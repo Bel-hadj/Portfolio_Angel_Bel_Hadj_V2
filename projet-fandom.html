@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit UX – Fandom | Angel Bel Hadj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="project-detail project-detail-cozy">
+    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+
+    <!--
+      Projet Accor retiré temporairement (pas encore prêt : visuels et captures manquants).
+      Conservé ici en commentaire pour être réactivé facilement plus tard : il suffit de
+      décommenter ce bloc, de le remettre avant l'article Fandom, de ré-envelopper les deux
+      articles dans <div class="projects-grid"> et de remettre la classe "project-detail-wide"
+      sur <main> (règles déjà présentes dans styles.css, inchangées).
+
+    <article class="detail-hero reveal visible">
+      <img src="assets/project-accor.jpg" alt="Aperçu Projet UX/UI – Accor" />
+      <div class="detail-content">
+        <p class="detail-index">Projet 01 / 02</p>
+        <span class="tag tag-cyan">UX/UI</span>
+        <h1>Projet UX/UI – Accor</h1>
+        <p>Projet centré sur l’expérience utilisateur et l’amélioration d’un parcours digital lié au groupe Accor. L’objectif était d’identifier les besoins utilisateurs, d’analyser l’expérience existante et de proposer des améliorations pour rendre le parcours plus clair, fluide et efficace.</p>
+
+        <h2>Missions réalisées</h2>
+        <ul>
+<li>Analyse de l’expérience utilisateur</li>
+<li>Identification des points de friction</li>
+<li>Réflexion sur l’ergonomie</li>
+<li>Amélioration du parcours client</li>
+<li>Proposition de solutions UX/UI</li>
+        </ul>
+
+        <h2>Compétences utilisées</h2>
+        <p>UX/UI design, analyse utilisateur, parcours client, ergonomie, design thinking.</p>
+
+        <div class="placeholder-note">
+          <strong>À personnaliser :</strong> ajoute ici tes vraies images, captures d’écran,
+          maquettes, documents ou explications précises du projet.
+        </div>
+      </div>
+    </article>
+    -->
+
+    <article class="detail-hero reveal visible compact-card">
+      <div class="detail-content">
+        <p class="detail-index">Projet principal</p>
+        <div class="tag-group">
+          <span class="tag tag-violet">UX Research</span>
+          <span class="tag tag-cyan">User Testing</span>
+          <span class="tag tag-amber">Card Sorting</span>
+        </div>
+        <h1>Audit UX – Fandom</h1>
+        <p class="detail-subtitle">Tests utilisateurs & Card Sorting</p>
+
+        <p>Analyse de l’expérience utilisateur du site Fandom à travers des tests utilisateurs, un questionnaire UX et une activité de card sorting.</p>
+        <p>L’objectif était d’identifier les difficultés de navigation et de comprendre comment les utilisateurs organisent naturellement l’information.</p>
+
+        <div class="pdf-viewer">
+          <div class="pdf-viewer-frame" id="fandomPdfFrame">
+            <canvas id="fandomPdfCanvas"></canvas>
+            <div class="pdf-viewer-status" id="fandomPdfStatus">
+              <p id="fandomPdfStatusText">Chargement de l’audit Fandom…</p>
+              <a href="assets/documents/audit-fandom.pdf" target="_blank" rel="noopener noreferrer"
+                class="btn secondary pdf-expand-btn" id="fandomPdfStatusFallback" hidden>Ouvrir le PDF complet</a>
+            </div>
+          </div>
+          <div class="pdf-controls">
+            <button type="button" class="pdf-btn" id="fandomPdfPrev" aria-label="Page précédente">←</button>
+            <span class="pdf-page-label">Page <span id="fandomPdfPageCurrent">1</span> / <span id="fandomPdfPageTotal">…</span></span>
+            <button type="button" class="pdf-btn" id="fandomPdfNext" aria-label="Page suivante">→</button>
+            <label class="pdf-goto" for="fandomPdfPageInput">
+              Aller à :
+              <input type="number" id="fandomPdfPageInput" min="1" value="1" inputmode="numeric" aria-label="Accéder à une page" />
+            </label>
+            <button type="button" class="btn secondary pdf-expand-btn" id="fandomPdfExpand" aria-label="Agrandir le PDF" disabled>Agrandir</button>
+          </div>
+        </div>
+
+        <h2>Documents du projet</h2>
+        <p>Consultez l’étude complète ou téléchargez le questionnaire utilisé pendant le projet.</p>
+        <div class="doc-actions">
+          <a href="assets/documents/audit-fandom.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary" aria-label="Ouvrir le PDF complet dans un nouvel onglet">Voir le PDF complet</a>
+          <a href="assets/documents/questionnaire-fandom.xlsx" download class="btn secondary" aria-label="Télécharger le questionnaire Excel">Télécharger le questionnaire Excel</a>
+        </div>
+
+        <h2>Missions réalisées</h2>
+        <ul>
+<li>Préparation et réalisation de tests utilisateurs</li>
+<li>Création et analyse d’un questionnaire UX</li>
+<li>Réalisation d’un card sorting</li>
+<li>Analyse des comportements et modèles mentaux</li>
+<li>Identification des points de friction</li>
+<li>Synthèse des résultats et recommandations UX</li>
+        </ul>
+
+        <h2>Méthodologie</h2>
+        <div class="cards-grid cards-grid-3">
+          <article class="card">
+            <span class="step-badge icon-indigo">01</span>
+            <h3>Tests utilisateurs</h3>
+            <p>Observation de la compréhension du site, de la navigation et des principales fonctionnalités.</p>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-violet">02</span>
+            <h3>Questionnaire UX</h3>
+            <p>Évaluation de la clarté de l’interface et de la manière dont les utilisateurs interprètent les différents éléments.</p>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-amber">03</span>
+            <h3>Card Sorting</h3>
+            <p>Classement de différents contenus par les participants afin d’identifier leur organisation naturelle de l’information.</p>
+          </article>
+        </div>
+
+        <h2>Résultats clés</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <span class="step-badge icon-indigo">01</span>
+            <h3>Structure globale comprise</h3>
+            <p>Les grandes catégories sont globalement organisées de manière similaire par les participants.</p>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-violet">02</span>
+            <h3>Produits & services</h3>
+            <p>Les produits sont facilement regroupés tandis que Shopping / Services forme un ensemble distinct.</p>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-amber">03</span>
+            <h3>Compte utilisateur</h3>
+            <p>Le compte utilisateur est naturellement identifié comme une catégorie indépendante.</p>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-rose">04</span>
+            <h3>Zones d’hésitation</h3>
+            <p>« À propos de nous », « Apps / Robotique » et « Nous contacter » ont généré davantage d’hésitations.</p>
+          </article>
+        </div>
+        <div class="insight-callout">
+          L’étude met en évidence l’importance d’une architecture de l’information alignée sur le modèle mental des utilisateurs.
+        </div>
+
+        <h2>Compétences utilisées</h2>
+        <div class="skill-tags">
+          <span>UX Research</span>
+          <span>User Testing</span>
+          <span>Card Sorting</span>
+          <span>Analyse utilisateur</span>
+          <span>Ergonomie</span>
+          <span>Architecture de l’information</span>
+          <span>Design Thinking</span>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div class="pdf-modal" id="fandomPdfModal" hidden>
+    <div class="pdf-modal-inner" role="dialog" aria-modal="true" aria-label="Lecteur PDF – Audit Fandom">
+      <div class="pdf-modal-head">
+        <span class="pdf-modal-title">Audit Fandom</span>
+        <button type="button" class="pdf-btn" id="fandomPdfModalClose" aria-label="Fermer le lecteur">✕</button>
+      </div>
+      <div class="pdf-viewer-frame">
+        <canvas id="fandomPdfModalCanvas"></canvas>
+      </div>
+      <div class="pdf-controls">
+        <button type="button" class="pdf-btn" id="fandomPdfModalPrev" aria-label="Page précédente">←</button>
+        <span class="pdf-page-label">Page <span id="fandomPdfModalPageCurrent">1</span> / <span id="fandomPdfModalPageTotal">…</span></span>
+        <button type="button" class="pdf-btn" id="fandomPdfModalNext" aria-label="Page suivante">→</button>
+        <label class="pdf-goto" for="fandomPdfModalPageInput">
+          Aller à :
+          <input type="number" id="fandomPdfModalPageInput" min="1" value="1" inputmode="numeric" aria-label="Accéder à une page" />
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="assets/documents/audit-fandom-data.js"></script>
+  <script type="module" src="pdf-viewer.js"></script>
+</body>
+</html>
