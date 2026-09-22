@@ -14,7 +14,8 @@
   <main class="project-detail">
     <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
     <article class="detail-hero reveal visible">
-      <img class="hero-image--contain" src="assets/projects/emergent/cover.webp" alt="Aperçu de la page d’accueil Emergent / IndieWave : navigation, hero, recherche, filtres, statistiques, Spotlight et intégration Spotify" />
+      <img class="hero-image--contain" src="assets/projects/emergent/cover.webp" alt="Aperçu de la page d’accueil Emergent / IndieWave : navigation, hero, recherche, filtres, statistiques, Spotlight et intégration Spotify"
+        onerror="const d=document.createElement('div'); d.className='media-fallback'; d.textContent='Capture d’écran à venir — cover.webp'; this.replaceWith(d);" />
       <div class="detail-content">
         <span class="tag tag-indigo">Web • Entrepreneuriat</span>
         <h1>Emergent / IndieWave</h1>
@@ -22,23 +23,25 @@
 
         <p>Plateforme de découverte musicale dédiée aux artistes émergents. L’objectif était de proposer une expérience permettant de découvrir de nouveaux artistes, rechercher et filtrer des morceaux et écouter directement certains contenus via Spotify.</p>
 
-        <!-- Remplace EMERGENT_LIVE_URL et EMERGENT_GITHUB_URL par les vraies adresses
-             une fois le site et le dépôt publiés. target/rel sont déjà en place. -->
-        <div class="doc-actions">
-          <a href="EMERGENT_LIVE_URL" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir le site ↗</a>
-          <a href="EMERGENT_GITHUB_URL" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir le code GitHub ↗</a>
-        </div>
+        <h2>Problématique</h2>
+        <p>De nombreux artistes émergents peinent à se faire connaître sur les plateformes de streaming classiques, où la mise en avant favorise surtout les artistes déjà installés. Du côté des auditeurs, il est aussi difficile de découvrir facilement de nouveaux talents en dehors des recommandations automatiques. Emergent / IndieWave part de ce constat pour proposer un espace dédié à la découverte musicale indépendante.</p>
 
-        <h2>Ce que j’ai réalisé</h2>
-        <p>Conception du concept et du parcours utilisateur, réflexion autour du modèle de plateforme, réalisation de l’interface et développement des principales interactions en HTML, CSS et JavaScript.</p>
+        <h2>Objectifs</h2>
         <ul>
-<li>Conception de l’expérience et du parcours</li>
-<li>Interface responsive</li>
-<li>Recherche et filtrage</li>
-<li>Système de favoris</li>
-<li>Découverte d’artistes</li>
-<li>Intégration Spotify</li>
+<li>Créer une plateforme simple pour découvrir des artistes émergents</li>
+<li>Permettre une recherche et un filtrage clairs des morceaux</li>
+<li>Proposer un système de favoris pour suivre ses artistes préférés</li>
+<li>Intégrer l’écoute directe via Spotify pour ne pas rompre l’expérience utilisateur</li>
         </ul>
+
+        <!-- Aucune URL réelle disponible pour le moment (site / dépôt non publiés).
+             Boutons désactivés plutôt que des liens factices : dès que les vraies
+             adresses existent, remplace disabled par href="..." target="_blank"
+             rel="noopener noreferrer" (comme sur les autres pages projet). -->
+        <div class="doc-actions">
+          <button type="button" class="btn secondary" disabled aria-disabled="true">Démo en ligne bientôt disponible</button>
+          <button type="button" class="btn secondary" disabled aria-disabled="true">Code source bientôt disponible</button>
+        </div>
 
         <h2>Fonctionnalités principales</h2>
         <div class="cards-grid cards-grid-3">
@@ -59,40 +62,16 @@
           </article>
         </div>
 
-        <h2>Aperçu de la plateforme</h2>
-        <div class="gallery-grid">
-          <article class="card gallery-card">
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/featured-artists.webp" data-lightbox-alt="Découverte des artistes – Emergent / IndieWave" aria-label="Agrandir la capture : Découverte des artistes">
-              <img class="card-thumb" src="assets/projects/emergent/featured-artists.webp" alt="Découverte des artistes – Emergent / IndieWave" loading="lazy" />
-            </button>
-            <h3>Découverte des artistes</h3>
-            <p>Une sélection d’artistes émergents avec leur genre, leur localisation et un accès à leur profil.</p>
-          </article>
-
-          <article class="card gallery-card">
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/catalogue.webp" data-lightbox-alt="Catalogue musical – Emergent / IndieWave" aria-label="Agrandir la capture : Catalogue musical">
-              <img class="card-thumb" src="assets/projects/emergent/catalogue.webp" alt="Catalogue musical – Emergent / IndieWave" loading="lazy" />
-            </button>
-            <h3>Catalogue musical</h3>
-            <p>Parcours des morceaux avec genre, score, favoris et accès rapide à l’écoute.</p>
-          </article>
-
-          <article class="card gallery-card">
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/spotify-playlists.webp" data-lightbox-alt="Intégration Spotify – Emergent / IndieWave" aria-label="Agrandir la capture : Intégration Spotify">
-              <img class="card-thumb" src="assets/projects/emergent/spotify-playlists.webp" alt="Intégration Spotify – Emergent / IndieWave" loading="lazy" />
-            </button>
-            <h3>Intégration Spotify</h3>
-            <p>Des playlists Spotify sont intégrées directement à la plateforme.</p>
-          </article>
-
-          <article class="card gallery-card">
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/submit-track.webp" data-lightbox-alt="Proposer un titre – Emergent / IndieWave" aria-label="Agrandir la capture : Proposer un titre">
-              <img class="card-thumb" src="assets/projects/emergent/submit-track.webp" alt="Proposer un titre – Emergent / IndieWave" loading="lazy" />
-            </button>
-            <h3>Proposer un titre</h3>
-            <p>Un formulaire permet à un artiste de proposer un morceau et son lien Spotify.</p>
-          </article>
-        </div>
+        <h2>Mon rôle &amp; contributions</h2>
+        <p>Conception du concept et du parcours utilisateur, réflexion autour du modèle de plateforme, réalisation de l’interface et développement des principales interactions en HTML, CSS et JavaScript.</p>
+        <ul>
+<li>Conception de l’expérience et du parcours</li>
+<li>Interface responsive</li>
+<li>Recherche et filtrage</li>
+<li>Système de favoris</li>
+<li>Découverte d’artistes</li>
+<li>Intégration Spotify</li>
+        </ul>
 
         <h2>Compétences</h2>
         <div class="skill-tags">
@@ -104,6 +83,48 @@
           <span>Design d’interface</span>
           <span>Entrepreneuriat</span>
         </div>
+
+        <h2>Aperçu de la plateforme</h2>
+        <div class="gallery-grid">
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/featured-artists.webp" data-lightbox-alt="Découverte des artistes – Emergent / IndieWave" aria-label="Agrandir la capture : Découverte des artistes">
+              <img class="card-thumb" src="assets/projects/emergent/featured-artists.webp" alt="Découverte des artistes – Emergent / IndieWave" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Découverte des artistes</h3>
+            <p>Une sélection d’artistes émergents avec leur genre, leur localisation et un accès à leur profil.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/catalogue.webp" data-lightbox-alt="Catalogue musical – Emergent / IndieWave" aria-label="Agrandir la capture : Catalogue musical">
+              <img class="card-thumb" src="assets/projects/emergent/catalogue.webp" alt="Catalogue musical – Emergent / IndieWave" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Catalogue musical</h3>
+            <p>Parcours des morceaux avec genre, score, favoris et accès rapide à l’écoute.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/spotify-playlists.webp" data-lightbox-alt="Intégration Spotify – Emergent / IndieWave" aria-label="Agrandir la capture : Intégration Spotify">
+              <img class="card-thumb" src="assets/projects/emergent/spotify-playlists.webp" alt="Intégration Spotify – Emergent / IndieWave" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Intégration Spotify</h3>
+            <p>Des playlists Spotify sont intégrées directement à la plateforme.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/submit-track.webp" data-lightbox-alt="Proposer un titre – Emergent / IndieWave" aria-label="Agrandir la capture : Proposer un titre">
+              <img class="card-thumb" src="assets/projects/emergent/submit-track.webp" alt="Proposer un titre – Emergent / IndieWave" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Proposer un titre</h3>
+            <p>Un formulaire permet à un artiste de proposer un morceau et son lien Spotify.</p>
+          </article>
+        </div>
+
+        <h2>Résultats &amp; apprentissages</h2>
+        <p>Ce projet m’a permis de mener une réflexion produit complète, de l’idée jusqu’à une interface fonctionnelle : définir un concept, structurer un parcours utilisateur, puis développer les interactions en HTML, CSS et JavaScript. Il m’a aussi appris à concevoir une interface responsive et à intégrer un service tiers (Spotify) de façon fluide dans une expérience utilisateur cohérente.</p>
       </div>
     </article>
   </main>

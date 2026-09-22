@@ -1,0 +1,28 @@
+Images attendues pour la page projet Emergent / IndieWave
+(projet-indiewave.html + tuile dans index.html)
+
+Dépose ici les fichiers suivants, avec exactement ces noms :
+
+1. cover.webp
+   - Utilisée comme visuel principal (hero) ET comme vignette sur la page d'accueil.
+   - Idéalement une capture large de la page d'accueil de la plateforme
+     (navigation, hero, recherche, stats, Spotlight).
+
+2. featured-artists.webp
+   - Capture de la section "Découverte des artistes".
+
+3. catalogue.webp
+   - Capture du catalogue musical (recherche, filtres, favoris).
+
+4. spotify-playlists.webp
+   - Capture de l'intégration Spotify (lecture / playlists).
+
+5. submit-track.webp
+   - Capture du formulaire "Proposer un titre".
+
+Format conseillé : .webp, largeur ~1600px pour cover.webp et ~1000px
+pour les 4 autres (compression correcte pour un chargement rapide).
+
+Tant que ces fichiers ne sont pas présents, le site affiche automatiquement
+un état de secours propre (pas d'image cassée) : voir projet-indiewave.html
+et la classe CSS .media-fallback dans styles.css.
