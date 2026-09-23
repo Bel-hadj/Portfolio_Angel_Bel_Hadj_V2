@@ -1,28 +1,31 @@
-Images attendues pour la page projet Emergent / IndieWave
+Images de la page projet Emergent
 (projet-indiewave.html + tuile dans index.html)
 
-Dépose ici les fichiers suivants, avec exactement ces noms :
+Statut : captures réelles en place (format .png).
 
-1. cover.webp
-   - Utilisée comme visuel principal (hero) ET comme vignette sur la page d'accueil.
-   - Idéalement une capture large de la page d'accueil de la plateforme
-     (navigation, hero, recherche, stats, Spotlight).
+- cover.png              → hero de la page + vignette sur la page d'accueil
+- featured-artists.png   → section "Featured Artists" du vrai site
+- catalogue.png          → section "Catalog" du vrai site
+- spotify-playlists.png  → section "Playlists to explore" (vrais embeds Spotify)
+- submit-track.png       → page "Submit your music"
 
-2. featured-artists.webp
-   - Capture de la section "Découverte des artistes".
+Origine : captures d'écran réelles, prises automatiquement (Chrome headless)
+à partir du vrai code du projet Emergent fourni par Angel (data.js, shared.js,
+style.css, index.html, artists.html, submit.html, etc.), reconstitué à
+l'identique dans un dossier temporaire hors du portfolio, sans aucune
+modification du code d'origine. Rien n'a été inventé : ce sont les vraies
+données (artistes, morceaux, playlists Spotify) telles que définies dans
+data.js.
 
-3. catalogue.webp
-   - Capture du catalogue musical (recherche, filtres, favoris).
+Format : .png (pas de .webp — aucun encodeur WebP disponible dans cet
+environnement). Les <img> de projet-indiewave.html et de la carte index.html
+référencent ces fichiers en .png.
 
-4. spotify-playlists.webp
-   - Capture de l'intégration Spotify (lecture / playlists).
+Si tu remplaces ces images par de nouvelles captures (ex. après une mise à
+jour du vrai site), garde exactement ces noms de fichiers, ou mets à jour les
+chemins dans projet-indiewave.html et index.html en conséquence.
 
-5. submit-track.webp
-   - Capture du formulaire "Proposer un titre".
-
-Format conseillé : .webp, largeur ~1600px pour cover.webp et ~1000px
-pour les 4 autres (compression correcte pour un chargement rapide).
-
-Tant que ces fichiers ne sont pas présents, le site affiche automatiquement
-un état de secours propre (pas d'image cassée) : voir projet-indiewave.html
-et la classe CSS .media-fallback dans styles.css.
+Fallback : si un de ces fichiers venait à manquer, le site affiche
+automatiquement un état de secours propre (pas d'image cassée) — voir la
+classe CSS .media-fallback dans styles.css et les attributs onerror sur
+chaque <img> concernée dans projet-indiewave.html.

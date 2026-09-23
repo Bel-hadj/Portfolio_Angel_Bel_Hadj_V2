@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emergent / IndieWave | Angel Bel Hadj</title>
+  <title>Emergent — Découverte musicale | Angel Bel Hadj</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
@@ -11,35 +11,38 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="project-detail">
+  <main class="project-detail project-detail-showcase">
     <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
     <article class="detail-hero reveal visible">
-      <img class="hero-image--contain" src="assets/projects/emergent/cover.webp" alt="Aperçu de la page d’accueil Emergent / IndieWave : navigation, hero, recherche, filtres, statistiques, Spotlight et intégration Spotify"
-        onerror="const d=document.createElement('div'); d.className='media-fallback'; d.textContent='Capture d’écran à venir — cover.webp'; this.replaceWith(d);" />
+      <img class="hero-image--contain" src="assets/projects/emergent/cover.png" alt="Page d’accueil d’Emergent : navigation, hero, recherche, statistiques et lecteur Spotify (Spotlight)"
+        onerror="const d=document.createElement('div'); d.className='media-fallback'; d.textContent='Capture d’écran à venir — cover.png'; this.replaceWith(d);" />
       <div class="detail-content">
         <span class="tag tag-indigo">Web • Entrepreneuriat</span>
-        <h1>Emergent / IndieWave</h1>
+        <h1>Emergent — Découverte musicale</h1>
         <p class="detail-subtitle">Conception produit • UX/UI • Développement front-end</p>
 
-        <p>Plateforme de découverte musicale dédiée aux artistes émergents. L’objectif était de proposer une expérience permettant de découvrir de nouveaux artistes, rechercher et filtrer des morceaux et écouter directement certains contenus via Spotify.</p>
+        <p>Emergent est une plateforme de découverte musicale dédiée aux artistes émergents : recherche et filtrage d’un catalogue, annuaire d’artistes avec fiches individuelles, écoute directe via de vrais embeds Spotify, et un formulaire permettant à un artiste de proposer un titre.</p>
 
-        <h2>Problématique</h2>
-        <p>De nombreux artistes émergents peinent à se faire connaître sur les plateformes de streaming classiques, où la mise en avant favorise surtout les artistes déjà installés. Du côté des auditeurs, il est aussi difficile de découvrir facilement de nouveaux talents en dehors des recommandations automatiques. Emergent / IndieWave part de ce constat pour proposer un espace dédié à la découverte musicale indépendante.</p>
+        <div class="detail-pair">
+          <div class="card">
+            <h2>Contexte</h2>
+            <p>Projet réalisé dans le cadre de mon échange académique à la Varna University of Management (Bulgarie), en 2026, dans une logique de projet digital de A à Z : conception, UX/UI et développement front-end.</p>
+          </div>
+          <div class="card">
+            <h2>Problématique</h2>
+            <p>Sur les plateformes de streaming classiques, la mise en avant favorise surtout les artistes déjà installés : plus un artiste a d’écoutes, plus il est exposé. Les artistes indépendants et émergents peinent à se faire découvrir, indépendamment de la qualité de leur travail.</p>
+          </div>
+        </div>
 
-        <h2>Objectifs</h2>
-        <ul>
-<li>Créer une plateforme simple pour découvrir des artistes émergents</li>
-<li>Permettre une recherche et un filtrage clairs des morceaux</li>
-<li>Proposer un système de favoris pour suivre ses artistes préférés</li>
-<li>Intégrer l’écoute directe via Spotify pour ne pas rompre l’expérience utilisateur</li>
-        </ul>
+        <h2>Solution</h2>
+        <p>Emergent propose une expérience de découverte plus équitable : un catalogue où les artistes émergents sont mis en avant par défaut, et non relégués au second plan. Sans création de compte, un visiteur peut chercher, filtrer par genre, parcourir des profils d’artistes et écouter instantanément via des lecteurs Spotify intégrés.</p>
 
-        <!-- Aucune URL réelle disponible pour le moment (site / dépôt non publiés).
-             Boutons désactivés plutôt que des liens factices : dès que les vraies
-             adresses existent, remplace disabled par href="..." target="_blank"
+        <!-- Démo : le vrai projet Emergent est hébergé tel quel dans emergent-demo/
+             (aucune modification de son code). GitHub reste désactivé tant qu'aucun
+             dépôt n'est publié — remplace alors disabled par href="..." target="_blank"
              rel="noopener noreferrer" (comme sur les autres pages projet). -->
         <div class="doc-actions">
-          <button type="button" class="btn secondary" disabled aria-disabled="true">Démo en ligne bientôt disponible</button>
+          <a href="emergent-demo/index.html" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir le site complet ↗</a>
           <button type="button" class="btn secondary" disabled aria-disabled="true">Code source bientôt disponible</button>
         </div>
 
@@ -47,84 +50,219 @@
         <div class="cards-grid cards-grid-3">
           <article class="card">
             <span class="step-badge icon-indigo">01</span>
-            <h3>Découverte d’artistes</h3>
-            <p>Exploration d’artistes émergents avec genres, localisation et profils dédiés.</p>
+            <h3>Découverte &amp; recherche</h3>
+            <p>Recherche en direct, filtre par genre et tri par score, date ou ordre alphabétique.</p>
           </article>
           <article class="card">
             <span class="step-badge icon-violet">02</span>
-            <h3>Catalogue musical</h3>
-            <p>Recherche, filtres, classement, favoris et accès rapide aux morceaux.</p>
+            <h3>Annuaire d’artistes</h3>
+            <p>Annuaire complet avec fiche individuelle par artiste (bio, genre, ville) et ses morceaux associés.</p>
           </article>
           <article class="card">
             <span class="step-badge icon-amber">03</span>
-            <h3>Intégration Spotify</h3>
-            <p>Écoute de morceaux et playlists directement depuis l’interface.</p>
+            <h3>Écoute Spotify intégrée</h3>
+            <p>Lecteurs Spotify réels pour les morceaux et pour des playlists éditoriales, directement dans l’interface.</p>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-rose">04</span>
+            <h3>Découverte aléatoire</h3>
+            <p>Un bouton « Surprise » met en avant un morceau du catalogue tiré au hasard.</p>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-indigo">05</span>
+            <h3>Favoris</h3>
+            <p>Système de favoris persistant d’une visite à l’autre grâce au stockage local du navigateur.</p>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-violet">06</span>
+            <h3>Proposer un titre</h3>
+            <p>Formulaire avec validation (champs requis, URL Spotify, année) ; le morceau soumis est sauvegardé localement et apparaît dans le catalogue.</p>
           </article>
         </div>
 
-        <h2>Mon rôle &amp; contributions</h2>
-        <p>Conception du concept et du parcours utilisateur, réflexion autour du modèle de plateforme, réalisation de l’interface et développement des principales interactions en HTML, CSS et JavaScript.</p>
-        <ul>
-<li>Conception de l’expérience et du parcours</li>
-<li>Interface responsive</li>
-<li>Recherche et filtrage</li>
-<li>Système de favoris</li>
-<li>Découverte d’artistes</li>
-<li>Intégration Spotify</li>
-        </ul>
+        <div class="detail-pair">
+          <div class="card">
+            <h2>Mon rôle &amp; contributions</h2>
+            <p>Conception du concept et du parcours utilisateur, réflexion sur le modèle de plateforme, réalisation de l’interface et développement de l’ensemble des interactions en HTML, CSS et JavaScript, sur les quatre pages du site (accueil, annuaire d’artistes, fiche artiste, formulaire).</p>
+            <ul>
+<li>Conception de l’expérience et du parcours utilisateur</li>
+<li>Architecture multi-pages en JavaScript natif</li>
+<li>Recherche, filtrage et tri du catalogue</li>
+<li>Système de favoris et formulaire de soumission</li>
+<li>Intégration des lecteurs Spotify</li>
+<li>Interface responsive, thème et internationalisation</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>Stack technique</h2>
+            <p>HTML, CSS et JavaScript vanilla — sans framework, sans étape de build et sans backend. Les données (artistes, morceaux, playlists) vivent dans un fichier unique, et tout ce qui doit persister d’une visite à l’autre (favoris, thème, langue, morceaux proposés) est stocké dans le navigateur via <code>localStorage</code>.</p>
+          </div>
+        </div>
+
+        <div class="detail-note">
+          <h3>Expérience utilisateur</h3>
+          <p>L’interface s’adapte du mobile au desktop, avec un thème clair/sombre mémorisé d’une visite à l’autre et une interface disponible en français, anglais et bulgare. Les sections apparaissent progressivement au défilement, et la navigation reste utilisable au clavier (focus visible, libellés accessibles).</p>
+        </div>
+
+        <h2>Sous le capot</h2>
+        <p>Quelques extraits représentatifs, repris tels quels du code réel du projet — sélectionne un onglet pour l’afficher.</p>
+
+        <div class="code-tabs">
+          <input type="radio" name="codeTab" id="codeTab1" class="code-tab-input" checked>
+          <input type="radio" name="codeTab" id="codeTab2" class="code-tab-input">
+          <input type="radio" name="codeTab" id="codeTab3" class="code-tab-input">
+          <input type="radio" name="codeTab" id="codeTab4" class="code-tab-input">
+
+          <div class="code-tab-list" role="tablist">
+            <label for="codeTab1" class="code-tab-btn">Recherche &amp; filtrage</label>
+            <label for="codeTab2" class="code-tab-btn">Favoris</label>
+            <label for="codeTab3" class="code-tab-btn">Cartes dynamiques</label>
+            <label for="codeTab4" class="code-tab-btn">Thème clair / sombre</label>
+          </div>
+
+          <div class="code-tab-panel" id="codePanel1">
+            <pre><code>const q = state.q.trim().toLowerCase();
+if (q) {
+  list = list.filter(
+    (x) =&gt;
+      x.artist.toLowerCase().includes(q) ||
+      x.title.toLowerCase().includes(q) ||
+      x.genre.toLowerCase().includes(q),
+  );
+}
+
+if (state.genre !== "all") list = list.filter((x) =&gt; x.genre === state.genre);</code></pre>
+            <p>La recherche filtre en direct sur l’artiste, le titre et le genre, combinable avec le filtre par genre.</p>
+          </div>
+
+          <div class="code-tab-panel" id="codePanel2">
+            <pre><code>function toggleFavorite(id) {
+  const favs = getFavorites();
+  const key = Number(id);
+  let added;
+  if (favs.has(key)) {
+    favs.delete(key);
+    added = false;
+  } else {
+    favs.add(key);
+    added = true;
+  }
+  localStorage.setItem(FAV_KEY, JSON.stringify([...favs]));
+  toast(added ? t("toast_added") : t("toast_removed"));
+  return added;
+}</code></pre>
+            <p>Chaque favori est stocké côté navigateur ; l’état est retrouvé identique à la visite suivante.</p>
+          </div>
+
+          <div class="code-tab-panel" id="codePanel3">
+            <pre><code>function artistCardHTML(artist) {
+  const cityLine = artist.city ? ` • ${escapeHTML(artist.city)}` : "";
+  return `
+    &lt;article class="artist-card"&gt;
+      ${artistMediaHTML(artist, { size: "card" })}
+      &lt;div class="artist-card__body"&gt;
+        &lt;div class="artist-card__name"&gt;${escapeHTML(artist.name)}&lt;/div&gt;
+        &lt;div class="artist-card__meta"&gt;${genreLabel(artist.genre)}${cityLine}&lt;/div&gt;
+        &lt;div class="artist-card__footer"&gt;
+          &lt;a class="btn btn--ghost btn--sm"
+             href="./artist.html?id=${encodeURIComponent(artist.id)}"
+             data-i18n="view_artist"&gt;View artist&lt;/a&gt;</code></pre>
+            <p>Chaque carte artiste est générée depuis un template JavaScript ; le lien renvoie vers la fiche complète de l’artiste.</p>
+          </div>
+
+          <div class="code-tab-panel" id="codePanel4">
+            <pre><code>function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem(THEME_KEY, theme);
+  $$("[data-theme-btn]").forEach((btn) =&gt; {
+    btn.textContent = theme === "dark" ? "🌙" : "☀️";
+    btn.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
+  });
+}</code></pre>
+            <p>Le thème choisi est appliqué immédiatement et mémorisé pour les prochaines visites.</p>
+          </div>
+        </div>
 
         <h2>Compétences</h2>
-        <div class="skill-tags">
+        <div class="skill-tags skills-plain">
           <span>HTML</span>
           <span>CSS</span>
           <span>JavaScript</span>
           <span>UX/UI</span>
           <span>Responsive Design</span>
-          <span>Design d’interface</span>
+          <span>Architecture front-end</span>
+          <span>Internationalisation (i18n)</span>
           <span>Entrepreneuriat</span>
         </div>
 
         <h2>Aperçu de la plateforme</h2>
         <div class="gallery-grid">
           <article class="card gallery-card">
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/featured-artists.webp" data-lightbox-alt="Découverte des artistes – Emergent / IndieWave" aria-label="Agrandir la capture : Découverte des artistes">
-              <img class="card-thumb" src="assets/projects/emergent/featured-artists.webp" alt="Découverte des artistes – Emergent / IndieWave" loading="lazy"
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/featured-artists.png" data-lightbox-alt="Artistes en vedette – Emergent" aria-label="Agrandir la capture : Artistes en vedette">
+              <img class="card-thumb" src="assets/projects/emergent/featured-artists.png" alt="Artistes en vedette – Emergent" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
-            <h3>Découverte des artistes</h3>
-            <p>Une sélection d’artistes émergents avec leur genre, leur localisation et un accès à leur profil.</p>
+            <h3>Artistes en vedette</h3>
+            <p>Une sélection d’artistes émergents, chacun avec son genre, sa ville et un accès direct à son profil.</p>
           </article>
 
           <article class="card gallery-card">
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/catalogue.webp" data-lightbox-alt="Catalogue musical – Emergent / IndieWave" aria-label="Agrandir la capture : Catalogue musical">
-              <img class="card-thumb" src="assets/projects/emergent/catalogue.webp" alt="Catalogue musical – Emergent / IndieWave" loading="lazy"
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/catalogue.png" data-lightbox-alt="Catalogue musical – Emergent" aria-label="Agrandir la capture : Catalogue musical">
+              <img class="card-thumb" src="assets/projects/emergent/catalogue.png" alt="Catalogue musical – Emergent" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
             <h3>Catalogue musical</h3>
-            <p>Parcours des morceaux avec genre, score, favoris et accès rapide à l’écoute.</p>
+            <p>Recherche, genre, score et favoris pour chaque morceau du catalogue.</p>
           </article>
 
           <article class="card gallery-card">
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/spotify-playlists.webp" data-lightbox-alt="Intégration Spotify – Emergent / IndieWave" aria-label="Agrandir la capture : Intégration Spotify">
-              <img class="card-thumb" src="assets/projects/emergent/spotify-playlists.webp" alt="Intégration Spotify – Emergent / IndieWave" loading="lazy"
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/spotify-playlists.png" data-lightbox-alt="Playlists Spotify – Emergent" aria-label="Agrandir la capture : Playlists Spotify">
+              <img class="card-thumb" src="assets/projects/emergent/spotify-playlists.png" alt="Playlists Spotify – Emergent" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
-            <h3>Intégration Spotify</h3>
-            <p>Des playlists Spotify sont intégrées directement à la plateforme.</p>
+            <h3>Playlists Spotify</h3>
+            <p>Des playlists éditoriales Spotify, intégrées et écoutables directement depuis la plateforme.</p>
           </article>
 
           <article class="card gallery-card">
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/submit-track.webp" data-lightbox-alt="Proposer un titre – Emergent / IndieWave" aria-label="Agrandir la capture : Proposer un titre">
-              <img class="card-thumb" src="assets/projects/emergent/submit-track.webp" alt="Proposer un titre – Emergent / IndieWave" loading="lazy"
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/submit-track.png" data-lightbox-alt="Formulaire Proposer un titre – Emergent" aria-label="Agrandir la capture : Proposer un titre">
+              <img class="card-thumb" src="assets/projects/emergent/submit-track.png" alt="Formulaire Proposer un titre – Emergent" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
             <h3>Proposer un titre</h3>
-            <p>Un formulaire permet à un artiste de proposer un morceau et son lien Spotify.</p>
+            <p>Un formulaire validé permet à un artiste de soumettre un morceau et son lien Spotify.</p>
           </article>
         </div>
 
+        <div class="reality-strip">
+          <h2>Ce qui est réel / ce qui est simulé</h2>
+          <p class="reality-lead">Projet entièrement front-end : pas de serveur, pas de base de données, pas d’authentification.</p>
+          <div class="reality-grid">
+            <div>
+              <strong>Spotify</strong>
+              <span>Liens et lecteurs intégrés pointant vers de vrais morceaux et playlists publics.</span>
+            </div>
+            <div>
+              <strong>Photos d’artistes</strong>
+              <span>Vraies photos libres de droits (Unsplash), à titre illustratif — repli automatique vers une pochette générée en cas d’échec.</span>
+            </div>
+            <div>
+              <strong>Pochettes de morceaux</strong>
+              <span>Générées à la volée (dégradé + formes, seedé par morceau).</span>
+            </div>
+            <div>
+              <strong>Formulaire « Proposer un titre »</strong>
+              <span>Flux réel (validation, erreurs, sauvegarde), stocké uniquement dans le navigateur du visiteur.</span>
+            </div>
+            <div>
+              <strong>Favoris, thème et langue</strong>
+              <span>Également mémorisés via le stockage local du navigateur.</span>
+            </div>
+          </div>
+        </div>
+
         <h2>Résultats &amp; apprentissages</h2>
-        <p>Ce projet m’a permis de mener une réflexion produit complète, de l’idée jusqu’à une interface fonctionnelle : définir un concept, structurer un parcours utilisateur, puis développer les interactions en HTML, CSS et JavaScript. Il m’a aussi appris à concevoir une interface responsive et à intégrer un service tiers (Spotify) de façon fluide dans une expérience utilisateur cohérente.</p>
+        <p>Ce projet m’a permis de mener une réflexion produit complète, de l’idée jusqu’à une plateforme à quatre pages fonctionnelle : définir un concept, structurer plusieurs parcours utilisateur liés entre eux, puis développer l’ensemble en HTML, CSS et JavaScript. Il m’a aussi appris à structurer une architecture front-end sans framework (données centralisées, logique partagée entre pages), à gérer la persistance via <code>localStorage</code>, et à intégrer un service tiers (Spotify) et une interface multilingue de façon cohérente.</p>
       </div>
     </article>
   </main>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergent — Artists</title>
+  <meta name="description" content="Browse independent and emerging artists on Emergent — filter by genre, search, and open full artist profiles." />
+  <meta name="theme-color" content="#070a12" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="./index.html">
+        <div class="logo" aria-hidden="true">E</div>
+        <div>
+          <div class="brand__name">Emergent</div>
+          <div class="brand__tag" data-i18n="brand_tag">Discover the next sound.</div>
+        </div>
+      </a>
+
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">☰</button>
+
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a class="chip" href="./index.html" data-i18n="nav_discover">Discover</a>
+        <a class="chip chip--active" href="./artists.html" data-i18n="nav_artists">Artists</a>
+        <a class="chip" href="./index.html?tab=new#catalog" data-i18n="nav_new">New Releases</a>
+        <a class="chip" href="./index.html?tab=favorites" data-i18n="nav_favorites">Favorites</a>
+        <a class="chip" href="./submit.html" data-i18n="nav_submit">Submit Music</a>
+      </nav>
+
+      <div class="header__actions">
+        <select id="langSelect" class="select" aria-label="Language">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="bg">BG</option>
+        </select>
+        <button class="icon-btn" data-theme-btn title="Toggle theme" aria-label="Toggle theme">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main">
+    <section class="hero hero--single">
+      <div class="hero__left">
+        <h1 data-i18n="artists_title">Discover Artists</h1>
+        <p class="lead" data-i18n="artists_sub">Independent voices. New sounds. No popularity contest.</p>
+
+        <div class="search">
+          <span class="search__icon" aria-hidden="true">🔎</span>
+          <input id="artistSearch" type="text" data-i18n-placeholder="artist_search_placeholder" placeholder="Search an artist…" />
+        </div>
+
+        <div class="filters">
+          <span class="pill" data-i18n="filter_genre">Genre</span>
+          <select id="genreSelect" class="select" aria-label="Filter by genre">
+            <option value="all" data-i18n="genre_all">All</option>
+          </select>
+
+          <span class="pill" data-i18n="filter_sort">Sort</span>
+          <select id="sortSelect" class="select" aria-label="Sort artists">
+            <option value="az" data-i18n="sort_alpha">A → Z</option>
+            <option value="tracks" data-i18n="stat_tracks">Tracks</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid grid--artists" id="artistGrid"></div>
+      <div class="empty" id="emptyState" hidden>
+        <div class="empty__title" data-i18n="empty_title">No results</div>
+        <div class="empty__text muted" data-i18n="empty_text">Try a different search or filter.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="logo" aria-hidden="true">E</div>
+        <div>
+          <div class="brand__name">Emergent</div>
+          <div class="muted" data-i18n="footer_tag">Discover emerging talent.</div>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="./index.html" data-i18n="nav_discover">Discover</a>
+        <a href="./artists.html" data-i18n="nav_artists">Artists</a>
+        <a href="./submit.html" data-i18n="nav_submit">Submit Music</a>
+      </nav>
+    </div>
+    <div class="container footer__meta">
+      <div data-i18n="footer_student">Student project — Varna University of Management, 2026</div>
+      <div data-i18n="footer_erasmus">Designed and developed as part of an Erasmus academic project.</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./data.js"></script>
+  <script src="./shared.js"></script>
+  <script src="./artists.js"></script>
+</body>
+</html>
