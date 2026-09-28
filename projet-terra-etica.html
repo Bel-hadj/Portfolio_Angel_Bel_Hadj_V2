@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marketing International – Terra Ética | Angel Bel Hadj</title>
+  <title>Terra Ética | Angel Bel Hadj</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
@@ -11,34 +11,212 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="project-detail">
+  <main class="project-detail project-detail-showcase">
     <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
-    <article class="detail-hero reveal visible">
-      <img src="assets/project-terra-etica.jpg" alt="Aperçu Marketing International – Terra Ética" />
-      <div class="detail-content">
-        <span class="tag tag-amber">Marketing international</span>
-        <h1>Marketing International – Terra Ética</h1>
-        <p>Projet réalisé dans le cadre du cours de Marketing International. Le travail portait sur la marque Terra Ética, avec une analyse de son positionnement, de ses valeurs, de son marché et de ses opportunités de développement à l’international.</p>
-
-        <h2>Missions réalisées</h2>
-        <ul>
-<li>Analyse de la marque</li>
-<li>Étude du marché</li>
-<li>Analyse des concurrents</li>
-<li>Réflexion sur le développement international</li>
-<li>Proposition d’actions marketing</li>
-        </ul>
-
-        <h2>Compétences utilisées</h2>
-        <p>Marketing international, analyse de marché, benchmark, stratégie de marque, présentation orale.</p>
-
-        <div class="placeholder-note">
-          <strong>À personnaliser :</strong> ajoute ici tes vraies images, captures d’écran,
-          maquettes, documents ou explications précises du projet.
+    <article class="detail-hero reveal visible terra-glow">
+      <!-- Le lecteur PDF sert de visuel principal du hero (remplace l'image
+           statique) : c'est le seul lecteur PDF de la page, aucune duplication
+           plus bas. -->
+      <div class="pdf-viewer pdf-viewer--hero" id="terra-pdf-viewer">
+        <div class="pdf-viewer-frame" id="terraPdfFrame">
+          <canvas id="terraPdfCanvas"></canvas>
+          <div class="pdf-viewer-status" id="terraPdfStatus">
+            <p id="terraPdfStatusText">Chargement de l’étude Terra Ética…</p>
+            <a href="assets/projects/terra-etica/terra-etica-international-marketing.pdf" target="_blank" rel="noopener noreferrer"
+              class="btn secondary pdf-expand-btn" id="terraPdfStatusFallback" hidden>Ouvrir le PDF complet</a>
+          </div>
         </div>
+        <div class="pdf-controls">
+          <button type="button" class="pdf-btn" id="terraPdfPrev" aria-label="Page précédente">←</button>
+          <span class="pdf-page-label">Page <span id="terraPdfPageCurrent">5</span> / <span id="terraPdfPageTotal">…</span></span>
+          <button type="button" class="pdf-btn" id="terraPdfNext" aria-label="Page suivante">→</button>
+          <label class="pdf-goto" for="terraPdfPageInput">
+            Aller à :
+            <input type="number" id="terraPdfPageInput" min="1" value="5" inputmode="numeric" aria-label="Accéder à une page" />
+          </label>
+          <button type="button" class="btn secondary pdf-expand-btn" id="terraPdfExpand" aria-label="Agrandir le PDF" disabled>Agrandir</button>
+        </div>
+      </div>
+
+      <div class="detail-content terra-detail-content">
+        <span class="tag tag-terra">International Marketing</span>
+        <h1>Terra Ética</h1>
+        <p class="detail-subtitle">Stratégie d’internationalisation &amp; Marketing international</p>
+        <p>Étude de marché et stratégie d’expansion internationale d’une marque française de chocolat bio et équitable.</p>
+
+        <!-- Bouton Canva : aucune URL fournie pour le moment. Dès qu'Angel transmet le
+             vrai lien, remplacer le <button disabled> ci-dessous par :
+             <a href="COLLER_URL_CANVA_ICI" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir sur Canva ↗</a> -->
+        <div class="doc-actions">
+          <a href="#terra-pdf-viewer" class="btn terra-btn-primary">Voir la présentation</a>
+          <a href="assets/projects/terra-etica/terra-etica-international-marketing.pdf" download class="btn secondary">Télécharger le PDF</a>
+          <button type="button" class="btn secondary" disabled aria-disabled="true">Canva bientôt disponible</button>
+        </div>
+
+        <div class="snapshot-grid">
+          <div class="snapshot-item">
+            <span class="snapshot-label">Type de projet</span>
+            <span class="snapshot-value">Étude de marché &amp; stratégie d’internationalisation</span>
+          </div>
+          <div class="snapshot-item">
+            <span class="snapshot-label">Cadre</span>
+            <span class="snapshot-value">EMLV — cours International Marketing</span>
+          </div>
+          <div class="snapshot-item">
+            <span class="snapshot-label">Équipe</span>
+            <span class="snapshot-value">Travail de groupe (4 personnes)</span>
+          </div>
+          <div class="snapshot-item">
+            <span class="snapshot-label">Marchés</span>
+            <span class="snapshot-value">🇩🇪 Allemagne · 🇨🇦 Canada</span>
+          </div>
+          <div class="snapshot-item">
+            <span class="snapshot-label">Objectif</span>
+            <span class="snapshot-value">Construire une stratégie d’expansion adaptée à chaque marché</span>
+          </div>
+        </div>
+
+        <h2>Positionnement &amp; C.A.P.</h2>
+        <p>Terra Ética est une marque française de chocolat bio et équitable, fondée en 2009 à Lorient.</p>
+
+        <div class="cards-grid cards-grid-3">
+          <article class="card">
+            <span class="step-badge icon-indigo">01</span>
+            <h3>Concept</h3>
+            <ul>
+<li>Marque française</li>
+<li>Bio et fair-trade</li>
+<li>Fabrication française</li>
+<li>Cacao durable et traçable</li>
+<li>Plaisir, éthique, authenticité</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-violet">02</span>
+            <h3>Advantages</h3>
+            <ul>
+<li>Naturalité</li>
+<li>Cacao bio et équitable</li>
+<li>Soutien aux producteurs</li>
+<li>Packaging responsable</li>
+<li>Made in France</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="step-badge icon-amber">03</span>
+            <h3>Proof</h3>
+            <ul>
+<li>Certifications Bio/Fairtrade</li>
+<li>Traçabilité</li>
+<li>25+ coopératives</li>
+<li>Distribution en réseaux bio</li>
+            </ul>
+          </article>
+        </div>
+
+        <p><strong>Produits analysés :</strong> 70% Pérou Grand Cru Piura • Lait aux noisettes entières.</p>
+        <p>L’internationalisation vise à diversifier les marchés, profiter de la croissance du chocolat premium/bio et renforcer la visibilité internationale de la marque.</p>
+
+        <h2>Deux marchés, deux stratégies</h2>
+        <p>Sélectionne un marché pour voir le détail.</p>
+        <div class="tabs">
+          <input type="radio" name="terraTab" id="terraTabDE" class="tabs-input" checked>
+          <input type="radio" name="terraTab" id="terraTabCA" class="tabs-input">
+
+          <div class="tabs-list" role="tablist">
+            <label for="terraTabDE" class="tabs-btn">🇩🇪 Allemagne</label>
+            <label for="terraTabCA" class="tabs-btn">🇨🇦 Canada</label>
+          </div>
+
+          <div class="tabs-panel" id="terraPanelDE">
+            <div class="card">
+              <ul>
+<li><strong>Opportunité :</strong> plus forte consommation de chocolat d’Europe, forte culture bio/fair-trade.</li>
+<li><strong>Cible :</strong> 25–55 ans, urbains, sensibles à la durabilité, achats en magasins bio.</li>
+<li><strong>Adaptation :</strong> tablettes bio, chocolat noir single-origine, certification Bio-Siegel.</li>
+<li><strong>Distribution :</strong> magasins bio (Alnatura, Denn’s).</li>
+<li><strong>Message-clé :</strong> écologie et traçabilité.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tabs-panel" id="terraPanelCA">
+            <div class="card">
+              <ul>
+<li><strong>Opportunité :</strong> croissance rapide du segment premium (+6 à 8%/an), consommateurs éco/santé.</li>
+<li><strong>Cible :</strong> 20–50 ans, éco-conscients, orientés santé, achats en magasins premium et en ligne.</li>
+<li><strong>Adaptation :</strong> chocolat premium équitable, noir à faible teneur en sucre, certification USDA/Fairtrade CA.</li>
+<li><strong>Distribution :</strong> magasins naturels/premium + e-commerce.</li>
+<li><strong>Message-clé :</strong> santé et clean label.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h2>De l’adaptation à la distribution</h2>
+        <p>Le produit reste globalement identique ; packaging, certifications, communication, prix et distribution sont adaptés au marché.</p>
+
+        <p class="reality-lead">Allemagne</p>
+        <div class="rtc-flow">
+          <div class="rtc-step">Terra Ética<span>France</span></div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Importateur / distributeur bio<span>Allemagne</span></div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Retailers bio</div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Consommateurs</div>
+        </div>
+        <p class="reality-lead">Canada</p>
+        <div class="rtc-flow">
+          <div class="rtc-step">Terra Ética<span>France</span></div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Distributeur canadien</div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Retail premium + boutique en ligne</div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Consommateurs</div>
+        </div>
+
+        <h2>Mon rôle &amp; compétences</h2>
+        <p>Projet réalisé en groupe dans le cadre du cours International Marketing. J’ai participé à l’analyse de la marque, à la comparaison Allemagne/Canada, à la segmentation, à la réflexion sur l’adaptation locale et à la stratégie de distribution.</p>
+        <div class="skill-tags skills-plain">
+          <span>International Marketing</span>
+          <span>Market Research</span>
+          <span>Segmentation</span>
+          <span>Market Selection</span>
+          <span>Localization</span>
+          <span>Route-to-Consumer</span>
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>Ce projet m’a permis d’appliquer une démarche complète de marketing international, de la sélection des marchés jusqu’à l’adaptation et au circuit de distribution.</p>
       </div>
     </article>
   </main>
+
+  <div class="pdf-modal" id="terraPdfModal" hidden>
+    <div class="pdf-modal-inner" role="dialog" aria-modal="true" aria-label="Lecteur PDF – Terra Ética">
+      <div class="pdf-modal-head">
+        <span class="pdf-modal-title">Terra Ética</span>
+        <button type="button" class="pdf-btn" id="terraPdfModalClose" aria-label="Fermer le lecteur">✕</button>
+      </div>
+      <div class="pdf-viewer-frame">
+        <canvas id="terraPdfModalCanvas"></canvas>
+      </div>
+      <div class="pdf-controls">
+        <button type="button" class="pdf-btn" id="terraPdfModalPrev" aria-label="Page précédente">←</button>
+        <span class="pdf-page-label">Page <span id="terraPdfModalPageCurrent">5</span> / <span id="terraPdfModalPageTotal">…</span></span>
+        <button type="button" class="pdf-btn" id="terraPdfModalNext" aria-label="Page suivante">→</button>
+        <label class="pdf-goto" for="terraPdfModalPageInput">
+          Aller à :
+          <input type="number" id="terraPdfModalPageInput" min="1" value="5" inputmode="numeric" aria-label="Accéder à une page" />
+        </label>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script src="assets/projects/terra-etica/terra-etica-pdf-data.js"></script>
+  <script type="module" src="assets/projects/terra-etica/terra-etica-pdf-viewer.js"></script>
 </body>
 </html>

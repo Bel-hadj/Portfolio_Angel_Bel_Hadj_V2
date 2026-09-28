@@ -1449,8 +1449,9 @@ footer {
   width: min(1040px, calc(100% - 32px));
 }
 
-/* Fiche "étude de cas" plus large et plus aérée (Emergent) : conteneur professionnel
-   d'environ 1180px, sans toucher aux autres fiches projet qui restent à 960px. */
+/* Fiche "étude de cas" plus large et plus aérée (Emergent, Xbox) : conteneur
+   professionnel d'environ 1180px, sans toucher aux autres fiches projet qui
+   restent à 960px. */
 .project-detail-showcase {
   width: min(1180px, calc(100% - 40px));
 }
@@ -1876,8 +1877,9 @@ footer {
   }
 }
 
-/* Fonctionnalités (Emergent) : 3 colonnes desktop, 2 en tablette — scopé à cette
-   fiche uniquement, sans toucher aux autres pages qui utilisent .cards-grid-3. */
+/* Grilles à 3 colonnes des fiches "étude de cas" (Emergent, Xbox) : 3 colonnes
+   desktop, 2 en tablette — scopé à .project-detail-showcase uniquement, sans
+   toucher aux autres pages qui utilisent .cards-grid-3 (ex. Fandom). */
 @media (max-width: 1024px) and (min-width: 761px) {
   .project-detail-showcase .cards-grid-3 {
     grid-template-columns: repeat(2, 1fr);
@@ -2623,4 +2625,475 @@ footer {
   .detail-hero + .detail-hero {
     margin-top: 48px;
   }
+}
+
+/* Accent Xbox (vert), utilisé uniquement sur la fiche projet Xbox — nouvelles
+   classes additives, aucune règle partagée n'est modifiée. */
+.tag-xbox {
+  background: rgba(16, 124, 16, 0.22);
+  color: #8fe89a;
+  border-color: rgba(76, 194, 44, 0.35);
+}
+
+.xbox-glow {
+  box-shadow: var(--shadow), 0 0 70px -25px rgba(76, 194, 44, 0.45);
+}
+
+.xbox-btn-primary {
+  background: linear-gradient(135deg, #107c10, #4cc22c);
+  color: #fff;
+  border-color: transparent;
+}
+
+.xbox-btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+/* Accent Terra Ética (brun chocolat / caramel), utilisé uniquement sur cette
+   fiche projet — nouvelles classes additives, aucune règle partagée modifiée. */
+.tag-terra {
+  background: rgba(180, 123, 66, 0.22);
+  color: #e8c39e;
+  border-color: rgba(232, 195, 158, 0.35);
+}
+
+.tag-terra-green {
+  background: rgba(74, 124, 89, 0.22);
+  color: #a8d5ba;
+  border-color: rgba(168, 213, 186, 0.35);
+}
+
+.terra-glow {
+  box-shadow: var(--shadow), 0 0 70px -25px rgba(180, 123, 66, 0.45);
+}
+
+.terra-btn-primary {
+  background: linear-gradient(135deg, #6b3f1d, #b3763f);
+  color: #fff;
+  border-color: transparent;
+}
+
+.terra-btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+/* Système d'onglets générique en CSS pur (aucun JS), réutilisable par
+   n'importe quelle fiche projet — utilisé ici pour "Allemagne / Canada". */
+.tabs {
+  margin: 20px 0 44px;
+}
+
+.tabs-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tabs-btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-solid);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.92rem;
+  font-family: var(--font-display);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  user-select: none;
+}
+
+.tabs-btn:hover {
+  color: var(--text);
+}
+
+.tabs-panel {
+  display: none;
+}
+
+#terraTabDE:checked ~ .tabs-list label[for="terraTabDE"],
+#terraTabCA:checked ~ .tabs-list label[for="terraTabCA"] {
+  background: var(--primary-soft);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+#terraTabDE:checked ~ #terraPanelDE,
+#terraTabCA:checked ~ #terraPanelCA {
+  display: block;
+}
+
+/* Workflow Route-to-Consumer : étapes reliées par des flèches */
+.rtc-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 28px;
+}
+
+.rtc-step {
+  flex: 1 1 150px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 18px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+.rtc-step span {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 4px;
+}
+
+.rtc-arrow {
+  flex-shrink: 0;
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+@media (max-width: 700px) {
+  .rtc-flow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rtc-arrow {
+    transform: rotate(90deg);
+    text-align: center;
+  }
+}
+
+/* Snapshot scannable (résumé du projet en un coup d'œil) */
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 18px 24px;
+  margin: 18px 0 6px;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.snapshot-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.snapshot-item .snapshot-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #e8c39e;
+}
+
+.snapshot-item .snapshot-value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Lecteur PDF utilisé comme visuel principal du hero (remplace l'image statique).
+   Scopé à .pdf-viewer--hero pour ne pas affecter Fandom / Xbox, qui utilisent le
+   même composant partagé avec leur propre mise en page. */
+.pdf-viewer--hero {
+  margin: 0;
+}
+
+.pdf-viewer--hero .pdf-viewer-frame {
+  border: none;
+  border-radius: 0;
+  min-height: 420px;
+  max-height: 640px;
+}
+
+.pdf-viewer--hero .pdf-viewer-frame canvas {
+  max-height: 640px;
+}
+
+.pdf-viewer--hero .pdf-controls {
+  padding: 18px 24px 26px;
+}
+
+@media (max-width: 620px) {
+  .pdf-viewer--hero .pdf-viewer-frame,
+  .pdf-viewer--hero .pdf-viewer-frame canvas {
+    min-height: 320px;
+    max-height: 460px;
+  }
+}
+
+/* Carte index.html Terra Ética sans visuel (aucune image du deck Canva) */
+.project-tile-terra {
+  background: linear-gradient(135deg, #2a1608 0%, #6b3f1d 55%, #b3763f 100%);
+}
+
+.project-tile-terra::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 82% 18%, rgba(243, 227, 201, 0.24), transparent 60%);
+  pointer-events: none;
+}
+
+/* Respiration verticale supplémentaire entre les sections de Terra Ética
+   uniquement (scopé à .terra-detail-content pour ne pas modifier le rythme
+   partagé de Fandom / Xbox / Emergent, qui utilisent le même .detail-content). */
+.terra-detail-content h2 {
+  margin-top: 52px;
+}
+
+.terra-detail-content .rtc-flow {
+  margin: 14px 0 24px;
+}
+
+.terra-detail-content .rtc-step {
+  padding: 12px 16px;
+}
+
+/* Listes courtes dans les cartes C.A.P. (Concept / Advantages / Proof) */
+.terra-detail-content .card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.terra-detail-content .card li {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.terra-detail-content .card li + li {
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Système de catégories unifié pour la page d'accueil (badges de projets et
+   d'expériences). Réutilise les teintes déjà existantes (tag-violet, etc.)
+   pour rester cohérent avec le reste du site, sans créer une classe par
+   projet.
+   ========================================================================== */
+.category-ux {
+  background: rgba(167, 139, 250, 0.22);
+  color: #ddd6fe;
+}
+
+.category-web {
+  background: rgba(99, 102, 241, 0.22);
+  color: #c7d2fe;
+}
+
+.category-social {
+  background: rgba(244, 114, 182, 0.2);
+  color: #fbcfe8;
+}
+
+.category-marketing {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fde68a;
+}
+
+.category-design {
+  background: rgba(34, 211, 238, 0.18);
+  color: #a5f3fc;
+}
+
+.category-communication {
+  background: rgba(52, 211, 153, 0.2);
+  color: #a7f3d0;
+}
+
+.category-experience {
+  background: rgba(148, 163, 184, 0.2);
+  color: #e2e8f0;
+}
+
+/* Grille "Mes projets principaux" : 4 cartes sur une seule rangée en desktop
+   large ; retombe sur les règles partagées de .project-grid (2 col / 1 col)
+   en dessous de 900px. */
+@media (min-width: 901px) {
+  .project-grid-main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Carte "info" (sans visuel de couverture) utilisée pour les projets web et
+   expériences qui n'ont pas de vraie image disponible : réutilise le style
+   .card existant (fond, bordure, ombre) plutôt qu'une nouvelle esthétique. */
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.info-card .tag {
+  margin-bottom: 2px;
+}
+
+.info-card-subtitle {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: -6px;
+}
+
+.info-card .skill-tags.skills-plain {
+  margin: 8px 0 0;
+}
+
+/* Identité "web / développement" discrète pour les fiches Bibliothèque en
+   ligne et Portfolio personnel (accent indigo/violet, cohérent avec
+   category-web). */
+.web-glow {
+  box-shadow: var(--shadow), 0 0 70px -25px rgba(99, 102, 241, 0.45);
+}
+
+.web-btn-primary {
+  background: linear-gradient(135deg, #4338ca, #6366f1);
+  color: #fff;
+  border-color: transparent;
+}
+
+.web-btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+/* Extrait de code unique (hors système d'onglets) : même style que
+   .code-tab-panel pre/code, réutilisable sur n'importe quelle fiche. */
+.code-snippet {
+  margin: 0 0 14px;
+  padding: 22px 26px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1b1b2c, #201f33);
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+
+.code-snippet code {
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #d7dae2;
+  white-space: pre;
+}
+
+/* ==========================================================================
+   Cards "flip" pour la section Expériences & projets créatifs : recto avec
+   logo/contenu, verso avec un simple visuel teinté par catégorie (aucun
+   texte, aucun logo, aucun bouton au verso). Scopé à .flip-card pour ne
+   toucher aucune autre grille du site.
+   ========================================================================== */
+.flip-card {
+  perspective: 1400px;
+  outline: none;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-front {
+  overflow-y: auto;
+}
+
+.flip-card-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  margin-bottom: 2px;
+  flex-shrink: 0;
+}
+
+.flip-card-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.flip-card-back::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.16), transparent 60%);
+}
+
+.flip-card-back-marketing {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.28), rgba(20, 14, 4, 0.94));
+}
+
+.flip-card-back-communication {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.28), rgba(4, 20, 14, 0.94));
+}
+
+.flip-card-back-design {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.28), rgba(4, 16, 20, 0.94));
+}
+
+@media (max-width: 620px) {
+  .flip-card-inner {
+    min-height: 420px;
+  }
+}
+
+/* Espacement icône/texte pour les boutons qui embarquent un petit SVG (ex.
+   "Voir le site" / "Voir sur GitHub" sur les fiches projet). N'affecte que
+   les boutons contenant réellement une icône, aucun autre bouton du site. */
+.btn svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  flex-shrink: 0;
 }

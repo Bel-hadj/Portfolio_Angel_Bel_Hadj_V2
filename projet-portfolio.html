@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio personnel | Angel Bel Hadj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="project-detail">
+    <a href="index.html#projets-web" class="back-link">← Retour au portfolio</a>
+    <article class="detail-hero reveal visible web-glow">
+      <!-- Vraie capture de la page d'accueil de ce portfolio (générée depuis le site
+           réel, pas une maquette). -->
+      <img class="hero-image--contain" src="assets/projects/portfolio/cover.png"
+        alt="Page d’accueil du portfolio Angel Bel Hadj"
+        onerror="const d=document.createElement('div'); d.className='media-fallback'; d.textContent='Capture d’écran à venir — cover.png'; this.replaceWith(d);" />
+
+      <div class="detail-content">
+        <span class="tag category-web">Web Design • Front-end</span>
+        <h1>Portfolio personnel</h1>
+        <p class="detail-subtitle">Design, développement et structuration d’un portfolio professionnel</p>
+        <p>Portfolio développé pour présenter mes projets, mes compétences et mes expériences à travers des études de cas interactives.</p>
+
+        <div class="doc-actions">
+          <a href="index.html" class="btn web-btn-primary">Voir le portfolio</a>
+          <a href="https://github.com/Bel-hadj/Portfolio_Angel_Bel_Hadj_V2" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir sur GitHub ↗</a>
+        </div>
+
+        <h2>Contexte</h2>
+        <p>Le portfolio que vous consultez actuellement a été conçu et développé pour présenter mes projets académiques et professionnels de façon claire, à destination des recruteurs.</p>
+
+        <h2>Objectifs</h2>
+        <p>Créer un site rapide à parcourir, où chaque projet est présenté comme une vraie étude de cas plutôt qu’une simple liste, avec une identité visuelle cohérente et un accès direct à l’essentiel.</p>
+
+        <h2>Design &amp; UX</h2>
+        <ul>
+<li>Thème sombre, cohérent sur l’ensemble du site</li>
+<li>Hiérarchie visuelle claire : titres, sous-titres, badges de catégorie</li>
+<li>Cards projets avec système de catégories réutilisable</li>
+<li>Pages projet construites comme de vraies études de cas</li>
+<li>Navigation simple, pensée pour réduire le nombre de clics d’un recruteur</li>
+        </ul>
+
+        <h2>Développement</h2>
+        <p>Le site est développé en HTML, CSS et JavaScript, sans framework, avec des composants réutilisables (cards, badges, sections de type « étude de cas ») répétés d’un projet à l’autre pour garder une cohérence visuelle.</p>
+
+        <h2>Fonctionnalités</h2>
+        <div class="reality-grid">
+          <div>
+            <strong>Menu mobile</strong>
+            <span>Navigation repliable sur petit écran.</span>
+          </div>
+          <div>
+            <strong>Animations au scroll</strong>
+            <span>Apparition progressive des sections (IntersectionObserver).</span>
+          </div>
+          <div>
+            <strong>Lecteurs PDF intégrés</strong>
+            <span>Certaines études de cas embarquent la présentation complète, page par page.</span>
+          </div>
+          <div>
+            <strong>Galerie avec lightbox</strong>
+            <span>Captures agrandissables au clavier et à la souris.</span>
+          </div>
+          <div>
+            <strong>Fallbacks gracieux</strong>
+            <span>Logos ou images manquants remplacés proprement plutôt qu’une icône cassée.</span>
+          </div>
+          <div>
+            <strong>Catégories réutilisables</strong>
+            <span>Un même système de badges pour tous les projets et expériences.</span>
+          </div>
+        </div>
+
+        <h2>Architecture du portfolio</h2>
+        <p>Une page d’accueil présente les projets sous forme de cards, chacune reliant vers une page dédiée construite comme une étude de cas (contexte, réalisations, rôle, compétences).</p>
+        <div class="rtc-flow">
+          <div class="rtc-step">Accueil<span>Cards projets</span></div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Page projet<span>Étude de cas</span></div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Retour au portfolio</div>
+        </div>
+
+        <h2>Responsive</h2>
+        <p>Le site est pensé pour rester lisible sur desktop, tablette et mobile : les grilles de projets s’adaptent (jusqu’à 4 colonnes en desktop, 2 en tablette, 1 en mobile) et les boutons restent dimensionnés pour un usage tactile.</p>
+
+        <h2>Stack technique</h2>
+        <div class="skill-tags skills-plain">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Git</span>
+          <span>GitHub</span>
+        </div>
+
+        <h2>Aperçu</h2>
+        <div class="gallery-grid">
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/portfolio/projets.png" data-lightbox-alt="Section Mes projets – Portfolio" aria-label="Agrandir la capture : Mes projets">
+              <img class="card-thumb" src="assets/projects/portfolio/projets.png" alt="Section Mes projets – Portfolio" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Mes projets</h3>
+            <p>La grille de projets principaux, avec badges de catégorie.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/portfolio/page-projet.png" data-lightbox-alt="Exemple de page projet – Portfolio" aria-label="Agrandir la capture : Page projet">
+              <img class="card-thumb" src="assets/projects/portfolio/page-projet.png" alt="Exemple de page projet – Portfolio" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Page projet</h3>
+            <p>Une étude de cas (ici Terra Ética), avec hero et navigation.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/portfolio/mobile.png" data-lightbox-alt="Version mobile – Portfolio" aria-label="Agrandir la capture : Version mobile">
+              <img class="card-thumb" src="assets/projects/portfolio/mobile.png" alt="Version mobile – Portfolio" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Version mobile</h3>
+            <p>Le hero et la navigation adaptés à un écran mobile.</p>
+          </article>
+        </div>
+
+        <h2>Compétences &amp; apprentissages</h2>
+        <p>Ce projet m’a permis de travailler la présentation de mon travail comme un vrai produit : hiérarchisation de l’information, cohérence visuelle entre les pages, et itérations successives pour rendre chaque étude de cas plus claire et plus rapide à parcourir pour un recruteur.</p>
+        <div class="skill-tags skills-plain">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>UX/UI</span>
+          <span>Responsive Design</span>
+          <span>Git</span>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l’aperçu">✕</button>
+      <img id="lightboxImage" src="" alt="" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

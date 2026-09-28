@@ -1,0 +1,37 @@
+Assets de la page projet Xbox (projet-xbox.html + tuile index.html)
+
+STATUT : les vrais visuels sont en place.
+
+Fichiers présents (générés à partir du vrai PDF fourni, aucune image
+fabriquée) :
+
+- xbox-social-media-strategy.pdf   → le vrai livrable (copie exacte du PDF fourni)
+- xbox-pdf-data.js                 → même PDF encodé en base64, pour le lecteur intégré
+- xbox-pdf-viewer.js               → lecteur PDF (copie de pdf-viewer.js, IDs "xbox",
+                                      ne touche jamais au lecteur de la page Fandom)
+- cover.png                        → diapositive 1 (page de titre)
+- e-reputation.png                 → diapositive imprimée "08" (2.2 E-réputation)
+- analyse-reseaux.png              → diapositive imprimée "10" (2.4 Communication
+                                      actuelle — YouTube, Instagram, X/Twitter, TikTok)
+- recommandations.png              → diapositive imprimée "16" (4.2 Recommandations)
+- ligne-editoriale-youtube.png     → diapositive imprimée "20" (6.1 YouTube)
+- ligne-editoriale-tiktok.png      → diapositive imprimée "21" (6.2 TikTok)
+
+Ces images ont été obtenues en rendant réellement le PDF (via PDF.js, la
+même bibliothèque que le lecteur intégré), pas en les inventant.
+
+IMPORTANT — écart de pagination constaté :
+Le PDF reçu contient 24 pages (vérifié via sa structure interne), pas 34.
+Les numéros de diapositives ci-dessus correspondent au vrai fichier reçu.
+Si tu as une version plus complète/à jour de la présentation (34 pages),
+remplace xbox-social-media-strategy.pdf par la bonne version et préviens-moi
+pour que je resynchronise xbox-pdf-data.js et les captures de la galerie.
+
+Ce qu'il reste à fournir :
+- Le lien Canva de la présentation, une fois disponible (voir le commentaire
+  HTML au-dessus du bouton "Canva bientôt disponible" dans projet-xbox.html
+  pour l'emplacement exact où l'ajouter).
+
+Fallback : si un fichier venait à manquer, le site affiche automatiquement
+un état de secours propre (pas d'image cassée) — voir la classe CSS
+.media-fallback dans styles.css.

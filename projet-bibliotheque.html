@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DVD Filmothèque | Angel Bel Hadj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="project-detail">
+    <a href="index.html#projets-web" class="back-link">← Retour au portfolio</a>
+    <article class="detail-hero reveal visible web-glow">
+      <!-- Vraie capture de la page d'accueil, prise en direct sur le site fonctionnel
+           (XAMPP local), pas une maquette. -->
+      <img class="hero-image--contain" src="assets/projects/dvd-filmotheque/cover.png"
+        alt="Page d’accueil du site DVD Filmothèque"
+        onerror="const d=document.createElement('div'); d.className='media-fallback'; d.textContent='Capture d’écran à venir — cover.png'; this.replaceWith(d);" />
+
+      <div class="detail-content">
+        <span class="tag category-web">Web Development</span>
+        <h1>DVD Filmothèque</h1>
+        <p class="detail-subtitle">Application web PHP / MySQL</p>
+        <p>Application web permettant de consulter un catalogue de films connecté à une base de données relationnelle.</p>
+
+        <div class="doc-actions">
+          <a href="https://angel-filmotheque.alwaysdata.net" target="_blank" rel="noopener noreferrer" class="btn web-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"></path></svg>
+            Voir le site ↗
+          </a>
+          <a href="https://github.com/Bel-hadj/bibliotheque-dvd-php" target="_blank" rel="noopener noreferrer" class="btn secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+            Voir sur GitHub ↗
+          </a>
+        </div>
+
+        <h2>Contexte</h2>
+        <p>Projet réalisé dans le cadre de la SAE 203 (BUT Métiers du Multimédia et de l’Internet, IUT de Haguenau, Université de Strasbourg) : concevoir un site de catalogue de DVD à partir d’une base de données MySQL, avec un moteur de templates.</p>
+
+        <h2>Objectif</h2>
+        <p>Construire une application complète — pas seulement une liste de films — avec plusieurs sections reliées entre elles, une base de données relationnelle propre, et des formulaires sécurisés.</p>
+
+        <h2>Présentation du projet</h2>
+        <p>Le site « Filmothèque » propose un catalogue de 30 DVD filtrable par catégorie, une section Nouveautés, une frise Histoire du cinéma, un espace Clients/Commandes, une recherche par titre ou réalisateur, et un système de commentaires sur les fiches films.</p>
+
+        <h2>Fonctionnalités principales</h2>
+        <div class="reality-grid">
+          <div>
+            <strong>Catalogue de films</strong>
+            <span>30 DVD avec affiche, note, prix et fiche détaillée.</span>
+          </div>
+          <div>
+            <strong>Catégories</strong>
+            <span>Films et séries, avec le nombre de DVD par catégorie.</span>
+          </div>
+          <div>
+            <strong>Nouveautés</strong>
+            <span>Derniers films ajoutés, triés par date.</span>
+          </div>
+          <div>
+            <strong>Histoire du cinéma</strong>
+            <span>Frise chronologique des grandes périodes.</span>
+          </div>
+          <div>
+            <strong>Commentaires</strong>
+            <span>Formulaire avec validation des champs et protection CSRF, sur les DVD et les nouveautés.</span>
+          </div>
+          <div>
+            <strong>Recherche</strong>
+            <span>Par titre de film ou par réalisateur.</span>
+          </div>
+        </div>
+
+        <h2>Technologies utilisées</h2>
+        <div class="skill-tags skills-plain">
+          <span>PHP</span>
+          <span>Twig</span>
+          <span>PDO</span>
+          <span>MySQL</span>
+          <span>HTML</span>
+          <span>CSS</span>
+        </div>
+
+        <h2>Architecture &amp; fonctionnement</h2>
+        <p>Chaque page PHP récupère les données via PDO (requêtes préparées), puis les transmet à un template Twig chargé de l’affichage — aucun HTML n’est généré directement dans les pages PHP.</p>
+        <div class="rtc-flow">
+          <div class="rtc-step">Interface<span>Twig</span></div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Logique<span>PHP</span></div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Requêtes<span>PDO</span></div>
+          <div class="rtc-arrow">→</div>
+          <div class="rtc-step">Données<span>MySQL</span></div>
+        </div>
+
+        <h2>Galerie</h2>
+        <div class="gallery-grid">
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/dvd-filmotheque/cover.png" data-lightbox-alt="Page d’accueil – DVD Filmothèque" aria-label="Agrandir la capture : Accueil">
+              <img class="card-thumb" src="assets/projects/dvd-filmotheque/cover.png" alt="Page d’accueil – DVD Filmothèque" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Accueil</h3>
+            <p>Bannière d’accueil et sélection de films en vedette.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/dvd-filmotheque/catalogue.png" data-lightbox-alt="Catalogue de DVD – DVD Filmothèque" aria-label="Agrandir la capture : Catalogue">
+              <img class="card-thumb" src="assets/projects/dvd-filmotheque/catalogue.png" alt="Catalogue de DVD – DVD Filmothèque" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Catalogue</h3>
+            <p>Les 30 DVD du catalogue, avec note et prix.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/dvd-filmotheque/detail-film.png" data-lightbox-alt="Fiche détail d’un film – DVD Filmothèque" aria-label="Agrandir la capture : Fiche film">
+              <img class="card-thumb" src="assets/projects/dvd-filmotheque/detail-film.png" alt="Fiche détail d’un film – DVD Filmothèque" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Fiche film</h3>
+            <p>Synopsis, description, prix et commentaires.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/dvd-filmotheque/nouveautes.png" data-lightbox-alt="Nouveautés – DVD Filmothèque" aria-label="Agrandir la capture : Nouveautés">
+              <img class="card-thumb" src="assets/projects/dvd-filmotheque/nouveautes.png" alt="Nouveautés – DVD Filmothèque" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Nouveautés</h3>
+            <p>Derniers films ajoutés au catalogue.</p>
+          </article>
+        </div>
+
+        <h2>Ce que j’ai réalisé</h2>
+        <p>Conception et développement des pages de consultation (catalogue, détail, nouveautés, histoire), de la couche d’accès aux données (PDO) et de l’intégration des templates Twig, dans le cadre de ce projet universitaire.</p>
+
+        <h2>Difficultés &amp; apprentissages</h2>
+        <p>La mise en place des jointures SQL entre les tables (films, genres, catégories) pour afficher une fiche détail complète a demandé plusieurs itérations, tout comme la sécurisation des formulaires (requêtes préparées PDO, protection CSRF sur les commentaires). Ce projet m’a permis de manipuler une vraie base de données relationnelle et de structurer un site avec un moteur de templates plutôt que du PHP mélangé au HTML.</p>
+      </div>
+    </article>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l’aperçu">✕</button>
+      <img id="lightboxImage" src="" alt="" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

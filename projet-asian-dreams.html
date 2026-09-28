@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asian Dreams | Angel Bel Hadj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="project-detail">
+    <a href="index.html#projets-web" class="back-link">← Retour au portfolio</a>
+    <article class="detail-hero reveal visible web-glow">
+      <!-- Vraie capture de la page d'accueil, prise en direct sur le site fonctionnel
+           (XAMPP local), pas une maquette. -->
+      <img class="hero-image--contain" src="assets/projects/asian-dreams/cover.png"
+        alt="Page d’accueil du site Asian Dreams"
+        onerror="const d=document.createElement('div'); d.className='media-fallback'; d.textContent='Capture d’écran à venir — cover.png'; this.replaceWith(d);" />
+
+      <div class="detail-content">
+        <span class="tag category-web">Web Development</span>
+        <h1>Asian Dreams</h1>
+        <p class="detail-subtitle">Site bilingue PHP / Twig dédié à la pop culture asiatique</p>
+        <p>Site personnel présentant des fiches K-Drama, K-Pop et mangas, entièrement disponible en français et en anglais.</p>
+
+        <div class="doc-actions">
+          <a href="https://github.com/Bel-hadj/BEL_HADJ_Angel_V8" target="_blank" rel="noopener noreferrer" class="btn secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+            Voir sur GitHub ↗
+          </a>
+        </div>
+
+        <h2>Contexte</h2>
+        <p>Projet personnel, développé pour découvrir et exposer trois univers que j’apprécie — les K-Dramas, la K-Pop et les mangas — puis repris et amélioré pour en faire une vraie pièce de portfolio.</p>
+
+        <h2>Objectif</h2>
+        <p>Construire un site multi-sections propre et accessible, entièrement bilingue (français/anglais), avec une vraie architecture back-end (PHP + Twig) plutôt qu’un site statique.</p>
+
+        <h2>Fonctionnalités</h2>
+        <div class="reality-grid">
+          <div>
+            <strong>Trois univers de contenu</strong>
+            <span>Fiches détaillées K-Drama, K-Pop et Mangas, avec affiches et informations clés.</span>
+          </div>
+          <div>
+            <strong>Bilingue FR/EN</strong>
+            <span>Chaque page a son équivalent dans l’autre langue ; la navigation reste dans la langue choisie.</span>
+          </div>
+          <div>
+            <strong>Formulaire de contact sécurisé</strong>
+            <span>Validation côté serveur, jeton CSRF, champ anti-robot, aucun email envoyé (stockage local).</span>
+          </div>
+          <div>
+            <strong>Plan de page dynamique</strong>
+            <span>Sommaire qui met en surbrillance la section active pendant la lecture.</span>
+          </div>
+          <div>
+            <strong>Galerie accessible</strong>
+            <span>Respecte la préférence système « mouvement réduit ».</span>
+          </div>
+          <div>
+            <strong>Menu mobile accessible</strong>
+            <span>Bouton avec état <code>aria-expanded</code>, fermeture au clavier (Échap).</span>
+          </div>
+        </div>
+
+        <h2>Design &amp; développement</h2>
+        <p>Palette sombre avec accents dorés/rouges, mise en page en CSS Grid et Flexbox avec variables CSS pour la cohérence des couleurs. Le contenu est structuré par des templates Twig (un par page, hérités d’un gabarit commun), avec un fichier de traduction centralisant les textes d’interface en français et en anglais.</p>
+
+        <h2>Aperçu</h2>
+        <div class="gallery-grid">
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/asian-dreams/cover.png" data-lightbox-alt="Page d’accueil – Asian Dreams" aria-label="Agrandir la capture : Accueil">
+              <img class="card-thumb" src="assets/projects/asian-dreams/cover.png" alt="Page d’accueil – Asian Dreams" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Accueil</h3>
+            <p>Présentation du site et accès aux trois univers.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/asian-dreams/kdrama.png" data-lightbox-alt="Fiche K-Drama – Asian Dreams" aria-label="Agrandir la capture : K-Drama">
+              <img class="card-thumb" src="assets/projects/asian-dreams/kdrama.png" alt="Fiche K-Drama – Asian Dreams" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>K-Drama</h3>
+            <p>Fiche détaillée avec synopsis, informations et distribution.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/asian-dreams/kpop.png" data-lightbox-alt="Page K-Pop – Asian Dreams" aria-label="Agrandir la capture : K-Pop">
+              <img class="card-thumb" src="assets/projects/asian-dreams/kpop.png" alt="Page K-Pop – Asian Dreams" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>K-Pop</h3>
+            <p>Fiches groupes avec informations clés et actualité.</p>
+          </article>
+
+          <article class="card gallery-card">
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/asian-dreams/mobile.png" data-lightbox-alt="Version mobile – Asian Dreams" aria-label="Agrandir la capture : Mobile">
+              <img class="card-thumb" src="assets/projects/asian-dreams/mobile.png" alt="Version mobile – Asian Dreams" loading="lazy"
+                onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
+            </button>
+            <h3>Version mobile</h3>
+            <p>Accueil adapté au petit écran, menu mobile accessible.</p>
+          </article>
+        </div>
+
+        <h2>Stack technique</h2>
+        <div class="skill-tags skills-plain">
+          <span>PHP</span>
+          <span>Twig</span>
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+        </div>
+
+        <h2>Mon rôle</h2>
+        <p>Conception et développement complet du site : structure des pages, gabarits Twig, système de traduction FR/EN, formulaire de contact sécurisé et scripts JavaScript (menu mobile, galerie, sommaire actif).</p>
+
+        <h2>Apprentissages</h2>
+        <p>Ce projet m’a permis de structurer un site multilingue proprement (un seul contrôleur par page, langue détectée et propagée dans toute la navigation), et de sécuriser un formulaire de bout en bout (validation serveur, jeton CSRF, anti-robot) sans dépendre d’un service d’envoi d’e-mail externe.</p>
+      </div>
+    </article>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l’aperçu">✕</button>
+      <img id="lightboxImage" src="" alt="" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

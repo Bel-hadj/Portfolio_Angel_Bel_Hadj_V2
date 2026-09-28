@@ -24,6 +24,19 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
+// Cards "flip" (section Expériences) : le survol retourne déjà la carte en
+// desktop (CSS), mais le tactile n'a pas de vrai :hover — un tap bascule donc
+// la classe .is-flipped pour retourner/re-retourner la carte.
+document.querySelectorAll(".flip-card").forEach((card) => {
+  card.addEventListener("click", () => card.classList.toggle("is-flipped"));
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      card.classList.toggle("is-flipped");
+    }
+  });
+});
+
 // Si le logo distant (CDN) ne charge pas (pas de réseau, bloqueur, etc.),
 // on retombe sur une abréviation texte plutôt que de laisser une image cassée.
 document.querySelectorAll(".tool-badge img").forEach((img) => {
