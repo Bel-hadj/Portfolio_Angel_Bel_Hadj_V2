@@ -2998,11 +2998,12 @@ footer {
 }
 
 /* ==========================================================================
-   Cartes statiques de la section Expériences (The Ranch, Club Entrepreneurs,
-   Escape Game) : reprennent .card/.info-card (fond, bordure, ombre, hover)
-   déjà utilisés ailleurs sur le site — aucun retournement, contenu toujours
-   visible. Scopé à .exp-card / .exp-card-logo pour ne toucher aucune autre
-   grille du site.
+   Continuité visuelle entre "Mes projets principaux/web" et "Expériences
+   professionnelles / Création & UX/UI" : The Ranch réutilise directement le
+   composant .project-tile (grande image, scrim, overlay) des cartes projet
+   ci-dessus au lieu d'un style dédié ; Club Entrepreneurs et Escape Game
+   restent des .info-card (texte) mais partagent désormais la même grille
+   pleine largeur, alignée à gauche, que le reste du portfolio.
    ========================================================================== */
 .exp-card-logo {
   width: 52px;
@@ -3024,46 +3025,31 @@ footer {
   object-fit: contain;
 }
 
-/* The Ranch : seule carte d'expérience avec une vraie photo. L'image est en
-   négatif du padding de .card pour venir affleurer les bords (haut/gauche/
-   droite), avec les coins arrondis à var(--radius) recopiés en haut. */
-.exp-card {
-  overflow: hidden;
-  text-decoration: none;
-}
-
-.exp-card-media {
-  margin: -26px -26px 4px -26px;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  border-radius: var(--radius) var(--radius) 0 0;
-}
-
-.exp-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.exp-card:hover .exp-card-media img {
-  transform: scale(1.05);
-}
-
-.exp-card-cta {
-  margin-top: auto;
-  padding-top: 6px;
+/* Petite ligne discrète (ex. "Projet créatif · UX/UI" sur Escape Game) pour
+   rattacher une carte texte à une famille de projets visuels existante,
+   sans dupliquer le style plus appuyé de .eyebrow. */
+.exp-card-kicker {
+  color: var(--muted);
+  font-size: 0.75rem;
   font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
 }
 
-/* Grille à 2 cartes égales et centrées (section Expériences professionnelles
-   & associatives) : évite qu'avec seulement 2 éléments, .project-grid en
-   3 colonnes laisse une 3e colonne vide et un groupe non centré. */
+/* Fond graphique très léger sur la carte Club Entrepreneurs : même principe
+   que .web-glow (léger halo de couleur en plus de l'ombre .card existante),
+   ici repris dans le vert de .category-communication déjà utilisé par le tag
+   de la carte — aucune nouvelle couleur inventée. */
+.exp-card-tint-communication {
+  box-shadow: var(--shadow), 0 0 70px -25px rgba(52, 211, 153, 0.35);
+}
+
+/* Grille à 2 cartes (Expériences professionnelles & associatives) : pleine
+   largeur et alignée à gauche comme .project-grid par défaut, simplement
+   sur 2 colonnes égales au lieu de 3/4 — même système que les projets. */
 .project-grid-2 {
-  grid-template-columns: repeat(2, minmax(0, 440px));
-  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 @media (max-width: 620px) {
@@ -3072,21 +3058,24 @@ footer {
   }
 }
 
-/* Grille contenant une seule carte (ex. "Autres projets créatifs" tant qu'un
-   seul projet y figure) : évite qu'une unique carte s'étire sur toute la
-   largeur des 3 colonnes de .project-grid. Sur mobile/tablette, .project-grid
-   repasse déjà à 1 colonne, donc cette règle ne s'applique qu'au desktop. */
+/* Grille contenant une seule carte (Escape Game tant qu'un seul projet créatif
+   y figure) : largeur raisonnable pour une carte texte, alignée à gauche
+   (comportement par défaut de la grille) plutôt qu'étirée ou centrée. */
 .project-grid-single {
-  grid-template-columns: minmax(0, 380px);
-  justify-content: center;
+  grid-template-columns: minmax(0, 480px);
 }
 
-/* Réduit l'espace vertical entre la section Expériences et la section
-   Création & UX/UI (tant que cette dernière ne contient qu'une seule petite
-   carte texte) pour éviter le grand vide constaté avec le padding standard
-   de .section (92px). Ne touche à aucune autre section du site. */
-#creation.section {
-  padding-top: 24px;
+/* Resserre l'espace vertical entre "Mes projets principaux", "Mes projets
+   web", "Expériences professionnelles & associatives" et "Création & UX/UI"
+   pour qu'elles se lisent comme un même système de réalisations plutôt que
+   comme des pages séparées. Remplace le padding standard de .section (92px)
+   uniquement sur ces 4 sections précises ; aucune autre section du site
+   n'est concernée (Hero, À propos, Compétences, Formation, Contact). */
+#projets.section-linked,
+#projets-web.section-linked,
+#experiences.section-linked,
+#creation.section-linked {
+  padding: 56px 0;
 }
 
 /* Espacement icône/texte pour les boutons qui embarquent un petit SVG (ex.
