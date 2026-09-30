@@ -2998,45 +2998,13 @@ footer {
 }
 
 /* ==========================================================================
-   Cards "flip" pour la section Expériences & projets créatifs : recto avec
-   logo/contenu, verso avec un simple visuel teinté par catégorie (aucun
-   texte, aucun logo, aucun bouton au verso). Scopé à .flip-card pour ne
-   toucher aucune autre grille du site.
+   Cartes statiques de la section Expériences (The Ranch, Club Entrepreneurs,
+   Escape Game) : reprennent .card/.info-card (fond, bordure, ombre, hover)
+   déjà utilisés ailleurs sur le site — aucun retournement, contenu toujours
+   visible. Scopé à .exp-card / .exp-card-logo pour ne toucher aucune autre
+   grille du site.
    ========================================================================== */
-.flip-card {
-  perspective: 1400px;
-  outline: none;
-  cursor: pointer;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 460px;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner,
-.flip-card:focus-within .flip-card-inner,
-.flip-card.is-flipped .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.flip-card-front {
-  overflow-y: auto;
-}
-
-.flip-card-logo {
+.exp-card-logo {
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -3050,41 +3018,57 @@ footer {
   flex-shrink: 0;
 }
 
-.flip-card-logo img {
+.exp-card-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.flip-card-back {
-  transform: rotateY(180deg);
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
+/* The Ranch : seule carte d'expérience avec une vraie photo. L'image est en
+   négatif du padding de .card pour venir affleurer les bords (haut/gauche/
+   droite), avec les coins arrondis à var(--radius) recopiés en haut. */
+.exp-card {
   overflow: hidden;
+  text-decoration: none;
 }
 
-.flip-card-back::before {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.16), transparent 60%);
+.exp-card-media {
+  margin: -26px -26px 4px -26px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 
-.flip-card-back-marketing {
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.28), rgba(20, 14, 4, 0.94));
+.exp-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.flip-card-back-communication {
-  background: linear-gradient(135deg, rgba(52, 211, 153, 0.28), rgba(4, 20, 14, 0.94));
+.exp-card:hover .exp-card-media img {
+  transform: scale(1.05);
 }
 
-.flip-card-back-design {
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.28), rgba(4, 16, 20, 0.94));
+.exp-card-cta {
+  margin-top: auto;
+  padding-top: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+/* Grille à 2 cartes égales et centrées (section Expériences professionnelles
+   & associatives) : évite qu'avec seulement 2 éléments, .project-grid en
+   3 colonnes laisse une 3e colonne vide et un groupe non centré. */
+.project-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 440px));
+  justify-content: center;
 }
 
 @media (max-width: 620px) {
-  .flip-card-inner {
-    min-height: 420px;
+  .project-grid-2 {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -3095,6 +3079,14 @@ footer {
 .project-grid-single {
   grid-template-columns: minmax(0, 380px);
   justify-content: center;
+}
+
+/* Réduit l'espace vertical entre la section Expériences et la section
+   Création & UX/UI (tant que cette dernière ne contient qu'une seule petite
+   carte texte) pour éviter le grand vide constaté avec le padding standard
+   de .section (92px). Ne touche à aucune autre section du site. */
+#creation.section {
+  padding-top: 24px;
 }
 
 /* Espacement icône/texte pour les boutons qui embarquent un petit SVG (ex.
