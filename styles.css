@@ -3088,6 +3088,15 @@ footer {
   }
 }
 
+/* Grille contenant une seule carte (ex. "Autres projets créatifs" tant qu'un
+   seul projet y figure) : évite qu'une unique carte s'étire sur toute la
+   largeur des 3 colonnes de .project-grid. Sur mobile/tablette, .project-grid
+   repasse déjà à 1 colonne, donc cette règle ne s'applique qu'au desktop. */
+.project-grid-single {
+  grid-template-columns: minmax(0, 380px);
+  justify-content: center;
+}
+
 /* Espacement icône/texte pour les boutons qui embarquent un petit SVG (ex.
    "Voir le site" / "Voir sur GitHub" sur les fiches projet). N'affecte que
    les boutons contenant réellement une icône, aucun autre bouton du site. */
