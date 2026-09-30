@@ -2999,12 +2999,12 @@ footer {
 
 /* ==========================================================================
    Continuité visuelle entre "Mes projets principaux/web" et "Expériences
-   professionnelles / Création & UX/UI" : The Ranch réutilise directement le
-   composant .project-tile (grande image, scrim, overlay) des cartes projet
-   ci-dessus au lieu d'un style dédié. Club Entrepreneurs et Escape Game
-   restent des .info-card (texte), alignées à gauche sur le même conteneur
-   1120px que les grilles projets, avec une largeur de carte contrôlée pour
-   rester proche de la taille des cartes projets plutôt que de s'étirer.
+   professionnelles / Création & UX/UI" : ces deux sections réutilisent
+   exactement .project-grid (même grille, mêmes dimensions de carte) — The
+   Ranch reprend directement .project-tile (image, scrim, overlay) et Club
+   Entrepreneurs/Escape Game restent des .info-card (texte), sans grille ni
+   largeur dédiées. Structure volontairement minimale : le contenu détaillé
+   (galeries, visuels) sera ajouté plus tard avec les vrais assets.
    ========================================================================== */
 .exp-card-logo {
   width: 68px;
@@ -3056,21 +3056,6 @@ footer {
 
 .exp-card-balanced .skill-tags.skills-plain {
   margin-top: auto;
-}
-
-/* Grille à 2 cartes (Expériences professionnelles & associatives) : largeur
-   de colonne contrôlée (proche d'une carte projet, sans devenir énorme) et
-   alignée à gauche sur le même conteneur 1120px que les autres grilles,
-   au lieu de s'étirer sur toute la largeur ou d'être centrée. */
-.project-grid-2 {
-  grid-template-columns: repeat(2, minmax(0, 460px));
-  justify-content: start;
-}
-
-@media (max-width: 620px) {
-  .project-grid-2 {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Resserre l'espace vertical entre "Mes projets principaux", "Mes projets
