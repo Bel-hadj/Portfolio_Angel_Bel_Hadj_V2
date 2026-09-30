@@ -3001,19 +3001,20 @@ footer {
    Continuité visuelle entre "Mes projets principaux/web" et "Expériences
    professionnelles / Création & UX/UI" : The Ranch réutilise directement le
    composant .project-tile (grande image, scrim, overlay) des cartes projet
-   ci-dessus au lieu d'un style dédié ; Club Entrepreneurs et Escape Game
-   restent des .info-card (texte) mais partagent désormais la même grille
-   pleine largeur, alignée à gauche, que le reste du portfolio.
+   ci-dessus au lieu d'un style dédié. Club Entrepreneurs et Escape Game
+   restent des .info-card (texte), alignées à gauche sur le même conteneur
+   1120px que les grilles projets, avec une largeur de carte contrôlée pour
+   rester proche de la taille des cartes projets plutôt que de s'étirer.
    ========================================================================== */
 .exp-card-logo {
-  width: 52px;
-  height: 52px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
+  padding: 8px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
   margin-bottom: 2px;
   flex-shrink: 0;
@@ -3045,24 +3046,31 @@ footer {
   box-shadow: var(--shadow), 0 0 70px -25px rgba(52, 211, 153, 0.35);
 }
 
-/* Grille à 2 cartes (Expériences professionnelles & associatives) : pleine
-   largeur et alignée à gauche comme .project-grid par défaut, simplement
-   sur 2 colonnes égales au lieu de 3/4 — même système que les projets. */
+/* Meilleure répartition verticale du contenu de la carte Club Entrepreneurs
+   une fois étirée à la hauteur de The Ranch : un peu plus d'air entre les
+   blocs, et les tags repoussés en bas plutôt que collés sous la description,
+   pour éviter un grand vide non structuré en bas de carte. */
+.exp-card-balanced {
+  gap: 16px;
+}
+
+.exp-card-balanced .skill-tags.skills-plain {
+  margin-top: auto;
+}
+
+/* Grille à 2 cartes (Expériences professionnelles & associatives) : largeur
+   de colonne contrôlée (proche d'une carte projet, sans devenir énorme) et
+   alignée à gauche sur le même conteneur 1120px que les autres grilles,
+   au lieu de s'étirer sur toute la largeur ou d'être centrée. */
 .project-grid-2 {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 460px));
+  justify-content: start;
 }
 
 @media (max-width: 620px) {
   .project-grid-2 {
     grid-template-columns: 1fr;
   }
-}
-
-/* Grille contenant une seule carte (Escape Game tant qu'un seul projet créatif
-   y figure) : largeur raisonnable pour une carte texte, alignée à gauche
-   (comportement par défaut de la grille) plutôt qu'étirée ou centrée. */
-.project-grid-single {
-  grid-template-columns: minmax(0, 480px);
 }
 
 /* Resserre l'espace vertical entre "Mes projets principaux", "Mes projets
