@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Visuel à venir — Club Entrepreneurs EMLV">
+  <rect width="800" height="500" fill="#131316"/>
+  <rect x="1" y="1" width="798" height="498" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  <g transform="translate(400,210)" fill="none" stroke="#9a9aa6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-42" y="-30" width="84" height="60" rx="8"/>
+    <circle cx="0" cy="-2" r="16"/>
+    <path d="M-30 -30 l8 -14 h44 l8 14"/>
+  </g>
+  <text x="400" y="300" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">Club Entrepreneurs EMLV</text>
+  <text x="400" y="330" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" fill="#9a9aa6">Visuel à venir</text>
+</svg>
