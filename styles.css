@@ -1411,7 +1411,7 @@ footer {
    plafonnée et recadrage cover plutôt que letterboxing. */
 .detail-hero .hero-image--compact {
   width: 100%;
-  height: 220px;
+  height: 150px;
   object-fit: cover;
 }
 
@@ -1447,16 +1447,6 @@ footer {
   padding: 30px;
 }
 
-/* Les images imbriquées dans .detail-hero héritent de ".detail-hero img"
-   (height: 380px, règle partagée par toutes les fiches projet, pensée pour
-   la seule photo de couverture directe) : on neutralise explicitement cette
-   hauteur forcée ici pour que l'aspect-ratio propre à cette carte s'applique. */
-.ranch-project-card .card-thumb {
-  height: auto;
-  aspect-ratio: 16 / 9;
-  margin-bottom: 18px;
-}
-
 .ranch-project-card h3 {
   margin: 0 0 10px;
   font-size: 1.25rem;
@@ -1476,16 +1466,18 @@ footer {
   margin-top: auto;
 }
 
-/* Comparatif avant/après ou recto/verso : deux visuels côte à côte à la
-   place d'un gros iframe PDF. */
+/* Ligne de visuels côte à côte (avant/après, recto/verso, menus de gala,
+   photos d'événement...) : accepte 2, 3 ou 4 éléments, passe en colonne sur
+   mobile. Remplace les anciens iframes PDF avec barre de défilement. */
 .ranch-pair {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
   margin-bottom: 18px;
 }
 
 .ranch-pair > * {
-  flex: 1 1 0;
+  flex: 1 1 95px;
   min-width: 0;
 }
 
@@ -1498,6 +1490,14 @@ footer {
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
   display: block;
+  cursor: pointer;
+}
+
+/* Vraies photos d'événement (pas des documents) : on recadre proprement
+   plutôt que de laisser des bandes blanches de lettrage. */
+.ranch-project-card .ranch-pair img.ranch-photo {
+  object-fit: cover;
+  background: none;
 }
 
 .ranch-pair-caption {
@@ -1511,74 +1511,31 @@ footer {
   text-align: center;
 }
 
+.ranch-pair a,
+.ranch-pair button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
 @media (max-width: 560px) {
   .ranch-pair {
     flex-direction: column;
   }
 }
 
-/* Miniature "document" propre : aucun iframe, aucune barre de défilement —
-   un clic ouvre directement le PDF complet dans un nouvel onglet. Utilisée
-   comme visuel principal du projet 01 (pas d'image du menu disponible). */
-.doc-preview {
-  aspect-ratio: 4 / 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border-radius: var(--radius-sm);
-  border: 1px dashed rgba(255, 255, 255, 0.18);
-  background: linear-gradient(135deg, #1b1b2c, #201f33);
-  color: var(--text);
-  text-decoration: none;
-  padding: 16px;
-  text-align: center;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.doc-preview:hover {
-  border-color: rgba(255, 255, 255, 0.34);
-  background: linear-gradient(135deg, #21213a, #262440);
-}
-
-.doc-preview-icon {
-  font-size: 1.8rem;
-  line-height: 1;
-}
-
-.doc-preview-label {
+/* Petit intitulé pour distinguer deux supports dans une même carte
+   (ex. "Carte de visite" / "Flyer" dans le projet Identité). */
+.ranch-subheading {
+  display: block;
+  font-size: 0.8rem;
   font-weight: 700;
-  font-size: 0.95rem;
-}
-
-.doc-preview-sub {
-  font-size: 0.74rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Petite vignette-lien pour les documents secondaires (ex. les 3 menus de
-   gala) : compacte, pas de gros cadre. */
-.doc-tile {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.04);
+  letter-spacing: 0.03em;
   color: var(--text);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.86rem;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.doc-tile:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  margin: 22px 0 10px;
 }
 
 .detail-content li + li {
