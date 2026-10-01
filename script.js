@@ -40,19 +40,6 @@ document.querySelectorAll(".tool-badge img").forEach((img) => {
   );
 });
 
-// Vignette du projet Fandom : filet de sécurité si assets/project-fandom.png venait à
-// manquer (fichier renommé/supprimé) — évite une image cassée / zone vide plutôt qu'une
-// perte de fonctionnalité silencieuse. Vérifie aussi l'état déjà chargé (img.complete)
-// au cas où l'erreur se soit produite avant l'attache de l'écouteur.
-document.querySelectorAll(".project-tile-fandom img").forEach((img) => {
-  const markMissing = () => img.closest(".project-tile-fandom")?.classList.add("tile-no-image");
-  if (img.complete && img.naturalWidth === 0) {
-    markMissing();
-  } else {
-    img.addEventListener("error", markMissing, { once: true });
-  }
-});
-
 // Lightbox pour les galeries de captures de projet (n'agit que sur les pages qui
 // possèdent l'élément #lightbox, ex. projet-indiewave.html).
 const lightbox = document.getElementById("lightbox");

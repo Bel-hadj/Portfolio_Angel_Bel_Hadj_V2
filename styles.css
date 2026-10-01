@@ -955,107 +955,10 @@ button:focus-visible {
   gap: 20px;
 }
 
-.project-tile {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(135deg, #1b1b2c, #201f33);
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-tile:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
-}
-
-.project-tile img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.project-tile:hover img {
-  transform: scale(1.08);
-}
-
-.tile-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(4, 4, 8, 0.92) 0%, rgba(4, 4, 8, 0.55) 38%, transparent 70%);
-}
-
-.tile-overlay {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.tile-overlay h3 {
-  color: #ffffff;
-  font-size: 1.15rem;
-  letter-spacing: -0.01em;
-}
-
-.tile-overlay .tech {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.8rem;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
-}
-
-.project-tile:hover .tile-overlay .tech {
-  max-height: 60px;
-  opacity: 1;
-  margin-top: 2px;
-}
-
-/* Vignette Fandom : assets/project-fandom.png est la vraie couverture "AUDIT FANDOM"
-   (page 1 du PDF du projet). Elle est au format paysage (16:9 à l'origine, recadrée en
-   ~1:1 autour du texte) alors que la carte est en 4:5 (portrait) : object-fit: contain
-   évite de rogner le texte du titre plutôt que cover, qui le couperait sur les côtés.
-   Le fond reprend le bleu nuit exact de l'image pour que les bandes de letterboxing
-   (haut/bas) se fondent avec elle. .tile-no-image reste un filet de sécurité géré par
-   script.js si ce fichier venait à manquer un jour (actuellement inactif). */
-
-.project-tile-fandom {
-  background: #00204f;
-}
-
-.project-tile-fandom img {
-  object-fit: contain;
-}
-
-.project-tile-fandom.tile-no-image img {
-  display: none;
-}
-
-.project-tile-fandom.tile-no-image::before {
-  content: "Aperçu Audit UX Fandom";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 26px;
-  text-align: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  color: rgba(221, 214, 254, 0.85);
-}
+/* .project-tile / .tile-scrim / .tile-overlay / .project-tile-fandom ont été
+   supprimées ici : la page d'accueil n'affiche plus de vignettes "image +
+   overlay" (toutes les cartes réutilisent désormais .card.info-card +
+   .card-thumb, voir plus bas) — confirmé inutilisées ailleurs avant suppression. */
 
 .tag {
   display: inline-flex;
@@ -1341,8 +1244,6 @@ footer {
 
   .btn:hover,
   .card:hover,
-  .project-tile:hover,
-  .project-tile:hover img,
   .timeline-item:hover,
   .social-icon:hover {
     transform: none;
@@ -2556,10 +2457,6 @@ footer {
     font-size: 1.05rem;
   }
 
-  .project-tile {
-    aspect-ratio: 16 / 11;
-  }
-
   .about-stats > div {
     flex-direction: column;
     align-items: flex-start;
@@ -2843,18 +2740,8 @@ footer {
   }
 }
 
-/* Carte index.html Terra Ética sans visuel (aucune image du deck Canva) */
-.project-tile-terra {
-  background: linear-gradient(135deg, #2a1608 0%, #6b3f1d 55%, #b3763f 100%);
-}
-
-.project-tile-terra::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 82% 18%, rgba(243, 227, 201, 0.24), transparent 60%);
-  pointer-events: none;
-}
+/* .project-tile-terra supprimée ici : n'était utilisée que par l'ancienne
+   vignette Terra Ética de la page d'accueil (désormais .card.info-card). */
 
 /* Respiration verticale supplémentaire entre les sections de Terra Ética
    uniquement (scopé à .terra-detail-content pour ne pas modifier le rythme
@@ -2892,19 +2779,9 @@ footer {
    pour rester cohérent avec le reste du site, sans créer une classe par
    projet.
    ========================================================================== */
-.category-ux {
-  background: rgba(167, 139, 250, 0.22);
-  color: #ddd6fe;
-}
-
 .category-web {
   background: rgba(99, 102, 241, 0.22);
   color: #c7d2fe;
-}
-
-.category-social {
-  background: rgba(244, 114, 182, 0.2);
-  color: #fbcfe8;
 }
 
 .category-marketing {
@@ -2925,15 +2802,6 @@ footer {
 .category-experience {
   background: rgba(148, 163, 184, 0.2);
   color: #e2e8f0;
-}
-
-/* Grille "Mes projets principaux" : 4 cartes sur une seule rangée en desktop
-   large ; retombe sur les règles partagées de .project-grid (2 col / 1 col)
-   en dessous de 900px. */
-@media (min-width: 901px) {
-  .project-grid-main {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 /* Carte "info" (sans visuel de couverture) utilisée pour les projets web et
@@ -3012,6 +2880,15 @@ footer {
 
 .exp-card-photo:hover .card-thumb {
   transform: scale(1.04);
+}
+
+/* Vignette Fandom : assets/project-fandom.png est recadrée serré autour du
+   texte "AUDIT FANDOM" ; object-fit: cover sur le ratio 16/10 de .card-thumb
+   coupe ce texte. object-fit: contain l'évite, avec le bleu nuit de l'image
+   en fond pour que les bandes ne jurent pas. Scopé à cette seule carte. */
+.card-thumb-fandom {
+  object-fit: contain;
+  background: #00204f;
 }
 
 /* Petite ligne discrète (ex. "Projet créatif · UX/UI" sur Escape Game) pour
