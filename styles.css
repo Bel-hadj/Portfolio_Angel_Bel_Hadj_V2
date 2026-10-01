@@ -1399,9 +1399,11 @@ footer {
 }
 
 /* ==========================================================================
-   Page The Ranch compacte (experience-the-ranch.html) : hero réduit, cartes
-   "Réalisations principales" courtes avec aperçu PDF intégré. Scopé à cette
-   page (aucune de ces classes n'est utilisée ailleurs sur le site).
+   Page The Ranch (experience-the-ranch.html) : conteneur large, 4 projets
+   regroupés chacun dans une carte complète unique (image + titre + texte +
+   bouton), sans double affichage résumé/détail. Miniatures de documents
+   propres (pas d'iframe PDF avec barre de défilement). Scopé à cette page
+   (aucune de ces classes n'est utilisée ailleurs sur le site).
    ========================================================================== */
 
 /* Hero plus court et plus "horizontal" que .hero-image--contain (partagée
@@ -1409,7 +1411,7 @@ footer {
    plafonnée et recadrage cover plutôt que letterboxing. */
 .detail-hero .hero-image--compact {
   width: 100%;
-  height: 190px;
+  height: 220px;
   object-fit: cover;
 }
 
@@ -1421,120 +1423,162 @@ footer {
   margin-bottom: 4px;
 }
 
-.realisation-card-compact {
-  margin-top: 18px;
+.project-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--primary-light);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
 }
 
-.realisation-card-compact h3 {
-  margin-bottom: 8px;
+/* Grille des 4 projets : 2 colonnes desktop/tablette, 1 colonne mobile
+   (réutilise .cards-grid / .cards-grid-sm déjà responsive ailleurs),
+   avec un peu plus de respiration entre les cartes que l'espacement
+   générique du site. */
+.ranch-projects-grid {
+  gap: 28px;
 }
 
-.before-after-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin: 14px 0;
+.ranch-project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
 }
 
-.before-after-grid--compact .pdf-embed-frame {
-  height: 340px;
+/* Les images imbriquées dans .detail-hero héritent de ".detail-hero img"
+   (height: 380px, règle partagée par toutes les fiches projet, pensée pour
+   la seule photo de couverture directe) : on neutralise explicitement cette
+   hauteur forcée ici pour que l'aspect-ratio propre à cette carte s'applique. */
+.ranch-project-card .card-thumb {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 18px;
 }
 
-@media (max-width: 620px) {
-  .before-after-grid {
-    grid-template-columns: 1fr;
+.ranch-project-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.ranch-project-card > p {
+  color: #b8b8c5;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.ranch-doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* Comparatif avant/après ou recto/verso : deux visuels côte à côte à la
+   place d'un gros iframe PDF. */
+.ranch-pair {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.ranch-pair > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ranch-project-card .ranch-pair img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 3;
+  object-fit: contain;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  display: block;
+}
+
+.ranch-pair-caption {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .ranch-pair {
+    flex-direction: column;
   }
 }
 
-.before-after-item .tag {
-  margin-bottom: 8px;
-}
-
-.pdf-embed-frame {
-  width: 100%;
-  height: 360px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
-  overflow: hidden;
-  background: #1b1b2c;
-}
-
-.pdf-embed-frame iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-.gallery-grid--compact {
-  grid-template-columns: minmax(0, 320px);
-  margin-top: 14px;
-}
-
-/* Grille "Mes projets réalisés pendant le stage" (page The Ranch) : 4 cartes
-   résumé, 2x2 desktop/tablette, 1 colonne mobile (réutilise .cards-grid /
-   .cards-grid-sm déjà responsive). */
-.project-summary-card {
+/* Miniature "document" propre : aucun iframe, aucune barre de défilement —
+   un clic ouvre directement le PDF complet dans un nouvel onglet. Utilisée
+   comme visuel principal du projet 01 (pas d'image du menu disponible). */
+.doc-preview {
+  aspect-ratio: 4 / 3;
   display: flex;
   flex-direction: column;
-}
-
-.project-number {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--primary-light);
-  letter-spacing: 0.04em;
-  margin-bottom: 4px;
-}
-
-.project-summary-card h3 {
-  margin: 0 0 8px;
-}
-
-.project-summary-card > p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  margin: 0 0 14px;
-}
-
-.project-summary-card .skill-tags {
-  margin-top: 0;
-  margin-bottom: 14px;
-}
-
-.project-summary-card .project-link {
-  margin-top: auto;
-  font-weight: 700;
-  font-size: 0.88rem;
-  color: var(--primary-light);
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: linear-gradient(135deg, #1b1b2c, #201f33);
+  color: var(--text);
   text-decoration: none;
+  padding: 16px;
+  text-align: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.project-summary-card .project-link:hover {
-  text-decoration: underline;
+.doc-preview:hover {
+  border-color: rgba(255, 255, 255, 0.34);
+  background: linear-gradient(135deg, #21213a, #262440);
 }
 
-/* Cover PDF réduit pour la carte-résumé du projet 01 : aperçu, pas un gros
-   iframe plein écran (l'iframe complet reste dans le détail du projet). */
-.pdf-embed-frame--cover {
-  height: 170px;
-  margin-bottom: 14px;
-  pointer-events: none;
+.doc-preview-icon {
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
-/* Recto/verso de la carte de visite, côte à côte (réutilise la grille
-   .before-after-grid déjà utilisée pour le comparatif avant/après du menu). */
-.business-card-grid img {
-  width: 100%;
-  display: block;
+.doc-preview-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.doc-preview-sub {
+  font-size: 0.74rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Petite vignette-lien pour les documents secondaires (ex. les 3 menus de
+   gala) : compacte, pas de gros cadre. */
+.doc-tile {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.86rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.realisation-card-compact .project-number {
-  margin-bottom: 2px;
+.doc-tile:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .detail-content li + li {
