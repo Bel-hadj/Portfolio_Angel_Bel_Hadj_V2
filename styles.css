@@ -1398,6 +1398,79 @@ footer {
   padding-left: 20px;
 }
 
+/* ==========================================================================
+   Page The Ranch compacte (experience-the-ranch.html) : hero réduit, cartes
+   "Réalisations principales" courtes avec aperçu PDF intégré. Scopé à cette
+   page (aucune de ces classes n'est utilisée ailleurs sur le site).
+   ========================================================================== */
+
+/* Hero plus court et plus "horizontal" que .hero-image--contain (partagée
+   avec DVD Filmothèque/Asian Dreams/Emergent, donc non modifiée) : hauteur
+   plafonnée et recadrage cover plutôt que letterboxing. */
+.detail-hero .hero-image--compact {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.hero-meta {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: -6px;
+  margin-bottom: 4px;
+}
+
+.realisation-card-compact {
+  margin-top: 18px;
+}
+
+.realisation-card-compact h3 {
+  margin-bottom: 8px;
+}
+
+.before-after-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 14px 0;
+}
+
+.before-after-grid--compact .pdf-embed-frame {
+  height: 340px;
+}
+
+@media (max-width: 620px) {
+  .before-after-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.before-after-item .tag {
+  margin-bottom: 8px;
+}
+
+.pdf-embed-frame {
+  width: 100%;
+  height: 360px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: #1b1b2c;
+}
+
+.pdf-embed-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.gallery-grid--compact {
+  grid-template-columns: minmax(0, 320px);
+  margin-top: 14px;
+}
+
 .detail-content li + li {
   margin-top: 6px;
 }
