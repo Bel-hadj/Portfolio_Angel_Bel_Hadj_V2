@@ -15,6 +15,7 @@
   --primary-light: #5b9dff;
   --primary-soft: rgba(47, 123, 255, 0.16);
   --accent: #5b9dff;
+  --accent-bright: #8ab4ff;
   --rose: #60a5fa;
   --amber: #93c5fd;
   --emerald: #38bdf8;
@@ -1068,13 +1069,18 @@ button:focus-visible {
 /* Hiérarchie de la section Expériences professionnelles & associatives :
    nom de la structure (.exp-org-name) > type + période globale (.exp-org-meta
    / .exp-org-date) > rôle + date bien visible (.exp-role-title / .exp-role-date)
-   > description secondaire. Réutilise .timeline-item existant (fond, bordure,
-   radius, bordure gauche) sans nouvelle architecture de carte. */
-.exp-org-name {
+   > description plus claire (.exp-role-desc). Réutilise .timeline-item existant
+   (fond, bordure, radius, bordure gauche) sans nouvelle architecture de carte.
+   Sélecteurs scopés via .timeline-item (ex. ".timeline-item .exp-role-date")
+   pour primer sur .timeline-item p / .timeline-item h3 (plus spécifiques de
+   par leur sélecteur "classe + élément") sans toucher à .timeline-item p/h3
+   eux-mêmes, donc sans changer l'apparence de la section Freelance qui les
+   utilise aussi. */
+.timeline-item .exp-org-name {
   font-size: 1.3rem;
 }
 
-.exp-org-meta {
+.timeline-item .exp-org-meta {
   color: var(--muted);
   font-weight: 600;
   font-size: 0.85rem;
@@ -1082,8 +1088,8 @@ button:focus-visible {
   margin-bottom: 10px;
 }
 
-.exp-org-date {
-  color: var(--accent);
+.timeline-item .exp-org-date {
+  color: var(--accent-bright);
   font-weight: 700;
 }
 
@@ -1097,7 +1103,7 @@ button:focus-visible {
   border-left: 2px solid var(--line);
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 24px;
 }
 
 .exp-role {
@@ -1107,37 +1113,40 @@ button:focus-visible {
 .exp-role::before {
   content: "";
   position: absolute;
-  top: 6px;
+  top: 7px;
   left: -25px;
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-bright);
+  box-shadow: 0 0 0 3px rgba(138, 180, 255, 0.25);
 }
 
-.exp-role-title {
+.timeline-item .exp-role-title {
   font-weight: 700;
+  font-size: 1.02rem;
   color: var(--text);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 /* Hors mini-chronologie (ex. The Ranch), un rôle unique se place directement
    dans la carte : un peu d'air au-dessus pour ne pas coller au nom. */
 .timeline-item > .exp-role-title {
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
-.exp-role-date {
+.timeline-item .exp-role-date {
   display: inline-block;
-  color: var(--accent);
+  color: var(--accent-bright);
   font-weight: 700;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 8px;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
 }
 
-.exp-role-desc {
+.timeline-item .exp-role-desc {
+  color: #d7dae2;
+  line-height: 1.65;
   margin: 0;
 }
 
