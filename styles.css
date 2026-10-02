@@ -1406,13 +1406,20 @@ footer {
    (aucune de ces classes n'est utilisée ailleurs sur le site).
    ========================================================================== */
 
-/* Hero plus court et plus "horizontal" que .hero-image--contain (partagée
-   avec DVD Filmothèque/Asian Dreams/Emergent, donc non modifiée) : hauteur
-   plafonnée et recadrage cover plutôt que letterboxing. */
+/* Bannière pleine largeur, bord à bord (aucune bande vide sur les côtés) :
+   le ratio du cadre (985/410, dérivé du visuel source 985x634) ne garde que
+   la partie haute de l'image — grill + logo The Ranch, toujours entièrement
+   visible — et recadre volontairement les informations de contact du bas
+   (adresse/site web), comme demandé. object-position: top fait porter tout
+   le rognage sur le bas, jamais sur le logo. */
 .detail-hero .hero-image--compact {
+  display: block;
   width: 100%;
-  height: 150px;
+  height: auto;
+  max-width: none;
+  aspect-ratio: 985 / 410;
   object-fit: cover;
+  object-position: top;
 }
 
 .hero-meta {
@@ -1421,6 +1428,13 @@ footer {
   font-size: 0.9rem;
   margin-top: -6px;
   margin-bottom: 4px;
+}
+
+/* Conteneur un peu plus large que .project-detail-showcase (1180px, partagée
+   avec Xbox/Indiewave) : les documents affichés en pleine taille ont besoin
+   de plus de place. Classe combinée, donc sans impact sur les autres pages. */
+main.project-detail-showcase.ranch-detail-wide {
+  width: min(1260px, calc(100% - 40px));
 }
 
 .project-number {
@@ -1433,18 +1447,33 @@ footer {
   margin-bottom: 6px;
 }
 
+/* Titre de section "libre" (entre le cadre de présentation et la grille,
+   ou au-dessus des outils) : hors de tout cadre, donc pas de style hérité
+   de .detail-content ; reprend la même typographie que les h2 du site. */
+.ranch-section-title {
+  margin: 48px 0 20px;
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
 /* Grille des 4 projets : 2 colonnes desktop/tablette, 1 colonne mobile
    (réutilise .cards-grid / .cards-grid-sm déjà responsive ailleurs),
    avec un peu plus de respiration entre les cartes que l'espacement
-   générique du site. */
+   générique du site. align-items: start empêche la grille d'étirer une
+   carte courte à la hauteur de sa voisine (plus de grand vide). */
 .ranch-projects-grid {
   gap: 28px;
+  align-items: start;
 }
 
 .ranch-project-card {
   display: flex;
   flex-direction: column;
   padding: 30px;
+  /* Sans ce reset, le contenu non rétrécissable des lignes de documents
+     (flex-shrink: 0) pousse la carte — et donc la grille — à déborder au
+     lieu de passer les documents à la ligne suivante. */
+  min-width: 0;
 }
 
 .ranch-project-card h3 {
@@ -1466,25 +1495,28 @@ footer {
   margin-top: auto;
 }
 
-/* Ligne de visuels côte à côte (avant/après, recto/verso, menus de gala,
-   photos d'événement...) : accepte 2, 3 ou 4 éléments, passe en colonne sur
-   mobile. Remplace les anciens iframes PDF avec barre de défilement. */
+/* Ligne de documents côte à côte (avant/après, menus de gala, flyer) :
+   chaque document garde sa hauteur et sa largeur naturelles (pas de boîte
+   forcée qui le réduit à une miniature ni ne crée de marges blanches) —
+   seule la hauteur est pilotée en CSS, la largeur suit le ratio réel de
+   l'image. Remplace les anciens iframes PDF avec barre de défilement. */
 .ranch-pair {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  align-items: flex-start;
+  gap: 16px;
   margin-bottom: 18px;
-}
-
-.ranch-pair > * {
-  flex: 1 1 95px;
   min-width: 0;
 }
 
+.ranch-pair > * {
+  flex: 0 0 auto;
+}
+
 .ranch-project-card .ranch-pair img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 5 / 3;
+  height: 300px;
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
   background: #fff;
   border-radius: var(--radius-sm);
@@ -1493,11 +1525,65 @@ footer {
   cursor: pointer;
 }
 
-/* Vraies photos d'événement (pas des documents) : on recadre proprement
-   plutôt que de laisser des bandes blanches de lettrage. */
-.ranch-project-card .ranch-pair img.ranch-photo {
+/* Carte de visite : image "pleine largeur" plutôt que pilotée par la
+   hauteur — les deux faces se partagent toute la largeur disponible. */
+.ranch-pair.ranch-pair--fill {
+  flex-wrap: nowrap;
+}
+
+.ranch-pair.ranch-pair--fill > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ranch-project-card .ranch-pair.ranch-pair--fill img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+/* Vraies photos d'événement (pas des documents) : grille 2x2, recadrage
+   propre plutôt que des bandes blanches de lettrage. */
+.ranch-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.ranch-project-card .ranch-photo-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  background: none;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  display: block;
+  cursor: pointer;
+}
+
+/* Ligne discrète des structures associées à l'événement (UVSQ/Paris-Saclay,
+   The Ranch) : logos sur fond blanc pour rester lisibles, hauteur commune,
+   largeur libre pour ne pas déformer les proportions. */
+.ranch-logos-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.ranch-project-card .ranch-logos-row img {
+  height: 52px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  display: block;
 }
 
 .ranch-pair-caption {
@@ -1511,8 +1597,19 @@ footer {
   text-align: center;
 }
 
+a.ranch-pair-caption {
+  text-decoration: none;
+}
+
+a.ranch-pair-caption:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
 .ranch-pair a,
-.ranch-pair button {
+.ranch-pair button,
+.ranch-photo-grid a,
+.ranch-photo-grid button {
   display: block;
   width: 100%;
   padding: 0;
@@ -1522,8 +1619,16 @@ footer {
 }
 
 @media (max-width: 560px) {
-  .ranch-pair {
-    flex-direction: column;
+  .ranch-project-card .ranch-pair img {
+    height: 220px;
+  }
+
+  .ranch-pair.ranch-pair--fill {
+    flex-wrap: wrap;
+  }
+
+  .ranch-pair.ranch-pair--fill > * {
+    flex: 1 1 100%;
   }
 }
 
