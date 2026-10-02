@@ -1551,6 +1551,12 @@ main.project-detail-showcase.ranch-detail-wide {
   max-width: none;
 }
 
+/* Rangée de 3 documents (menus de gala) : espace resserré, toujours des
+   colonnes égales via .ranch-pair--fill. */
+.ranch-pair.ranch-pair--gap-sm {
+  gap: 12px;
+}
+
 /* Vraies photos d'événement (pas des documents) : grille 2x2, recadrage
    propre plutôt que des bandes blanches de lettrage. */
 .ranch-photo-grid {
@@ -1579,15 +1585,17 @@ main.project-detail-showcase.ranch-detail-wide {
 }
 
 /* Ligne discrète des structures associées à l'événement (UVSQ/Paris-Saclay,
-   The Ranch) : logos sur fond blanc pour rester lisibles, hauteur commune,
-   largeur libre pour ne pas déformer les proportions. */
+   The Ranch) : logos sur fond clair pour rester lisibles, hauteur commune,
+   largeur libre pour ne pas déformer les proportions. Centrée et enchaînée
+   juste après les menus (pas de margin-top: auto) pour ne pas finir isolée
+   tout en bas d'une carte étirée par l'alignement des 4 cadres. */
 .ranch-logos-row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 18px;
-  margin-top: auto;
-  padding-top: 18px;
+  margin: 24px 0 0;
 }
 
 .ranch-project-card .ranch-logos-row img {
