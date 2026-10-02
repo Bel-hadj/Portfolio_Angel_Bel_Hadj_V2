@@ -1459,11 +1459,20 @@ main.project-detail-showcase.ranch-detail-wide {
 /* Grille des 4 projets : 2 colonnes desktop/tablette, 1 colonne mobile
    (réutilise .cards-grid / .cards-grid-sm déjà responsive ailleurs),
    avec un peu plus de respiration entre les cartes que l'espacement
-   générique du site. align-items: start empêche la grille d'étirer une
-   carte courte à la hauteur de sa voisine (plus de grand vide). */
+   générique du site. grid-auto-rows: 1fr + align-items: stretch harmonisent
+   la hauteur des 4 cartes sur la hauteur de la plus grande (sans hauteur
+   fixe en dur) ; repassé en auto au-delà du point de rupture où la grille
+   devient 1 colonne, pour ne pas forcer un vide artificiel sur mobile. */
 .ranch-projects-grid {
   gap: 28px;
-  align-items: start;
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+
+@media (max-width: 620px) {
+  .ranch-projects-grid {
+    grid-auto-rows: auto;
+  }
 }
 
 .ranch-project-card {
@@ -1549,6 +1558,13 @@ main.project-detail-showcase.ranch-detail-wide {
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
   margin-bottom: 18px;
+}
+
+/* Porteurs de données invisibles : complètent un data-lightbox-group avec des
+   photos qui ne sont pas affichées en vignette (galerie "voir les N photos"),
+   pour que la navigation précédent/suivant parcoure l'ensemble du lot. */
+.ranch-gallery-extra {
+  display: none;
 }
 
 .ranch-project-card .ranch-photo-grid img {
@@ -2179,6 +2195,62 @@ a.ranch-pair-caption:hover {
 .lightbox-close:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
+}
+
+/* Navigation précédent/suivant optionnelle (galeries multi-photos, ex. "10
+   photos" de The Ranch) : positionnée sur l'overlay, pas sur .lightbox-inner,
+   pour rester accessible quelle que soit la taille de l'image affichée. */
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface-solid);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 101;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.lightbox-nav[hidden] {
+  display: none;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lightbox-prev {
+  left: 16px;
+}
+
+.lightbox-next {
+  right: 16px;
+}
+
+@media (max-width: 640px) {
+  .lightbox-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 1.15rem;
+  }
+
+  .lightbox-prev {
+    left: 6px;
+  }
+
+  .lightbox-next {
+    right: 6px;
+  }
 }
 
 /* Lecteur PDF intégré */
