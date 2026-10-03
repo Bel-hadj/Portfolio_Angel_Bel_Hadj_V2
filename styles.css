@@ -1711,6 +1711,18 @@ main.ranch-detail-wide .hero-meta {
   margin: 24px 0 0;
 }
 
+/* Logos d'identité (UVSQ, The Ranch) sous la description de la carte 02 :
+   petite taille, alignés à gauche, sans bloc massif. */
+.ranch-project-card .ranch-logos-head {
+  justify-content: flex-start;
+  margin: 0 0 20px;
+}
+
+.ranch-project-card .ranch-logos-head img {
+  height: 40px;
+  padding: 4px 8px;
+}
+
 .ranch-project-card .ranch-logos-row img {
   height: 52px;
   width: auto;
