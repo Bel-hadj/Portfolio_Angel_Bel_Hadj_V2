@@ -1572,6 +1572,16 @@ main.ranch-detail-wide .hero-meta {
   margin-top: 6px;
 }
 
+/* En deux colonnes, le bloc « Travail réalisé » de la carte 01 (bouton
+   « Voir le menu complet » au-dessus) doit commencer à la même hauteur que
+   le bloc « Mission » de la carte 02. Espacement mesuré : 55 px au total,
+   répartis autour du bouton. */
+@media (min-width: 621px) {
+  .ranch-project-card .ranch-doc-actions {
+    margin: 20px 0 49px;
+  }
+}
+
 /* Ligne de documents côte à côte (avant/après, menus de gala, flyer) :
    chaque document garde sa hauteur et sa largeur naturelles (pas de boîte
    forcée qui le réduit à une miniature ni ne crée de marges blanches) —
