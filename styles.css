@@ -1589,6 +1589,21 @@ main.ranch-detail-wide .hero-meta {
   flex: 0 0 auto;
 }
 
+/* Cadres d'une même rangée (AVANT / APRÈS, menus du gala) : même hauteur et
+   même largeur par colonne, image entière (object-fit: contain, sans
+   recadrage ni déformation). Sans cela, la largeur suivait le ratio de chaque
+   image et les cadres blancs avaient des tailles différentes. */
+.ranch-project-card .ranch-pair:not(.ranch-pair--fill) > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ranch-project-card .ranch-pair:not(.ranch-pair--fill) img {
+  width: 100%;
+  max-width: none;
+  height: 340px;
+}
+
 .ranch-project-card .ranch-pair img {
   height: 340px;
   width: auto;
