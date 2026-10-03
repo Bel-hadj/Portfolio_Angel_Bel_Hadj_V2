@@ -1714,42 +1714,68 @@ main.ranch-detail-wide .hero-meta {
   cursor: pointer;
 }
 
-/* Ligne discrète des structures associées à l'événement (UVSQ/Paris-Saclay,
-   The Ranch) : logos sur fond clair pour rester lisibles, hauteur commune,
-   largeur libre pour ne pas déformer les proportions. Centrée et enchaînée
-   juste après les menus (pas de margin-top: auto) pour ne pas finir isolée
-   tout en bas d'une carte étirée par l'alignement des 4 cadres. */
-.ranch-logos-row {
+/* Bloc partenaires de la carte 02 (UVSQ × The Ranch) : logos officiels, sans
+   cadre ajouté, ratio conservé. Placé juste après la description, avant les
+   menus du gala. */
+.ranch-partners {
+  margin: 0 0 26px;
+  text-align: center;
+}
+
+.ranch-partners-logos {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  margin: 24px 0 0;
+  gap: 22px;
 }
 
-/* Logos d'identité (UVSQ, The Ranch) sous la description de la carte 02 :
-   petite taille, alignés à gauche, sans bloc massif. */
-.ranch-project-card .ranch-logos-head {
-  justify-content: flex-start;
-  margin: 0 0 20px;
-}
-
-.ranch-project-card .ranch-logos-head img {
-  height: 40px;
-  padding: 4px 8px;
-}
-
-.ranch-project-card .ranch-logos-row img {
-  height: 52px;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  background: #fff;
-  border-radius: 8px;
-  border: 1px solid var(--line);
-  padding: 6px 10px;
+.ranch-partners-logos img {
   display: block;
+  width: auto;
+  height: 112px;
+  max-width: 40%;
+  object-fit: contain;
+}
+
+/* Le logo The Ranch a un fond noir intégré : en mode « écran », le noir se
+   fond dans la carte et le blanc du logo reste lisible. */
+.ranch-partners-logos .ranch-partner-logo--ranch {
+  mix-blend-mode: screen;
+}
+
+.ranch-partners-x {
+  color: var(--primary-light);
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.ranch-partners-caption {
+  margin: 12px 0 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9c9d4;
+}
+
+@media (max-width: 900px) {
+  .ranch-partners-logos {
+    gap: 14px;
+  }
+
+  .ranch-partners-logos img {
+    height: 88px;
+  }
+}
+
+@media (max-width: 620px) {
+  .ranch-partners-logos {
+    gap: 14px;
+  }
+
+  .ranch-partners-logos img {
+    height: 72px;
+  }
 }
 
 .ranch-pair-caption {
