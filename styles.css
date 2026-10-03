@@ -1491,10 +1491,22 @@ main.project-detail-showcase.ranch-detail-wide {
 }
 
 .ranch-project-card > p {
-  color: #b8b8c5;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0 0 18px;
+  color: #e2e2ea;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+/* Textes descriptifs de la page (contexte, hero) : blanc légèrement adouci,
+   pour ressortir sur le fond sombre sans concurrencer les titres. */
+main.ranch-detail-wide .detail-content p {
+  color: #e2e2ea;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+main.ranch-detail-wide .hero-meta {
+  color: #c9c9d4;
 }
 
 .ranch-doc-actions {
@@ -1523,7 +1535,7 @@ main.project-detail-showcase.ranch-detail-wide {
 }
 
 .ranch-project-card .ranch-pair img {
-  height: 300px;
+  height: 340px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -1612,12 +1624,12 @@ main.project-detail-showcase.ranch-detail-wide {
 
 .ranch-pair-caption {
   display: block;
-  margin-top: 8px;
-  font-size: 0.76rem;
-  font-weight: 700;
+  margin-top: 10px;
+  font-size: 0.84rem;
+  font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #e2e2ea;
   text-align: center;
 }
 
