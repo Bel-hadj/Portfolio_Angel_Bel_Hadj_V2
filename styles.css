@@ -1580,6 +1580,13 @@ main.ranch-detail-wide .hero-meta {
   .ranch-project-card .ranch-doc-actions {
     margin: 20px 0 49px;
   }
+
+  /* Première rangée uniquement : les blocs « Travail réalisé » (carte 01) et
+     « Mission » (carte 02) remplissent la hauteur commune de la rangée, et
+     leur contenu reste en haut. Sur mobile, la hauteur reste automatique. */
+  .ranch-projects-grid > .ranch-project-card:nth-child(-n + 2) .ranch-work {
+    flex: 1 0 auto;
+  }
 }
 
 /* Ligne de documents côte à côte (avant/après, menus de gala, flyer) :
