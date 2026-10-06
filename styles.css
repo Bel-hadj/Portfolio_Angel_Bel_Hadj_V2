@@ -1687,6 +1687,13 @@ main.ranch-detail-wide .hero-meta {
   gap: 12px;
 }
 
+@media (min-width: 561px) {
+  .ranch-projects-grid > .ranch-project-card:nth-child(2) .ranch-pair.ranch-pair--gap-sm {
+    width: calc(100% + 42px);
+    margin: 0 -21px 18px;
+  }
+}
+
 /* Vraies photos d'événement (pas des documents) : grille 2x2, recadrage
    propre plutôt que des bandes blanches de lettrage. */
 .ranch-photo-grid {
