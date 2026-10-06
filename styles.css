@@ -1522,33 +1522,6 @@ main.project-detail-showcase.ranch-detail-wide {
   margin-top: 0;
 }
 
-.ranch-work-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 8px;
-}
-
-.ranch-work-list li {
-  position: relative;
-  padding-left: 18px;
-  color: #ffffff;
-  font-size: 1.02rem;
-  line-height: 1.6;
-}
-
-.ranch-work-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.6em;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--primary-light);
-}
-
 /* Textes descriptifs de la page (contexte, hero) : blanc légèrement adouci,
    pour ressortir sur le fond sombre sans concurrencer les titres. */
 main.ranch-detail-wide .detail-content p {
@@ -1581,6 +1554,10 @@ main.ranch-detail-wide .hero-meta {
 
 .ranch-group {
   padding-top: 16px;
+}
+
+.ranch-work > .ranch-group:first-child {
+  padding-top: 0;
 }
 
 @media (max-width: 900px) {
@@ -2122,15 +2099,12 @@ a.ranch-pair-caption:hover {
   cursor: pointer;
 }
 
-.ranch-deliverable {
-  margin: 10px 0 0;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.ranch-deliverable strong {
-  color: var(--text);
-  font-weight: 700;
+.ranch-deliverable-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .gallery-trigger .card-thumb {
