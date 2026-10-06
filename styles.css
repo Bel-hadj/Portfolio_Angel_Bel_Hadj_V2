@@ -750,10 +750,13 @@ button:focus-visible {
   background: linear-gradient(135deg, #1b1b2c, #201f33);
 }
 
-/* Vignette dont la capture est plus large que le cadre 16/10 : entière
-   (contain) plutôt que recadrée, pour garder la nav et la colonne Spotify. */
-.card-thumb.card-thumb--contain {
-  object-fit: contain;
+/* Capture Emergent (ratio ~2,14) dans le cadre 16/10 : cadrage "cover" qui
+   remplit tout le cadre sans bandes. object-position 20% décale légèrement le
+   recadrage vers la gauche pour garder le logo et le titre entiers ; l'extrémité
+   droite de la carte Spotify est donc partiellement coupée. */
+.card-thumb.card-thumb--crop-left {
+  object-fit: cover;
+  object-position: 20% top;
 }
 
 /* Quand un sous-projet a plusieurs visuels : petite grille de vignettes à la place d'une seule .card-thumb */
