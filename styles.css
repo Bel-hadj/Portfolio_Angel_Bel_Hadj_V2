@@ -3454,13 +3454,17 @@ a.ranch-pair-caption:hover {
   margin: 8px 0 0;
 }
 
-/* Carte Emergent : technologies en une ligne de texte (sans pastilles). */
-.info-card .info-card-stack {
-  margin: 10px 0 0;
-  color: #c7d2fe;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+/* Cartes de l'accueil (projets, expériences et compétences) : textes
+   descriptifs en blanc pour une lecture immédiate, et badges à texte plus
+   contrasté. Les contours arrondis des badges restent ceux de .skill-tags span. */
+.info-card p,
+.skill-card p {
+  color: #ffffff;
+}
+
+.info-card .skill-tags span,
+.skill-card .skill-tags span {
+  color: #e5e7eb;
 }
 
 /* Identité "web / développement" discrète pour les fiches Bibliothèque en
