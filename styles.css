@@ -1511,11 +1511,11 @@ main.project-detail-showcase.ranch-detail-wide {
 
 .ranch-work-title {
   margin: 14px 0 8px;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--primary-light);
+  color: #ffffff;
 }
 
 .ranch-work-title:first-child {
@@ -1549,10 +1549,6 @@ main.project-detail-showcase.ranch-detail-wide {
   background: var(--primary-light);
 }
 
-.ranch-work .skill-tags {
-  margin-top: 4px;
-}
-
 /* Textes descriptifs de la page (contexte, hero) : blanc légèrement adouci,
    pour ressortir sur le fond sombre sans concurrencer les titres. */
 main.ranch-detail-wide .detail-content p {
@@ -1581,12 +1577,39 @@ main.ranch-detail-wide .hero-meta {
     margin: 20px 0 49px;
   }
 
-  /* Première rangée uniquement : les blocs « Travail réalisé » (carte 01) et
-     « Mission » (carte 02) remplissent la hauteur commune de la rangée, et
-     leur contenu reste en haut. Sur mobile, la hauteur reste automatique. */
-  .ranch-projects-grid > .ranch-project-card:nth-child(-n + 2) .ranch-work {
-    flex: 1 0 auto;
+}
+
+.ranch-group {
+  padding-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .cards-grid.ranch-projects-grid {
+    grid-template-columns: 1fr;
   }
+}
+
+.ranch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.ranch-tags span {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.ranch-group--tools .ranch-tags span {
+  border-color: var(--primary-light);
+  background: rgba(47, 123, 255, 0.22);
 }
 
 /* Ligne de documents côte à côte (avant/après, menus de gala, flyer) :
