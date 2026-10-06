@@ -1501,11 +1501,11 @@ main.project-detail-showcase.ranch-detail-wide {
 
 /* Bloc "Travail réalisé" / "Mission" + outils : contenu concret et scannable,
    placé sous les visuels pour remplir la carte sans texte long. */
-/* Cadre du bas : collé au bas de la carte (margin-top: auto), pour que les
-   cadres d'une même ligne soient alignés en bas et de même hauteur (chaque
-   carte a le même nombre de blocs : livrable, outils, compétences). */
+/* Cadre du bas : suit naturellement son contenu. L'espace total avant le
+   cadre est de 28 px sur toutes les cartes : 18 px de marge en bas de
+   l'élément précédent (.ranch-pair, .ranch-doc-actions) + 10 px ici. */
 .ranch-work {
-  margin-top: auto;
+  margin-top: 10px;
   box-sizing: border-box;
   padding: 18px 20px;
   border-radius: var(--radius-sm);
@@ -1545,10 +1545,9 @@ main.ranch-detail-wide .hero-meta {
   margin-top: 6px;
 }
 
-/* Espacement régulier entre le contenu visuel et le cadre du bas, identique
-   sur toutes les cartes (le cadre est ancré en bas via margin-top: auto). */
+/* Espacement régulier entre le contenu visuel et le cadre du bas (voir .ranch-work). */
 .ranch-project-card .ranch-doc-actions {
-  margin: 20px 0 22px;
+  margin: 20px 0 18px;
 }
 
 .ranch-group {
@@ -1685,6 +1684,12 @@ main.ranch-detail-wide .hero-meta {
 
   .ranch-projects-grid > .ranch-project-card:nth-child(2) .ranch-pair.ranch-pair--gap-sm button {
     height: 380px;
+  }
+
+  /* Carte 01 : AVANT / APRÈS un peu plus grands (même hauteur pour les deux,
+     image entière et ratio conservé grâce à object-fit: contain). */
+  .ranch-projects-grid > .ranch-project-card:nth-child(1) .ranch-pair.ranch-frames button {
+    height: 400px;
   }
 }
 
