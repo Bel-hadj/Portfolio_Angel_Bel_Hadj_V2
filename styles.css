@@ -963,6 +963,16 @@ button:focus-visible {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  /* 1fr : toutes les lignes prennent la hauteur de la carte la plus haute,
+     donc toutes les cartes de la grille ont la même hauteur. */
+  grid-auto-rows: 1fr;
+}
+
+/* Badges de compétences toujours alignés en bas de carte, même si la
+   description est plus courte que celle des cartes voisines. */
+.project-grid .info-card .skill-tags.skills-plain {
+  margin-top: auto;
+  padding-top: 8px;
 }
 
 /* .project-tile / .tile-scrim / .tile-overlay / .project-tile-fandom ont été
@@ -3424,9 +3434,11 @@ a.ranch-pair-caption:hover {
   color: #a7f3d0;
 }
 
+/* Projets académiques (seule utilisation sur l'accueil) : rose sourd, cohérent
+   avec la palette des autres catégories. */
 .category-experience {
-  background: rgba(148, 163, 184, 0.2);
-  color: #e2e8f0;
+  background: rgba(244, 114, 182, 0.18);
+  color: #fbcfe8;
 }
 
 /* Carte "info" (sans visuel de couverture) utilisée pour les projets web et
@@ -3441,6 +3453,17 @@ a.ranch-pair-caption:hover {
 
 .info-card .tag {
   margin-bottom: 2px;
+}
+
+/* Titres des projets (accueil) : même taille, graisse, couleur et interligne
+   sur toutes les cartes, nettement plus grands que la description pour être
+   lus en premier. Pas d'encadré : seulement la typographie. */
+.project-grid .info-card h3 {
+  margin: 4px 0 10px;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
 }
 
 .info-card-subtitle {
