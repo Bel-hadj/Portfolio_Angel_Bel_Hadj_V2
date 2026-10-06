@@ -2080,6 +2080,29 @@ a.ranch-pair-caption:hover {
   text-align: left;
 }
 
+/* Cumul .btn + .gallery-trigger : restaure la taille normale du bouton */
+.btn.gallery-trigger {
+  display: inline-flex;
+  width: auto;
+  padding: 14px 22px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 1rem;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.ranch-deliverable {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.ranch-deliverable strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
 .gallery-trigger .card-thumb {
   transition: transform 0.3s ease;
 }
