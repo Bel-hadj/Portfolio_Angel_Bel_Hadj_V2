@@ -11,58 +11,134 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="project-detail">
+  <main class="project-detail project-detail-showcase ranch-detail-wide">
     <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
     <article class="detail-hero reveal visible">
-      <!-- TODO : remplacer ce placeholder par un vrai visuel du Club Entrepreneurs EMLV
-           (photo du club, publication, affiche, etc.) dès qu'il sera disponible. -->
-      <img class="hero-image--contain" src="assets/projects/club-entrepreneurs/club-placeholder.svg"
-        alt="Visuel temporaire — Club Entrepreneurs EMLV" />
+      <img class="hero-image--contain" src="assets/projects/club-entrepreneurs/mockup-sweat.png"
+        alt="Sweat-shirt aux couleurs du Club Entrepreneurs EMLV" />
 
       <div class="detail-content">
         <span class="tag category-communication">Communication</span>
         <h1>Club Entrepreneurs EMLV</h1>
-        <p class="detail-subtitle">Membre depuis 10/2024 · Responsable communication (09/2025 → 03/2026)</p>
+        <p class="detail-subtitle">Membre depuis 10/2024 · Responsable communication (03/2025 → 03/2026)</p>
         <p>Création de contenus et animation de la communication digitale du club.</p>
 
         <h2>Le club</h2>
-        <!-- TODO : compléter avec une présentation réelle du Club Entrepreneurs EMLV
-             (mission de l'association, taille de l'équipe, activités principales). -->
-        <p>Association étudiante de l'EMLV dédiée à l'entrepreneuriat. Présentation détaillée à compléter.</p>
+        <p>Association étudiante de l'EMLV dédiée à la sensibilisation à l'entrepreneuriat : événements, ateliers et conférences ouverts à tous les étudiants.</p>
 
         <h2>Mon rôle</h2>
-        <p>Responsable communication de 09/2025 à 03/2026 : gestion des contenus digitaux, création de posts, animation de la communication du club et coordination avec l'équipe.</p>
+        <p>Responsable communication de 03/2025 à 03/2026 : gestion des contenus digitaux, création de publications, animation de la communication du club. L'objectif du bureau était de publier au moins une fois par semaine sur Instagram et LinkedIn.</p>
 
-        <h2>Communication digitale</h2>
-        <!-- TODO : détailler les actions concrètes de communication digitale menées
-             (calendrier éditorial, campagnes, outils utilisés) une fois précisées. -->
-        <div class="skill-tags skills-plain">
-          <span>Communication digitale</span>
-          <span>Social Media</span>
-          <span>Content Creation</span>
-          <span>Community Management</span>
-        </div>
-
-        <h2>Créations</h2>
-        <!-- TODO : ajouter ici les vraies réalisations (publications, affiches, visuels)
-             dès qu'elles seront fournies. Aucune création n'est encore documentée. -->
-        <p>Les créations réalisées pour le club (publications, affiches, visuels) seront présentées ici dès qu'elles seront disponibles.</p>
-
-        <h2>Réseaux sociaux</h2>
-        <!-- TODO : ajouter les captures ou statistiques réelles des réseaux sociaux du club
-             une fois communiquées. Aucun chiffre n'est encore confirmé. -->
-        <p>Captures et éléments des réseaux sociaux du club à venir.</p>
-
-        <h2>Compétences</h2>
-        <div class="skill-tags skills-plain">
-          <span>Communication digitale</span>
-          <span>Social Media</span>
-          <span>Content Creation</span>
-          <span>Community Management</span>
-          <span>Coordination d'équipe</span>
-        </div>
       </div>
     </article>
+
+    <h2 class="ranch-section-title">Mes projets réalisés</h2>
+    <div class="cards-grid cards-grid-sm ranch-projects-grid">
+
+          <article class="card ranch-project-card">
+            <span class="project-number">01</span>
+            <h3>Post Instagram « After Work »</h3>
+            <p>Visuel de publication pour l'After Work du vendredi 23 mai, à Paris.</p>
+            <div class="ranch-pair ranch-frames club-frame-tall">
+              <div>
+                <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/after-work.png" data-lightbox-alt="Publication Instagram du Club Entrepreneurs pour l'After Work du 23 mai" aria-label="Agrandir le visuel After Work">
+                  <img src="assets/projects/club-entrepreneurs/after-work.png" alt="Publication Instagram du Club Entrepreneurs pour l'After Work du 23 mai" loading="lazy" />
+                </button>
+              </div>
+            </div>
+            <div class="ranch-work">
+              <div class="ranch-group">
+                <p class="ranch-work-title">Livrable</p>
+                <p class="ranch-deliverable-text">Visuel de publication Instagram</p>
+              </div>
+              <div class="ranch-group ranch-group--tools">
+                <p class="ranch-work-title">Outils utilisés</p>
+                <div class="ranch-tags"><span>À CONFIRMER</span></div>
+              </div>
+              <div class="ranch-group ranch-group--skills">
+                <p class="ranch-work-title">Compétences mobilisées</p>
+                <div class="ranch-tags"><span>Création de visuels</span><span>Réseaux sociaux</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card ranch-project-card">
+            <span class="project-number">02</span>
+            <h3>Création de contenus vidéo</h3>
+            <p>Deux vidéos courtes publiées sur les réseaux sociaux du club, en versions « animée » et « simple », et la proposition éditoriale des formats qui les accompagnent (21/05/2025), co-rédigée avec Noam Raharinosy.</p>
+            <div class="ranch-pair ranch-frames">
+              <div>
+                <video controls muted preload="metadata" playsinline aria-label="Vidéo animée du Club Entrepreneurs">
+                  <source src="assets/projects/club-entrepreneurs/video-animee.mp4" type="video/mp4" />
+                </video>
+                <span class="ranch-pair-caption">Version animée</span>
+              </div>
+              <div>
+                <video controls muted preload="metadata" playsinline aria-label="Vidéo simple du Club Entrepreneurs">
+                  <source src="assets/projects/club-entrepreneurs/video-simple.mp4" type="video/mp4" />
+                </video>
+                <span class="ranch-pair-caption">Version simple</span>
+              </div>
+            </div>
+            <ul class="ranch-list">
+              <li><strong>Formats courts :</strong> « On décode pour toi », « Dans les coulisses de… », « Street Pitch », « 1 minute avec… », « C'est quoi ton projet ? »</li>
+              <li><strong>Formats longs :</strong> « Start With Me », « Round Table »</li>
+            </ul>
+            <div class="ranch-doc-actions">
+              <a href="assets/projects/club-entrepreneurs/proposition-video.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir la proposition ↗</a>
+            </div>
+            <div class="ranch-work">
+              <div class="ranch-group">
+                <p class="ranch-work-title">Livrable</p>
+                <p class="ranch-deliverable-text">Deux vidéos courtes et une proposition éditoriale</p>
+              </div>
+              <div class="ranch-group ranch-group--tools">
+                <p class="ranch-work-title">Outils utilisés</p>
+                <div class="ranch-tags"><span>À CONFIRMER</span></div>
+              </div>
+              <div class="ranch-group ranch-group--skills">
+                <p class="ranch-work-title">Compétences mobilisées</p>
+                <div class="ranch-tags"><span>Création de contenus vidéo</span><span>Conception éditoriale</span><span>Réseaux sociaux</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card ranch-project-card">
+            <span class="project-number">03</span>
+            <h3>Identité visuelle du club</h3>
+            <p>Logo officiel et palette de couleurs du Club Entrepreneurs EMLV (avril-mai 2025).</p>
+            <div class="ranch-pair ranch-frames">
+              <div>
+                <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/logo-officiel.png" data-lightbox-alt="Logo officiel du Club Entrepreneurs EMLV" aria-label="Agrandir le logo officiel">
+                  <img src="assets/projects/club-entrepreneurs/logo-officiel.png" alt="Logo officiel du Club Entrepreneurs EMLV" loading="lazy" />
+                </button>
+              </div>
+              <div>
+                <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/palette.svg" data-lightbox-alt="Palette de couleurs du Club Entrepreneurs EMLV" aria-label="Agrandir la palette de couleurs">
+                  <img src="assets/projects/club-entrepreneurs/palette.svg" alt="Palette de couleurs du Club Entrepreneurs EMLV" loading="lazy" />
+                </button>
+              </div>
+            </div>
+            <div class="ranch-doc-actions">
+              <a href="assets/projects/club-entrepreneurs/palette-couleurs.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir la palette ↗</a>
+            </div>
+            <div class="ranch-work">
+              <div class="ranch-group">
+                <p class="ranch-work-title">Livrable</p>
+                <p class="ranch-deliverable-text">Logo officiel et palette de couleurs</p>
+              </div>
+              <div class="ranch-group ranch-group--tools">
+                <p class="ranch-work-title">Outils utilisés</p>
+                <div class="ranch-tags"><span>À CONFIRMER</span></div>
+              </div>
+              <div class="ranch-group ranch-group--skills">
+                <p class="ranch-work-title">Compétences mobilisées</p>
+                <div class="ranch-tags"><span>Identité visuelle</span><span>Création de logo</span></div>
+              </div>
+            </div>
+          </article>
+
+    </div>
   </main>
 
   <script src="script.js"></script>

@@ -750,6 +750,12 @@ button:focus-visible {
   background: linear-gradient(135deg, #1b1b2c, #201f33);
 }
 
+/* Visuel plus haut que le cadre 16/10 (ex. mockup Club Entrepreneurs) : entier
+   (contain) plutôt que recadré, pour ne pas couper le produit. */
+.card-thumb.card-thumb--contain {
+  object-fit: contain;
+}
+
 /* Capture Emergent (ratio ~2,14) dans le cadre 16/10 : cadrage "cover" qui
    remplit tout le cadre sans bandes. object-position 20% décale légèrement le
    recadrage vers la gauche pour garder le logo et le titre entiers ; l'extrémité
@@ -1650,7 +1656,46 @@ main.ranch-detail-wide .hero-meta {
   border-radius: var(--radius-sm);
 }
 
+/* Page Club Entrepreneurs : visuel principal de la carte 01 plus grand, pour
+   réduire le vide sous le texte. Scopé à la classe club-frame-tall (The Ranch
+   n'est pas concerné). */
+@media (min-width: 561px) {
+  .ranch-projects-grid > .ranch-project-card:nth-child(1) .ranch-pair.ranch-frames.club-frame-tall button {
+    height: 560px;
+  }
+}
+
+/* Liste courte dans une carte projet (formats de la proposition vidéo). */
+.ranch-project-card .ranch-list {
+  margin: 0 0 18px;
+  padding-left: 20px;
+  color: #ffffff;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.ranch-project-card .ranch-list li + li {
+  margin-top: 6px;
+}
+
+/* Vidéos dans les cadres de la page Club Entrepreneurs : même hauteur et même
+   logique que les visuels, sans déformation (object-fit: contain). */
+.ranch-project-card .ranch-pair.ranch-frames video {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 340px;
+  object-fit: contain;
+  background: #000;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
 @media (max-width: 560px) {
+  .ranch-project-card .ranch-pair.ranch-frames video {
+    height: 260px;
+  }
+
   .ranch-project-card .ranch-pair.ranch-frames > div {
     flex: 1 1 100%;
   }
