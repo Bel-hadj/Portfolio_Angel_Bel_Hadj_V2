@@ -1747,6 +1747,16 @@ main.ranch-detail-wide .hero-meta {
   min-height: 266px; /* secours si le JS n'a pas encore tourné ; le script ajuste ensuite la valeur exacte en direct */
 }
 
+/* Carte 02 : son bouton "Voir la proposition" (absent de la carte 01)
+   décalait le bloc du bas d'environ 18px plus bas que sur la carte 01,
+   même une fois les deux blocs Livrable/Outils/Compétences égalisés en
+   hauteur par le script. On resserre juste les marges de ce bouton
+   (sans le retirer) pour que les deux cartes finissent exactement à la
+   même hauteur. */
+.club-detail .club-card-02 .ranch-doc-actions {
+  margin: 12px 0 8px;
+}
+
 @media (max-width: 560px) {
   /* En une colonne, les cases empilées deviennent plus larges que hautes :
      les hauteurs fixes du desktop couperaient le haut/bas des visuels au
