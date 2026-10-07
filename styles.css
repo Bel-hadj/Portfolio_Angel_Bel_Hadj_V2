@@ -1707,6 +1707,19 @@ main.ranch-detail-wide .hero-meta {
   height: 214px;
 }
 
+/* La palette (format 2:1) ne remplit pas un cadre de 214px de haut sans
+   laisser un vide (ratio du cadre trop étroit pour l'image) : on adapte
+   la hauteur de ce cadre précis au ratio réel de l'image, pour qu'elle le
+   remplisse exactement, sans toucher au cadre du logo à côté. */
+.club-detail .ranch-pair.ranch-frames.club-identity-row > div:not(.club-logo-tile) {
+  align-self: center;
+}
+
+.club-detail .ranch-pair.ranch-frames.club-identity-row > div:not(.club-logo-tile) button {
+  height: auto;
+  aspect-ratio: 2 / 1;
+}
+
 .club-detail .ranch-pair.ranch-frames.club-banner-row button {
   height: 140px;
 }
