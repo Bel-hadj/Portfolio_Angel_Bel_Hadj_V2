@@ -11,11 +11,23 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="project-detail project-detail-showcase ranch-detail-wide">
+  <main class="project-detail project-detail-showcase ranch-detail-wide club-detail">
     <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
     <article class="detail-hero reveal visible">
-      <img class="hero-image--contain" src="assets/projects/club-entrepreneurs/logo-officiel.png"
-        alt="Logo officiel du Club Entrepreneurs EMLV" />
+      <div class="club-hero-mosaic">
+        <div class="mosaic-tile mosaic-main">
+          <img src="assets/projects/club-entrepreneurs/after-work.png" alt="Publication Instagram du Club Entrepreneurs pour l'After Work du 23 mai" loading="lazy" />
+        </div>
+        <div class="mosaic-tile">
+          <img src="assets/projects/club-entrepreneurs/video-frame.png" alt="Image extraite d'une vidéo courte créée pour le Club Entrepreneurs" loading="lazy" />
+        </div>
+        <div class="mosaic-tile">
+          <img src="assets/projects/club-entrepreneurs/logo-officiel.png" alt="Logo officiel du Club Entrepreneurs EMLV" loading="lazy" />
+        </div>
+        <div class="mosaic-tile">
+          <img src="assets/projects/club-entrepreneurs/conference-canva.png" alt="Invitation Canva de la conférence Gestion patrimoniale avec Mathis Ferrera" loading="lazy" />
+        </div>
+      </div>
 
       <div class="detail-content">
         <span class="tag category-communication">Communication</span>
@@ -38,11 +50,16 @@
           <article class="card ranch-project-card">
             <span class="project-number">01</span>
             <h3>Post Instagram « After Work »</h3>
-            <p>Visuel de publication pour l'After Work du vendredi 23 mai, à Paris.</p>
-            <div class="ranch-pair ranch-frames club-frame-tall">
+            <p>Visuel de publication pour l'After Work du vendredi 23 mai, à Paris, en version post et en version story.</p>
+            <div class="ranch-pair ranch-frames club-cover-frames">
               <div>
                 <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/after-work.png" data-lightbox-alt="Publication Instagram du Club Entrepreneurs pour l'After Work du 23 mai" aria-label="Agrandir le visuel After Work">
-                  <img src="assets/projects/club-entrepreneurs/after-work.png" alt="Publication Instagram du Club Entrepreneurs pour l'After Work du 23 mai" loading="lazy" />
+                  <img class="club-img-top" src="assets/projects/club-entrepreneurs/after-work.png" alt="Publication Instagram du Club Entrepreneurs pour l'After Work du 23 mai" loading="lazy" />
+                </button>
+              </div>
+              <div>
+                <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/after-work-story.png" data-lightbox-alt="Version story de l'affiche After Work, avec le contact du club" aria-label="Agrandir la version story">
+                  <img class="club-img-top" src="assets/projects/club-entrepreneurs/after-work-story.png" alt="Version story de l'affiche After Work, avec le contact du club" loading="lazy" />
                 </button>
               </div>
             </div>
@@ -107,33 +124,77 @@
             <span class="project-number">03</span>
             <h3>Identité visuelle du club</h3>
             <p>Logo officiel et palette de couleurs du Club Entrepreneurs EMLV (avril-mai 2025).</p>
-            <div class="ranch-pair ranch-frames">
-              <div>
+            <div class="ranch-pair ranch-frames club-identity-row">
+              <div class="club-logo-tile">
                 <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/logo-officiel.png" data-lightbox-alt="Logo officiel du Club Entrepreneurs EMLV" aria-label="Agrandir le logo officiel">
                   <img src="assets/projects/club-entrepreneurs/logo-officiel.png" alt="Logo officiel du Club Entrepreneurs EMLV" loading="lazy" />
                 </button>
               </div>
               <div>
                 <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/palette.svg" data-lightbox-alt="Palette de couleurs du Club Entrepreneurs EMLV" aria-label="Agrandir la palette de couleurs">
-                  <img src="assets/projects/club-entrepreneurs/palette.svg" alt="Palette de couleurs du Club Entrepreneurs EMLV" loading="lazy" />
+                  <img class="club-img-cover" src="assets/projects/club-entrepreneurs/palette.svg" alt="Palette de couleurs du Club Entrepreneurs EMLV" loading="lazy" />
+                </button>
+              </div>
+            </div>
+            <div class="ranch-pair ranch-frames club-banner-row">
+              <div>
+                <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/banniere-officielle.png" data-lightbox-alt="Bannière officielle du Club Entrepreneurs EMLV, logo et nom" aria-label="Agrandir la bannière officielle">
+                  <img class="club-img-cover" src="assets/projects/club-entrepreneurs/banniere-officielle.png" alt="Bannière officielle du Club Entrepreneurs EMLV, logo et nom" loading="lazy" />
                 </button>
               </div>
             </div>
             <div class="ranch-doc-actions">
               <a href="assets/projects/club-entrepreneurs/palette-couleurs.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir la palette ↗</a>
+              <a href="assets/projects/club-entrepreneurs/charte-graphique.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir la charte complète ↗</a>
             </div>
             <div class="ranch-work">
               <div class="ranch-group">
                 <p class="ranch-work-title">Livrable</p>
-                <p class="ranch-deliverable-text">Logo officiel et palette de couleurs</p>
+                <p class="ranch-deliverable-text">Logo officiel, palette et charte graphique</p>
               </div>
               <div class="ranch-group ranch-group--tools">
                 <p class="ranch-work-title">Outils utilisés</p>
-                <div class="ranch-tags"><span>À CONFIRMER</span></div>
+                <div class="ranch-tags"><span>Figma</span></div>
               </div>
               <div class="ranch-group ranch-group--skills">
                 <p class="ranch-work-title">Compétences mobilisées</p>
                 <div class="ranch-tags"><span>Identité visuelle</span><span>Création de logo</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card ranch-project-card">
+            <span class="project-number">04</span>
+            <h3>Communication de conférence</h3>
+            <p>Invitation pour la conférence « Gestion patrimoniale », en ligne sur Zoom le jeudi 24 avril 2025 à 17h30, avec Mathis Ferrera (Fondateur de Need, JH Conseil Patrimoine).</p>
+            <div class="ranch-pair ranch-frames club-conf-frame">
+              <div>
+                <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/conference-canva.png" data-lightbox-alt="Invitation Canva de la conférence Gestion patrimoniale avec Mathis Ferrera" aria-label="Agrandir l'invitation de la conférence">
+                  <img class="club-img-cover" src="assets/projects/club-entrepreneurs/conference-canva.png" alt="Invitation Canva de la conférence Gestion patrimoniale avec Mathis Ferrera" loading="lazy" />
+                </button>
+              </div>
+            </div>
+            <ul class="ranch-list">
+              <li>Base de l'investissement : bourse, immobilier…</li>
+              <li>Stratégies possibles</li>
+              <li>Analyser les risques</li>
+              <li>Outils numériques et plateformes à connaître</li>
+            </ul>
+            <div class="ranch-doc-actions">
+              <a href="assets/projects/club-entrepreneurs/flyer-conference.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir le programme détaillé ↗</a>
+            </div>
+            <div class="ranch-work">
+              <div class="ranch-group">
+                <p class="ranch-work-title">Livrable</p>
+                <p class="ranch-deliverable-text">Invitation Canva et programme détaillé</p>
+              </div>
+              <div class="ranch-group ranch-group--tools">
+                <p class="ranch-work-title">Outils utilisés</p>
+                <div class="ranch-tags"><span>Canva</span></div>
+              </div>
+              <div class="ranch-group ranch-group--skills">
+                <p class="ranch-work-title">Compétences mobilisées</p>
+                <div class="ranch-tags"><span>Communication événementielle</span><span>Création de visuels</span></div>
               </div>
             </div>
           </article>

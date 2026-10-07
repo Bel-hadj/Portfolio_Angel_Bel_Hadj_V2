@@ -750,10 +750,13 @@ button:focus-visible {
   background: linear-gradient(135deg, #1b1b2c, #201f33);
 }
 
-/* Visuel plus haut que le cadre 16/10 (ex. mockup Club Entrepreneurs) : entier
-   (contain) plutôt que recadré, pour ne pas couper le produit. */
-.card-thumb.card-thumb--contain {
-  object-fit: contain;
+/* Visuel dont la partie utile (titre, branding) est en haut plutôt qu'au
+   centre : garde le haut visible au lieu de recadrer sur le milieu de
+   l'image (ex. carte Club Entrepreneurs : la photo du bar, sans texte,
+   tombait au centre d'un visuel 1:1 dans un cadre 16/10). */
+.card-thumb.card-thumb--top {
+  object-fit: cover;
+  object-position: top;
 }
 
 /* Capture Emergent (ratio ~2,14) dans le cadre 16/10 : cadrage "cover" qui
@@ -1656,12 +1659,122 @@ main.ranch-detail-wide .hero-meta {
   border-radius: var(--radius-sm);
 }
 
-/* Page Club Entrepreneurs : visuel principal de la carte 01 plus grand, pour
-   réduire le vide sous le texte. Scopé à la classe club-frame-tall (The Ranch
-   n'est pas concerné). */
-@media (min-width: 561px) {
-  .ranch-projects-grid > .ranch-project-card:nth-child(1) .ranch-pair.ranch-frames.club-frame-tall button {
-    height: 560px;
+/* Page Club Entrepreneurs : les libellés "LIVRABLE" / "OUTILS UTILISÉS" et
+   leur valeur (.ranch-work-title, .ranch-deliverable-text) sont des <p>
+   dans .card, donc la règle générique ".card p" (plus spécifique qu'une
+   seule classe) les repassait en gris malgré leur couleur blanche déclarée
+   plus haut. Scopé à .club-detail : The Ranch n'est pas concerné. */
+.club-detail .ranch-work-title,
+.club-detail .ranch-deliverable-text {
+  color: #ffffff;
+}
+
+/* Visuels des projets Club Entrepreneurs : remplissent tout le cadre (cover)
+   plutôt que de flotter, plus petits, dans un cadre resté vide (contain,
+   hérité de The Ranch). Pas de déformation : cover recadre, il n'étire
+   jamais. Classes propres à cette page. */
+.club-detail .ranch-pair.ranch-frames.club-cover-frames img,
+.club-detail .ranch-pair.ranch-frames .club-img-cover {
+  object-fit: cover;
+}
+
+/* Garde le haut du visuel (titre, nom de l'événement) plutôt que le centre,
+   qui tombait sur la photo sans texte en bas de l'affiche. */
+.club-detail .club-img-top {
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Carte 03 (Identité) et carte 04 (Conférence) : le logo (carré), la palette
+   (2/1), la bannière (4.38/1) et l'affiche (presque carrée) n'ont pas du
+   tout la même forme. Les forcer à la même hauteur de case laissait un
+   grand vide autour des visuels larges, ou rognait le logo de façon
+   absurde. aspect-ratio donne à chaque case exactement la forme de son
+   visuel : avec cover, le remplissage est donc parfait, sans rognage et
+   sans vide, à n'importe quelle largeur d'écran (pas de recalcul par
+   media query). */
+.club-detail .ranch-pair.ranch-frames.club-identity-row .club-logo-tile {
+  flex: 0 0 170px;
+}
+
+.club-detail .ranch-pair.ranch-frames.club-identity-row .club-logo-tile button {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+.club-detail .ranch-pair.ranch-frames.club-identity-row > div:not(.club-logo-tile) button {
+  aspect-ratio: 2 / 1;
+  height: auto;
+}
+
+.club-detail .ranch-pair.ranch-frames.club-banner-row button {
+  aspect-ratio: 412 / 94;
+  height: auto;
+}
+
+.club-detail .ranch-pair.ranch-frames.club-conf-frame button {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+@media (max-width: 560px) {
+  .club-detail .ranch-pair.ranch-frames.club-identity-row .club-logo-tile {
+    flex: 1 1 100%;
+  }
+}
+
+/* Hero de la page Club Entrepreneurs : mosaïque de 4 réalisations réelles
+   plutôt qu'un seul visuel (logo ou affiche). Grande case à gauche (After
+   Work), trois cases empilées à droite (vidéo, identité, conférence). Les
+   coins arrondis et l'ombre viennent de .detail-hero (overflow: hidden),
+   inchangé. Scopé à cette page : aucune autre page n'utilise ces classes. */
+.club-hero-mosaic {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+  height: 520px;
+  background: var(--line);
+}
+
+.club-hero-mosaic .mosaic-main {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+}
+
+.club-hero-mosaic .mosaic-tile {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1b1b2c, #201f33);
+}
+
+.club-hero-mosaic .mosaic-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* After Work : garde le titre et le nom de l'événement en haut du visuel
+   plutôt que le centre (qui tombait sur la photo du bar, sans texte). */
+.club-hero-mosaic .mosaic-main img {
+  object-position: top;
+}
+
+@media (max-width: 760px) {
+  .club-hero-mosaic {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 220px 130px;
+    height: auto;
+  }
+
+  .club-hero-mosaic .mosaic-main {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+  }
+
+  .club-hero-mosaic .mosaic-tile:not(.mosaic-main) {
+    grid-row: 2;
   }
 }
 
@@ -1678,14 +1791,15 @@ main.ranch-detail-wide .hero-meta {
   margin-top: 6px;
 }
 
-/* Vidéos dans les cadres de la page Club Entrepreneurs : même hauteur et même
-   logique que les visuels, sans déformation (object-fit: contain). */
+/* Vidéos dans les cadres de la page Club Entrepreneurs : remplissent le
+   cadre (cover) comme les images, sans déformation (cover recadre, il
+   n'étire jamais). */
 .ranch-project-card .ranch-pair.ranch-frames video {
   display: block;
   box-sizing: border-box;
   width: 100%;
   height: 340px;
-  object-fit: contain;
+  object-fit: cover;
   background: #000;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
