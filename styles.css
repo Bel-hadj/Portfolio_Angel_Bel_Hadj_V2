@@ -1673,6 +1673,14 @@ main.ranch-detail-wide .hero-meta {
    plutôt que de flotter, plus petits, dans un cadre resté vide (contain,
    hérité de The Ranch). Pas de déformation : cover recadre, il n'étire
    jamais. Classes propres à cette page. */
+/* Les cartes de cette page n'ont pas toutes le même nombre de visuels :
+   forcer leur hauteur sur celle de leur voisine (align-items: stretch,
+   hérité de The Ranch) créait un grand vide sous le texte des cartes plus
+   courtes. Chaque carte garde ici sa propre hauteur naturelle. */
+.club-detail .ranch-projects-grid {
+  align-items: start;
+}
+
 .club-detail .ranch-pair.ranch-frames.club-cover-frames img,
 .club-detail .ranch-pair.ranch-frames .club-img-cover {
   object-fit: cover;
@@ -1685,31 +1693,26 @@ main.ranch-detail-wide .hero-meta {
   object-position: top;
 }
 
-/* Carte 03 (Identité) et carte 04 (Conférence) : le logo (carré), la palette
-   (2/1), la bannière (4.38/1) et l'affiche (presque carrée) n'ont pas du
-   tout la même forme. Les forcer à la même hauteur de case laissait un
-   grand vide autour des visuels larges, ou rognait le logo de façon
-   absurde. aspect-ratio donne à chaque case exactement la forme de son
-   visuel : avec cover, le remplissage est donc parfait, sans rognage et
-   sans vide, à n'importe quelle largeur d'écran (pas de recalcul par
-   media query). */
+/* Carte 03 (Identité) : chaque ligne de visuels a une hauteur commune un
+   peu plus grande qu'un simple ajustement au ratio exact, pour que les
+   réalisations occupent davantage la carte (et se rapprochent de la
+   hauteur de la carte 04). Avec cover, cela implique un très léger
+   rognage sur les bords (quelques % par visuel, vérifié visuellement) :
+   jamais de déformation, jamais un visuel méconnaissable. */
 .club-detail .ranch-pair.ranch-frames.club-identity-row .club-logo-tile {
-  flex: 0 0 170px;
+  flex: 0 0 200px;
 }
 
-.club-detail .ranch-pair.ranch-frames.club-identity-row .club-logo-tile button {
-  aspect-ratio: 1 / 1;
-  height: auto;
-}
-
-.club-detail .ranch-pair.ranch-frames.club-identity-row > div:not(.club-logo-tile) button {
-  aspect-ratio: 2 / 1;
-  height: auto;
+.club-detail .ranch-pair.ranch-frames.club-identity-row button {
+  height: 214px;
 }
 
 .club-detail .ranch-pair.ranch-frames.club-banner-row button {
-  aspect-ratio: 412 / 94;
-  height: auto;
+  height: 140px;
+}
+
+.club-detail .ranch-pair.ranch-frames.club-extra-row button {
+  height: 300px;
 }
 
 .club-detail .ranch-pair.ranch-frames.club-conf-frame button {
@@ -1717,9 +1720,65 @@ main.ranch-detail-wide .hero-meta {
   height: auto;
 }
 
+/* Carte 04 : espacements verticaux resserrés (liste, bouton, bloc du bas)
+   pour se rapprocher de la hauteur de la carte 03, sans retirer de
+   contenu. Scopé à cette carte précise, les autres projets gardent leurs
+   espacements d'origine. */
+.club-detail .club-card-04 .ranch-list {
+  margin-bottom: 10px;
+}
+
+.club-detail .club-card-04 .ranch-doc-actions {
+  margin: 12px 0 8px;
+}
+
+.club-detail .club-card-04 .ranch-work {
+  margin-top: 4px;
+}
+
+/* Carte 01 : espacements resserrés (bouton, liste, bloc du bas), pour se
+   rapprocher de la hauteur de la carte 02 sans toucher à cette dernière. */
+.club-detail .club-card-01 .ranch-list {
+  margin-bottom: 8px;
+}
+
+.club-detail .club-card-01 .ranch-work {
+  margin-top: 4px;
+  min-height: 266px; /* secours si le JS n'a pas encore tourné ; le script ajuste ensuite la valeur exacte en direct */
+}
+
 @media (max-width: 560px) {
+  /* En une colonne, les cases empilées deviennent plus larges que hautes :
+     les hauteurs fixes du desktop couperaient le haut/bas des visuels au
+     lieu des côtés. Retour à une hauteur automatique, sans aucun rognage,
+     comme demandé pour le mobile. */
   .club-detail .ranch-pair.ranch-frames.club-identity-row .club-logo-tile {
     flex: 1 1 100%;
+  }
+
+  .club-detail .ranch-pair.ranch-frames.club-identity-row .club-logo-tile button {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .club-detail .ranch-pair.ranch-frames.club-identity-row > div:not(.club-logo-tile) button {
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+
+  .club-detail .ranch-pair.ranch-frames.club-banner-row button {
+    height: auto;
+    aspect-ratio: 412 / 94;
+  }
+
+  .club-detail .ranch-pair.ranch-frames.club-extra-row .club-mockup-tile button {
+    height: auto;
+    aspect-ratio: 8 / 7;
+  }
+
+  .club-detail .ranch-pair.ranch-frames.club-extra-row .club-mono-tile button {
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
 
@@ -2555,7 +2614,8 @@ a.ranch-pair-caption:hover {
   max-height: 90vh;
 }
 
-.lightbox-inner img {
+.lightbox-inner img,
+.lightbox-inner video {
   display: block;
   width: auto;
   height: auto;
@@ -2563,6 +2623,14 @@ a.ranch-pair-caption:hover {
   max-height: 90vh;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-hover);
+  object-fit: contain;
+}
+
+/* display: block ci-dessus passe outre l'attribut hidden par défaut : sans
+   cette règle, la vidéo masquée restait visible (cadre noir vide) sous une
+   image statique. */
+.lightbox-inner video[hidden] {
+  display: none;
 }
 
 .lightbox-close {
@@ -2585,6 +2653,33 @@ a.ranch-pair-caption:hover {
 }
 
 .lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Bouton téléchargement optionnel : même style que .lightbox-close, côté
+   opposé. N'apparaît que sur les pages dont le lightbox inclut cet élément
+   (#lightboxDownload), donc sans effet ailleurs. */
+.lightbox-download {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--surface-solid);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 1.1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.lightbox-download:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }

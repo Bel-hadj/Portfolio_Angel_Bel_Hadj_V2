@@ -52,14 +52,39 @@ if (lightbox) {
   const lightboxClose = document.getElementById("lightboxClose");
   const lightboxPrev = document.getElementById("lightboxPrev");
   const lightboxNext = document.getElementById("lightboxNext");
+  const lightboxDownload = document.getElementById("lightboxDownload");
+  const lightboxVideo = document.getElementById("lightboxVideo");
   let lastFocusedBeforeLightbox = null;
   let currentGroup = null;
   let currentIndex = -1;
+
+  // Bascule image/vidéo dans le viewer : affiche le bon élément (contain,
+  // jamais rogné) et met en pause/réinitialise l'autre. N'a d'effet que sur
+  // les pages dont le lightbox inclut #lightboxVideo.
+  function setMedia(src, alt, type) {
+    if (type === "video" && lightboxVideo) {
+      lightboxImage.hidden = true;
+      lightboxImage.src = "";
+      lightboxVideo.hidden = false;
+      lightboxVideo.src = src;
+    } else {
+      if (lightboxVideo) {
+        lightboxVideo.hidden = true;
+        lightboxVideo.pause();
+        lightboxVideo.src = "";
+      }
+      lightboxImage.hidden = false;
+      lightboxImage.src = src;
+      lightboxImage.alt = alt || "";
+    }
+    if (lightboxDownload) lightboxDownload.href = src;
+  }
 
   function getGroupItems(groupName) {
     const items = Array.from(document.querySelectorAll('[data-lightbox-group="' + groupName + '"]')).map((el) => ({
       src: el.dataset.lightboxSrc,
       alt: el.dataset.lightboxAlt || "",
+      type: el.dataset.lightboxType || "image",
     }));
     // Déduplique par src : un bouton "voir toutes les photos" peut partager la
     // même image qu'une vignette déjà affichée (il sert juste de point d'entrée
@@ -82,8 +107,7 @@ if (lightbox) {
     if (!currentGroup || !currentGroup.length) return;
     currentIndex = (index + currentGroup.length) % currentGroup.length;
     const item = currentGroup[currentIndex];
-    lightboxImage.src = item.src;
-    lightboxImage.alt = item.alt;
+    setMedia(item.src, item.alt, item.type);
   }
 
   const onLightboxKeydown = (e) => {
@@ -92,7 +116,7 @@ if (lightbox) {
     if (e.key === "ArrowRight") showAt(currentIndex + 1);
   };
 
-  function openLightbox(src, alt, groupName) {
+  function openLightbox(src, alt, groupName, type) {
     lastFocusedBeforeLightbox = document.activeElement;
     if (groupName) {
       currentGroup = getGroupItems(groupName);
@@ -102,8 +126,7 @@ if (lightbox) {
     } else {
       currentGroup = null;
       currentIndex = -1;
-      lightboxImage.src = src;
-      lightboxImage.alt = alt || "";
+      setMedia(src, alt, type);
     }
     updateNavVisibility();
     lightbox.hidden = false;
@@ -116,6 +139,10 @@ if (lightbox) {
     lightbox.hidden = true;
     document.body.style.overflow = "";
     lightboxImage.src = "";
+    if (lightboxVideo) {
+      lightboxVideo.pause();
+      lightboxVideo.src = "";
+    }
     currentGroup = null;
     currentIndex = -1;
     document.removeEventListener("keydown", onLightboxKeydown);
@@ -126,7 +153,7 @@ if (lightbox) {
 
   document.querySelectorAll(".gallery-trigger").forEach((trigger) => {
     trigger.addEventListener("click", () => {
-      openLightbox(trigger.dataset.lightboxSrc, trigger.dataset.lightboxAlt, trigger.dataset.lightboxGroup);
+      openLightbox(trigger.dataset.lightboxSrc, trigger.dataset.lightboxAlt, trigger.dataset.lightboxGroup, trigger.dataset.lightboxType);
     });
   });
 
@@ -136,4 +163,27 @@ if (lightbox) {
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) closeLightbox();
   });
+}
+
+// Page Club Entrepreneurs : égalise en direct la hauteur des blocs
+// Livrable/Outils/Compétences des cartes 01 et 02, en mesurant le rendu
+// réel du navigateur plutôt qu'une valeur fixe (fiable quelle que soit la
+// police ou l'affichage). Sans effet sur les autres pages.
+const club01Work = document.querySelector(".club-card-01 .ranch-work");
+const club02Work = document.querySelector(".club-card-02 .ranch-work");
+if (club01Work && club02Work) {
+  const equalizeClubWork = () => {
+    club01Work.style.minHeight = "0px";
+    club02Work.style.minHeight = "0px";
+    const tallest = Math.max(club01Work.offsetHeight, club02Work.offsetHeight);
+    club01Work.style.minHeight = tallest + "px";
+    club02Work.style.minHeight = tallest + "px";
+  };
+  equalizeClubWork();
+  window.addEventListener("resize", equalizeClubWork);
+  window.addEventListener("load", equalizeClubWork);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(equalizeClubWork);
+  }
+  setTimeout(equalizeClubWork, 400);
 }
