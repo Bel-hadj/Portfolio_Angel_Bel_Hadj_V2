@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Image à ajouter">
+  <rect width="800" height="500" fill="#131316"/>
+  <rect x="1" y="1" width="798" height="498" fill="none" stroke="rgba(49,168,255,0.25)" stroke-width="2"/>
+  <g transform="translate(400,210)" fill="none" stroke="#31a8ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-44" y="-32" width="88" height="64" rx="8"/>
+    <circle cx="-16" cy="-10" r="9"/>
+    <path d="M-44 20 l26 -24 l20 18 l18 -22 l24 28"/>
+  </g>
+  <text x="400" y="300" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">[IMAGE À AJOUTER]</text>
+</svg>

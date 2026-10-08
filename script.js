@@ -165,16 +165,28 @@ if (lightbox) {
   });
 }
 
-// Page Club Entrepreneurs : égalise en direct la hauteur des blocs
-// Livrable/Outils/Compétences des cartes 01 et 02, en mesurant le rendu
-// réel du navigateur plutôt qu'une valeur fixe (fiable quelle que soit la
-// police ou l'affichage). Sans effet sur les autres pages.
+// En dessous de 900px, .ranch-projects-grid repasse en une seule colonne
+// (voir styles.css) : les cartes "par paire" ne sont plus côte à côte, donc
+// forcer leurs blocs à la même hauteur ne ferait qu'ajouter un vide inutile
+// en bas de la plus courte. L'égaliseur ci-dessous s'appuie sur ce même
+// seuil pour rester "hauteur automatique" en mobile.
+const isRanchGridTwoColumns = () => window.matchMedia("(min-width: 901px)").matches;
+
+// Page Club Entrepreneurs : le bas du cadre Livrable/Outils/Compétences des
+// cartes 01 et 02 est déjà aligné en CSS pur (.club-card-01, .club-card-02 :
+// align-self + margin-top: auto sur .ranch-work, voir styles.css). Il reste
+// à égaliser leur hauteur, qui diffère naturellement selon le nombre de
+// lignes que prennent les outils/compétences une fois le texte rendu dans
+// le navigateur réel (pas reproductible en CSS statique). Une fois la
+// hauteur égale, le haut s'aligne aussi automatiquement (même bas + même
+// hauteur). Sans effet sur les autres pages.
 const club01Work = document.querySelector(".club-card-01 .ranch-work");
 const club02Work = document.querySelector(".club-card-02 .ranch-work");
 if (club01Work && club02Work) {
   const equalizeClubWork = () => {
     club01Work.style.minHeight = "0px";
     club02Work.style.minHeight = "0px";
+    if (!isRanchGridTwoColumns()) return;
     const tallest = Math.max(club01Work.offsetHeight, club02Work.offsetHeight);
     club01Work.style.minHeight = tallest + "px";
     club02Work.style.minHeight = tallest + "px";
@@ -186,4 +198,69 @@ if (club01Work && club02Work) {
     document.fonts.ready.then(equalizeClubWork);
   }
   setTimeout(equalizeClubWork, 400);
+}
+
+// Page The Ranch : égalise en direct la hauteur des blocs Livrable/Outils/
+// Compétences des cartes 01/02 et 03/04, en mesurant le rendu réel du
+// navigateur. Ignoré sur Club Entrepreneurs (présence de .club-detail),
+// qui a son propre réglage ci-dessus.
+const ranchGrid = document.querySelector(".ranch-projects-grid");
+if (ranchGrid && !document.querySelector(".club-detail")) {
+  const ranchCards = Array.from(ranchGrid.querySelectorAll(".ranch-project-card"));
+  const ranchPairs = [
+    [ranchCards[0], ranchCards[1]],
+    [ranchCards[2], ranchCards[3]],
+  ];
+  const equalizeRanchWork = () => {
+    ranchPairs.forEach(([cardA, cardB]) => {
+      const workA = cardA && cardA.querySelector(".ranch-work");
+      const workB = cardB && cardB.querySelector(".ranch-work");
+      if (!workA || !workB) return;
+      workA.style.minHeight = "0px";
+      workB.style.minHeight = "0px";
+      if (!isRanchGridTwoColumns()) return;
+      const tallest = Math.max(workA.offsetHeight, workB.offsetHeight);
+      workA.style.minHeight = tallest + "px";
+      workB.style.minHeight = tallest + "px";
+    });
+  };
+  equalizeRanchWork();
+  window.addEventListener("resize", equalizeRanchWork);
+  window.addEventListener("load", equalizeRanchWork);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(equalizeRanchWork);
+  }
+  setTimeout(equalizeRanchWork, 400);
+}
+
+// Page Escape Game Château Lutenberg : le bouton "Télécharger le PSD" des
+// cartes 01 et 02 ne démarrait pas à la même hauteur, car leurs descriptions
+// (texte réel, longueur différente) ne font pas le même nombre de lignes
+// une fois rendues dans le navigateur. Égalise la hauteur de ces deux
+// paragraphes (mesure réelle) pour que tout ce qui suit (bouton PSD) soit
+// aligné, sans toucher au texte, aux images ni aux cadres LIVRABLE/OUTILS/
+// COMPÉTENCES (déjà alignés séparément ci-dessus).
+const escapeGrid = document.querySelector(".escape-detail .ranch-projects-grid");
+if (escapeGrid) {
+  const escCard1 = escapeGrid.children[0];
+  const escCard2 = escapeGrid.children[1];
+  const escP1 = escCard1 && escCard1.querySelector(":scope > p");
+  const escP2 = escCard2 && escCard2.querySelector(":scope > p");
+  if (escP1 && escP2) {
+    const equalizeEscapeIntro = () => {
+      escP1.style.minHeight = "0px";
+      escP2.style.minHeight = "0px";
+      if (!isRanchGridTwoColumns()) return;
+      const tallest = Math.max(escP1.offsetHeight, escP2.offsetHeight);
+      escP1.style.minHeight = tallest + "px";
+      escP2.style.minHeight = tallest + "px";
+    };
+    equalizeEscapeIntro();
+    window.addEventListener("resize", equalizeEscapeIntro);
+    window.addEventListener("load", equalizeEscapeIntro);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(equalizeEscapeIntro);
+    }
+    setTimeout(equalizeEscapeIntro, 400);
+  }
 }

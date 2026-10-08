@@ -1541,16 +1541,36 @@ main.project-detail-showcase.ranch-detail-wide {
   background: rgba(255, 255, 255, 0.03);
 }
 
-.ranch-work-title {
-  margin: 14px 0 8px;
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #ffffff;
+/* The Ranch uniquement : le contenu au-dessus du cadre LIVRABLE/OUTILS/
+   COMPÉTENCES n'a pas la même hauteur naturelle d'une carte à l'autre
+   (ex. le bloc partenaires + sous-titre du projet 02, absent du projet
+   01). .ranch-project-card est déjà une colonne flex et les cartes d'une
+   même rangée ont déjà la même hauteur totale (align-items: stretch sur
+   .ranch-projects-grid) : ancrer ce cadre en bas de la colonne (au lieu
+   de le laisser suivre le contenu) le rend flush avec le bas de la carte
+   dans les deux cas, donc avec le même haut ET le même bas d'une rangée à
+   l'autre, sans rien retirer ni resserrer le contenu au-dessus. Non
+   appliqué à Club Entrepreneurs, qui a son propre réglage par carte. */
+main.ranch-detail-wide:not(.club-detail) .ranch-work {
+  margin-top: auto;
 }
 
-.ranch-work-title:first-child {
+/* Titre de catégorie (LIVRABLE / OUTILS UTILISÉS / COMPÉTENCES MOBILISÉES) :
+   plus petit, en couleur secondaire, nettement moins dominant que sa valeur
+   juste en dessous, pour qu'un recruteur distingue catégorie et information
+   au premier coup d'œil. Sélectionné via .ranch-work pour primer sur la
+   règle générique ".card p" (gris) qui sinon neutralise la couleur ici ;
+   règle commune aux deux pages (The Ranch et Club Entrepreneurs). */
+.ranch-work .ranch-work-title {
+  margin: 14px 0 6px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+}
+
+.ranch-work .ranch-work-title:first-child {
   margin-top: 0;
 }
 
@@ -1659,16 +1679,6 @@ main.ranch-detail-wide .hero-meta {
   border-radius: var(--radius-sm);
 }
 
-/* Page Club Entrepreneurs : les libellés "LIVRABLE" / "OUTILS UTILISÉS" et
-   leur valeur (.ranch-work-title, .ranch-deliverable-text) sont des <p>
-   dans .card, donc la règle générique ".card p" (plus spécifique qu'une
-   seule classe) les repassait en gris malgré leur couleur blanche déclarée
-   plus haut. Scopé à .club-detail : The Ranch n'est pas concerné. */
-.club-detail .ranch-work-title,
-.club-detail .ranch-deliverable-text {
-  color: #ffffff;
-}
-
 /* Visuels des projets Club Entrepreneurs : remplissent tout le cadre (cover)
    plutôt que de flotter, plus petits, dans un cadre resté vide (contain,
    hérité de The Ranch). Pas de déformation : cover recadre, il n'étire
@@ -1717,11 +1727,36 @@ main.ranch-detail-wide .hero-meta {
 
 .club-detail .ranch-pair.ranch-frames.club-identity-row > div:not(.club-logo-tile) button {
   height: auto;
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 500 / 220;
 }
 
+/* Le logo horizontal (fusée + texte) a un fond quasi sans marge interne
+   (le pixel de contenu touche presque le bord gauche du fichier) et un
+   ratio (412:94) différent du cadre (object-fit: cover rognait la fusée
+   à gauche et le texte à droite). On passe en contain, sur un cadre à
+   son ratio exact + un peu de padding, pour voir le logo entier et
+   centré, sans toucher au fichier image ni aux autres visuels. */
 .club-detail .ranch-pair.ranch-frames.club-banner-row button {
-  height: 140px;
+  height: auto;
+  aspect-ratio: 412 / 94;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 28px;
+}
+
+.club-detail .ranch-pair.ranch-frames.club-banner-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Le cadre du logo est un peu moins haut depuis le passage à son ratio
+   réel (412:94 au lieu de 140px fixe), ce qui a raccourci la carte 03
+   d'une dizaine de pixels par rapport à la carte 04. On compense par un
+   micro-ajustement de marge, sans toucher au logo ni aux autres visuels. */
+.club-detail .club-banner-row {
+  margin-bottom: 32px;
 }
 
 .club-detail .ranch-pair.ranch-frames.club-extra-row button {
@@ -1755,9 +1790,22 @@ main.ranch-detail-wide .hero-meta {
   margin-bottom: 8px;
 }
 
-.club-detail .club-card-01 .ranch-work {
-  margin-top: 4px;
-  min-height: 266px; /* secours si le JS n'a pas encore tourné ; le script ajuste ensuite la valeur exacte en direct */
+/* Cartes 01 et 02 : leur contenu (texte, visuels, outils) n'a jamais la
+   même longueur naturelle, donc leurs cadres LIVRABLE/OUTILS/COMPÉTENCES
+   ne partent pas du même point si on les laisse suivre le flux normal.
+   .ranch-project-card est une colonne flex ; on stretch ces deux cartes
+   précises à la hauteur de leur rangée (sans toucher à align-items: start
+   du reste de la grille, qui protège les autres cartes d'un grand vide),
+   puis on ancre leur cadre en bas de la colonne : même bas + même hauteur
+   => même haut, sans marge artificielle ni script de mesure. */
+.club-detail .club-card-01,
+.club-detail .club-card-02 {
+  align-self: stretch;
+}
+
+.club-detail .club-card-01 .ranch-work,
+.club-detail .club-card-02 .ranch-work {
+  margin-top: auto;
 }
 
 /* Carte 02 : son bouton "Voir la proposition" (absent de la carte 01)
@@ -1786,7 +1834,7 @@ main.ranch-detail-wide .hero-meta {
 
   .club-detail .ranch-pair.ranch-frames.club-identity-row > div:not(.club-logo-tile) button {
     height: auto;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 500 / 220;
   }
 
   .club-detail .ranch-pair.ranch-frames.club-banner-row button {
@@ -2370,11 +2418,14 @@ a.ranch-pair-caption:hover {
   cursor: pointer;
 }
 
-.ranch-deliverable-text {
+/* Valeur sous le titre de catégorie : blanc pur, graisse forte, contraste
+   maximum (voir .ranch-work .ranch-work-title ci-dessus pour le titre).
+   Même logique .ranch-work pour primer sur ".card p". */
+.ranch-work .ranch-deliverable-text {
   margin: 0;
   color: #ffffff;
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.4;
 }
 
@@ -3458,6 +3509,136 @@ a.ranch-pair-caption:hover {
   filter: brightness(1.08);
 }
 
+/* .snapshot-item .snapshot-label est colorée en beige Terra par défaut (voir
+   plus bas) : réaccordée ici en vert Xbox pour le bloc d'infos clés de cette
+   fiche, sans toucher au composant partagé. */
+.xbox-theme .snapshot-item .snapshot-label {
+  color: #8fe89a;
+}
+
+/* Accent Fandom (bleu profond), utilisé uniquement sur cette fiche projet —
+   nouvelles classes additives, aucune règle partagée n'est modifiée. */
+.tag-fandom {
+  background: rgba(47, 91, 255, 0.22);
+  color: #9db8ff;
+  border-color: rgba(157, 184, 255, 0.35);
+}
+
+.fandom-glow {
+  box-shadow: var(--shadow), 0 0 70px -25px rgba(47, 91, 255, 0.45);
+}
+
+.fandom-btn-primary {
+  background: linear-gradient(135deg, #15224f, #2f5bff);
+  color: #fff;
+  border-color: transparent;
+}
+
+.fandom-btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+/* Accent Adobe Photoshop (bleu Photoshop), utilisé uniquement sur cette
+   fiche projet — nouvelles classes additives, aucune règle partagée n'est
+   modifiée. Sobre : accents (badge, glow, boutons), pas de fond flashy. */
+.tag-photoshop {
+  background: rgba(49, 168, 255, 0.2);
+  color: #7fcaff;
+  border-color: rgba(127, 202, 255, 0.35);
+}
+
+.photoshop-glow {
+  box-shadow: var(--shadow), 0 0 70px -25px rgba(49, 168, 255, 0.4);
+}
+
+.photoshop-btn-primary {
+  background: linear-gradient(135deg, #001e36, #31a8ff);
+  color: #fff;
+  border-color: transparent;
+}
+
+.photoshop-btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+/* Fiche "Adobe Photoshop for Business" : réutilise le système de cartes de
+   Club Entrepreneurs (.ranch-project-card). Les visuels remplissent leur
+   cadre (cover) plutôt que de flotter dans un cadre blanc hérité de The
+   Ranch, sans déformation. */
+.photoshop-detail .ranch-pair.ranch-frames img {
+  object-fit: cover;
+}
+
+/* Neutralise ici l'exception "carte 01 plus haute" héritée de The Ranch
+   (.ranch-projects-grid > :nth-child(1) ... { height: 400px }, pensée pour
+   un cas précis sur cette page-là) : les cartes de cette page doivent
+   garder une hauteur de cadre identique entre elles. */
+@media (min-width: 561px) {
+  .photoshop-detail .ranch-projects-grid > .ranch-project-card:nth-child(1) .ranch-pair.ranch-frames button {
+    height: 340px;
+  }
+}
+
+/* Carte 03 (création Noël) : seule sur sa rangée (3 cartes réelles dans
+   une grille à 2 colonnes) — occupe toute la largeur plutôt que de laisser
+   un grand vide à côté. Cadre plus haut que les autres (format large
+   16:9 du visuel) pour limiter le recadrage. */
+.photoshop-detail .photoshop-card-full {
+  grid-column: 1 / -1;
+}
+
+/* Petit titre de bloc libre (ex. "Travail réalisé") hors du cadre
+   LIVRABLE/OUTILS/COMPÉTENCES : même traitement que .ranch-work .ranch-work-title
+   (bleu clair, capitales, gras) pour rester cohérent avec le reste de la page. */
+.photoshop-detail .ranch-work-note-title,
+.escape-detail .ranch-work-note-title {
+  margin: 0 0 6px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+}
+
+/* Fiche Escape Game Château Lutenberg : visuels (mockups) remplissent leur
+   cadre (cover) plutôt que de flotter dans un cadre blanc hérité de The
+   Ranch, sans déformation. */
+.escape-detail .ranch-pair.ranch-frames img {
+  object-fit: cover;
+}
+
+/* Neutralise l'exception "carte 01 plus haute" héritée de The Ranch,
+   pour garder une hauteur de cadre identique entre les cartes de cette
+   page. */
+@media (min-width: 561px) {
+  .escape-detail .ranch-projects-grid > .ranch-project-card:nth-child(1) .ranch-pair.ranch-frames button {
+    height: 340px;
+  }
+}
+
+/* Hero mosaïque à 3 visuels réels (pas de 4e image disponible) : variante
+   à 2 rangées du composant .club-hero-mosaic (déjà partagé avec Club
+   Entrepreneurs), scopée à cette classe pour ne rien changer ailleurs. */
+.escape-hero-mosaic {
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.escape-hero-mosaic .mosaic-main {
+  grid-row: 1 / span 2;
+}
+
+@media (max-width: 760px) {
+  .escape-hero-mosaic {
+    grid-template-rows: 220px 130px;
+  }
+}
+
+@media (min-width: 561px) {
+  .photoshop-detail .photoshop-card-full .ranch-pair.ranch-frames button {
+    height: 480px;
+  }
+}
+
 /* Accent Terra Ética (brun chocolat / caramel), utilisé uniquement sur cette
    fiche projet — nouvelles classes additives, aucune règle partagée modifiée. */
 .tag-terra {
@@ -3716,6 +3897,62 @@ a.ranch-pair-caption:hover {
 .category-experience {
   background: rgba(244, 114, 182, 0.18);
   color: #fbcfe8;
+}
+
+/* Badge année des cartes d'accueil : posé en absolu sur le coin de la
+   vignette (ne modifie donc jamais la hauteur de la carte), plus visible
+   qu'un petit tag classique mais sans dépasser le titre. Texte blanc
+   toujours très lisible ; seule la couleur du contour change pour rester
+   cohérente avec la catégorie du projet (mêmes teintes que les tags
+   category-*). Nécessite .info-card en position: relative (ajouté ci-dessous). */
+.info-card {
+  position: relative;
+}
+
+.card-year-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  background: rgba(8, 9, 14, 0.78);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.card-year-badge.category-web {
+  border-color: #818cf8;
+}
+
+.card-year-badge.category-marketing {
+  border-color: #fbbf24;
+}
+
+.card-year-badge.category-design {
+  border-color: #22d3ee;
+}
+
+.card-year-badge.category-communication {
+  border-color: #34d399;
+}
+
+.card-year-badge.category-experience {
+  border-color: #f472b6;
+}
+
+@media (max-width: 480px) {
+  .card-year-badge {
+    top: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+    padding: 4px 11px;
+  }
 }
 
 /* Carte "info" (sans visuel de couverture) utilisée pour les projets web et
