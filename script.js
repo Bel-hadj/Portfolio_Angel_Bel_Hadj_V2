@@ -264,3 +264,30 @@ if (escapeGrid) {
     setTimeout(equalizeEscapeIntro, 400);
   }
 }
+
+// Page d'accueil : les 4 cartes de compétences ("Ce que je peux apporter")
+// n'ont pas la même hauteur naturelle (texte/tags de longueur différente).
+// Les tags sont déjà ancrés en bas de chaque carte (margin-top: auto en
+// CSS) ; égaliser la hauteur des 4 cartes suffit donc à aligner le reste
+// proprement, sans gros trou au milieu. Mesure réelle du navigateur,
+// désactivée sous 901px (cartes empilées : hauteur automatique).
+const skillCards = document.querySelectorAll(".skills-showcase .skill-card");
+if (skillCards.length) {
+  const equalizeSkillCards = () => {
+    skillCards.forEach((c) => {
+      c.style.minHeight = "0px";
+    });
+    if (!window.matchMedia("(min-width: 901px)").matches) return;
+    const tallest = Math.max(...Array.from(skillCards).map((c) => c.offsetHeight));
+    skillCards.forEach((c) => {
+      c.style.minHeight = tallest + "px";
+    });
+  };
+  equalizeSkillCards();
+  window.addEventListener("resize", equalizeSkillCards);
+  window.addEventListener("load", equalizeSkillCards);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(equalizeSkillCards);
+  }
+  setTimeout(equalizeSkillCards, 400);
+}

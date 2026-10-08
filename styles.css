@@ -196,6 +196,21 @@ button:focus-visible {
   align-items: center;
 }
 
+/* Sur desktop, le hero (quasi plein écran) laisse un grand vide avant les
+   statistiques quand le contenu réel est plus court que la fenêtre
+   (contenu centré verticalement). Hauteur réduite ici uniquement en
+   desktop large : le visiteur arrive plus vite aux projets au scroll,
+   sans perdre la respiration du design en mobile/tablette. */
+@media (min-width: 1025px) {
+  .hero {
+    min-height: calc(82vh - 76px);
+  }
+
+  #accueil.section {
+    padding-bottom: 36px;
+  }
+}
+
 .hero::before,
 .hero::after {
   content: "";
@@ -895,6 +910,8 @@ button:focus-visible {
 }
 
 .skill-card {
+  display: flex;
+  flex-direction: column;
   padding: 24px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -910,6 +927,75 @@ button:focus-visible {
   flex-wrap: wrap;
   gap: 7px;
   margin-top: 16px;
+}
+
+/* Cartes de compétences (section "Ce que je peux apporter") : contenu
+   aligné en haut, tags ancrés en bas via flex (plutôt qu'un grand trou
+   au milieu si une carte a moins de texte) ; voir aussi l'égalisation de
+   hauteur des 4 cartes dans script.js. */
+.skill-card .skill-tags {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+/* Finitions "premium" des 4 cartes de compétences : padding un peu plus
+   généreux, titre plus affirmé, meilleure hiérarchie icône / titre /
+   texte / tags. Scopé à .skill-card pour ne rien changer ailleurs
+   (les cartes projets/étapes réutilisent .card sans cette classe). */
+.skill-card {
+  padding: 28px;
+}
+
+.skill-card h3 {
+  font-size: 1.18rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  line-height: 1.6;
+}
+
+/* Icônes de catégorie : chip plus grand, dégradé doux propre à chaque
+   univers (au lieu des classes .icon-* partagées avec les badges d'étape
+   numérotés d'autres pages, pour ne jamais les affecter), anneau discret,
+   aucune touche cartoon. */
+.skills-showcase .card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.skills-showcase .card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.skill-icon-web {
+  background: linear-gradient(135deg, rgba(47, 123, 255, 0.22), rgba(47, 123, 255, 0.06));
+  border-color: rgba(91, 157, 255, 0.35);
+  color: var(--primary-light);
+}
+
+.skill-icon-marketing {
+  background: linear-gradient(135deg, rgba(217, 70, 239, 0.22), rgba(217, 70, 239, 0.06));
+  border-color: rgba(232, 121, 249, 0.35);
+  color: #e879f9;
+}
+
+.skill-icon-design {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.24), rgba(99, 102, 241, 0.06));
+  border-color: rgba(129, 140, 248, 0.35);
+  color: #818cf8;
+}
+
+.skill-icon-business {
+  background: linear-gradient(135deg, rgba(202, 138, 4, 0.26), rgba(202, 138, 4, 0.08));
+  border-color: rgba(234, 179, 8, 0.4);
+  color: #eab308;
 }
 
 .skill-tags span {
@@ -1179,7 +1265,15 @@ button:focus-visible {
 }
 
 .cta-section {
-  padding: 0 0 92px;
+  padding: 0 0 56px;
+}
+
+/* Resserre légèrement l'espace Formation → CTA → Contact → Footer en bas
+   de page (restait très généreux avec le padding par défaut de .section
+   cumulé entre chaque bloc), sans supprimer la respiration du design. */
+#contact.section {
+  padding-top: 56px;
+  padding-bottom: 64px;
 }
 
 .cta-box {
