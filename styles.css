@@ -355,6 +355,22 @@ button:focus-visible {
   gap: 10px;
 }
 
+.hero-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  transition: gap 0.2s ease;
+}
+
+.hero-github-link:hover,
+.hero-github-link:focus-visible {
+  gap: 10px;
+}
+
 .social-icon.sm {
   position: relative;
   width: 38px;
