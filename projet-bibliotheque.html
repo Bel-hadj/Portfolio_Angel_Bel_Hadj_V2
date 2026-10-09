@@ -46,15 +46,12 @@
         </div>
 
         <h2 data-i18n="dvd.h2Context">Contexte</h2>
-        <p data-i18n="dvd.pContext">Projet SAE 203 (BUT MMI, IUT de Haguenau – Université de Strasbourg) : une filmothèque web connectée à une base de données MySQL, avec PHP, Twig et PDO.</p>
+        <p data-i18n="dvd.pContext">Projet réalisé dans le cadre de la SAE 203 (BUT MMI, IUT de Haguenau – Université de Strasbourg) : une filmothèque web connectée à une base de données MySQL.</p>
 
         <h2 data-i18n="dvd.h2Objective">Objectif</h2>
-        <p data-i18n="dvd.pObjective">Aller au-delà d’une simple liste de films : plusieurs sections reliées entre elles, une base de données propre et des formulaires sécurisés.</p>
+        <p data-i18n="dvd.pObjective">Créer une filmothèque dynamique permettant de consulter et rechercher des films à partir d’une base MySQL, avec plusieurs sections reliées entre elles plutôt qu’une simple liste.</p>
 
-        <h2 data-i18n="dvd.h2Presentation">Présentation du projet</h2>
-        <p data-i18n="dvd.pPresentation">Catalogue de 30 DVD filtrable par catégorie, avec recherche et commentaires sur chaque fiche film.</p>
-
-        <h2 data-i18n="dvd.h2Features">Fonctionnalités principales</h2>
+        <h2 data-i18n="dvd.h2Features">Fonctionnalités</h2>
         <div class="reality-grid">
           <div>
             <strong data-i18n="dvd.f1Title">Catalogue de films</strong>
@@ -82,7 +79,9 @@
           </div>
         </div>
 
-        <h2 data-i18n="dvd.h2Tech">Technologies utilisées</h2>
+        <h2 data-i18n="dvd.h2Design">Design &amp; développement</h2>
+        <p data-i18n="dvd.pDesign1">Conception et développement des pages de consultation (catalogue, détail, nouveautés, histoire) en PHP : les données sont récupérées via PDO (requêtes préparées) puis affichées par des templates Twig — jamais de HTML généré directement en PHP.</p>
+        <p data-i18n="dvd.pDesign2">Les jointures SQL entre tables (films, genres, catégories) et la sécurisation des formulaires (CSRF) ont demandé plusieurs itérations — une bonne occasion de manipuler une vraie base relationnelle avec un moteur de templates plutôt que du PHP mélangé au HTML.</p>
         <div class="skill-tags skills-plain">
           <span>PHP</span>
           <span>Twig</span>
@@ -91,9 +90,6 @@
           <span>HTML</span>
           <span>CSS</span>
         </div>
-
-        <h2 data-i18n="dvd.h2Architecture">Architecture &amp; fonctionnement</h2>
-        <p data-i18n="dvd.pArchitecture">Chaque page récupère les données via PDO (requêtes préparées), puis les affiche via un template Twig — jamais de HTML généré directement en PHP.</p>
         <div class="rtc-flow">
           <div class="rtc-step"><span data-i18n="dvd.flowInterface">Interface</span><span>Twig</span></div>
           <div class="rtc-arrow">→</div>
@@ -104,7 +100,7 @@
           <div class="rtc-step"><span data-i18n="dvd.flowData">Données</span><span>MySQL</span></div>
         </div>
 
-        <h2 data-i18n="dvd.h2Gallery">Galerie</h2>
+        <h2 data-i18n="dvd.h2Gallery">Aperçu</h2>
         <div class="gallery-grid">
           <article class="card gallery-card">
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/dvd-filmotheque/cover.png" data-lightbox-alt="Page d’accueil – DVD Filmothèque" aria-label="Agrandir la capture : Accueil">
@@ -142,12 +138,6 @@
             <p data-i18n="dvd.galNewDesc">Derniers films ajoutés au catalogue.</p>
           </article>
         </div>
-
-        <h2 data-i18n="dvd.h2Done">Ce que j’ai réalisé</h2>
-        <p data-i18n="dvd.pDone">Conception et développement des pages de consultation (catalogue, détail, nouveautés, histoire), de la couche d’accès aux données (PDO) et de l’intégration des templates Twig.</p>
-
-        <h2 data-i18n="dvd.h2Learnings">Difficultés &amp; apprentissages</h2>
-        <p data-i18n="dvd.pLearnings">Les jointures SQL entre tables (films, genres, catégories) et la sécurisation des formulaires ont demandé plusieurs itérations. Une bonne occasion de manipuler une vraie base relationnelle avec un moteur de templates plutôt que du PHP mélangé au HTML.</p>
       </div>
     </article>
   </main>

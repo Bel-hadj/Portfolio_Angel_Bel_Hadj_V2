@@ -31,20 +31,6 @@
 
         <p data-i18n="emergent.intro">Projet réalisé pendant mes 4 mois en Bulgarie. Emergent est une plateforme de découverte musicale dédiée aux artistes émergents : recherche et filtrage d’un catalogue, annuaire d’artistes avec fiches individuelles, écoute directe via de vrais embeds Spotify, et un formulaire permettant à un artiste de proposer un titre.</p>
 
-        <div class="detail-pair">
-          <div class="card">
-            <h2 data-i18n="emergent.h2Context">Contexte</h2>
-            <p data-i18n="emergent.pContext">Réalisé seul pendant mon échange académique à la Varna University of Management (2026), de la conception à l’UX/UI jusqu’au développement front-end.</p>
-          </div>
-          <div class="card">
-            <h2 data-i18n="emergent.h2Problem">Problématique</h2>
-            <p data-i18n="emergent.pProblem">Sur les plateformes classiques, la visibilité va aux artistes déjà installés : les artistes émergents ont du mal à se faire découvrir, peu importe la qualité de leur travail.</p>
-          </div>
-        </div>
-
-        <h2 data-i18n="emergent.h2Solution">Solution</h2>
-        <p data-i18n="emergent.pSolution">Sans création de compte : recherche, filtres par genre, profils d’artistes et écoute instantanée via de vrais lecteurs Spotify intégrés.</p>
-
         <div class="doc-actions">
           <a href="https://bel-hadj.github.io/emergent-music-web/" target="_blank" rel="noopener noreferrer" class="btn web-btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"></path></svg>
@@ -56,80 +42,53 @@
           </a>
         </div>
 
-        <h2 data-i18n="emergent.h2Features">Fonctionnalités principales</h2>
-        <div class="cards-grid cards-grid-3">
-          <article class="card">
-            <span class="step-badge step-badge--num">1</span>
-            <h3 data-i18n="emergent.f1Title">Découverte &amp; recherche</h3>
-            <p data-i18n="emergent.f1Text">Recherche en direct, filtre par genre et tri par score, date ou ordre alphabétique.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge step-badge--num">2</span>
-            <h3 data-i18n="emergent.f2Title">Annuaire d’artistes</h3>
-            <p data-i18n="emergent.f2Text">Annuaire complet avec fiche individuelle par artiste (bio, genre, ville) et ses morceaux associés.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge step-badge--num">3</span>
-            <h3 data-i18n="emergent.f3Title">Écoute Spotify intégrée</h3>
-            <p data-i18n="emergent.f3Text">Lecteurs Spotify réels pour les morceaux et pour des playlists éditoriales, directement dans l’interface.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge step-badge--num">4</span>
-            <h3 data-i18n="emergent.f4Title">Découverte aléatoire</h3>
-            <p data-i18n="emergent.f4Text">Un bouton « Surprise » met en avant un morceau du catalogue tiré au hasard.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge step-badge--num">5</span>
-            <h3 data-i18n="emergent.f5Title">Favoris</h3>
-            <p data-i18n="emergent.f5Text">Système de favoris persistant d’une visite à l’autre grâce au stockage local du navigateur.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge step-badge--num">6</span>
-            <h3 data-i18n="emergent.f6Title">Proposer un titre</h3>
-            <p data-i18n="emergent.f6Text">Formulaire avec validation (champs requis, URL Spotify, année) ; le morceau soumis est sauvegardé localement et apparaît dans le catalogue.</p>
-          </article>
-        </div>
+        <h2 data-i18n="emergent.h2Context">Contexte</h2>
+        <p data-i18n="emergent.pContext">Projet réalisé seul pendant mon échange académique à la Varna University of Management, en 2026. Sur les plateformes de streaming classiques, les artistes émergents peinent à se faire découvrir face aux artistes déjà installés.</p>
 
-        <div class="detail-pair">
-          <div class="card">
-            <h2 data-i18n="emergent.h2RoleContrib">Mon rôle &amp; contributions</h2>
-            <p data-i18n="emergent.pRoleContrib">Seul sur les 4 pages du site (accueil, annuaire d’artistes, fiche artiste, formulaire).</p>
-            <ul>
-<li data-i18n="emergent.role2">Architecture multi-pages en JavaScript natif</li>
-<li data-i18n="emergent.role3">Recherche, filtrage et tri du catalogue</li>
-<li data-i18n="emergent.role4">Système de favoris et formulaire de soumission</li>
-<li data-i18n="emergent.role5">Intégration des lecteurs Spotify</li>
-            </ul>
+        <h2 data-i18n="emergent.h2Objective">Objectif</h2>
+        <p data-i18n="emergent.pObjective">Permettre de découvrir des artistes émergents et leurs morceaux à travers une plateforme dédiée, où ils sont mis en avant par défaut plutôt que relégués au second plan.</p>
+
+        <h2 data-i18n="emergent.h2Features">Fonctionnalités</h2>
+        <div class="reality-grid">
+          <div>
+            <strong data-i18n="emergent.f1Title">Découverte &amp; recherche</strong>
+            <span data-i18n="emergent.f1Text">Recherche en direct, filtre par genre et tri par score, date ou ordre alphabétique.</span>
           </div>
-          <div class="card">
-            <h2 data-i18n="emergent.h2Stack">Stack technique</h2>
-            <p data-i18n="emergent.pStack">HTML, CSS et JavaScript vanilla — sans framework, sans backend. Les données vivent dans un fichier unique ; favoris, thème et langue sont sauvegardés via <code>localStorage</code>.</p>
+          <div>
+            <strong data-i18n="emergent.f2Title">Annuaire d’artistes</strong>
+            <span data-i18n="emergent.f2Text">Annuaire complet avec fiche individuelle par artiste (bio, genre, ville) et ses morceaux associés.</span>
+          </div>
+          <div>
+            <strong data-i18n="emergent.f3Title">Écoute Spotify intégrée</strong>
+            <span data-i18n="emergent.f3Text">Lecteurs Spotify réels pour les morceaux et pour des playlists éditoriales, directement dans l’interface.</span>
+          </div>
+          <div>
+            <strong data-i18n="emergent.f4Title">Découverte aléatoire</strong>
+            <span data-i18n="emergent.f4Text">Un bouton « Surprise » met en avant un morceau du catalogue tiré au hasard.</span>
+          </div>
+          <div>
+            <strong data-i18n="emergent.f5Title">Favoris</strong>
+            <span data-i18n="emergent.f5Text">Système de favoris persistant d’une visite à l’autre grâce au stockage local du navigateur.</span>
+          </div>
+          <div>
+            <strong data-i18n="emergent.f6Title">Proposer un titre</strong>
+            <span data-i18n="emergent.f6Text">Formulaire avec validation (champs requis, URL Spotify, année) ; le morceau soumis est sauvegardé localement et apparaît dans le catalogue.</span>
           </div>
         </div>
 
-        <div class="detail-note">
-          <h3 data-i18n="emergent.uxTitle">Expérience utilisateur</h3>
-          <p data-i18n="emergent.uxText">Interface responsive, thème clair/sombre mémorisé, disponible en français, anglais et bulgare. Navigation utilisable au clavier, avec focus visible.</p>
+        <h2 data-i18n="emergent.h2Design">Design &amp; développement</h2>
+        <p data-i18n="emergent.pDesign1">Projet réalisé seul, de la conception à la mise en ligne : HTML, CSS et JavaScript vanilla, sans framework ni backend, sur les 4 pages du site (accueil, annuaire, fiche artiste, formulaire). Recherche, filtres, tri du catalogue, favoris et formulaire de soumission sont gérés en JavaScript natif, avec les données et préférences (thème, langue, favoris) stockées dans le navigateur via <code>localStorage</code>.</p>
+        <p data-i18n="emergent.pDesign2">L’interface est responsive et disponible en français, anglais et bulgare, avec un thème clair/sombre mémorisé d’une visite à l’autre. Les liens Spotify pointent vers de vrais morceaux et playlists ; les photos d’artistes sont libres de droits et les pochettes générées automatiquement, par souci de transparence sur ce qui est réel et simulé.</p>
+        <div class="skill-tags skills-plain">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>UX/UI</span>
+          <span>Responsive Design</span>
+          <span>Internationalisation (i18n)</span>
         </div>
-
-        <h2 data-i18n="emergent.h2UnderHood">Sous le capot</h2>
-        <p data-i18n="emergent.pUnderHood">Quelques extraits représentatifs, repris tels quels du code réel du projet — sélectionne un onglet pour l’afficher.</p>
-
-        <div class="code-tabs">
-          <input type="radio" name="codeTab" id="codeTab1" class="code-tab-input" checked>
-          <input type="radio" name="codeTab" id="codeTab2" class="code-tab-input">
-          <input type="radio" name="codeTab" id="codeTab3" class="code-tab-input">
-          <input type="radio" name="codeTab" id="codeTab4" class="code-tab-input">
-
-          <div class="code-tab-list" role="tablist">
-            <label for="codeTab1" class="code-tab-btn" data-i18n="emergent.tab1">Recherche &amp; filtrage</label>
-            <label for="codeTab2" class="code-tab-btn" data-i18n="emergent.tab2">Favoris</label>
-            <label for="codeTab3" class="code-tab-btn" data-i18n="emergent.tab3">Cartes dynamiques</label>
-            <label for="codeTab4" class="code-tab-btn" data-i18n="emergent.tab4">Thème clair / sombre</label>
-          </div>
-
-          <div class="code-tab-panel" id="codePanel1">
-            <pre><code>const q = state.q.trim().toLowerCase();
+        <p data-i18n="emergent.pCodeNote">Extrait représentatif du code réel du projet (recherche &amp; filtrage) :</p>
+        <pre class="code-snippet"><code>const q = state.q.trim().toLowerCase();
 if (q) {
   list = list.filter(
     (x) =&gt;
@@ -140,70 +99,8 @@ if (q) {
 }
 
 if (state.genre !== "all") list = list.filter((x) =&gt; x.genre === state.genre);</code></pre>
-            <p data-i18n="emergent.tab1Desc">La recherche filtre en direct sur l’artiste, le titre et le genre, combinable avec le filtre par genre.</p>
-          </div>
 
-          <div class="code-tab-panel" id="codePanel2">
-            <pre><code>function toggleFavorite(id) {
-  const favs = getFavorites();
-  const key = Number(id);
-  let added;
-  if (favs.has(key)) {
-    favs.delete(key);
-    added = false;
-  } else {
-    favs.add(key);
-    added = true;
-  }
-  localStorage.setItem(FAV_KEY, JSON.stringify([...favs]));
-  toast(added ? t("toast_added") : t("toast_removed"));
-  return added;
-}</code></pre>
-            <p data-i18n="emergent.tab2Desc">Chaque favori est stocké côté navigateur ; l’état est retrouvé identique à la visite suivante.</p>
-          </div>
-
-          <div class="code-tab-panel" id="codePanel3">
-            <pre><code>function artistCardHTML(artist) {
-  const cityLine = artist.city ? ` • ${escapeHTML(artist.city)}` : "";
-  return `
-    &lt;article class="artist-card"&gt;
-      ${artistMediaHTML(artist, { size: "card" })}
-      &lt;div class="artist-card__body"&gt;
-        &lt;div class="artist-card__name"&gt;${escapeHTML(artist.name)}&lt;/div&gt;
-        &lt;div class="artist-card__meta"&gt;${genreLabel(artist.genre)}${cityLine}&lt;/div&gt;
-        &lt;div class="artist-card__footer"&gt;
-          &lt;a class="btn btn--ghost btn--sm"
-             href="./artist.html?id=${encodeURIComponent(artist.id)}"
-             data-i18n="view_artist"&gt;View artist&lt;/a&gt;</code></pre>
-            <p data-i18n="emergent.tab3Desc">Chaque carte artiste est générée depuis un template JavaScript ; le lien renvoie vers la fiche complète de l’artiste.</p>
-          </div>
-
-          <div class="code-tab-panel" id="codePanel4">
-            <pre><code>function setTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem(THEME_KEY, theme);
-  $$("[data-theme-btn]").forEach((btn) =&gt; {
-    btn.textContent = theme === "dark" ? "🌙" : "☀️";
-    btn.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
-  });
-}</code></pre>
-            <p data-i18n="emergent.tab4Desc">Le thème choisi est appliqué immédiatement et mémorisé pour les prochaines visites.</p>
-          </div>
-        </div>
-
-        <h2 data-i18n="emergent.h2Skills">Compétences</h2>
-        <div class="skill-tags skills-plain">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>UX/UI</span>
-          <span>Responsive Design</span>
-          <span>Architecture front-end</span>
-          <span>Internationalisation (i18n)</span>
-          <span>Entrepreneuriat</span>
-        </div>
-
-        <h2 data-i18n="emergent.h2Preview">Aperçu de la plateforme</h2>
+        <h2 data-i18n="emergent.h2Preview">Aperçu</h2>
         <div class="gallery-grid">
           <article class="card gallery-card">
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/emergent/featured-artists.png" data-lightbox-alt="Artistes en vedette – Emergent" aria-label="Agrandir la capture : Artistes en vedette">
@@ -241,36 +138,6 @@ if (state.genre !== "all") list = list.filter((x) =&gt; x.genre === state.genre)
             <p data-i18n="emergent.galSubmitDesc">Un formulaire validé permet à un artiste de soumettre un morceau et son lien Spotify.</p>
           </article>
         </div>
-
-        <div class="reality-strip">
-          <h2 data-i18n="emergent.h2Reality">Ce qui est réel / ce qui est simulé</h2>
-          <p class="reality-lead" data-i18n="emergent.realityLead">Projet entièrement front-end : pas de serveur, pas de base de données, pas d’authentification.</p>
-          <div class="reality-grid">
-            <div>
-              <strong>Spotify</strong>
-              <span data-i18n="emergent.r1Text">Liens et lecteurs intégrés pointant vers de vrais morceaux et playlists publics.</span>
-            </div>
-            <div>
-              <strong data-i18n="emergent.r2Title">Photos d’artistes</strong>
-              <span data-i18n="emergent.r2Text">Vraies photos libres de droits (Unsplash), à titre illustratif — repli automatique vers une pochette générée en cas d’échec.</span>
-            </div>
-            <div>
-              <strong data-i18n="emergent.r3Title">Pochettes de morceaux</strong>
-              <span data-i18n="emergent.r3Text">Générées à la volée (dégradé + formes, seedé par morceau).</span>
-            </div>
-            <div>
-              <strong data-i18n="emergent.r4Title">Formulaire « Proposer un titre »</strong>
-              <span data-i18n="emergent.r4Text">Flux réel (validation, erreurs, sauvegarde), stocké uniquement dans le navigateur du visiteur.</span>
-            </div>
-            <div>
-              <strong data-i18n="emergent.r5Title">Favoris, thème et langue</strong>
-              <span data-i18n="emergent.r5Text">Également mémorisés via le stockage local du navigateur.</span>
-            </div>
-          </div>
-        </div>
-
-        <h2 data-i18n="emergent.h2ResultsLearnings">Résultats &amp; apprentissages</h2>
-        <p data-i18n="emergent.pResultsLearnings">Ce projet m’a fait passer d’une idée à une plateforme à 4 pages fonctionnelle : architecture front-end sans framework, persistance via <code>localStorage</code>, intégration d’un service tiers (Spotify).</p>
       </div>
     </article>
   </main>
