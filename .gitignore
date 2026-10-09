@@ -1,2 +1,21 @@
 # Projet Emergent complet, gardé en local (non publié avec le portfolio)
 emergent-demo/
+
+# Secrets et environnement local
+.env
+.env.*
+
+# Fichiers temporaires / sauvegardes
+*.tmp
+*.bak
+*.log
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/

@@ -9,9 +9,6 @@ Portfolio HTML/CSS/JS prêt à modifier.
    - project-indiewave.jpg
    - project-accor.jpg
    - project-xbox.jpg
-   - project-terra-etica.jpg
-   - project-watchup.jpg
-   - project-adobe.jpg
    - cv-angel-bel-hadj.pdf (ton CV, pour le bouton "Télécharger mon CV" du hero)
 
 2. Remplacer les liens dans `index.html`
@@ -23,9 +20,6 @@ Portfolio HTML/CSS/JS prêt à modifier.
    - projet-indiewave.html
    - projet-fandom.html
    - projet-xbox.html
-   - projet-terra-etica.html
-   - projet-watchup.html
-   - projet-adobe.html
 
 ## Pour publier sur GitHub Pages
 

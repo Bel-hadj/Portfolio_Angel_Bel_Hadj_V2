@@ -7,10 +7,14 @@
   <title data-i18n="home.pageTitle">Angel Bel Hadj | Portfolio</title>
   <meta name="description" data-i18n-attr="content:home.metaDescription"
     content="Portfolio d'Angel Bel Hadj - Web Design, UX/UI, Marketing Digital et Communication." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
-    rel="stylesheet" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Angel Bel Hadj | Portfolio" />
+  <meta property="og:title" content="Angel Bel Hadj | Portfolio" />
+  <meta property="og:description" content="Portfolio d'Angel Bel Hadj - Web Design, UX/UI, Marketing Digital et Communication." />
+  <meta name="twitter:card" content="summary" />
+  <!-- og:url et og:image à ajouter une fois le domaine final choisi et une image
+       de partage dédiée disponible (À CONFIGURER APRÈS CHOIX DU DOMAINE / favicon à créer) -->
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
   <link rel="stylesheet" href="styles.css" />
   <script src="assets/i18n/translations.js"></script>
 </head>
@@ -683,6 +687,11 @@
 
   <footer>
     <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p class="footer-legal">
+      <a href="mentions-legales.html" data-i18n="common.footerLegal">Mentions légales</a>
+      <span aria-hidden="true">·</span>
+      <a href="confidentialite.html" data-i18n="common.footerPrivacy">Confidentialité</a>
+    </p>
   </footer>
 
   <script src="script.js"></script>

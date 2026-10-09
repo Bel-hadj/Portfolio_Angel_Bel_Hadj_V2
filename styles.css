@@ -1016,15 +1016,6 @@ button:focus-visible {
   color: #fde68a;
 }
 
-.tag-emerald {
-  background: rgba(52, 211, 153, 0.2);
-  color: #a7f3d0;
-}
-
-.tag-violet {
-  background: rgba(167, 139, 250, 0.22);
-  color: #ddd6fe;
-}
 
 .timeline {
   display: grid;
@@ -1312,6 +1303,39 @@ footer {
   padding: 36px 16px;
   border-top: 1px solid var(--line);
   font-size: 0.9rem;
+}
+
+.footer-legal {
+  margin-top: 10px;
+  font-size: 0.82rem;
+}
+
+.footer-legal a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: var(--text);
+}
+
+.footer-legal span {
+  margin: 0 8px;
+  opacity: 0.6;
+}
+
+.notfound-page {
+  text-align: center;
+}
+
+.notfound-topbar {
+  justify-content: center;
+}
+
+.notfound-page .detail-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
 }
 
 .reveal {
