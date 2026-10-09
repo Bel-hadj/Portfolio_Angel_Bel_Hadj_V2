@@ -9,203 +9,211 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail project-detail-showcase ranch-detail-wide escape-detail">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible">
       <div class="club-hero-mosaic escape-hero-mosaic">
         <div class="mosaic-tile mosaic-main">
-          <img src="assets/projects/escape-game/mockup-facebook.jpg" alt="Mockup de la page Facebook de l'Escape Game Château Lutenberg" loading="lazy" />
+          <img src="assets/projects/escape-game/mockup-facebook.jpg" alt="Mockup de la page Facebook de l'Escape Game Château de Lichtenberg" loading="lazy" />
         </div>
         <div class="mosaic-tile">
-          <img src="assets/projects/escape-game/mockup-tiktok.jpg" alt="Mockup TikTok de l'Escape Game Château Lutenberg" loading="lazy" />
+          <img src="assets/projects/escape-game/mockup-tiktok.jpg" alt="Mockup TikTok de l'Escape Game Château de Lichtenberg" loading="lazy" />
         </div>
         <div class="mosaic-tile">
-          <img src="assets/projects/escape-game/mockup-twitter.jpg" alt="Mockup Twitter / X de l'Escape Game Château Lutenberg" loading="lazy" />
+          <img src="assets/projects/escape-game/mockup-twitter.jpg" alt="Mockup Twitter / X de l'Escape Game Château de Lichtenberg" loading="lazy" />
         </div>
       </div>
 
       <div class="detail-content">
-        <span class="tag category-design">Design & communication</span>
+        <span class="tag category-design" data-i18n="escape.tag">Design & communication</span>
         <h1>La nuit du château maudit</h1>
-        <p class="detail-subtitle">Projet de communication pour le Château de Lichtenberg · 2024</p>
-        <p>Projet réalisé en équipe dans le cadre d'Eventify, une agence de communication fictive. Le Château de Lichtenberg souhaitait développer sa fréquentation et toucher de nouveaux publics. Notre réponse : imaginer un escape game d'horreur inspiré de l'histoire du château et construire sa communication digitale.</p>
+        <p class="detail-subtitle" data-i18n="escape.subtitle">Projet de communication pour le Château de Lichtenberg · 2024</p>
+        <p data-i18n="escape.intro">Projet réalisé en équipe dans le cadre d'Eventify, une agence de communication fictive. Le Château de Lichtenberg souhaitait développer sa fréquentation et toucher de nouveaux publics. Notre réponse : imaginer un escape game d'horreur inspiré de l'histoire du château et construire sa communication digitale.</p>
 
         <div class="snapshot-grid">
           <div class="snapshot-item">
-            <span class="snapshot-label">Client</span>
-            <span class="snapshot-value">Château de Lichtenberg</span>
+            <span class="snapshot-label" data-i18n="escape.snapClientLbl">Client</span>
+            <span class="snapshot-value" data-i18n="escape.snapClientVal">Château de Lichtenberg</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Concept</span>
-            <span class="snapshot-value">Escape game d'horreur « La nuit du château maudit »</span>
+            <span class="snapshot-label" data-i18n="escape.snapConceptLbl">Concept</span>
+            <span class="snapshot-value" data-i18n="escape.snapConceptVal">Escape game d'horreur « La nuit du château maudit »</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Cible principale</span>
-            <span class="snapshot-value">18–30 ans</span>
+            <span class="snapshot-label" data-i18n="escape.snapTargetLbl">Cible principale</span>
+            <span class="snapshot-value" data-i18n="escape.snapTargetVal">18–30 ans</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Mon rôle</span>
-            <span class="snapshot-value">Chargé d'études</span>
+            <span class="snapshot-label" data-i18n="escape.snapRoleLbl">Mon rôle</span>
+            <span class="snapshot-value" data-i18n="escape.snapRoleVal">Chargé d'études</span>
           </div>
         </div>
 
-        <h2>Contexte du projet</h2>
-        <p>L'analyse de la fréquentation du Château de Lichtenberg a montré une forte présence des familles et des enfants, mais une fréquentation plus faible des 18–30 ans et des touristes.</p>
-        <p>Pour toucher ce public, l'équipe a imaginé une nouvelle activité plus immersive : un escape game d'horreur mêlant patrimoine, légendes du château et recherche de sensations fortes.</p>
+        <h2 data-i18n="escape.h2Context">Contexte du projet</h2>
+        <p data-i18n="escape.pContext1">L'analyse de la fréquentation du Château de Lichtenberg a montré une forte présence des familles et des enfants, mais une fréquentation plus faible des 18–30 ans et des touristes.</p>
+        <p data-i18n="escape.pContext2">Pour toucher ce public, l'équipe a imaginé une nouvelle activité plus immersive : un escape game d'horreur mêlant patrimoine, légendes du château et recherche de sensations fortes.</p>
 
-        <h2>Mon rôle</h2>
-        <p>Chargé d'études : analyse des publics et des tendances afin d'orienter le positionnement et la stratégie de communication du projet.</p>
+        <h2 data-i18n="common.myRole">Mon rôle</h2>
+        <p data-i18n="escape.pRole">Chargé d'études : analyse des publics et des tendances afin d'orienter le positionnement et la stratégie de communication du projet.</p>
 
-        <h2>Objectifs</h2>
+        <h2 data-i18n="common.objectives">Objectifs</h2>
         <ul class="ranch-list">
-          <li>Développer la notoriété de l'escape game à l'échelle locale et internationale</li>
-          <li>Attirer davantage de visiteurs régionaux, nationaux et internationaux</li>
-          <li>Augmenter la fréquentation des adultes, notamment les 18–30 ans</li>
-          <li>Favoriser une expérience suffisamment marquante pour générer du bouche-à-oreille</li>
+          <li data-i18n="escape.obj1">Développer la notoriété de l'escape game à l'échelle locale et internationale</li>
+          <li data-i18n="escape.obj2">Attirer davantage de visiteurs régionaux, nationaux et internationaux</li>
+          <li data-i18n="escape.obj3">Augmenter la fréquentation des adultes, notamment les 18–30 ans</li>
+          <li data-i18n="escape.obj4">Favoriser une expérience suffisamment marquante pour générer du bouche-à-oreille</li>
         </ul>
         <div class="snapshot-grid">
           <div class="snapshot-item">
-            <span class="snapshot-label">Objectif SMART</span>
-            <span class="snapshot-value">+30 % de visiteurs adultes en 6 mois</span>
+            <span class="snapshot-label" data-i18n="escape.smartLbl">Objectif SMART</span>
+            <span class="snapshot-value" data-i18n="escape.smartVal">+30 % de visiteurs adultes en 6 mois</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Indicateur</span>
-            <span class="snapshot-value">120 réservations par mois</span>
+            <span class="snapshot-label" data-i18n="escape.kpiLbl">Indicateur</span>
+            <span class="snapshot-value" data-i18n="escape.kpiVal">120 réservations par mois</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Échéance</span>
-            <span class="snapshot-value">Juillet 2025</span>
+            <span class="snapshot-label" data-i18n="escape.deadlineLbl">Échéance</span>
+            <span class="snapshot-value" data-i18n="escape.deadlineVal">Juillet 2025</span>
           </div>
         </div>
 
-        <h2>Stratégie</h2>
-        <p>La communication devait s'appuyer sur plusieurs plateformes Social Media afin d'adapter les contenus aux différents publics, tout en construisant un univers visuel cohérent avec le positionnement horreur et historique de l'expérience.</p>
+        <h2 data-i18n="escape.h2Strategy">Stratégie</h2>
+        <p data-i18n="escape.pStrategy">La communication devait s'appuyer sur plusieurs plateformes Social Media afin d'adapter les contenus aux différents publics, tout en construisant un univers visuel cohérent avec le positionnement horreur et historique de l'expérience.</p>
         <div class="skill-tags skills-plain">
-          <span>Social Media</span>
-          <span>Communication digitale</span>
-          <span>Positionnement</span>
+          <span data-i18n="escape.stratTag1">Social Media</span>
+          <span data-i18n="escape.stratTag2">Communication digitale</span>
+          <span data-i18n="escape.stratTag3">Positionnement</span>
         </div>
       </div>
     </article>
 
-    <h2 class="ranch-section-title">Mes réalisations</h2>
+    <h2 class="ranch-section-title" data-i18n="escape.sectionTitle">Mes réalisations</h2>
     <div class="cards-grid cards-grid-sm ranch-projects-grid">
 
       <article class="card ranch-project-card">
         <span class="project-number">01</span>
-        <h3>Mockup TikTok</h3>
-        <p>Création d'un mockup de présence TikTok pour l'univers de l'Escape Game, afin de mettre en scène son identité sur les réseaux sociaux.</p>
+        <h3 data-i18n="escape.card1Title">Mockup TikTok</h3>
+        <p data-i18n="escape.card1Desc">Création d'un mockup de présence TikTok pour l'univers de l'Escape Game, afin de mettre en scène son identité sur les réseaux sociaux.</p>
         <div class="ranch-pair ranch-frames">
           <div>
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/escape-game/mockup-tiktok.jpg" data-lightbox-alt="Mockup TikTok de l'Escape Game Château Lutenberg" aria-label="Agrandir le mockup TikTok">
-              <img src="assets/projects/escape-game/mockup-tiktok.jpg" alt="Mockup TikTok de l'Escape Game Château Lutenberg" loading="lazy" />
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/escape-game/mockup-tiktok.jpg" data-lightbox-alt="Mockup TikTok de l'Escape Game Château de Lichtenberg" aria-label="Agrandir le mockup TikTok">
+              <img src="assets/projects/escape-game/mockup-tiktok.jpg" alt="Mockup TikTok de l'Escape Game Château de Lichtenberg" loading="lazy" />
             </button>
           </div>
         </div>
         <div class="ranch-doc-actions">
-          <a href="assets/projects/escape-game/psd/mockup-tiktok.psd" download class="btn secondary">Télécharger le PSD ↓</a>
+          <a href="assets/projects/escape-game/psd/mockup-tiktok.psd" download class="btn secondary" data-i18n="common.downloadPsd">Télécharger le PSD ↓</a>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Mockup TikTok</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="escape.card1Deliverable">Mockup TikTok</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Adobe Photoshop</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Social media</span><span>Mockup</span><span>Design graphique</span><span>Identité visuelle</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="escape.card1Skill1">Social media</span><span data-i18n="escape.card1Skill2">Mockup</span><span data-i18n="escape.card1Skill3">Design graphique</span><span data-i18n="escape.card1Skill4">Identité visuelle</span></div>
           </div>
         </div>
       </article>
 
       <article class="card ranch-project-card">
         <span class="project-number">02</span>
-        <h3>Mockup Twitter X</h3>
-        <p>Déclinaison de l'identité graphique de l'Escape Game dans un mockup de présence sur Twitter / X.</p>
+        <h3 data-i18n="escape.card2Title">Mockup Twitter X</h3>
+        <p data-i18n="escape.card2Desc">Déclinaison de l'identité graphique de l'Escape Game dans un mockup de présence sur Twitter / X.</p>
         <div class="ranch-pair ranch-frames">
           <div>
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/escape-game/mockup-twitter.jpg" data-lightbox-alt="Mockup Twitter / X de l'Escape Game Château Lutenberg" aria-label="Agrandir le mockup Twitter / X">
-              <img src="assets/projects/escape-game/mockup-twitter.jpg" alt="Mockup Twitter / X de l'Escape Game Château Lutenberg" loading="lazy" />
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/escape-game/mockup-twitter.jpg" data-lightbox-alt="Mockup Twitter / X de l'Escape Game Château de Lichtenberg" aria-label="Agrandir le mockup Twitter / X">
+              <img src="assets/projects/escape-game/mockup-twitter.jpg" alt="Mockup Twitter / X de l'Escape Game Château de Lichtenberg" loading="lazy" />
             </button>
           </div>
         </div>
         <div class="ranch-doc-actions">
-          <a href="assets/projects/escape-game/psd/mockup-twitter.psd" download class="btn secondary">Télécharger le PSD ↓</a>
+          <a href="assets/projects/escape-game/psd/mockup-twitter.psd" download class="btn secondary" data-i18n="common.downloadPsd">Télécharger le PSD ↓</a>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Mockup Twitter X</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="escape.card2Deliverable">Mockup Twitter X</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Adobe Photoshop</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Social media</span><span>Mockup</span><span>Adaptation visuelle</span><span>Communication digitale</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="escape.card2Skill1">Social media</span><span data-i18n="escape.card2Skill2">Mockup</span><span data-i18n="escape.card2Skill3">Adaptation visuelle</span><span data-i18n="escape.card2Skill4">Communication digitale</span></div>
           </div>
         </div>
       </article>
 
       <article class="card ranch-project-card">
         <span class="project-number">03</span>
-        <h3>Identité Facebook & bannière</h3>
-        <p>Création d'une présence Facebook cohérente avec l'univers narratif de l'Escape Game, avec mise en situation de la page et création d'une bannière dédiée.</p>
+        <h3 data-i18n="escape.card3Title">Identité Facebook & bannière</h3>
+        <p data-i18n="escape.card3Desc">Création d'une présence Facebook cohérente avec l'univers narratif de l'Escape Game, avec mise en situation de la page et création d'une bannière dédiée.</p>
         <div class="ranch-pair ranch-frames">
           <div>
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/escape-game/mockup-facebook.jpg" data-lightbox-alt="Mockup de la page Facebook de l'Escape Game Château Lutenberg, avec bannière" aria-label="Agrandir le mockup Facebook">
-              <img src="assets/projects/escape-game/mockup-facebook.jpg" alt="Mockup de la page Facebook de l'Escape Game Château Lutenberg, avec bannière" loading="lazy" />
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/escape-game/mockup-facebook.jpg" data-lightbox-alt="Mockup de la page Facebook de l'Escape Game Château de Lichtenberg, avec bannière" aria-label="Agrandir le mockup Facebook">
+              <img src="assets/projects/escape-game/mockup-facebook.jpg" alt="Mockup de la page Facebook de l'Escape Game Château de Lichtenberg, avec bannière" loading="lazy" />
             </button>
           </div>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Mockup Facebook & bannière</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="escape.card3Deliverable">Mockup Facebook & bannière</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Adobe Photoshop</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Identité visuelle</span><span>Design social media</span><span>Bannière</span><span>Mise en situation</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="escape.card3Skill1">Identité visuelle</span><span data-i18n="escape.card3Skill2">Design social media</span><span data-i18n="escape.card3Skill3">Bannière</span><span data-i18n="escape.card3Skill4">Mise en situation</span></div>
           </div>
         </div>
       </article>
 
       <article class="card ranch-project-card">
         <span class="project-number">04</span>
-        <h3>Mockup YouTube</h3>
-        <p>Déclinaison de l'univers graphique du projet sur YouTube afin de présenter une identité cohérente sur plusieurs plateformes digitales.</p>
+        <h3 data-i18n="escape.card4Title">Mockup YouTube</h3>
+        <p data-i18n="escape.card4Desc">Déclinaison de l'univers graphique du projet sur YouTube afin de présenter une identité cohérente sur plusieurs plateformes digitales.</p>
         <div class="ranch-pair ranch-frames">
           <div>
-            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/escape-game/mockup-youtube.jpg" data-lightbox-alt="Mockup YouTube de l'Escape Game Château Lutenberg" aria-label="Agrandir le mockup YouTube">
-              <img src="assets/projects/escape-game/mockup-youtube.jpg" alt="Mockup YouTube de l'Escape Game Château Lutenberg" loading="lazy" />
+            <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/escape-game/mockup-youtube.jpg" data-lightbox-alt="Mockup YouTube de l'Escape Game Château de Lichtenberg" aria-label="Agrandir le mockup YouTube">
+              <img src="assets/projects/escape-game/mockup-youtube.jpg" alt="Mockup YouTube de l'Escape Game Château de Lichtenberg" loading="lazy" />
             </button>
           </div>
         </div>
         <div class="ranch-doc-actions">
-          <a href="assets/projects/escape-game/mockup-youtube.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir le mockup YouTube ↗</a>
+          <a href="assets/projects/escape-game/mockup-youtube.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary" data-i18n="escape.viewYoutubeMockup">Voir le mockup YouTube ↗</a>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Mockup YouTube</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="escape.card4Deliverable">Mockup YouTube</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Adobe Illustrator</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Social media</span><span>Adaptation multiplateforme</span><span>Identité visuelle</span><span>Communication digitale</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="escape.card4Skill1">Social media</span><span data-i18n="escape.card4Skill2">Adaptation multiplateforme</span><span data-i18n="escape.card4Skill3">Identité visuelle</span><span data-i18n="escape.card4Skill4">Communication digitale</span></div>
           </div>
         </div>
       </article>
@@ -214,20 +222,21 @@
   </main>
 
   <div class="lightbox" id="lightbox" hidden>
-    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Visuel précédent" hidden>‹</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Visuel précédent" hidden data-i18n-attr="aria-label:common.lightboxPrevVisual">‹</button>
     <div class="lightbox-inner">
-      <a class="lightbox-download" id="lightboxDownload" href="" download aria-label="Télécharger l'image">⬇</a>
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l'aperçu">✕</button>
+      <a class="lightbox-download" id="lightboxDownload" href="" download aria-label="Télécharger l'image" data-i18n-attr="aria-label:common.lightboxDownload">⬇</a>
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l'aperçu" data-i18n-attr="aria-label:common.lightboxClose">✕</button>
       <img id="lightboxImage" src="" alt="" />
       <video id="lightboxVideo" controls playsinline hidden></video>
     </div>
-    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Visuel suivant" hidden>›</button>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Visuel suivant" hidden data-i18n-attr="aria-label:common.lightboxNextVisual">›</button>
   </div>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

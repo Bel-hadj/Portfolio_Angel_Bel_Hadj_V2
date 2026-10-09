@@ -9,10 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail project-detail-showcase ranch-detail-wide club-detail">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible">
       <div class="club-hero-mosaic">
         <div class="mosaic-tile mosaic-main">
@@ -30,27 +38,27 @@
       </div>
 
       <div class="detail-content">
-        <span class="tag category-communication">Communication</span>
+        <span class="tag category-communication" data-i18n="common.catCommunication">Communication</span>
         <h1>Club Entrepreneurs EMLV</h1>
-        <p class="detail-subtitle">Membre depuis 10/2024 · Responsable communication (03/2025 → 03/2026)</p>
-        <p>Création de contenus et animation de la communication digitale du club.</p>
+        <p class="detail-subtitle" data-i18n="clubDetail.subtitle">Membre depuis 10/2024 · Responsable communication (09/2025 → 03/2026)</p>
+        <p data-i18n="clubDetail.intro">Création de contenus et animation de la communication digitale du club.</p>
 
-        <h2>Le club</h2>
-        <p>Association étudiante de l'EMLV dédiée à la sensibilisation à l'entrepreneuriat : événements, ateliers et conférences ouverts à tous les étudiants.</p>
+        <h2 data-i18n="clubDetail.h2Club">Le club</h2>
+        <p data-i18n="clubDetail.pClub">Association étudiante de l'EMLV dédiée à la sensibilisation à l'entrepreneuriat : événements, ateliers et conférences ouverts à tous les étudiants.</p>
 
-        <h2>Mon rôle</h2>
-        <p>Responsable communication de 03/2025 à 03/2026 : gestion des contenus digitaux, création de publications, animation de la communication du club. L'objectif du bureau était de publier au moins une fois par semaine sur Instagram et LinkedIn.</p>
+        <h2 data-i18n="common.myRole">Mon rôle</h2>
+        <p data-i18n="clubDetail.pRole">Responsable communication de 09/2025 à 03/2026 : gestion des contenus digitaux, création de publications, animation de la communication du club. L'objectif du bureau était de publier au moins une fois par semaine sur Instagram et LinkedIn.</p>
 
       </div>
     </article>
 
-    <h2 class="ranch-section-title">Mes projets réalisés</h2>
+    <h2 class="ranch-section-title" data-i18n="common.projectsCompleted">Mes projets réalisés</h2>
     <div class="cards-grid cards-grid-sm ranch-projects-grid">
 
           <article class="card ranch-project-card club-card-01">
             <span class="project-number">01</span>
-            <h3>Post Instagram « After Work »</h3>
-            <p>Visuel de publication pour l'After Work du vendredi 23 mai, à Paris, en version post et en version story. Deux formats pensés pour une diffusion cohérente sur Instagram, du fil d'actualité aux stories, pour toucher un maximum d'étudiants avant l'événement, et facilement partageable par les membres du bureau.</p>
+            <h3 data-i18n="clubDetail.card1Title">Post Instagram « After Work »</h3>
+            <p data-i18n="clubDetail.card1Desc">Visuel de publication pour l'After Work du vendredi 23 mai, à Paris, en version post et en version story. Deux formats pensés pour une diffusion cohérente sur Instagram, du fil d'actualité aux stories, pour toucher un maximum d'étudiants avant l'événement, et facilement partageable par les membres du bureau.</p>
             <div class="ranch-pair ranch-frames club-cover-frames">
               <div>
                 <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/after-work.png" data-lightbox-alt="Publication Instagram du Club Entrepreneurs pour l'After Work du 23 mai" data-lightbox-group="after-work" aria-label="Agrandir le visuel After Work">
@@ -64,31 +72,31 @@
               </div>
             </div>
             <ul class="ranch-list">
-              <li>Déclinaisons : post carré (feed) et story verticale</li>
-              <li>Informations mises en avant : date, horaire, lieu (Bar Solluna)</li>
-              <li>Pied de page avec le contact du club, pour favoriser les inscriptions</li>
-              <li>Identité visuelle du club respectée (logo, couleurs, typographie)</li>
+              <li data-i18n="clubDetail.card1List1">Déclinaisons : post carré (feed) et story verticale</li>
+              <li data-i18n="clubDetail.card1List2">Informations mises en avant : date, horaire, lieu (Bar Solluna)</li>
+              <li data-i18n="clubDetail.card1List3">Pied de page avec le contact du club, pour favoriser les inscriptions</li>
+              <li data-i18n="clubDetail.card1List4">Identité visuelle du club respectée (logo, couleurs, typographie)</li>
             </ul>
             <div class="ranch-work">
               <div class="ranch-group">
-                <p class="ranch-work-title">Livrable</p>
-                <p class="ranch-deliverable-text">Visuel de publication Instagram</p>
+                <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+                <p class="ranch-deliverable-text" data-i18n="clubDetail.card1Deliverable">Visuel de publication Instagram</p>
               </div>
               <div class="ranch-group ranch-group--tools">
-                <p class="ranch-work-title">Outils utilisés</p>
+                <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
                 <div class="ranch-tags"><span>Canva</span><span>Photoshop</span><span>Illustrator</span><span>Pinterest</span></div>
               </div>
               <div class="ranch-group ranch-group--skills">
-                <p class="ranch-work-title">Compétences mobilisées</p>
-                <div class="ranch-tags"><span>Création de visuels</span><span>Réseaux sociaux</span></div>
+                <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+                <div class="ranch-tags"><span data-i18n="clubDetail.card1Skill1">Création de visuels</span><span data-i18n="clubDetail.card1Skill2">Réseaux sociaux</span></div>
               </div>
             </div>
           </article>
 
           <article class="card ranch-project-card club-card-02">
             <span class="project-number">02</span>
-            <h3>Création de contenus vidéo</h3>
-            <p>Deux vidéos courtes publiées sur les réseaux sociaux du club, en versions « animée » et « simple », et la proposition éditoriale des formats qui les accompagnent (21/05/2025), co-rédigée avec Noam Raharinosy.</p>
+            <h3 data-i18n="clubDetail.card2Title">Création de contenus vidéo</h3>
+            <p data-i18n="clubDetail.card2Desc">Deux vidéos courtes publiées sur les réseaux sociaux du club, en versions « animée » et « simple », et la proposition éditoriale des formats qui les accompagnent (21/05/2025), co-rédigée avec Noam Raharinosy.</p>
             <div class="ranch-pair ranch-frames">
               <div>
                 <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/video-animee.mp4" data-lightbox-type="video" data-lightbox-alt="Vidéo animée du Club Entrepreneurs" aria-label="Voir la vidéo animée en entier">
@@ -96,7 +104,7 @@
                     <source src="assets/projects/club-entrepreneurs/video-animee.mp4" type="video/mp4" />
                   </video>
                 </button>
-                <span class="ranch-pair-caption">Version animée</span>
+                <span class="ranch-pair-caption" data-i18n="clubDetail.versionAnimee">Version animée</span>
               </div>
               <div>
                 <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/video-simple.mp4" data-lightbox-type="video" data-lightbox-alt="Vidéo simple du Club Entrepreneurs" aria-label="Voir la vidéo simple en entier">
@@ -104,36 +112,36 @@
                     <source src="assets/projects/club-entrepreneurs/video-simple.mp4" type="video/mp4" />
                   </video>
                 </button>
-                <span class="ranch-pair-caption">Version simple</span>
+                <span class="ranch-pair-caption" data-i18n="clubDetail.versionSimple">Version simple</span>
               </div>
             </div>
             <ul class="ranch-list">
-              <li><strong>Formats courts :</strong> « On décode pour toi », « Dans les coulisses de… », « Street Pitch », « 1 minute avec… », « C'est quoi ton projet ? »</li>
-              <li><strong>Formats longs :</strong> « Start With Me », « Round Table »</li>
+              <li data-i18n="clubDetail.card2List1"><strong>Formats courts :</strong> « On décode pour toi », « Dans les coulisses de… », « Street Pitch », « 1 minute avec… », « C'est quoi ton projet ? »</li>
+              <li data-i18n="clubDetail.card2List2"><strong>Formats longs :</strong> « Start With Me », « Round Table »</li>
             </ul>
             <div class="ranch-doc-actions">
-              <a href="assets/projects/club-entrepreneurs/proposition-video.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir la proposition ↗</a>
+              <a href="assets/projects/club-entrepreneurs/proposition-video.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary" data-i18n="clubDetail.viewProposal">Voir la proposition ↗</a>
             </div>
             <div class="ranch-work">
               <div class="ranch-group">
-                <p class="ranch-work-title">Livrable</p>
-                <p class="ranch-deliverable-text">Deux vidéos courtes et une proposition éditoriale</p>
+                <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+                <p class="ranch-deliverable-text" data-i18n="clubDetail.card2Deliverable">Deux vidéos courtes et une proposition éditoriale</p>
               </div>
               <div class="ranch-group ranch-group--tools">
-                <p class="ranch-work-title">Outils utilisés</p>
+                <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
                 <div class="ranch-tags"><span>CapCut</span><span>Canva</span><span>Pinterest</span></div>
               </div>
               <div class="ranch-group ranch-group--skills">
-                <p class="ranch-work-title">Compétences mobilisées</p>
-                <div class="ranch-tags"><span>Création de contenus vidéo</span><span>Conception éditoriale</span><span>Réseaux sociaux</span></div>
+                <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+                <div class="ranch-tags"><span data-i18n="clubDetail.card2Skill1">Création de contenus vidéo</span><span data-i18n="clubDetail.card2Skill2">Conception éditoriale</span><span data-i18n="clubDetail.card2Skill3">Réseaux sociaux</span></div>
               </div>
             </div>
           </article>
 
           <article class="card ranch-project-card">
             <span class="project-number">03</span>
-            <h3>Identité visuelle du club</h3>
-            <p>Logo officiel, déclinaisons et palette de couleurs du Club Entrepreneurs EMLV (avril-mai 2025).</p>
+            <h3 data-i18n="clubDetail.card3Title">Identité visuelle du club</h3>
+            <p data-i18n="clubDetail.card3Desc">Logo officiel, déclinaisons et palette de couleurs du Club Entrepreneurs EMLV (avril-mai 2025).</p>
             <div class="ranch-pair ranch-frames club-identity-row">
               <div class="club-logo-tile">
                 <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/logo-officiel.png" data-lightbox-alt="Logo officiel du Club Entrepreneurs EMLV" aria-label="Agrandir le logo officiel">
@@ -166,29 +174,29 @@
               </div>
             </div>
             <div class="ranch-doc-actions">
-              <a href="assets/projects/club-entrepreneurs/palette-couleurs.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir la palette ↗</a>
-              <a href="assets/projects/club-entrepreneurs/charte-graphique.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir la charte complète ↗</a>
+              <a href="assets/projects/club-entrepreneurs/palette-couleurs.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary" data-i18n="clubDetail.viewPalette">Voir la palette ↗</a>
+              <a href="assets/projects/club-entrepreneurs/charte-graphique.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary" data-i18n="clubDetail.viewFullCharter">Voir la charte complète ↗</a>
             </div>
             <div class="ranch-work">
               <div class="ranch-group">
-                <p class="ranch-work-title">Livrable</p>
-                <p class="ranch-deliverable-text">Logo officiel, déclinaisons, palette et charte graphique</p>
+                <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+                <p class="ranch-deliverable-text" data-i18n="clubDetail.card3Deliverable">Logo officiel, déclinaisons, palette et charte graphique</p>
               </div>
               <div class="ranch-group ranch-group--tools">
-                <p class="ranch-work-title">Outils utilisés</p>
+                <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
                 <div class="ranch-tags"><span>Figma</span><span>Illustrator</span></div>
               </div>
               <div class="ranch-group ranch-group--skills">
-                <p class="ranch-work-title">Compétences mobilisées</p>
-                <div class="ranch-tags"><span>Identité visuelle</span><span>Création de logo</span></div>
+                <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+                <div class="ranch-tags"><span data-i18n="clubDetail.card3Skill1">Identité visuelle</span><span data-i18n="clubDetail.card3Skill2">Création de logo</span></div>
               </div>
             </div>
           </article>
 
           <article class="card ranch-project-card club-card-04">
             <span class="project-number">04</span>
-            <h3>Communication de conférence</h3>
-            <p>Invitation pour la conférence « Gestion patrimoniale », en ligne sur Zoom le jeudi 24 avril 2025 à 17h30, avec Mathis Ferrera (Fondateur de Need, JH Conseil Patrimoine).</p>
+            <h3 data-i18n="clubDetail.card4Title">Communication de conférence</h3>
+            <p data-i18n="clubDetail.card4Desc">Invitation pour la conférence « Gestion patrimoniale », en ligne sur Zoom le jeudi 24 avril 2025 à 17h30, avec Mathis Ferrera (Fondateur de Need, JH Conseil Patrimoine).</p>
             <div class="ranch-pair ranch-frames club-conf-frame">
               <div>
                 <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/club-entrepreneurs/conference-canva.png" data-lightbox-alt="Invitation Canva de la conférence Gestion patrimoniale avec Mathis Ferrera" aria-label="Agrandir l'invitation de la conférence">
@@ -197,26 +205,26 @@
               </div>
             </div>
             <ul class="ranch-list">
-              <li>Base de l'investissement : bourse, immobilier…</li>
-              <li>Stratégies possibles</li>
-              <li>Analyser les risques</li>
-              <li>Outils numériques et plateformes à connaître</li>
+              <li data-i18n="clubDetail.card4List1">Base de l'investissement : bourse, immobilier…</li>
+              <li data-i18n="clubDetail.card4List2">Stratégies possibles</li>
+              <li data-i18n="clubDetail.card4List3">Analyser les risques</li>
+              <li data-i18n="clubDetail.card4List4">Outils numériques et plateformes à connaître</li>
             </ul>
             <div class="ranch-doc-actions">
-              <a href="assets/projects/club-entrepreneurs/flyer-conference.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir le programme détaillé ↗</a>
+              <a href="assets/projects/club-entrepreneurs/flyer-conference.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary" data-i18n="clubDetail.viewFullProgram">Voir le programme détaillé ↗</a>
             </div>
             <div class="ranch-work">
               <div class="ranch-group">
-                <p class="ranch-work-title">Livrable</p>
-                <p class="ranch-deliverable-text">Invitation Canva et programme détaillé</p>
+                <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+                <p class="ranch-deliverable-text" data-i18n="clubDetail.card4Deliverable">Invitation Canva et programme détaillé</p>
               </div>
               <div class="ranch-group ranch-group--tools">
-                <p class="ranch-work-title">Outils utilisés</p>
+                <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
                 <div class="ranch-tags"><span>Canva</span><span>Photoshop</span><span>Illustrator</span><span>Pinterest</span></div>
               </div>
               <div class="ranch-group ranch-group--skills">
-                <p class="ranch-work-title">Compétences mobilisées</p>
-                <div class="ranch-tags"><span>Communication événementielle</span><span>Création de visuels</span></div>
+                <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+                <div class="ranch-tags"><span data-i18n="clubDetail.card4Skill1">Communication événementielle</span><span data-i18n="clubDetail.card4Skill2">Création de visuels</span></div>
               </div>
             </div>
           </article>
@@ -225,20 +233,21 @@
   </main>
 
   <div class="lightbox" id="lightbox" hidden>
-    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Visuel précédent" hidden>‹</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Visuel précédent" hidden data-i18n-attr="aria-label:common.lightboxPrevVisual">‹</button>
     <div class="lightbox-inner">
-      <a class="lightbox-download" id="lightboxDownload" href="" download aria-label="Télécharger l'image">⬇</a>
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l'aperçu">✕</button>
+      <a class="lightbox-download" id="lightboxDownload" href="" download aria-label="Télécharger l'image" data-i18n-attr="aria-label:common.lightboxDownload">⬇</a>
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l'aperçu" data-i18n-attr="aria-label:common.lightboxClose">✕</button>
       <img id="lightboxImage" src="" alt="" />
       <video id="lightboxVideo" controls playsinline hidden></video>
     </div>
-    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Visuel suivant" hidden>›</button>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Visuel suivant" hidden data-i18n-attr="aria-label:common.lightboxNextVisual">›</button>
   </div>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

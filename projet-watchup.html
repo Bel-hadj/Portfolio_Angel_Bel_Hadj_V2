@@ -9,40 +9,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible">
       <img src="assets/project-watchup.jpg" alt="Aperçu Business Game – WATCHUP" />
       <div class="detail-content">
-        <span class="tag tag-emerald">Business game</span>
+        <span class="tag tag-emerald" data-i18n="watchup.tag">Business game</span>
         <h1>Business Game WATCHUP</h1>
-        <p>Projet réalisé dans le cadre d’un Business Game en équipe. L’objectif était de gérer une entreprise fictive, de prendre des décisions stratégiques et de suivre l’impact de ces décisions sur les résultats commerciaux, financiers et marketing.</p>
+        <p data-i18n="watchup.intro">Projet réalisé dans le cadre d’un Business Game en équipe. L’objectif était de gérer une entreprise fictive, de prendre des décisions stratégiques et de suivre l’impact de ces décisions sur les résultats commerciaux, financiers et marketing.</p>
 
-        <h2>Missions réalisées</h2>
+        <h2 data-i18n="watchup.h2Missions">Missions réalisées</h2>
         <ul>
-<li>Prise de décisions en équipe</li>
-<li>Analyse des résultats</li>
-<li>Réflexion sur les prix et les ventes</li>
-<li>Suivi de la rentabilité</li>
-<li>Adaptation de la stratégie selon les performances</li>
+<li data-i18n="watchup.m1">Prise de décisions en équipe</li>
+<li data-i18n="watchup.m2">Analyse des résultats</li>
+<li data-i18n="watchup.m3">Réflexion sur les prix et les ventes</li>
+<li data-i18n="watchup.m4">Suivi de la rentabilité</li>
+<li data-i18n="watchup.m5">Adaptation de la stratégie selon les performances</li>
         </ul>
 
-        <h2>Compétences utilisées</h2>
-        <p>Gestion d’entreprise, stratégie commerciale, analyse financière, prise de décision, travail en équipe.</p>
+        <h2 data-i18n="watchup.h2Skills">Compétences utilisées</h2>
+        <p data-i18n="watchup.skillsText">Gestion d’entreprise, stratégie commerciale, analyse financière, prise de décision, travail en équipe.</p>
 
         <div class="placeholder-note">
-          <strong>À personnaliser :</strong> ajoute ici tes vraies images, captures d’écran,
-          maquettes, documents ou explications précises du projet.
+          <strong data-i18n="common.customize">À personnaliser :</strong> <span data-i18n="watchup.placeholder">ajoute ici tes vraies images, captures d’écran,
+          maquettes, documents ou explications précises du projet.</span>
         </div>
       </div>
     </article>
   </main>
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

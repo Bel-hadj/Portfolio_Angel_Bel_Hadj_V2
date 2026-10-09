@@ -9,10 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail project-detail-showcase">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible terra-glow">
       <!-- Le lecteur PDF sert de visuel principal du hero (remplace l'image
            statique) : c'est le seul lecteur PDF de la page, aucune duplication
@@ -21,121 +29,121 @@
         <div class="pdf-viewer-frame" id="terraPdfFrame">
           <canvas id="terraPdfCanvas"></canvas>
           <div class="pdf-viewer-status" id="terraPdfStatus">
-            <p id="terraPdfStatusText">Chargement de l’étude Terra Ética…</p>
+            <p id="terraPdfStatusText" data-i18n="terra.pdfLoading">Chargement de l’étude Terra Ética…</p>
             <a href="assets/projects/terra-etica/terra-etica-international-marketing.pdf" target="_blank" rel="noopener noreferrer"
-              class="btn secondary pdf-expand-btn" id="terraPdfStatusFallback" hidden>Ouvrir le PDF complet</a>
+              class="btn secondary pdf-expand-btn" id="terraPdfStatusFallback" hidden data-i18n="common.openFullPdf">Ouvrir le PDF complet</a>
           </div>
         </div>
         <div class="pdf-controls">
-          <button type="button" class="pdf-btn" id="terraPdfPrev" aria-label="Page précédente">←</button>
-          <span class="pdf-page-label">Page <span id="terraPdfPageCurrent">5</span> / <span id="terraPdfPageTotal">…</span></span>
-          <button type="button" class="pdf-btn" id="terraPdfNext" aria-label="Page suivante">→</button>
+          <button type="button" class="pdf-btn" id="terraPdfPrev" aria-label="Page précédente" data-i18n-attr="aria-label:common.previousPage">←</button>
+          <span class="pdf-page-label"><span data-i18n="common.page">Page</span> <span id="terraPdfPageCurrent">5</span> / <span id="terraPdfPageTotal">…</span></span>
+          <button type="button" class="pdf-btn" id="terraPdfNext" aria-label="Page suivante" data-i18n-attr="aria-label:common.nextPage">→</button>
           <label class="pdf-goto" for="terraPdfPageInput">
-            Aller à :
+            <span data-i18n="common.goTo">Aller à :</span>
             <input type="number" id="terraPdfPageInput" min="1" value="5" inputmode="numeric" aria-label="Accéder à une page" />
           </label>
-          <button type="button" class="btn secondary pdf-expand-btn" id="terraPdfExpand" aria-label="Agrandir le PDF" disabled>Agrandir</button>
+          <button type="button" class="btn secondary pdf-expand-btn" id="terraPdfExpand" aria-label="Agrandir le PDF" disabled data-i18n="common.expand">Agrandir</button>
         </div>
       </div>
 
       <div class="detail-content terra-detail-content">
-        <span class="tag tag-terra">International Marketing</span>
+        <span class="tag tag-terra" data-i18n="terra.tag">International Marketing</span>
         <h1>Terra Ética</h1>
-        <p class="detail-subtitle">Stratégie d’internationalisation &amp; Marketing international</p>
-        <p>Étude de marché et stratégie d’expansion internationale d’une marque française de chocolat bio et équitable.</p>
+        <p class="detail-subtitle" data-i18n="terra.subtitle">Stratégie d’internationalisation &amp; Marketing international</p>
+        <p data-i18n="terra.intro">Étude de marché et stratégie d’expansion internationale d’une marque française de chocolat bio et équitable.</p>
 
         <!-- Bouton Canva : aucune URL fournie pour le moment. Dès qu'Angel transmet le
              vrai lien, remplacer le <button disabled> ci-dessous par :
              <a href="COLLER_URL_CANVA_ICI" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir sur Canva ↗</a> -->
         <div class="doc-actions">
-          <a href="#terra-pdf-viewer" class="btn terra-btn-primary">Voir la présentation</a>
-          <a href="assets/projects/terra-etica/terra-etica-international-marketing.pdf" download class="btn secondary">Télécharger le PDF</a>
-          <button type="button" class="btn secondary" disabled aria-disabled="true">Canva bientôt disponible</button>
+          <a href="#terra-pdf-viewer" class="btn terra-btn-primary" data-i18n="common.viewPresentation">Voir la présentation</a>
+          <a href="assets/projects/terra-etica/terra-etica-international-marketing.pdf" download class="btn secondary" data-i18n="common.downloadPdf">Télécharger le PDF</a>
+          <button type="button" class="btn secondary" disabled aria-disabled="true" data-i18n="terra.btnCanvaSoon">Canva bientôt disponible</button>
         </div>
 
         <div class="snapshot-grid">
           <div class="snapshot-item">
-            <span class="snapshot-label">Type de projet</span>
-            <span class="snapshot-value">Étude de marché &amp; stratégie d’internationalisation</span>
+            <span class="snapshot-label" data-i18n="terra.snapTypeLbl">Type de projet</span>
+            <span class="snapshot-value" data-i18n="terra.snapTypeVal">Étude de marché &amp; stratégie d’internationalisation</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Cadre</span>
-            <span class="snapshot-value">EMLV — cours International Marketing</span>
+            <span class="snapshot-label" data-i18n="terra.snapFrameLbl">Cadre</span>
+            <span class="snapshot-value" data-i18n="terra.snapFrameVal">EMLV — cours International Marketing</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Équipe</span>
-            <span class="snapshot-value">Travail de groupe (4 personnes)</span>
+            <span class="snapshot-label" data-i18n="terra.snapTeamLbl">Équipe</span>
+            <span class="snapshot-value" data-i18n="terra.snapTeamVal">Travail de groupe (4 personnes)</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Marchés</span>
+            <span class="snapshot-label" data-i18n="terra.snapMarketsLbl">Marchés</span>
             <span class="snapshot-value">🇩🇪 Allemagne · 🇨🇦 Canada</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Objectif</span>
-            <span class="snapshot-value">Construire une stratégie d’expansion adaptée à chaque marché</span>
+            <span class="snapshot-label" data-i18n="terra.snapObjectiveLbl">Objectif</span>
+            <span class="snapshot-value" data-i18n="terra.snapObjectiveVal">Construire une stratégie d’expansion adaptée à chaque marché</span>
           </div>
         </div>
 
-        <h2>Positionnement &amp; C.A.P.</h2>
-        <p>Terra Ética est une marque française de chocolat bio et équitable, fondée en 2009 à Lorient.</p>
+        <h2 data-i18n="terra.h2Positioning">Positionnement &amp; C.A.P.</h2>
+        <p data-i18n="terra.pPositioning">Terra Ética est une marque française de chocolat bio et équitable, fondée en 2009 à Lorient.</p>
 
         <div class="cards-grid cards-grid-3">
           <article class="card">
             <span class="step-badge icon-indigo">01</span>
-            <h3>Concept</h3>
+            <h3 data-i18n="terra.conceptTitle">Concept</h3>
             <ul>
-<li>Marque française</li>
-<li>Bio et fair-trade</li>
-<li>Fabrication française</li>
-<li>Cacao durable et traçable</li>
-<li>Plaisir, éthique, authenticité</li>
+<li data-i18n="terra.concept1">Marque française</li>
+<li data-i18n="terra.concept2">Bio et fair-trade</li>
+<li data-i18n="terra.concept3">Fabrication française</li>
+<li data-i18n="terra.concept4">Cacao durable et traçable</li>
+<li data-i18n="terra.concept5">Plaisir, éthique, authenticité</li>
             </ul>
           </article>
           <article class="card">
             <span class="step-badge icon-violet">02</span>
-            <h3>Advantages</h3>
+            <h3 data-i18n="terra.advantagesTitle">Advantages</h3>
             <ul>
-<li>Naturalité</li>
-<li>Cacao bio et équitable</li>
-<li>Soutien aux producteurs</li>
-<li>Packaging responsable</li>
-<li>Made in France</li>
+<li data-i18n="terra.adv1">Naturalité</li>
+<li data-i18n="terra.adv2">Cacao bio et équitable</li>
+<li data-i18n="terra.adv3">Soutien aux producteurs</li>
+<li data-i18n="terra.adv4">Packaging responsable</li>
+<li data-i18n="terra.adv5">Made in France</li>
             </ul>
           </article>
           <article class="card">
             <span class="step-badge icon-amber">03</span>
-            <h3>Proof</h3>
+            <h3 data-i18n="terra.proofTitle">Proof</h3>
             <ul>
-<li>Certifications Bio/Fairtrade</li>
-<li>Traçabilité</li>
-<li>25+ coopératives</li>
-<li>Distribution en réseaux bio</li>
+<li data-i18n="terra.proof1">Certifications Bio/Fairtrade</li>
+<li data-i18n="terra.proof2">Traçabilité</li>
+<li data-i18n="terra.proof3">25+ coopératives</li>
+<li data-i18n="terra.proof4">Distribution en réseaux bio</li>
             </ul>
           </article>
         </div>
 
-        <p><strong>Produits analysés :</strong> 70% Pérou Grand Cru Piura • Lait aux noisettes entières.</p>
-        <p>L’internationalisation vise à diversifier les marchés, profiter de la croissance du chocolat premium/bio et renforcer la visibilité internationale de la marque.</p>
+        <p data-i18n="terra.productsAnalyzed"><strong>Produits analysés :</strong> 70% Pérou Grand Cru Piura • Lait aux noisettes entières.</p>
+        <p data-i18n="terra.pInternational">L’internationalisation vise à diversifier les marchés, profiter de la croissance du chocolat premium/bio et renforcer la visibilité internationale de la marque.</p>
 
-        <h2>Deux marchés, deux stratégies</h2>
-        <p>Sélectionne un marché pour voir le détail.</p>
+        <h2 data-i18n="terra.h2TwoMarkets">Deux marchés, deux stratégies</h2>
+        <p data-i18n="terra.pSelectMarket">Sélectionne un marché pour voir le détail.</p>
         <div class="tabs">
           <input type="radio" name="terraTab" id="terraTabDE" class="tabs-input" checked>
           <input type="radio" name="terraTab" id="terraTabCA" class="tabs-input">
 
           <div class="tabs-list" role="tablist">
-            <label for="terraTabDE" class="tabs-btn">🇩🇪 Allemagne</label>
-            <label for="terraTabCA" class="tabs-btn">🇨🇦 Canada</label>
+            <label for="terraTabDE" class="tabs-btn" data-i18n="terra.tabDE">🇩🇪 Allemagne</label>
+            <label for="terraTabCA" class="tabs-btn" data-i18n="terra.tabCA">🇨🇦 Canada</label>
           </div>
 
           <div class="tabs-panel" id="terraPanelDE">
             <div class="card">
               <ul>
-<li><strong>Opportunité :</strong> plus forte consommation de chocolat d’Europe, forte culture bio/fair-trade.</li>
-<li><strong>Cible :</strong> 25–55 ans, urbains, sensibles à la durabilité, achats en magasins bio.</li>
-<li><strong>Adaptation :</strong> tablettes bio, chocolat noir single-origine, certification Bio-Siegel.</li>
-<li><strong>Distribution :</strong> magasins bio (Alnatura, Denn’s).</li>
-<li><strong>Message-clé :</strong> écologie et traçabilité.</li>
+<li data-i18n="terra.deOpportunity"><strong>Opportunité :</strong> plus forte consommation de chocolat d’Europe, forte culture bio/fair-trade.</li>
+<li data-i18n="terra.deTarget"><strong>Cible :</strong> 25–55 ans, urbains, sensibles à la durabilité, achats en magasins bio.</li>
+<li data-i18n="terra.deAdaptation"><strong>Adaptation :</strong> tablettes bio, chocolat noir single-origine, certification Bio-Siegel.</li>
+<li data-i18n="terra.deDistribution"><strong>Distribution :</strong> magasins bio (Alnatura, Denn’s).</li>
+<li data-i18n="terra.deMessage"><strong>Message-clé :</strong> écologie et traçabilité.</li>
               </ul>
             </div>
           </div>
@@ -143,42 +151,42 @@
           <div class="tabs-panel" id="terraPanelCA">
             <div class="card">
               <ul>
-<li><strong>Opportunité :</strong> croissance rapide du segment premium (+6 à 8%/an), consommateurs éco/santé.</li>
-<li><strong>Cible :</strong> 20–50 ans, éco-conscients, orientés santé, achats en magasins premium et en ligne.</li>
-<li><strong>Adaptation :</strong> chocolat premium équitable, noir à faible teneur en sucre, certification USDA/Fairtrade CA.</li>
-<li><strong>Distribution :</strong> magasins naturels/premium + e-commerce.</li>
-<li><strong>Message-clé :</strong> santé et clean label.</li>
+<li data-i18n="terra.caOpportunity"><strong>Opportunité :</strong> croissance rapide du segment premium (+6 à 8%/an), consommateurs éco/santé.</li>
+<li data-i18n="terra.caTarget"><strong>Cible :</strong> 20–50 ans, éco-conscients, orientés santé, achats en magasins premium et en ligne.</li>
+<li data-i18n="terra.caAdaptation"><strong>Adaptation :</strong> chocolat premium équitable, noir à faible teneur en sucre, certification USDA/Fairtrade CA.</li>
+<li data-i18n="terra.caDistribution"><strong>Distribution :</strong> magasins naturels/premium + e-commerce.</li>
+<li data-i18n="terra.caMessage"><strong>Message-clé :</strong> santé et clean label.</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <h2>De l’adaptation à la distribution</h2>
-        <p>Le produit reste globalement identique ; packaging, certifications, communication, prix et distribution sont adaptés au marché.</p>
+        <h2 data-i18n="terra.h2Adaptation">De l’adaptation à la distribution</h2>
+        <p data-i18n="terra.pAdaptation">Le produit reste globalement identique ; packaging, certifications, communication, prix et distribution sont adaptés au marché.</p>
 
-        <p class="reality-lead">Allemagne</p>
+        <p class="reality-lead" data-i18n="terra.germany">Allemagne</p>
         <div class="rtc-flow">
           <div class="rtc-step">Terra Ética<span>France</span></div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Importateur / distributeur bio<span>Allemagne</span></div>
+          <div class="rtc-step"><span data-i18n="terra.flowImporter">Importateur / distributeur bio</span><span data-i18n="terra.germany">Allemagne</span></div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Retailers bio</div>
+          <div class="rtc-step" data-i18n="terra.flowRetailersBio">Retailers bio</div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Consommateurs</div>
+          <div class="rtc-step" data-i18n="terra.flowConsumers">Consommateurs</div>
         </div>
-        <p class="reality-lead">Canada</p>
+        <p class="reality-lead" data-i18n="terra.canada">Canada</p>
         <div class="rtc-flow">
           <div class="rtc-step">Terra Ética<span>France</span></div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Distributeur canadien</div>
+          <div class="rtc-step" data-i18n="terra.flowDistributorCA">Distributeur canadien</div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Retail premium + boutique en ligne</div>
+          <div class="rtc-step" data-i18n="terra.flowRetailPremium">Retail premium + boutique en ligne</div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Consommateurs</div>
+          <div class="rtc-step" data-i18n="terra.flowConsumers">Consommateurs</div>
         </div>
 
-        <h2>Mon rôle &amp; compétences</h2>
-        <p>Projet réalisé en groupe dans le cadre du cours International Marketing. J’ai participé à l’analyse de la marque, à la comparaison Allemagne/Canada, à la segmentation, à la réflexion sur l’adaptation locale et à la stratégie de distribution.</p>
+        <h2 data-i18n="terra.h2RoleSkills">Mon rôle &amp; compétences</h2>
+        <p data-i18n="terra.pRoleSkills">Projet réalisé en groupe dans le cadre du cours International Marketing. J’ai participé à l’analyse de la marque, à la comparaison Allemagne/Canada, à la segmentation, à la réflexion sur l’adaptation locale et à la stratégie de distribution.</p>
         <div class="skill-tags skills-plain">
           <span>International Marketing</span>
           <span>Market Research</span>
@@ -188,8 +196,8 @@
           <span>Route-to-Consumer</span>
         </div>
 
-        <h2>Conclusion</h2>
-        <p>Ce projet m’a permis d’appliquer une démarche complète de marketing international, de la sélection des marchés jusqu’à l’adaptation et au circuit de distribution.</p>
+        <h2 data-i18n="terra.h2Conclusion">Conclusion</h2>
+        <p data-i18n="terra.pConclusion">Ce projet m’a permis d’appliquer une démarche complète de marketing international, de la sélection des marchés jusqu’à l’adaptation et au circuit de distribution.</p>
       </div>
     </article>
   </main>
@@ -198,17 +206,17 @@
     <div class="pdf-modal-inner" role="dialog" aria-modal="true" aria-label="Lecteur PDF – Terra Ética">
       <div class="pdf-modal-head">
         <span class="pdf-modal-title">Terra Ética</span>
-        <button type="button" class="pdf-btn" id="terraPdfModalClose" aria-label="Fermer le lecteur">✕</button>
+        <button type="button" class="pdf-btn" id="terraPdfModalClose" aria-label="Fermer le lecteur" data-i18n-attr="aria-label:common.lightboxClose">✕</button>
       </div>
       <div class="pdf-viewer-frame">
         <canvas id="terraPdfModalCanvas"></canvas>
       </div>
       <div class="pdf-controls">
-        <button type="button" class="pdf-btn" id="terraPdfModalPrev" aria-label="Page précédente">←</button>
-        <span class="pdf-page-label">Page <span id="terraPdfModalPageCurrent">5</span> / <span id="terraPdfModalPageTotal">…</span></span>
-        <button type="button" class="pdf-btn" id="terraPdfModalNext" aria-label="Page suivante">→</button>
+        <button type="button" class="pdf-btn" id="terraPdfModalPrev" aria-label="Page précédente" data-i18n-attr="aria-label:common.previousPage">←</button>
+        <span class="pdf-page-label"><span data-i18n="common.page">Page</span> <span id="terraPdfModalPageCurrent">5</span> / <span id="terraPdfModalPageTotal">…</span></span>
+        <button type="button" class="pdf-btn" id="terraPdfModalNext" aria-label="Page suivante" data-i18n-attr="aria-label:common.nextPage">→</button>
         <label class="pdf-goto" for="terraPdfModalPageInput">
-          Aller à :
+          <span data-i18n="common.goTo">Aller à :</span>
           <input type="number" id="terraPdfModalPageInput" min="1" value="5" inputmode="numeric" aria-label="Accéder à une page" />
         </label>
       </div>
@@ -216,11 +224,12 @@
   </div>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
   <script src="assets/projects/terra-etica/terra-etica-pdf-data.js"></script>
   <script type="module" src="assets/projects/terra-etica/terra-etica-pdf-viewer.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

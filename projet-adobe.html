@@ -9,40 +9,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible">
       <img src="assets/project-adobe.jpg" alt="Aperçu Design graphique & Suite Adobe" />
       <div class="detail-content">
-        <span class="tag tag-violet">Design graphique</span>
+        <span class="tag tag-violet" data-i18n="adobe.tag">Design graphique</span>
         <h1>Design graphique & Suite Adobe</h1>
-        <p>Projets réalisés en première année à l’EMLV dans le cadre des cours de design et de création visuelle. Ces travaux m’ont permis de pratiquer les bases de la création graphique avec Photoshop, Illustrator et InDesign.</p>
+        <p data-i18n="adobe.intro">Projets réalisés en première année à l’EMLV dans le cadre des cours de design et de création visuelle. Ces travaux m’ont permis de pratiquer les bases de la création graphique avec Photoshop, Illustrator et InDesign.</p>
 
-        <h2>Missions réalisées</h2>
+        <h2 data-i18n="common.missionsDone">Missions réalisées</h2>
         <ul>
-<li>Création de visuels graphiques</li>
-<li>Retouche et montage photo</li>
-<li>Travail sur la composition visuelle</li>
-<li>Mise en page de supports de communication</li>
-<li>Respect d’une direction artistique</li>
+<li data-i18n="adobe.m1">Création de visuels graphiques</li>
+<li data-i18n="adobe.m2">Retouche et montage photo</li>
+<li data-i18n="adobe.m3">Travail sur la composition visuelle</li>
+<li data-i18n="adobe.m4">Mise en page de supports de communication</li>
+<li data-i18n="adobe.m5">Respect d’une direction artistique</li>
         </ul>
 
-        <h2>Compétences utilisées</h2>
-        <p>Photoshop, Illustrator, InDesign, Canva, création graphique, retouche photo, mise en page, typographie, composition visuelle.</p>
+        <h2 data-i18n="common.skillsUsedPlain">Compétences utilisées</h2>
+        <p data-i18n="adobe.skillsText">Photoshop, Illustrator, InDesign, Canva, création graphique, retouche photo, mise en page, typographie, composition visuelle.</p>
 
         <div class="placeholder-note">
-          <strong>À personnaliser :</strong> ajoute ici tes vraies images, captures d’écran,
-          maquettes, documents ou explications précises du projet.
+          <strong data-i18n="common.customize">À personnaliser :</strong> <span data-i18n="watchup.placeholder">ajoute ici tes vraies images, captures d’écran,
+          maquettes, documents ou explications précises du projet.</span>
         </div>
       </div>
     </article>
   </main>
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

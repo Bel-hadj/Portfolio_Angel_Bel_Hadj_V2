@@ -9,10 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail project-detail-showcase ranch-detail-wide photoshop-detail">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible photoshop-glow">
       <div class="club-hero-mosaic">
         <div class="mosaic-tile mosaic-main">
@@ -30,103 +38,103 @@
       </div>
 
       <div class="detail-content">
-        <span class="tag tag-photoshop">Projet académique</span>
+        <span class="tag tag-photoshop" data-i18n="photoshop.tag">Projet académique</span>
         <h1>Adobe Photoshop for Business</h1>
-        <p class="detail-subtitle">Création graphique, retouche photo et communication visuelle · 2024</p>
-        <p>Trois exercices réalisés dans le cadre du cours DIB (EMLV) avec Adobe Photoshop : retouche et correction d’image, création de visuels social media multi-formats, et composition graphique libre.</p>
+        <p class="detail-subtitle" data-i18n="photoshop.subtitle">Création graphique, retouche photo et communication visuelle · 2024</p>
+        <p data-i18n="photoshop.intro">Trois exercices réalisés dans le cadre du cours DIB (EMLV) avec Adobe Photoshop : retouche et correction d’image, création de visuels social media multi-formats, et composition graphique libre.</p>
       </div>
     </article>
 
-    <h2 class="ranch-section-title">Mes projets réalisés</h2>
+    <h2 class="ranch-section-title" data-i18n="common.projectsCompleted">Mes projets réalisés</h2>
     <div class="cards-grid cards-grid-sm ranch-projects-grid">
 
       <article class="card ranch-project-card">
         <span class="project-number">01</span>
-        <h3>Retouche photo beauté</h3>
-        <p>Retouche et amélioration d’un portrait : détourage, correction des imperfections de peau, ajustement du fond et optimisation du rendu visuel.</p>
+        <h3 data-i18n="photoshop.card1Title">Retouche photo beauté</h3>
+        <p data-i18n="photoshop.card1Desc">Retouche et amélioration d’un portrait : détourage, correction des imperfections de peau, ajustement du fond et optimisation du rendu visuel.</p>
         <div class="ranch-pair ranch-frames">
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/photoshop-business/retouche-avant.jpg" data-lightbox-alt="Avant retouche : portrait avec imperfections, fond gris" data-lightbox-group="retouche" aria-label="Agrandir la photo avant retouche">
               <img src="assets/projects/photoshop-business/retouche-avant.jpg" alt="Avant retouche : portrait avec imperfections, fond gris" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Avant</span>
+            <span class="ranch-pair-caption" data-i18n="common.before">Avant</span>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/photoshop-business/retouche-apres.jpg" data-lightbox-alt="Après retouche : portrait peau corrigée, fond orange" data-lightbox-group="retouche" aria-label="Agrandir la photo après retouche">
               <img src="assets/projects/photoshop-business/retouche-apres.jpg" alt="Après retouche : portrait peau corrigée, fond orange" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Après</span>
+            <span class="ranch-pair-caption" data-i18n="common.after">Après</span>
           </div>
         </div>
         <div class="ranch-doc-actions">
-          <a href="assets/projects/photoshop-business/psd/Angel-Bel-Hadj-Exercice1-DIB-avant.psd" download class="btn secondary">Télécharger le PSD (Avant) ↓</a>
-          <a href="assets/projects/photoshop-business/psd/Angel-Bel-Hadj-Exercice1-DIB.psd" download class="btn secondary">Télécharger le PSD (Après) ↓</a>
+          <a href="assets/projects/photoshop-business/psd/Angel-Bel-Hadj-Exercice1-DIB-avant.psd" download class="btn secondary" data-i18n="photoshop.downloadBefore">Télécharger le PSD (Avant) ↓</a>
+          <a href="assets/projects/photoshop-business/psd/Angel-Bel-Hadj-Exercice1-DIB.psd" download class="btn secondary" data-i18n="photoshop.downloadAfter">Télécharger le PSD (Après) ↓</a>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Portrait retouché avant / après</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="photoshop.card1Deliverable">Portrait retouché avant / après</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Adobe Photoshop</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Retouche photo</span><span>Détourage</span><span>Correction d’image</span><span>Gestion des calques</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="photoshop.card1Skill1">Retouche photo</span><span data-i18n="photoshop.card1Skill2">Détourage</span><span data-i18n="photoshop.card1Skill3">Correction d’image</span><span data-i18n="photoshop.card1Skill4">Gestion des calques</span></div>
           </div>
         </div>
       </article>
 
       <article class="card ranch-project-card">
         <span class="project-number">02</span>
-        <h3>Campagne Social Media Prescription Lab</h3>
-        <p>Création d’une campagne promotionnelle déclinée sur plusieurs formats digitaux afin d’adapter une même identité visuelle à Instagram et YouTube.</p>
+        <h3 data-i18n="photoshop.card2Title">Campagne Social Media Prescription Lab</h3>
+        <p data-i18n="photoshop.card2Desc">Création d’une campagne promotionnelle déclinée sur plusieurs formats digitaux afin d’adapter une même identité visuelle à Instagram et YouTube.</p>
         <div class="ranch-pair ranch-frames ranch-pair--gap-sm">
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/photoshop-business/prescriptionlab-post.jpg" data-lightbox-alt="Post Instagram carré Prescription Lab" data-lightbox-group="prescriptionlab" aria-label="Agrandir le post Instagram">
               <img src="assets/projects/photoshop-business/prescriptionlab-post.jpg" alt="Post Instagram carré Prescription Lab" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Post Instagram · 1080 × 1080</span>
+            <span class="ranch-pair-caption" data-i18n="photoshop.postCaption">Post Instagram · 1080 × 1080</span>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/photoshop-business/prescriptionlab-story.jpg" data-lightbox-alt="Story Instagram Prescription Lab" data-lightbox-group="prescriptionlab" aria-label="Agrandir la story Instagram">
               <img src="assets/projects/photoshop-business/prescriptionlab-story.jpg" alt="Story Instagram Prescription Lab" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Story Instagram · 1080 × 1920</span>
+            <span class="ranch-pair-caption" data-i18n="photoshop.storyCaption">Story Instagram · 1080 × 1920</span>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/photoshop-business/prescriptionlab-cover.jpg" data-lightbox-alt="Cover YouTube Prescription Lab" data-lightbox-group="prescriptionlab" aria-label="Agrandir la cover YouTube">
               <img src="assets/projects/photoshop-business/prescriptionlab-cover.jpg" alt="Cover YouTube Prescription Lab" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Cover YouTube · 2560 × 1440</span>
+            <span class="ranch-pair-caption" data-i18n="photoshop.coverCaption">Cover YouTube · 2560 × 1440</span>
           </div>
         </div>
         <div class="ranch-doc-actions">
-          <a href="assets/projects/photoshop-business/psd/prescriptionlab-post.psd" download class="btn secondary">Télécharger le PSD (Post) ↓</a>
-          <a href="assets/projects/photoshop-business/psd/prescriptionlab-story.psd" download class="btn secondary">Télécharger le PSD (Story) ↓</a>
-          <a href="assets/projects/photoshop-business/psd/prescriptionlab-cover.psd" download class="btn secondary">Télécharger le PSD (Cover YouTube) ↓</a>
+          <a href="assets/projects/photoshop-business/psd/prescriptionlab-post.psd" download class="btn secondary" data-i18n="photoshop.downloadPost">Télécharger le PSD (Post) ↓</a>
+          <a href="assets/projects/photoshop-business/psd/prescriptionlab-story.psd" download class="btn secondary" data-i18n="photoshop.downloadStory">Télécharger le PSD (Story) ↓</a>
+          <a href="assets/projects/photoshop-business/psd/prescriptionlab-cover.psd" download class="btn secondary" data-i18n="photoshop.downloadCover">Télécharger le PSD (Cover YouTube) ↓</a>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">3 visuels Social Media</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="photoshop.card2Deliverable">3 visuels Social Media</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Adobe Photoshop</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Design social media</span><span>Composition visuelle</span><span>Adaptation multiformat</span><span>Hiérarchie visuelle</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="photoshop.card2Skill1">Design social media</span><span data-i18n="photoshop.card2Skill2">Composition visuelle</span><span data-i18n="photoshop.card2Skill3">Adaptation multiformat</span><span data-i18n="photoshop.card2Skill4">Hiérarchie visuelle</span></div>
           </div>
         </div>
       </article>
 
       <article class="card ranch-project-card photoshop-card-full">
         <span class="project-number">03</span>
-        <h3>Création graphique Noël</h3>
-        <p>Création graphique libre autour de l’univers de Noël, réalisée dans Adobe Photoshop. Composition de plusieurs éléments visuels afin de construire une scène festive cohérente, avec travail sur l’intégration, les proportions, les couleurs et la hiérarchie visuelle.</p>
+        <h3 data-i18n="photoshop.card3Title">Création graphique Noël</h3>
+        <p data-i18n="photoshop.card3Desc">Création graphique libre autour de l’univers de Noël, réalisée dans Adobe Photoshop. Composition de plusieurs éléments visuels afin de construire une scène festive cohérente, avec travail sur l’intégration, les proportions, les couleurs et la hiérarchie visuelle.</p>
         <div class="ranch-pair ranch-frames">
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/photoshop-business/noel.jpg" data-lightbox-alt="Création graphique libre sur le thème de Noël" aria-label="Agrandir la création Noël">
@@ -135,27 +143,27 @@
           </div>
         </div>
         <div class="ranch-doc-actions">
-          <a href="assets/projects/photoshop-business/psd/noel.psd" download class="btn secondary">Télécharger le PSD ↓</a>
+          <a href="assets/projects/photoshop-business/psd/noel.psd" download class="btn secondary" data-i18n="common.downloadPsd">Télécharger le PSD ↓</a>
         </div>
-        <p class="ranch-work-note-title">Travail réalisé</p>
+        <p class="ranch-work-note-title" data-i18n="common.workDone">Travail réalisé</p>
         <ul class="ranch-list">
-          <li>Composition d’une scène graphique autour de l’univers de Noël</li>
-          <li>Assemblage et intégration de plusieurs éléments visuels</li>
-          <li>Harmonisation des couleurs et des proportions</li>
-          <li>Organisation de la composition pour mettre en avant le message « Joyeux Noël »</li>
+          <li data-i18n="photoshop.card3List1">Composition d’une scène graphique autour de l’univers de Noël</li>
+          <li data-i18n="photoshop.card3List2">Assemblage et intégration de plusieurs éléments visuels</li>
+          <li data-i18n="photoshop.card3List3">Harmonisation des couleurs et des proportions</li>
+          <li data-i18n="photoshop.card3List4">Organisation de la composition pour mettre en avant le message « Joyeux Noël »</li>
         </ul>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Création graphique événementielle</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="photoshop.card3Deliverable">Création graphique événementielle</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Adobe Photoshop</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Photomontage</span><span>Composition visuelle</span><span>Détourage</span><span>Intégration d’éléments</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="photoshop.card3Skill1">Photomontage</span><span data-i18n="photoshop.card3Skill2">Composition visuelle</span><span data-i18n="photoshop.card3Skill3">Détourage</span><span data-i18n="photoshop.card3Skill4">Intégration d’éléments</span></div>
           </div>
         </div>
       </article>
@@ -196,20 +204,21 @@
   </main>
 
   <div class="lightbox" id="lightbox" hidden>
-    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Visuel précédent" hidden>‹</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Visuel précédent" hidden data-i18n-attr="aria-label:common.lightboxPrevVisual">‹</button>
     <div class="lightbox-inner">
-      <a class="lightbox-download" id="lightboxDownload" href="" download aria-label="Télécharger l'image">⬇</a>
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l'aperçu">✕</button>
+      <a class="lightbox-download" id="lightboxDownload" href="" download aria-label="Télécharger l'image" data-i18n-attr="aria-label:common.lightboxDownload">⬇</a>
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l'aperçu" data-i18n-attr="aria-label:common.lightboxClose">✕</button>
       <img id="lightboxImage" src="" alt="" />
       <video id="lightboxVideo" controls playsinline hidden></video>
     </div>
-    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Visuel suivant" hidden>›</button>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Visuel suivant" hidden data-i18n-attr="aria-label:common.lightboxNextVisual">›</button>
   </div>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

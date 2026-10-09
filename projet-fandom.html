@@ -9,10 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail project-detail-cozy">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
 
     <!--
       Projet Accor retiré temporairement (pas encore prêt : visuels et captures manquants).
@@ -51,111 +59,117 @@
 
     <article class="detail-hero reveal visible compact-card fandom-glow">
       <div class="detail-content">
-        <p class="detail-index">Projet principal</p>
+        <p class="detail-index" data-i18n="fandom.index">Projet principal</p>
         <div class="tag-group">
-          <span class="tag tag-fandom">UX Research</span>
-          <span class="tag tag-cyan">User Testing</span>
-          <span class="tag tag-amber">Card Sorting</span>
+          <span class="tag tag-fandom" data-i18n="fandom.tag1">UX Research</span>
+          <span class="tag tag-cyan" data-i18n="fandom.tag2">User Testing</span>
+          <span class="tag tag-amber" data-i18n="fandom.tag3">Card Sorting</span>
         </div>
         <h1>Audit UX Fandom</h1>
-        <p class="detail-subtitle">Tests utilisateurs & Card Sorting · 1er semestre 2026</p>
+        <p class="detail-subtitle" data-i18n="fandom.subtitle">Tests utilisateurs & Card Sorting · 1er semestre 2026</p>
 
-        <p>Analyse de l’expérience utilisateur du site Fandom à travers des tests utilisateurs, un questionnaire UX et une activité de card sorting.</p>
-        <p>L’objectif était d’identifier les difficultés de navigation et de comprendre comment les utilisateurs organisent naturellement l’information.</p>
+        <p data-i18n="fandom.intro1">Analyse de l’expérience utilisateur du site Fandom à travers des tests utilisateurs, un questionnaire UX et une activité de card sorting.</p>
+        <p data-i18n="fandom.intro2">L’objectif était d’identifier les difficultés de navigation et de comprendre comment les utilisateurs organisent naturellement l’information.</p>
 
         <div class="pdf-viewer">
           <div class="pdf-viewer-frame" id="fandomPdfFrame">
             <canvas id="fandomPdfCanvas"></canvas>
             <div class="pdf-viewer-status" id="fandomPdfStatus">
-              <p id="fandomPdfStatusText">Chargement de l’audit Fandom…</p>
+              <p id="fandomPdfStatusText" data-i18n="fandom.pdfLoading">Chargement de l’audit Fandom…</p>
               <a href="assets/documents/audit-fandom.pdf" target="_blank" rel="noopener noreferrer"
-                class="btn secondary pdf-expand-btn" id="fandomPdfStatusFallback" hidden>Ouvrir le PDF complet</a>
+                class="btn secondary pdf-expand-btn" id="fandomPdfStatusFallback" hidden data-i18n="common.openFullPdf">Ouvrir le PDF complet</a>
             </div>
           </div>
           <div class="pdf-controls">
-            <button type="button" class="pdf-btn" id="fandomPdfPrev" aria-label="Page précédente">←</button>
-            <span class="pdf-page-label">Page <span id="fandomPdfPageCurrent">1</span> / <span id="fandomPdfPageTotal">…</span></span>
-            <button type="button" class="pdf-btn" id="fandomPdfNext" aria-label="Page suivante">→</button>
+            <button type="button" class="pdf-btn" id="fandomPdfPrev" aria-label="Page précédente" data-i18n-attr="aria-label:common.previousPage">←</button>
+            <span class="pdf-page-label"><span data-i18n="common.page">Page</span> <span id="fandomPdfPageCurrent">1</span> / <span id="fandomPdfPageTotal">…</span></span>
+            <button type="button" class="pdf-btn" id="fandomPdfNext" aria-label="Page suivante" data-i18n-attr="aria-label:common.nextPage">→</button>
             <label class="pdf-goto" for="fandomPdfPageInput">
-              Aller à :
+              <span data-i18n="common.goTo">Aller à :</span>
               <input type="number" id="fandomPdfPageInput" min="1" value="1" inputmode="numeric" aria-label="Accéder à une page" />
             </label>
-            <button type="button" class="btn secondary pdf-expand-btn" id="fandomPdfExpand" aria-label="Agrandir le PDF" disabled>Agrandir</button>
+            <button type="button" class="btn secondary pdf-expand-btn" id="fandomPdfExpand" aria-label="Agrandir le PDF" disabled data-i18n="common.expand">Agrandir</button>
           </div>
         </div>
 
-        <h2>Documents du projet</h2>
-        <p>Consultez l’étude complète ou téléchargez le questionnaire utilisé pendant le projet.</p>
+        <h2 data-i18n="fandom.h2Documents">Documents du projet</h2>
+        <p data-i18n="fandom.pDocuments">Consultez l’étude complète ou téléchargez le questionnaire utilisé pendant le projet.</p>
         <div class="doc-actions">
-          <a href="assets/documents/audit-fandom.pdf" target="_blank" rel="noopener noreferrer" class="btn fandom-btn-primary" aria-label="Ouvrir le PDF complet dans un nouvel onglet">Voir le PDF complet</a>
-          <a href="assets/documents/questionnaire-fandom.xlsx" download class="btn secondary" aria-label="Télécharger le questionnaire Excel">Télécharger le questionnaire Excel</a>
+          <a href="assets/documents/audit-fandom.pdf" target="_blank" rel="noopener noreferrer" class="btn fandom-btn-primary" aria-label="Ouvrir le PDF complet dans un nouvel onglet" data-i18n="fandom.btnViewPdf">Voir le PDF complet</a>
+          <a href="assets/documents/questionnaire-fandom.xlsx" download class="btn secondary" aria-label="Télécharger le questionnaire Excel" data-i18n="fandom.btnDownloadXlsx">Télécharger le questionnaire Excel</a>
         </div>
 
-        <h2>Missions réalisées</h2>
-        <ul>
-<li>Préparation et réalisation de tests utilisateurs</li>
-<li>Création et analyse d’un questionnaire UX</li>
-<li>Réalisation d’un card sorting</li>
-<li>Analyse des comportements et modèles mentaux</li>
-<li>Identification des points de friction</li>
-<li>Synthèse des résultats et recommandations UX</li>
-        </ul>
-
-        <h2>Méthodologie</h2>
-        <div class="cards-grid cards-grid-3">
-          <article class="card">
-            <span class="step-badge icon-indigo">01</span>
-            <h3>Tests utilisateurs</h3>
-            <p>Observation de la compréhension du site, de la navigation et des principales fonctionnalités.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge icon-violet">02</span>
-            <h3>Questionnaire UX</h3>
-            <p>Évaluation de la clarté de l’interface et de la manière dont les utilisateurs interprètent les différents éléments.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge icon-amber">03</span>
-            <h3>Card Sorting</h3>
-            <p>Classement de différents contenus par les participants afin d’identifier leur organisation naturelle de l’information.</p>
-          </article>
+        <div class="snapshot-grid">
+          <div class="snapshot-item">
+            <span class="snapshot-label" data-i18n="fandom.snapFrameLbl">Cadre</span>
+            <span class="snapshot-value" data-i18n="fandom.snapFrameVal">Projet académique — EMLV</span>
+          </div>
+          <div class="snapshot-item">
+            <span class="snapshot-label" data-i18n="fandom.snapFormatLbl">Format</span>
+            <span class="snapshot-value" data-i18n="fandom.snapFormatVal">Audit UX</span>
+          </div>
+          <div class="snapshot-item">
+            <span class="snapshot-label" data-i18n="fandom.snapPeriodLbl">Période</span>
+            <span class="snapshot-value" data-i18n="fandom.snapPeriodVal">1er semestre 2026</span>
+          </div>
+          <div class="snapshot-item">
+            <span class="snapshot-label" data-i18n="fandom.snapToolsLbl">Outils / méthodes</span>
+            <span class="snapshot-value" data-i18n="fandom.snapToolsVal">Tests utilisateurs, questionnaire UX, card sorting</span>
+          </div>
         </div>
 
-        <h2>Résultats clés</h2>
-        <div class="cards-grid">
-          <article class="card">
-            <span class="step-badge icon-indigo">01</span>
-            <h3>Structure globale comprise</h3>
-            <p>Les grandes catégories sont globalement organisées de manière similaire par les participants.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge icon-violet">02</span>
-            <h3>Produits & services</h3>
-            <p>Les produits sont facilement regroupés tandis que Shopping / Services forme un ensemble distinct.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge icon-amber">03</span>
-            <h3>Compte utilisateur</h3>
-            <p>Le compte utilisateur est naturellement identifié comme une catégorie indépendante.</p>
-          </article>
-          <article class="card">
-            <span class="step-badge icon-rose">04</span>
-            <h3>Zones d’hésitation</h3>
-            <p>« À propos de nous », « Apps / Robotique » et « Nous contacter » ont généré davantage d’hésitations.</p>
-          </article>
-        </div>
-        <div class="insight-callout">
-          L’étude met en évidence l’importance d’une architecture de l’information alignée sur le modèle mental des utilisateurs.
+        <h2 data-i18n="fandom.h2Context">Contexte de l’audit</h2>
+        <p data-i18n="fandom.pContext">Fandom propose un catalogue de contenus très large, organisé d’une façon qui n’est pas toujours intuitive pour les nouveaux visiteurs : c’est ce point de départ qui a motivé cet audit.</p>
+
+        <h2 data-i18n="fandom.h2Method">Approche UX</h2>
+        <p class="reality-lead" data-i18n="fandom.pApproach">Trois méthodes complémentaires ont été utilisées pour couvrir le comportement, le ressenti et l’organisation mentale des utilisateurs.</p>
+        <div class="reality-grid">
+          <div>
+            <strong data-i18n="fandom.method1Title">Tests utilisateurs</strong>
+            <span data-i18n="fandom.method1Text">Observation de la navigation et des principaux points de blocage.</span>
+          </div>
+          <div>
+            <strong data-i18n="fandom.method2Title">Questionnaire UX</strong>
+            <span data-i18n="fandom.method2Text">Recueil du ressenti des participants après les tests.</span>
+          </div>
+          <div>
+            <strong data-i18n="fandom.method3Title">Card Sorting</strong>
+            <span data-i18n="fandom.method3Text">Analyse de la manière dont les participants regroupent les contenus.</span>
+          </div>
         </div>
 
-        <h2>Compétences utilisées</h2>
-        <div class="skill-tags">
-          <span>UX Research</span>
-          <span>User Testing</span>
-          <span>Card Sorting</span>
-          <span>Analyse utilisateur</span>
-          <span>Ergonomie</span>
-          <span>Architecture de l’information</span>
-          <span>Design Thinking</span>
+        <h2 data-i18n="fandom.h2Results">Résultats clés</h2>
+        <div class="reality-grid">
+          <div>
+            <strong data-i18n="fandom.result1Title">Structure globale comprise</strong>
+            <span data-i18n="fandom.result1Text">Les grandes catégories sont organisées de façon similaire par les participants.</span>
+          </div>
+          <div>
+            <strong data-i18n="fandom.result2Title">Produits & services</strong>
+            <span data-i18n="fandom.result2Text">Les produits sont facilement regroupés ; Shopping/Services forme un ensemble distinct.</span>
+          </div>
+          <div>
+            <strong data-i18n="fandom.result3Title">Compte utilisateur</strong>
+            <span data-i18n="fandom.result3Text">Le compte utilisateur est naturellement identifié comme une catégorie indépendante.</span>
+          </div>
+          <div>
+            <strong data-i18n="fandom.result4Title">Zones d’hésitation</strong>
+            <span data-i18n="fandom.result4Text">« À propos de nous », « Apps / Robotique » et « Nous contacter » ont généré davantage d’hésitations.</span>
+          </div>
+        </div>
+        <div class="insight-callout" data-i18n="fandom.insight">
+          L’organisation des contenus doit rester proche de la logique utilisée spontanément par les utilisateurs.
+        </div>
+
+        <h2 data-i18n="fandom.h2RoleContrib">Mon rôle &amp; contributions</h2>
+        <p data-i18n="fandom.pRoleContrib">Projet réalisé dans le cadre de mes études, avec tests utilisateurs, questionnaire UX et card sorting pour analyser la navigation sur Fandom. J’ai ensuite analysé les observations et synthétisé les principaux constats.</p>
+        <div class="skill-tags skills-plain">
+          <span data-i18n="fandom.tag1">UX Research</span>
+          <span data-i18n="fandom.tag2">User Testing</span>
+          <span data-i18n="fandom.tag3">Card Sorting</span>
+          <span data-i18n="fandom.skill4">Analyse utilisateur</span>
+          <span data-i18n="fandom.method2Title">Questionnaire UX</span>
+          <span data-i18n="fandom.skill6">Architecture de l’information</span>
         </div>
       </div>
     </article>
@@ -165,17 +179,17 @@
     <div class="pdf-modal-inner" role="dialog" aria-modal="true" aria-label="Lecteur PDF – Audit Fandom">
       <div class="pdf-modal-head">
         <span class="pdf-modal-title">Audit Fandom</span>
-        <button type="button" class="pdf-btn" id="fandomPdfModalClose" aria-label="Fermer le lecteur">✕</button>
+        <button type="button" class="pdf-btn" id="fandomPdfModalClose" aria-label="Fermer le lecteur" data-i18n-attr="aria-label:common.lightboxClose">✕</button>
       </div>
       <div class="pdf-viewer-frame">
         <canvas id="fandomPdfModalCanvas"></canvas>
       </div>
       <div class="pdf-controls">
-        <button type="button" class="pdf-btn" id="fandomPdfModalPrev" aria-label="Page précédente">←</button>
-        <span class="pdf-page-label">Page <span id="fandomPdfModalPageCurrent">1</span> / <span id="fandomPdfModalPageTotal">…</span></span>
-        <button type="button" class="pdf-btn" id="fandomPdfModalNext" aria-label="Page suivante">→</button>
+        <button type="button" class="pdf-btn" id="fandomPdfModalPrev" aria-label="Page précédente" data-i18n-attr="aria-label:common.previousPage">←</button>
+        <span class="pdf-page-label"><span data-i18n="common.page">Page</span> <span id="fandomPdfModalPageCurrent">1</span> / <span id="fandomPdfModalPageTotal">…</span></span>
+        <button type="button" class="pdf-btn" id="fandomPdfModalNext" aria-label="Page suivante" data-i18n-attr="aria-label:common.nextPage">→</button>
         <label class="pdf-goto" for="fandomPdfModalPageInput">
-          Aller à :
+          <span data-i18n="common.goTo">Aller à :</span>
           <input type="number" id="fandomPdfModalPageInput" min="1" value="1" inputmode="numeric" aria-label="Accéder à une page" />
         </label>
       </div>
@@ -183,11 +197,12 @@
   </div>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
   <script src="assets/documents/audit-fandom-data.js"></script>
   <script type="module" src="pdf-viewer.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

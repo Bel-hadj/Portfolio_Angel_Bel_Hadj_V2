@@ -9,10 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible web-glow">
       <!-- Vraie capture de la page d'accueil, prise en direct sur le site fonctionnel
            (XAMPP local), pas une maquette. -->
@@ -21,60 +29,60 @@
         onerror="const d=document.createElement('div'); d.className='media-fallback'; d.textContent='Capture d’écran à venir — cover.png'; this.replaceWith(d);" />
 
       <div class="detail-content">
-        <span class="tag category-web">Web Development</span>
+        <span class="tag category-web" data-i18n="dvd.tag">Web Development</span>
         <h1>DVD Filmothèque</h1>
-        <p class="detail-subtitle">Application web PHP / MySQL · 2024</p>
-        <p>Application web permettant de consulter un catalogue de films connecté à une base de données relationnelle.</p>
+        <p class="detail-subtitle" data-i18n="dvd.subtitle">Application web PHP / MySQL · 2024</p>
+        <p data-i18n="dvd.intro">Application web permettant de consulter un catalogue de films connecté à une base de données relationnelle.</p>
 
         <div class="doc-actions">
           <a href="https://angel-filmotheque.alwaysdata.net" target="_blank" rel="noopener noreferrer" class="btn web-btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"></path></svg>
-            Voir le site ↗
+            <span data-i18n="common.viewSite">Voir le site ↗</span>
           </a>
           <a href="https://github.com/Bel-hadj/bibliotheque-dvd-php" target="_blank" rel="noopener noreferrer" class="btn secondary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
-            Voir sur GitHub ↗
+            <span data-i18n="common.viewGithub">Voir sur GitHub ↗</span>
           </a>
         </div>
 
-        <h2>Contexte</h2>
-        <p>Projet réalisé dans le cadre de la SAE 203 (BUT Métiers du Multimédia et de l’Internet, IUT de Haguenau, Université de Strasbourg) : concevoir un site de catalogue de DVD à partir d’une base de données MySQL, avec un moteur de templates.</p>
+        <h2 data-i18n="dvd.h2Context">Contexte</h2>
+        <p data-i18n="dvd.pContext">Projet SAE 203 (BUT MMI, IUT de Haguenau – Université de Strasbourg) : une filmothèque web connectée à une base de données MySQL, avec PHP, Twig et PDO.</p>
 
-        <h2>Objectif</h2>
-        <p>Construire une application complète — pas seulement une liste de films — avec plusieurs sections reliées entre elles, une base de données relationnelle propre, et des formulaires sécurisés.</p>
+        <h2 data-i18n="dvd.h2Objective">Objectif</h2>
+        <p data-i18n="dvd.pObjective">Aller au-delà d’une simple liste de films : plusieurs sections reliées entre elles, une base de données propre et des formulaires sécurisés.</p>
 
-        <h2>Présentation du projet</h2>
-        <p>Le site « Filmothèque » propose un catalogue de 30 DVD filtrable par catégorie, une section Nouveautés, une frise Histoire du cinéma, un espace Clients/Commandes, une recherche par titre ou réalisateur, et un système de commentaires sur les fiches films.</p>
+        <h2 data-i18n="dvd.h2Presentation">Présentation du projet</h2>
+        <p data-i18n="dvd.pPresentation">Catalogue de 30 DVD filtrable par catégorie, avec recherche et commentaires sur chaque fiche film.</p>
 
-        <h2>Fonctionnalités principales</h2>
+        <h2 data-i18n="dvd.h2Features">Fonctionnalités principales</h2>
         <div class="reality-grid">
           <div>
-            <strong>Catalogue de films</strong>
-            <span>30 DVD avec affiche, note, prix et fiche détaillée.</span>
+            <strong data-i18n="dvd.f1Title">Catalogue de films</strong>
+            <span data-i18n="dvd.f1Text">30 DVD avec affiche, note, prix et fiche détaillée.</span>
           </div>
           <div>
-            <strong>Catégories</strong>
-            <span>Films et séries, avec le nombre de DVD par catégorie.</span>
+            <strong data-i18n="dvd.f2Title">Catégories</strong>
+            <span data-i18n="dvd.f2Text">Films et séries, avec le nombre de DVD par catégorie.</span>
           </div>
           <div>
-            <strong>Nouveautés</strong>
-            <span>Derniers films ajoutés, triés par date.</span>
+            <strong data-i18n="dvd.f3Title">Nouveautés</strong>
+            <span data-i18n="dvd.f3Text">Derniers films ajoutés, triés par date.</span>
           </div>
           <div>
-            <strong>Histoire du cinéma</strong>
-            <span>Frise chronologique des grandes périodes.</span>
+            <strong data-i18n="dvd.f4Title">Histoire du cinéma</strong>
+            <span data-i18n="dvd.f4Text">Frise chronologique des grandes périodes.</span>
           </div>
           <div>
-            <strong>Commentaires</strong>
-            <span>Formulaire avec validation des champs et protection CSRF, sur les DVD et les nouveautés.</span>
+            <strong data-i18n="dvd.f5Title">Commentaires</strong>
+            <span data-i18n="dvd.f5Text">Validation des champs et protection CSRF.</span>
           </div>
           <div>
-            <strong>Recherche</strong>
-            <span>Par titre de film ou par réalisateur.</span>
+            <strong data-i18n="dvd.f6Title">Recherche</strong>
+            <span data-i18n="dvd.f6Text">Par titre de film ou par réalisateur.</span>
           </div>
         </div>
 
-        <h2>Technologies utilisées</h2>
+        <h2 data-i18n="dvd.h2Tech">Technologies utilisées</h2>
         <div class="skill-tags skills-plain">
           <span>PHP</span>
           <span>Twig</span>
@@ -84,27 +92,27 @@
           <span>CSS</span>
         </div>
 
-        <h2>Architecture &amp; fonctionnement</h2>
-        <p>Chaque page PHP récupère les données via PDO (requêtes préparées), puis les transmet à un template Twig chargé de l’affichage — aucun HTML n’est généré directement dans les pages PHP.</p>
+        <h2 data-i18n="dvd.h2Architecture">Architecture &amp; fonctionnement</h2>
+        <p data-i18n="dvd.pArchitecture">Chaque page récupère les données via PDO (requêtes préparées), puis les affiche via un template Twig — jamais de HTML généré directement en PHP.</p>
         <div class="rtc-flow">
-          <div class="rtc-step">Interface<span>Twig</span></div>
+          <div class="rtc-step"><span data-i18n="dvd.flowInterface">Interface</span><span>Twig</span></div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Logique<span>PHP</span></div>
+          <div class="rtc-step"><span data-i18n="dvd.flowLogic">Logique</span><span>PHP</span></div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Requêtes<span>PDO</span></div>
+          <div class="rtc-step"><span data-i18n="dvd.flowQueries">Requêtes</span><span>PDO</span></div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Données<span>MySQL</span></div>
+          <div class="rtc-step"><span data-i18n="dvd.flowData">Données</span><span>MySQL</span></div>
         </div>
 
-        <h2>Galerie</h2>
+        <h2 data-i18n="dvd.h2Gallery">Galerie</h2>
         <div class="gallery-grid">
           <article class="card gallery-card">
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/dvd-filmotheque/cover.png" data-lightbox-alt="Page d’accueil – DVD Filmothèque" aria-label="Agrandir la capture : Accueil">
               <img class="card-thumb" src="assets/projects/dvd-filmotheque/cover.png" alt="Page d’accueil – DVD Filmothèque" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
-            <h3>Accueil</h3>
-            <p>Bannière d’accueil et sélection de films en vedette.</p>
+            <h3 data-i18n="dvd.galHomeTitle">Accueil</h3>
+            <p data-i18n="dvd.galHomeDesc">Bannière d’accueil et sélection de films en vedette.</p>
           </article>
 
           <article class="card gallery-card">
@@ -112,8 +120,8 @@
               <img class="card-thumb" src="assets/projects/dvd-filmotheque/catalogue.png" alt="Catalogue de DVD – DVD Filmothèque" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
-            <h3>Catalogue</h3>
-            <p>Les 30 DVD du catalogue, avec note et prix.</p>
+            <h3 data-i18n="dvd.galCatalogTitle">Catalogue</h3>
+            <p data-i18n="dvd.galCatalogDesc">Les 30 DVD du catalogue, avec note et prix.</p>
           </article>
 
           <article class="card gallery-card">
@@ -121,8 +129,8 @@
               <img class="card-thumb" src="assets/projects/dvd-filmotheque/detail-film.png" alt="Fiche détail d’un film – DVD Filmothèque" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
-            <h3>Fiche film</h3>
-            <p>Synopsis, description, prix et commentaires.</p>
+            <h3 data-i18n="dvd.galDetailTitle">Fiche film</h3>
+            <p data-i18n="dvd.galDetailDesc">Synopsis, description, prix et commentaires.</p>
           </article>
 
           <article class="card gallery-card">
@@ -130,31 +138,32 @@
               <img class="card-thumb" src="assets/projects/dvd-filmotheque/nouveautes.png" alt="Nouveautés – DVD Filmothèque" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
-            <h3>Nouveautés</h3>
-            <p>Derniers films ajoutés au catalogue.</p>
+            <h3 data-i18n="dvd.galNewTitle">Nouveautés</h3>
+            <p data-i18n="dvd.galNewDesc">Derniers films ajoutés au catalogue.</p>
           </article>
         </div>
 
-        <h2>Ce que j’ai réalisé</h2>
-        <p>Conception et développement des pages de consultation (catalogue, détail, nouveautés, histoire), de la couche d’accès aux données (PDO) et de l’intégration des templates Twig, dans le cadre de ce projet universitaire.</p>
+        <h2 data-i18n="dvd.h2Done">Ce que j’ai réalisé</h2>
+        <p data-i18n="dvd.pDone">Conception et développement des pages de consultation (catalogue, détail, nouveautés, histoire), de la couche d’accès aux données (PDO) et de l’intégration des templates Twig.</p>
 
-        <h2>Difficultés &amp; apprentissages</h2>
-        <p>La mise en place des jointures SQL entre les tables (films, genres, catégories) pour afficher une fiche détail complète a demandé plusieurs itérations, tout comme la sécurisation des formulaires (requêtes préparées PDO, protection CSRF sur les commentaires). Ce projet m’a permis de manipuler une vraie base de données relationnelle et de structurer un site avec un moteur de templates plutôt que du PHP mélangé au HTML.</p>
+        <h2 data-i18n="dvd.h2Learnings">Difficultés &amp; apprentissages</h2>
+        <p data-i18n="dvd.pLearnings">Les jointures SQL entre tables (films, genres, catégories) et la sécurisation des formulaires ont demandé plusieurs itérations. Une bonne occasion de manipuler une vraie base relationnelle avec un moteur de templates plutôt que du PHP mélangé au HTML.</p>
       </div>
     </article>
   </main>
 
   <div class="lightbox" id="lightbox" hidden>
     <div class="lightbox-inner">
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l’aperçu">✕</button>
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l’aperçu" data-i18n-attr="aria-label:common.lightboxClose">✕</button>
       <img id="lightboxImage" src="" alt="" />
     </div>
   </div>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

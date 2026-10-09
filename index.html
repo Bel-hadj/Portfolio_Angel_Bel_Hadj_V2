@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Angel Bel Hadj | Portfolio</title>
-  <meta name="description"
+  <title data-i18n="home.pageTitle">Angel Bel Hadj | Portfolio</title>
+  <meta name="description" data-i18n-attr="content:home.metaDescription"
     content="Portfolio d'Angel Bel Hadj - Web Design, UX/UI, Marketing Digital et Communication." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 
 <body>
@@ -20,43 +21,57 @@
       <a href="#accueil" class="logo-brand">
         <span class="logo-text">Angel Bel Hadj</span>
       </a>
-      <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" data-i18n-attr="aria-label:common.menuToggleLabel">☰</button>
       <ul class="nav-links">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#apropos">Mon parcours</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#accueil" data-i18n="common.navHome">Accueil</a></li>
+        <li><a href="#projets" data-i18n="common.navProjects">Projets</a></li>
+        <li><a href="#apropos" data-i18n="common.navAbout">À propos</a></li>
+        <li><a href="#contact" data-i18n="common.navContact">Contact</a></li>
       </ul>
-      <a href="#contact" class="btn primary nav-cta">Me contacter ↗</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+      <a href="#contact" class="btn primary nav-cta" data-i18n="common.navContactCta">Me contacter ↗</a>
     </nav>
   </header>
 
   <main>
     <section id="accueil" class="hero section">
       <div class="hero-content reveal">
-        <p class="eyebrow-pill"><span class="dot"></span> Recherche alternance / stage alterné, 2026/2027</p>
+        <div class="hero-status">
+          <p class="hero-status-line">
+            <span class="hero-status-dot"></span>
+            <span class="hero-status-tag" data-i18n="home.heroStatusAvailable">Disponible</span>
+          </p>
+          <p class="hero-status-detail">
+            <span data-i18n="home.heroStatusType">Alternance / stage alterné</span>
+            <span class="hero-status-divider" aria-hidden="true"></span>
+            <span class="hero-status-years" data-i18n="home.heroStatusYears">2026 — 2027</span>
+          </p>
+        </div>
 
-        <h1>En recherche d’une <span class="accent">alternance</span> ou d’un <span class="accent">stage alterné</span></h1>
+        <h1 data-i18n="home.heroTitle">En recherche d’une <span class="accent">alternance</span> ou d’un <span class="accent">stage alterné</span></h1>
 
         <h2>
-          <span>Web Design & UX/UI</span>
-          <span>Marketing Digital</span>
+          <span data-i18n="home.heroSub1">Web Design & UX/UI</span>
+          <span data-i18n="home.heroSub2">Marketing Digital</span>
         </h2>
 
-        <p class="hero-text">
-          Je suis encore en train d’apprendre et de construire mon parcours, mais
-          j’aime déjà créer des projets digitaux qui ont du sens. À travers mes cours,
-          mes projets étudiants et mes expériences, je découvre le web design, l’UX/UI
-          et le marketing digital en essayant toujours de faire quelque chose de clair,
-          propre et utile.
+        <p class="hero-text" data-i18n="home.heroText">
+          Étudiant en Digital &amp; International Business, je développe un profil
+          polyvalent entre web design, UX/UI et marketing digital. À travers mes
+          projets académiques, personnels et professionnels, je cherche à concevoir
+          des expériences digitales claires, utiles et visuellement soignées.
         </p>
         <div class="hero-actions">
-          <a href="#projets" class="btn primary">Voir mes projets</a>
-          <a href="assets/cv-angel-bel-hadj.pdf" class="btn secondary" target="_blank" rel="noopener">Télécharger mon CV</a>
+          <a href="#projets" class="btn primary" data-i18n="home.heroBtnProjects">Voir mes projets</a>
+          <a href="assets/cv-angel-bel-hadj.pdf" class="btn secondary" target="_blank" rel="noopener" data-i18n="home.heroBtnCv">Télécharger mon CV</a>
         </div>
 
         <div class="hero-follow">
-          <span class="lbl">ME CONTACTER</span>
+          <span class="lbl" data-i18n="home.heroContactLbl">ME CONTACTER</span>
           <div class="socials">
             <a href="mailto:angel.belhadj.pro@gmail.com" class="social-icon sm" aria-label="Envoyer un email" data-tooltip="Email">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 6 10-6"></path></svg>
@@ -76,11 +91,11 @@
           <div class="profile-image-overlay">
             <img src="assets/moi.jpg" alt="Photo de Angel Bel Hadj" />
             <div class="photo-overlay">
-              <p class="overlay-caption">Rythme souhaité</p>
+              <p class="overlay-caption" data-i18n="home.heroOverlayRythme">Rythme souhaité</p>
               <div class="overlay-rythme">
-                <span class="big">3j</span><span class="lbl">entreprise</span>
+                <span class="big">3j</span><span class="lbl" data-i18n="home.heroOverlayEntreprise">entreprise</span>
                 <span class="sep">/</span>
-                <span class="big">2j</span><span class="lbl">école</span>
+                <span class="big">2j</span><span class="lbl" data-i18n="home.heroOverlayEcole">école</span>
               </div>
             </div>
           </div>
@@ -96,7 +111,7 @@
           </div>
           <div>
             <div class="stat-num">3<sup>e</sup></div>
-            <div class="stat-lbl">Année à l'EMLV</div>
+            <div class="stat-lbl" data-i18n="home.statYear">Année à l'EMLV</div>
           </div>
         </div>
         <div class="stat-item">
@@ -105,7 +120,7 @@
           </div>
           <div>
             <div class="stat-num">9</div>
-            <div class="stat-lbl">Projets réalisés</div>
+            <div class="stat-lbl" data-i18n="home.statProjects">Projets réalisés</div>
           </div>
         </div>
         <div class="stat-item">
@@ -113,8 +128,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg>
           </div>
           <div>
-            <div class="stat-num">4</div>
-            <div class="stat-lbl">Langues parlées</div>
+            <div class="stat-num">2</div>
+            <div class="stat-lbl" data-i18n="home.statLanguages">Langues parlées</div>
           </div>
         </div>
       </div>
@@ -122,47 +137,47 @@
 
     <section id="projets" class="section section-linked projects">
       <div class="section-heading reveal">
-        <p class="eyebrow">Projets & Expériences</p>
-        <h2>Mes réalisations principales</h2>
+        <p class="eyebrow" data-i18n="home.projectsEyebrow">Projets & Expériences</p>
+        <h2 data-i18n="home.projectsTitle">Mes réalisations principales</h2>
       </div>
 
       <div class="project-grid">
         <a href="experience-the-ranch.html" class="card info-card exp-card-photo reveal">
           <img class="card-thumb" src="assets/projects/the-ranch/visuel-grill-logo.jpg" alt="Aperçu The Ranch — Stage Marketing Digital & Événementiel" loading="lazy" />
           <span class="card-year-badge category-marketing">2025</span>
-          <span class="tag category-marketing">Expérience professionnelle</span>
+          <span class="tag category-marketing" data-i18n="common.catProExperience">Expérience professionnelle</span>
           <h3>The Ranch</h3>
-          <p>Stage en marketing, communication et événementiel avec création de supports visuels et participation à l'organisation d'événements.</p>
+          <p data-i18n="home.ranchDesc">Stage en marketing, communication et événementiel avec création de supports visuels et participation à l'organisation d'événements.</p>
           <div class="skill-tags skills-plain">
-            <span>Marketing</span>
-            <span>Communication</span>
-            <span>Événementiel</span>
-            <span>Adobe</span>
+            <span data-i18n="home.ranchTag1">Marketing</span>
+            <span data-i18n="home.ranchTag2">Communication</span>
+            <span data-i18n="home.ranchTag3">Événementiel</span>
+            <span data-i18n="home.ranchTag4">Adobe</span>
           </div>
         </a>
 
         <a href="experience-club-entrepreneurs.html" class="card info-card exp-card-photo reveal">
           <img class="card-thumb card-thumb--top" src="assets/projects/club-entrepreneurs/after-work.png" alt="Publication Instagram du Club Entrepreneurs pour l'After Work du 23 mai" loading="lazy" />
           <span class="card-year-badge category-communication">2025</span>
-          <span class="tag category-communication">Expérience associative</span>
+          <span class="tag category-communication" data-i18n="common.catAssocExperience">Expérience associative</span>
           <h3>Club Entrepreneurs EMLV</h3>
-          <p>Création de contenus et animation de la communication digitale du club.</p>
-          <p>Responsable communication de 03/2025 à 03/2026 : gestion des contenus digitaux et coordination avec l’équipe.</p>
+          <p data-i18n="home.clubDesc1">Création de contenus et animation de la communication digitale du club.</p>
+          <p data-i18n="home.clubDesc2">Responsable communication de 09/2025 à 03/2026 : gestion des contenus digitaux et coordination avec l’équipe.</p>
           <div class="skill-tags skills-plain">
-            <span>Communication digitale</span>
-            <span>Social Media</span>
-            <span>Content Creation</span>
-            <span>Community Management</span>
+            <span data-i18n="home.clubTag1">Communication digitale</span>
+            <span data-i18n="home.clubTag2">Social Media</span>
+            <span data-i18n="home.clubTag3">Content Creation</span>
+            <span data-i18n="home.clubTag4">Community Management</span>
           </div>
         </a>
 
         <a href="projet-indiewave.html" class="card info-card exp-card-photo reveal">
           <img class="card-thumb card-thumb--crop-left" src="assets/projects/emergent/cover.png" alt="Aperçu Emergent" loading="lazy" onerror="this.remove()" />
           <span class="card-year-badge category-web">2026</span>
-          <span class="tag category-web">Projet web</span>
+          <span class="tag category-web" data-i18n="common.catWebProject">Projet web</span>
           <h3>Emergent</h3>
-          <p>Projet web réalisé pendant mon échange universitaire à Varna, en Bulgarie.</p>
-          <p>Plateforme de découverte musicale pour artistes émergents : recherche, fiches artistes et écoute Spotify intégrée.</p>
+          <p data-i18n="home.emergentDesc1">Projet web réalisé pendant mon échange universitaire à Varna, en Bulgarie.</p>
+          <p data-i18n="home.emergentDesc2">Plateforme de découverte musicale pour artistes émergents : recherche, fiches artistes et écoute Spotify intégrée.</p>
           <div class="skill-tags skills-plain">
             <span>HTML</span>
             <span>CSS</span>
@@ -174,67 +189,67 @@
         <a href="projet-fandom.html" class="card info-card exp-card-photo reveal">
           <img class="card-thumb card-thumb-fandom" src="assets/project-fandom.png" alt="Aperçu Audit UX Fandom" loading="lazy" />
           <span class="card-year-badge category-experience">2026</span>
-          <span class="tag category-experience">Projet académique</span>
-          <h3>Audit UX Fandom</h3>
-          <p>Audit UX d'un parcours digital du groupe Accor : analyse des besoins utilisateurs et recommandations.</p>
-          <p>L’objectif : rendre le parcours plus clair, fluide et efficace. Réalisé au 1er semestre 2026.</p>
+          <span class="tag category-experience" data-i18n="common.catAcademicProject">Projet académique</span>
+          <h3 data-i18n="home.fandomTitle">Audit UX Fandom</h3>
+          <p data-i18n="home.fandomDesc1">Audit UX d'un parcours digital : analyse des besoins utilisateurs et recommandations.</p>
+          <p data-i18n="home.fandomDesc2">L’objectif : rendre le parcours plus clair, fluide et efficace. Réalisé au 1er semestre 2026.</p>
           <div class="skill-tags skills-plain">
-            <span>Tests utilisateurs</span>
-            <span>Questionnaire UX</span>
-            <span>Card Sorting</span>
+            <span data-i18n="home.fandomTag1">Tests utilisateurs</span>
+            <span data-i18n="home.fandomTag2">Questionnaire UX</span>
+            <span data-i18n="home.fandomTag3">Card Sorting</span>
           </div>
         </a>
 
         <a href="projet-photoshop-business.html" class="card info-card exp-card-photo reveal">
           <img class="card-thumb" src="assets/projects/photoshop-business/retouche-apres.jpg" alt="Aperçu Adobe Photoshop for Business" loading="lazy" onerror="this.remove()" />
           <span class="card-year-badge category-experience">2024</span>
-          <span class="tag category-experience">Projet académique</span>
+          <span class="tag category-experience" data-i18n="common.catAcademicProject">Projet académique</span>
           <h3>Adobe Photoshop for Business</h3>
-          <p>Retouche photo, compositions graphiques et créations Social Media réalisées avec Adobe Photoshop.</p>
+          <p data-i18n="home.photoshopHomeDesc">Retouche photo, compositions graphiques et créations Social Media réalisées avec Adobe Photoshop.</p>
           <div class="skill-tags skills-plain">
-            <span>Photoshop</span>
-            <span>Retouche photo</span>
-            <span>Design graphique</span>
+            <span data-i18n="home.photoshopHomeTag1">Photoshop</span>
+            <span data-i18n="home.photoshopHomeTag2">Retouche photo</span>
+            <span data-i18n="home.photoshopHomeTag3">Design graphique</span>
           </div>
         </a>
 
         <a href="projet-escape-game.html" class="card info-card exp-card-photo reveal">
-          <img class="card-thumb card-thumb--top" src="assets/projects/escape-game/mockup-facebook.jpg" alt="Aperçu Escape Game Château Lutenberg" loading="lazy" />
+          <img class="card-thumb card-thumb--top" src="assets/projects/escape-game/mockup-facebook.jpg" alt="Aperçu Escape Game Château de Lichtenberg" loading="lazy" />
           <span class="card-year-badge category-design">2024</span>
-          <span class="tag category-design">Projet design & communication</span>
+          <span class="tag category-design" data-i18n="common.catDesignCommProject">Projet design & communication</span>
           <h3>La nuit du château maudit</h3>
-          <p>Création d'une identité digitale déclinée sur plusieurs plateformes : TikTok, Twitter/X, Facebook et YouTube.</p>
-          <p>Réalisation de mockups et supports de communication adaptés à l'univers de l'Escape Game.</p>
+          <p data-i18n="home.escapeHomeDesc1">Déclinaison d’un univers visuel sur TikTok, Twitter/X, Facebook et YouTube à travers différents supports de communication.</p>
+          <p data-i18n="home.escapeHomeDesc2">Réalisation de mockups et supports de communication adaptés à l'univers de l'Escape Game.</p>
           <div class="skill-tags skills-plain">
             <span>Photoshop</span>
-            <span>Social Media</span>
-            <span>Mockup</span>
-            <span>Identité visuelle</span>
+            <span data-i18n="home.escapeHomeTag2">Social Media</span>
+            <span data-i18n="home.escapeHomeTag3">Mockup</span>
+            <span data-i18n="home.escapeHomeTag4">Identité visuelle</span>
           </div>
         </a>
 
         <a href="projet-xbox.html" class="card info-card exp-card-photo reveal">
           <img class="card-thumb" src="assets/projects/xbox/cover.png" alt="Aperçu Xbox — Stratégie Social Media & Influence" loading="lazy" onerror="this.remove()" />
           <span class="card-year-badge category-experience">2025</span>
-          <span class="tag category-experience">Projet académique</span>
-          <h3>Xbox Stratégie Social Media</h3>
-          <p>Étude de cas : diagnostic de la présence digitale de Xbox et recommandations éditoriales par plateforme.</p>
+          <span class="tag category-experience" data-i18n="common.catAcademicProject">Projet académique</span>
+          <h3 data-i18n="home.xboxTitle">Xbox Stratégie Social Media</h3>
+          <p data-i18n="home.xboxDesc">Étude de cas : diagnostic de la présence digitale de Xbox et recommandations éditoriales par plateforme.</p>
           <div class="skill-tags skills-plain">
-            <span>Social Media</span>
-            <span>Influence</span>
-            <span>Stratégie de contenu</span>
-            <span>Benchmark</span>
+            <span data-i18n="home.xboxTag1">Social Media</span>
+            <span data-i18n="home.xboxTag2">Influence</span>
+            <span data-i18n="home.xboxTag3">Stratégie de contenu</span>
+            <span data-i18n="home.xboxTag4">Benchmark</span>
           </div>
         </a>
 
         <a href="projet-asian-dreams.html" class="card info-card exp-card-photo reveal">
           <img class="card-thumb" src="assets/projects/asian-dreams/cover.png" alt="Aperçu du site Asian Dreams" loading="lazy" onerror="this.remove()" />
           <span class="card-year-badge category-web">2024</span>
-          <span class="tag category-web">Projet web</span>
+          <span class="tag category-web" data-i18n="common.catWebProject">Projet web</span>
           <h3>Asian Dreams</h3>
-          <p>Site bilingue FR/EN dédié à la pop culture asiatique : K-Drama, K-Pop et mangas.</p>
-          <p>Projet personnel, développé pour découvrir et exposer trois univers que j’apprécie.</p>
-          <p>Architecture back-end en PHP et Twig, plutôt qu’un site statique.</p>
+          <p data-i18n="home.asianDesc1">Site bilingue FR/EN dédié à la pop culture asiatique : K-Drama, K-Pop et mangas.</p>
+          <p data-i18n="home.asianDesc2">Projet personnel, développé pour découvrir et exposer trois univers que j’apprécie.</p>
+          <p data-i18n="home.asianDesc3">Architecture back-end en PHP et Twig, plutôt qu’un site statique.</p>
           <div class="skill-tags skills-plain">
             <span>PHP</span>
             <span>Twig</span>
@@ -246,10 +261,10 @@
         <a href="projet-bibliotheque.html" class="card info-card exp-card-photo reveal">
           <img class="card-thumb" src="assets/projects/dvd-filmotheque/cover.png" alt="Aperçu du site DVD Filmothèque" loading="lazy" onerror="this.remove()" />
           <span class="card-year-badge category-web">2024</span>
-          <span class="tag category-web">Projet web</span>
+          <span class="tag category-web" data-i18n="common.catWebProject">Projet web</span>
           <h3>DVD Filmothèque</h3>
-          <p>Catalogue de films avec recherche, fiches détaillées et commentaires, connecté à une base MySQL.</p>
-          <p>Projet réalisé dans le cadre de la SAE 203 du BUT Métiers du Multimédia et de l’Internet.</p>
+          <p data-i18n="home.dvdDesc1">Catalogue de films avec recherche, fiches détaillées et commentaires, connecté à une base MySQL.</p>
+          <p data-i18n="home.dvdDesc2">Projet réalisé dans le cadre de la SAE 203 du BUT Métiers du Multimédia et de l’Internet.</p>
           <div class="skill-tags skills-plain">
             <span>PHP</span>
             <span>Twig</span>
@@ -262,41 +277,11 @@
 
     <section id="experiences-pro" class="section experiences-legacy">
       <div class="section-heading reveal">
-        <p class="eyebrow">Expériences</p>
-        <h2>Expériences professionnelles<br>& associatives</h2>
+        <p class="eyebrow" data-i18n="home.expEyebrow">Expériences</p>
+        <h2 data-i18n="home.expTitle">Expériences professionnelles<br>& associatives</h2>
       </div>
 
       <div class="timeline">
-        <div class="timeline-item reveal">
-          <div class="timeline-item-head">
-            <span class="timeline-logo-wrap">
-              <img src="assets/club-entrepreneurs.png" alt="Logo Club Entrepreneurs EMLV" loading="lazy" />
-            </span>
-            <div>
-              <h3 class="exp-org-name">Club Entrepreneurs EMLV</h3>
-              <p class="exp-org-meta">Expérience associative · <span class="exp-org-date">10/2024 → Aujourd'hui</span></p>
-            </div>
-          </div>
-
-          <div class="exp-role-list">
-            <div class="exp-role">
-              <p class="exp-role-title">Responsable communication</p>
-              <p class="exp-role-date">09/2025 → 03/2026</p>
-              <p class="exp-role-desc">Participation à la restructuration et au développement de la communication du club.</p>
-            </div>
-            <div class="exp-role">
-              <p class="exp-role-title">Membre actif</p>
-              <p class="exp-role-date">03/2025 → 08/2025</p>
-              <p class="exp-role-desc">Implication dans les projets et la communication de l'association.</p>
-            </div>
-            <div class="exp-role">
-              <p class="exp-role-title">Membre</p>
-              <p class="exp-role-date">Depuis 10/2024</p>
-              <p class="exp-role-desc">Participation aux activités, événements et projets du Club Entrepreneurs.</p>
-            </div>
-          </div>
-        </div>
-
         <div class="timeline-item reveal">
           <div class="timeline-item-head">
             <span class="timeline-logo-wrap">
@@ -304,128 +289,76 @@
             </span>
             <div>
               <h3 class="exp-org-name">The Ranch Grill Bar</h3>
-              <p class="exp-role-title">Stagiaire marketing numérique</p>
+              <p class="exp-role-title" data-i18n="home.ranchExpRole">Stagiaire marketing numérique</p>
             </div>
           </div>
-          <p class="exp-role-date">05/2025 → 07/2025</p>
-          <p class="exp-org-meta">Stage · Mantes-la-Jolie, Île-de-France</p>
-          <p class="exp-role-desc">Stage en marketing numérique, communication et événementiel avec création de supports visuels, étude de la concurrence et participation à différents projets de communication.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="competences" class="section skills">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Compétences</p>
-        <h2>Ce que je peux apporter</h2>
-        <p class="skills-intro">Étudiant en Digital & International Business, je développe un profil polyvalent entre création, marketing, digital et gestion de projet.</p>
-      </div>
-
-      <div class="skills-showcase reveal">
-        <div class="skills-col skills-col-left">
-          <article class="card skill-card">
-            <div class="card-icon skill-icon-web" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            </div>
-            <h3>Web & Design</h3>
-            <p>J’aime concevoir des interfaces modernes, claires et faciles à utiliser. Je travaille avec HTML, CSS, JavaScript, Figma et les principes de l’UX/UI pour transformer une idée en expérience concrète.</p>
-            <div class="skill-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Figma</span><span>UX/UI</span>
-            </div>
-          </article>
-          <article class="card skill-card">
-            <div class="card-icon skill-icon-design" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="m2 2 7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
-            </div>
-            <h3>Design graphique</h3>
-            <p>J’aime créer des visuels et travailler l’identité graphique d’un projet. J’utilise Photoshop, Illustrator, InDesign et Canva pour réaliser des supports propres, cohérents et adaptés au message.</p>
-            <div class="skill-tags">
-              <span>Photoshop</span><span>Illustrator</span><span>InDesign</span><span>Canva</span>
-            </div>
-          </article>
+          <p class="exp-role-date" data-i18n="home.ranchExpDate">05/2025 → 07/2025</p>
+          <p class="exp-org-meta" data-i18n="home.ranchExpMeta">Stage · Mantes-la-Jolie, Île-de-France</p>
+          <p class="exp-role-desc" data-i18n="home.ranchExpDesc">Stage en marketing numérique, communication et événementiel avec création de supports visuels, étude de la concurrence et participation à différents projets de communication.</p>
         </div>
 
-        <div class="skills-photo-wrap" aria-hidden="false">
-          <div class="skills-glow" aria-hidden="true"></div>
-          <svg class="skills-arc" viewBox="0 0 400 400" aria-hidden="true">
-            <defs>
-              <linearGradient id="skillsArcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#2f7bff" />
-                <stop offset="100%" stop-color="#5b9dff" />
-              </linearGradient>
-            </defs>
-            <circle cx="200" cy="200" r="165" fill="none" stroke="url(#skillsArcGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="640 1037" transform="rotate(-120 200 200)"></circle>
-          </svg>
-          <picture>
-            <source srcset="assets/moi-cutout.webp" type="image/webp" />
-            <img src="assets/moi-cutout.png" alt="Photo d’Angel Bel Hadj" class="skills-photo" />
-          </picture>
+        <div class="timeline-item reveal">
+          <div class="timeline-item-head">
+            <span class="timeline-logo-wrap">
+              <img src="assets/club-entrepreneurs.png" alt="Logo Club Entrepreneurs EMLV" loading="lazy" />
+            </span>
+            <div>
+              <h3 class="exp-org-name">Club Entrepreneurs EMLV</h3>
+              <p class="exp-org-meta"><span data-i18n="home.clubExpMeta">Expérience associative</span> · <span class="exp-org-date" data-i18n="home.clubExpDate">10/2024 → Aujourd'hui</span></p>
+            </div>
+          </div>
+
+          <div class="exp-role-list">
+            <div class="exp-role">
+              <p class="exp-role-title" data-i18n="home.clubRole1Title">Responsable communication</p>
+              <p class="exp-role-date" data-i18n="home.clubRole1Date">09/2025 → 03/2026</p>
+              <p class="exp-role-desc" data-i18n="home.clubRole1Desc">Participation à la restructuration et au développement de la communication du club.</p>
+            </div>
+            <div class="exp-role">
+              <p class="exp-role-title" data-i18n="home.clubRole2Title">Membre</p>
+              <p class="exp-role-date" data-i18n="home.clubRole2Date">Depuis 10/2024</p>
+              <p class="exp-role-desc" data-i18n="home.clubRole2Desc">Participation aux activités, événements et projets du Club Entrepreneurs.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="skills-col skills-col-right">
-          <article class="card skill-card">
-            <div class="card-icon skill-icon-marketing" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>
-            </div>
-            <h3>Marketing & Communication</h3>
-            <p>Je m’intéresse à la manière dont une marque peut communiquer et créer de l’engagement. Je travaille sur les réseaux sociaux, la création de contenu, le benchmark et la stratégie digitale.</p>
-            <div class="skill-tags">
-              <span>Marketing digital</span><span>Réseaux sociaux</span><span>Content</span><span>Benchmark</span><span>Communication</span>
-            </div>
-          </article>
-          <article class="card skill-card">
-            <div class="card-icon skill-icon-business" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            </div>
-            <h3>Business & Projet</h3>
-            <p>Mes études m’ont permis de travailler sur l’analyse de marché, la stratégie et la gestion de projet. J’aime travailler en équipe et participer à un projet de l’idée jusqu’à sa réalisation.</p>
-            <div class="skill-tags">
-              <span>Stratégie</span><span>Analyse de marché</span><span>Gestion de projet</span><span>Business</span><span>Travail d’équipe</span>
-            </div>
-          </article>
+        <div class="timeline-item reveal">
+          <h3><span data-i18n="home.freelanceRoleTitle">Projets web &amp; missions freelance</span> <span style="font-weight:400;font-size:.75em;opacity:.65;" data-i18n="home.freelanceRoleDate">(Depuis 2023)</span></h3>
+          <p data-i18n="home.freelanceDesc">Réalisation de projets web et de missions ponctuelles autour du web design, de l’UX/UI et de l’intégration
+            HTML/CSS. Conception de maquettes, structuration des besoins et création de solutions digitales adaptées au projet.</p>
         </div>
       </div>
     </section>
 
     <section id="apropos" class="section about">
       <div class="section-heading reveal about-heading">
-        <p class="eyebrow">À propos</p>
-        <h2>Curieux, motivé,<br>polyvalent.</h2>
+        <p class="eyebrow" data-i18n="home.aboutEyebrow">À propos</p>
+        <h2 data-i18n="home.aboutTitle">Curieux, motivé,<br>polyvalent.</h2>
       </div>
 
       <div class="about-grid">
         <div class="about-text reveal">
-          <p>
-            Je m’appelle <strong>Angel Bel Hadj</strong>, je suis étudiant en
-            <strong>Bachelor Digital & International Business à l’EMLV</strong>.
-            Passionné par le digital, le web design, l’UX/UI et le marketing,
-            j’aime créer des projets à la fois utiles, modernes et visuellement soignés.
+          <p data-i18n="home.aboutP1">
+            Curieux et polyvalent, j’aime travailler à la croisée de la création, du digital et du business.
+            Mes expériences académiques, associatives et professionnelles m’ont appris à passer d’un besoin
+            à une idée concrète, puis à la transformer en un résultat visuel ou digital cohérent.
           </p>
 
-          <p>
-            Au fil de mes expériences académiques et professionnelles, j’ai développé
-            des compétences en création visuelle, communication digitale, stratégie
-            marketing, gestion de projet et développement web. Curieux, motivé et
-            polyvalent, je cherche à continuer à progresser dans le domaine du digital
-            tout en apportant des idées créatives et concrètes aux projets auxquels je participe.
+          <p data-i18n="home.aboutP2">
+            J’apprécie particulièrement les projets où je peux apprendre, proposer des idées, collaborer
+            avec une équipe et participer concrètement à leur réalisation.
           </p>
 
-          <p>
-            Certifiant HubSpot (Inbound Marketing), Google (Digital Marketing) et IBM (AI Fundamentals).
+          <p data-i18n="home.aboutP3">
+            Certifié HubSpot (Inbound Marketing), Google (Digital Marketing) et IBM (AI Fundamentals).
           </p>
 
           <div class="tools-strip" role="list" aria-label="Outils maîtrisés">
-            <span class="tool-stack" title="HTML5">
-              <span class="tool-badge tool-badge--white">
-                <img src="assets/logos/html5.svg" alt="HTML5" loading="lazy" />
-              </span>
-              <span class="tool-caption">HTML</span>
+            <span class="tool-badge tool-badge--white" title="HTML5">
+              <img src="assets/logos/html5.svg" alt="HTML5" loading="lazy" />
             </span>
-            <span class="tool-stack" title="CSS3">
-              <span class="tool-badge tool-badge--white">
-                <img src="assets/logos/css3.svg" alt="CSS3" loading="lazy" />
-              </span>
-              <span class="tool-caption">CSS</span>
+            <span class="tool-badge tool-badge--white" title="CSS3">
+              <img src="assets/logos/css3.svg" alt="CSS3" loading="lazy" />
             </span>
             <span class="tool-badge tool-badge--filled" title="JavaScript">
               <img src="assets/logos/javascript.svg" alt="JavaScript" loading="lazy" />
@@ -472,19 +405,9 @@
           </div>
         </div>
 
-        <div class="about-stats reveal about-lines">
-          <div>
-            <span>Formation</span>
-            <p>École de Management Léonard de Vinci, EMLV, 3e année</p>
-          </div>
-
-          <div>
-            <span>Spécialité</span>
-            <p>Digital & International Business</p>
-          </div>
-
+        <div class="about-stats reveal about-lines about-stats--languages-only">
           <div class="languages-row">
-            <span>Langues</span>
+            <span data-i18n="home.aboutLanguesLbl">Langues</span>
 
             <div class="languages">
               <div class="language-row">
@@ -496,10 +419,10 @@
                       <rect width="1" height="2" x="2" fill="#EF4135"/>
                     </svg>
                   </span>
-                  <span class="language-name">Français</span>
-                  <span class="language-level">Langue maternelle</span>
+                  <span class="language-name" data-i18n="home.langFrenchName">Français</span>
+                  <span class="language-level" data-i18n="home.langFrenchLevel">Langue maternelle</span>
                 </span>
-                <div class="level-meter" aria-label="Niveau : natif">
+                <div class="level-meter" aria-label="Niveau : natif" data-i18n-attr="aria-label:home.langLevelAriaNative">
                   <span class="dot filled"></span>
                   <span class="dot filled"></span>
                   <span class="dot filled"></span>
@@ -519,10 +442,10 @@
                       <path d="M30,0 V36 M0,18 H60" stroke="#cf142b" stroke-width="6"/>
                     </svg>
                   </span>
-                  <span class="language-name">Anglais</span>
-                  <span class="language-level">Niveau B1</span>
+                  <span class="language-name" data-i18n="home.langEnglishName">Anglais</span>
+                  <span class="language-level" data-i18n="home.langEnglishLevel">Niveau B1</span>
                 </span>
-                <div class="level-meter" aria-label="Niveau : B1">
+                <div class="level-meter" aria-label="Niveau : B1" data-i18n-attr="aria-label:home.langLevelAriaB1">
                   <span class="dot filled"></span>
                   <span class="dot filled"></span>
                   <span class="dot filled"></span>
@@ -539,10 +462,10 @@
                       <rect width="3" height="1" y="0.5" fill="#F1BF00"/>
                     </svg>
                   </span>
-                  <span class="language-name">Espagnol</span>
-                  <span class="language-level">Niveau A2</span>
+                  <span class="language-name" data-i18n="home.langSpanishName">Espagnol</span>
+                  <span class="language-level" data-i18n="home.langSpanishLevel">En apprentissage · A2</span>
                 </span>
-                <div class="level-meter" aria-label="Niveau : A2">
+                <div class="level-meter" aria-label="Niveau : A2" data-i18n-attr="aria-label:home.langLevelAriaA2">
                   <span class="dot filled"></span>
                   <span class="dot filled"></span>
                   <span class="dot"></span>
@@ -563,10 +486,10 @@
                       <text x="12" y="16" font-size="3.4" fill="#FFDE00" text-anchor="middle">★</text>
                     </svg>
                   </span>
-                  <span class="language-name">Chinois</span>
-                  <span class="language-level">Niveau A1</span>
+                  <span class="language-name" data-i18n="home.langChineseName">Chinois</span>
+                  <span class="language-level" data-i18n="home.langChineseLevel">En apprentissage · A1</span>
                 </span>
-                <div class="level-meter" aria-label="Niveau : A1">
+                <div class="level-meter" aria-label="Niveau : A1" data-i18n-attr="aria-label:home.langLevelAriaA1">
                   <span class="dot filled"></span>
                   <span class="dot"></span>
                   <span class="dot"></span>
@@ -581,11 +504,72 @@
       </div>
     </section>
 
+    <section id="competences" class="section skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="home.skillsEyebrow">Compétences</p>
+        <h2 data-i18n="home.skillsTitle">Ce que je peux apporter</h2>
+        <p class="skills-intro" data-i18n="home.skillsIntro">Étudiant en Digital & International Business, je développe un profil polyvalent entre création, marketing, digital et gestion de projet.</p>
+      </div>
+
+      <div class="skills-showcase reveal">
+        <div class="skills-col skills-col-left">
+          <article class="card skill-card">
+            <h3 data-i18n="home.skillWebTitle">Web & Design</h3>
+            <p data-i18n="home.skillWebDesc">J’aime concevoir des interfaces modernes, claires et faciles à utiliser. Je travaille avec HTML, CSS, JavaScript, Figma et les principes de l’UX/UI pour transformer une idée en expérience concrète.</p>
+            <div class="skill-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Figma</span><span>UX/UI</span>
+            </div>
+          </article>
+          <article class="card skill-card">
+            <h3 data-i18n="home.skillDesignTitle">Design graphique</h3>
+            <p data-i18n="home.skillDesignDesc">J’aime créer des visuels et travailler l’identité graphique d’un projet. J’utilise Photoshop, Illustrator, InDesign et Canva pour réaliser des supports propres, cohérents et adaptés au message.</p>
+            <div class="skill-tags">
+              <span>Photoshop</span><span>Illustrator</span><span>InDesign</span><span>Canva</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="skills-photo-wrap" aria-hidden="false">
+          <div class="skills-glow" aria-hidden="true"></div>
+          <svg class="skills-arc" viewBox="0 0 400 400" aria-hidden="true">
+            <defs>
+              <linearGradient id="skillsArcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2f7bff" />
+                <stop offset="100%" stop-color="#5b9dff" />
+              </linearGradient>
+            </defs>
+            <circle cx="200" cy="200" r="165" fill="none" stroke="url(#skillsArcGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="640 1037" transform="rotate(-120 200 200)"></circle>
+          </svg>
+          <picture>
+            <source srcset="assets/moi-cutout.webp" type="image/webp" />
+            <img src="assets/moi-cutout.png" alt="Photo d’Angel Bel Hadj" class="skills-photo" />
+          </picture>
+        </div>
+
+        <div class="skills-col skills-col-right">
+          <article class="card skill-card">
+            <h3 data-i18n="home.skillMarketingTitle">Marketing & Communication</h3>
+            <p data-i18n="home.skillMarketingDesc">Je m’intéresse à la manière dont une marque peut communiquer et créer de l’engagement. Je travaille sur les réseaux sociaux, la création de contenu, le benchmark et la stratégie digitale.</p>
+            <div class="skill-tags">
+              <span data-i18n="home.skillMarketingTag1">Marketing digital</span><span data-i18n="home.skillMarketingTag2">Réseaux sociaux</span><span data-i18n="home.skillMarketingTag3">Content</span><span>Benchmark</span><span data-i18n="home.skillMarketingTag5">Communication</span>
+            </div>
+          </article>
+          <article class="card skill-card">
+            <h3 data-i18n="home.skillBusinessTitle">Business & Projet</h3>
+            <p data-i18n="home.skillBusinessDesc">Mes études m’ont permis de travailler sur l’analyse de marché, la stratégie et la gestion de projet. J’aime travailler en équipe et participer à un projet de l’idée jusqu’à sa réalisation.</p>
+            <div class="skill-tags">
+              <span data-i18n="home.skillBusinessTag1">Stratégie</span><span data-i18n="home.skillBusinessTag2">Analyse de marché</span><span data-i18n="home.skillBusinessTag3">Gestion de projet</span><span>Business</span><span data-i18n="home.skillBusinessTag5">Travail d’équipe</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="formation" class="section education">
       <div class="section-heading reveal">
-        <p class="eyebrow">Formation</p>
-        <h2>Mon parcours académique</h2>
-        <p class="section-sub">Un parcours construit entre digital, création, business et ouverture internationale.</p>
+        <p class="eyebrow" data-i18n="home.formationEyebrow">Formation</p>
+        <h2 data-i18n="home.formationTitle">Mon parcours académique</h2>
+        <p class="section-sub" data-i18n="home.formationSub">Un parcours construit entre digital, création, business et ouverture internationale.</p>
       </div>
 
       <div class="academic-timeline">
@@ -604,15 +588,15 @@
               </span>
               <div class="timeline-org">
                 <h3>EMLV</h3>
-                <p class="timeline-loc">École de Management Léonard de Vinci, Paris La Défense</p>
+                <p class="timeline-loc" data-i18n="home.emlvOrgLoc">École de Management Léonard de Vinci, Paris La Défense</p>
               </div>
             </div>
-            <p class="timeline-degree">Bachelor Digital & International Business</p>
-            <p class="timeline-text">
+            <p class="timeline-degree" data-i18n="home.emlvDegree">Bachelor Digital & International Business</p>
+            <p class="timeline-text" data-i18n="home.emlvText">
               Formation orientée digital, marketing, communication, business international et gestion de projet.
               Je développe progressivement un profil polyvalent entre créativité, stratégie et outils numériques.
             </p>
-            <span class="timeline-badge badge-current">En cours, 3e année</span>
+            <span class="timeline-badge badge-current" data-i18n="home.emlvBadge">En cours, 3e année</span>
           </div>
         </div>
 
@@ -626,24 +610,24 @@
               </span>
               <div class="timeline-org">
                 <h3>Varna University of Management</h3>
-                <p class="timeline-loc">Varna, Bulgarie</p>
+                <p class="timeline-loc" data-i18n="home.varnaLoc">Varna, Bulgarie</p>
               </div>
             </div>
-            <p class="timeline-degree">Échange universitaire international</p>
-            <p class="timeline-text">
+            <p class="timeline-degree" data-i18n="home.varnaDegree">Échange universitaire international</p>
+            <p class="timeline-text" data-i18n="home.varnaText">
               Un semestre à l’international avec des cours et projets en anglais, autour de l’entrepreneuriat,
               du management, du marketing et du développement de projets digitaux.
             </p>
             <span class="timeline-badge badge-exchange">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.6 3.6 5.7 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.7-3.6-9S9.6 5.6 12 3z"></path></svg>
-              Échange international
+              <span data-i18n="home.varnaBadge">Échange international</span>
             </span>
           </div>
         </div>
 
         <div class="timeline-step reveal">
           <span class="timeline-dot" aria-hidden="true"></span>
-          <span class="timeline-date">Jusqu’en 2024</span>
+          <span class="timeline-date" data-i18n="home.hagueDate">Jusqu’en 2024</span>
           <div class="timeline-content">
             <div class="timeline-head">
               <span class="timeline-logo-wrap">
@@ -654,71 +638,43 @@
                 <p class="timeline-loc">Université de Strasbourg</p>
               </div>
             </div>
-            <p class="timeline-degree">BUT Métiers du Multimédia et de l’Internet</p>
-            <p class="timeline-text">
+            <p class="timeline-degree" data-i18n="home.hagueDegree">BUT Métiers du Multimédia et de l’Internet</p>
+            <p class="timeline-text" data-i18n="home.hagueText">
               Une formation qui m’a permis d’acquérir des bases en développement web, design graphique,
               communication digitale, audiovisuel et création de contenus.
             </p>
-            <span class="timeline-badge badge-past">Formation précédente</span>
+            <span class="timeline-badge badge-past" data-i18n="home.hagueBadge">Formation précédente</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="freelance" class="section experiences-legacy">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Freelance</p>
-        <h2>Activité freelance</h2>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>Webdesigner freelance <span style="font-weight:400;font-size:.75em;opacity:.65;">(Depuis Sept 2023)</span></h3>
-          <p>Développement de sites web (UX/UI, HTML, CSS), conception de maquettes sur Figma et Adobe Creative Suite,
-            gestion de projets de A à Z, du cahier des charges à la restitution client.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cta-section">
-      <div class="cta-box reveal">
-        <div class="cta-decor" aria-hidden="true"></div>
-        <p class="eyebrow eyebrow-light">On travaille ensemble ?</p>
-        <h2>Envie de collaborer sur votre prochain projet digital ?</h2>
-        <p class="cta-text">
-          Alternance, stage ou projet : je suis disponible pour échanger autour du web, du design,
-          du marketing et du digital.
-        </p>
-        <a href="#contact" class="btn cta-btn">Discutons-en →</a>
-      </div>
-    </section>
-
     <section id="contact" class="section contact">
       <div class="contact-box reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Restons en contact</h2>
-        <p>
+        <p class="eyebrow" data-i18n="home.contactEyebrow">Contact</p>
+        <h2 data-i18n="home.contactTitle">Restons en contact</h2>
+        <p data-i18n="home.contactText">
           Une opportunité, une question ou simplement envie d’échanger ? Vous pouvez me contacter
           directement.
         </p>
         <div class="contact-links">
-          <a href="mailto:angel.belhadj.pro@gmail.com" class="contact-stack" aria-label="Envoyer un email" title="angel.belhadj.pro@gmail.com">
+          <a href="mailto:angel.belhadj.pro@gmail.com" class="contact-stack" aria-label="Envoyer un email" title="angel.belhadj.pro@gmail.com" data-i18n-attr="aria-label:home.ariaSendEmail">
             <span class="social-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 7 10 6 10-6"></path></svg>
             </span>
-            <span class="tool-caption">Email</span>
+            <span class="tool-caption" data-i18n="home.contactEmail">Email</span>
           </a>
-          <a href="https://www.linkedin.com/in/angel-bel-hadj" target="_blank" rel="noopener" class="contact-stack" aria-label="Profil LinkedIn" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/angel-bel-hadj" target="_blank" rel="noopener" class="contact-stack" aria-label="Profil LinkedIn" title="LinkedIn" data-i18n-attr="aria-label:home.ariaLinkedinProfile">
             <span class="social-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
             </span>
-            <span class="tool-caption">LinkedIn</span>
+            <span class="tool-caption" data-i18n="home.contactLinkedin">LinkedIn</span>
           </a>
-          <a href="https://github.com/Bel-hadj" target="_blank" rel="noopener" class="contact-stack" aria-label="Profil GitHub" title="GitHub">
+          <a href="https://github.com/Bel-hadj" target="_blank" rel="noopener" class="contact-stack" aria-label="Profil GitHub" title="GitHub" data-i18n-attr="aria-label:home.ariaGithubProfile">
             <span class="social-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
             </span>
-            <span class="tool-caption">GitHub</span>
+            <span class="tool-caption" data-i18n="home.contactGithub">GitHub</span>
           </a>
         </div>
       </div>
@@ -726,10 +682,11 @@
   </main>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 
 </body>
 

@@ -9,10 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail project-detail-showcase ranch-detail-wide">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible">
       <!-- Visuel officiel The Ranch Grill Bar (grill + logo), issu du fichier fourni par
            l'utilisateur (Face.jpg) — contour turquoise et marges extérieures recadrés
@@ -22,183 +30,183 @@
         onerror="const d=document.createElement('div'); d.className='media-fallback'; d.textContent='Capture à venir — visuel-grill-logo.jpg'; this.replaceWith(d);" />
 
       <div class="detail-content">
-        <span class="tag category-marketing">Digital Marketing & Events</span>
+        <span class="tag category-marketing" data-i18n="ranch.tag">Digital Marketing & Events</span>
         <h1>The Ranch Grill Bar</h1>
-        <p class="detail-subtitle">Stage marketing digital & communication · 2025</p>
-        <p class="hero-meta">Mai 2025 → Juillet 2025 · Mantes-la-Jolie, Île-de-France</p>
+        <p class="detail-subtitle" data-i18n="ranch.subtitle">Stage marketing digital & communication · 2025</p>
+        <p class="hero-meta" data-i18n="ranch.meta">Mai 2025 → Juillet 2025 · Mantes-la-Jolie, Île-de-France</p>
 
-        <h2>Contexte</h2>
-        <p>Lors de mon stage en marketing digital et communication, j'ai travaillé sur la refonte de menus, la création de supports visuels, la communication autour d'un événement et la photographie événementielle.</p>
+        <h2 data-i18n="ranch.h2Context">Contexte</h2>
+        <p data-i18n="ranch.pContext">Lors de mon stage en marketing digital et communication, j'ai travaillé sur la refonte de menus, la création de supports visuels, la communication autour d'un événement et la photographie événementielle.</p>
       </div>
     </article>
 
-    <h2 class="ranch-section-title">Mes projets réalisés pendant le stage</h2>
+    <h2 class="ranch-section-title" data-i18n="ranch.sectionTitle">Mes projets réalisés pendant le stage</h2>
     <div class="cards-grid cards-grid-sm ranch-projects-grid">
       <article class="card ranch-project-card">
         <span class="project-number">01</span>
-        <h3>Refonte du menu The Ranch Events</h3>
-        <p>Refonte graphique du menu traiteur sur Canva : identité florale et pastel d'origine remplacée par un univers plus rustique, proche du grill/braise de The Ranch Grill Bar.</p>
+        <h3 data-i18n="ranch.card1Title">Refonte du menu The Ranch Events</h3>
+        <p data-i18n="ranch.card1Desc">Refonte graphique du menu traiteur sur Canva : identité florale et pastel d'origine remplacée par un univers plus rustique, proche du grill/braise de The Ranch Grill Bar.</p>
         <div class="ranch-pair ranch-frames">
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/menu-avant-apercu.jpg" data-lightbox-alt="Ancien menu traiteur The Ranch, identité florale et pastel" aria-label="Agrandir l'ancien menu">
               <img src="assets/projects/the-ranch/menu-avant-apercu.jpg" alt="Ancien menu traiteur The Ranch, identité florale et pastel" loading="lazy" />
             </button>
-            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-avant.pdf" target="_blank" rel="noopener noreferrer">Avant · PDF ↗</a>
+            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-avant.pdf" target="_blank" rel="noopener noreferrer" data-i18n="ranch.before">Avant · PDF ↗</a>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/menu-refonte-apercu.jpg" data-lightbox-alt="Nouveau menu The Ranch Events, refonte Canva" aria-label="Agrandir le nouveau menu">
               <img src="assets/projects/the-ranch/menu-refonte-apercu.jpg" alt="Nouveau menu The Ranch Events, refonte Canva" loading="lazy" />
             </button>
-            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-refonte.pdf" target="_blank" rel="noopener noreferrer">Après · PDF ↗</a>
+            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-refonte.pdf" target="_blank" rel="noopener noreferrer" data-i18n="ranch.after">Après · PDF ↗</a>
           </div>
         </div>
         <div class="ranch-doc-actions">
-          <a href="assets/projects/the-ranch/menu-refonte.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir le menu complet ↗</a>
+          <a href="assets/projects/the-ranch/menu-refonte.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary" data-i18n="ranch.viewFullMenu">Voir le menu complet ↗</a>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Menu The Ranch Events</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="ranch.card1Deliverable">Menu The Ranch Events</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Canva</span><span>Photoshop</span><span>Illustrator</span><span>Pinterest</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Mise en page</span><span>Identité visuelle</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="ranch.card1Skill1">Mise en page</span><span data-i18n="ranch.card1Skill2">Identité visuelle</span></div>
           </div>
         </div>
       </article>
 
       <article class="card ranch-project-card">
         <span class="project-number">02</span>
-        <h3>Création des menus · Colloque AIRMAP</h3>
-        <p>Conception des menus du gala du colloque international AIRMAP UVSQ (4-6 juin 2025) et participation à la mise en place et au service lors de l'événement.</p>
+        <h3 data-i18n="ranch.card2Title">Création des menus · Colloque AIRMAP</h3>
+        <p data-i18n="ranch.card2Desc">Conception des menus du gala du colloque international AIRMAP UVSQ (4-6 juin 2025) et participation à la mise en place et au service lors de l'événement.</p>
         <div class="ranch-partners">
           <div class="ranch-partners-logos">
             <img class="ranch-partner-logo--uvsq" src="assets/projects/the-ranch/logo-uvsq-officiel.png" alt="Logo UVSQ Université Paris-Saclay" loading="lazy" />
             <span class="ranch-partners-x" aria-hidden="true">×</span>
             <img class="ranch-partner-logo--ranch" src="assets/projects/the-ranch/logo-the-ranch-officiel.png" alt="Logo The Ranch Grill Bar" loading="lazy" />
           </div>
-          <p class="ranch-partners-caption">Collaboration événementielle</p>
+          <p class="ranch-partners-caption" data-i18n="ranch.partnersCaption">Collaboration événementielle</p>
         </div>
-        <span class="ranch-subheading">Menus du gala</span>
+        <span class="ranch-subheading" data-i18n="ranch.galaMenusHeading">Menus du gala</span>
         <div class="ranch-pair ranch-frames ranch-pair--gap-sm">
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/menu-gala-4-juin-apercu.jpg" data-lightbox-alt="Menu du gala AIRMAP, mercredi 4 juin 2025" aria-label="Agrandir le menu du 4 juin">
               <img src="assets/projects/the-ranch/menu-gala-4-juin-apercu.jpg" alt="Menu du gala AIRMAP, mercredi 4 juin 2025" loading="lazy" />
             </button>
-            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-gala-mercredi-4-juin.pdf" target="_blank" rel="noopener noreferrer">4 juin · PDF ↗</a>
+            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-gala-mercredi-4-juin.pdf" target="_blank" rel="noopener noreferrer" data-i18n="ranch.menu4juinCaption">4 juin · PDF ↗</a>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/menu-gala-5-juin-apercu.jpg" data-lightbox-alt="Menu du gala AIRMAP, jeudi 5 juin 2025" aria-label="Agrandir le menu du 5 juin">
               <img src="assets/projects/the-ranch/menu-gala-5-juin-apercu.jpg" alt="Menu du gala AIRMAP, jeudi 5 juin 2025" loading="lazy" />
             </button>
-            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-gala-jeudi-5-juin.pdf" target="_blank" rel="noopener noreferrer">5 juin · PDF ↗</a>
+            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-gala-jeudi-5-juin.pdf" target="_blank" rel="noopener noreferrer" data-i18n="ranch.menu5juinCaption">5 juin · PDF ↗</a>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/menu-gala-6-juin-apercu.jpg" data-lightbox-alt="Menu du gala AIRMAP, vendredi 6 juin 2025" aria-label="Agrandir le menu du 6 juin">
               <img src="assets/projects/the-ranch/menu-gala-6-juin-apercu.jpg" alt="Menu du gala AIRMAP, vendredi 6 juin 2025" loading="lazy" />
             </button>
-            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-gala-vendredi-6-juin.pdf" target="_blank" rel="noopener noreferrer">6 juin · PDF ↗</a>
+            <a class="ranch-pair-caption" href="assets/projects/the-ranch/menu-gala-vendredi-6-juin.pdf" target="_blank" rel="noopener noreferrer" data-i18n="ranch.menu6juinCaption">6 juin · PDF ↗</a>
           </div>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Trois menus de gala</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="ranch.card2Deliverable">Trois menus de gala</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Canva</span><span>Photoshop</span><span>Illustrator</span><span>Pinterest</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Mise en page</span><span>Communication événementielle</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="ranch.card2Skill1">Mise en page</span><span data-i18n="ranch.card2Skill2">Communication événementielle</span></div>
           </div>
         </div>
       </article>
 
       <article class="card ranch-project-card">
         <span class="project-number">03</span>
-        <h3>Identité & supports de communication</h3>
-        <p>Carte de visite et carte de fidélité : coordonnées, réseaux sociaux et éléments de marque cohérents avec l'identité The Ranch Events.</p>
-        <span class="ranch-subheading">Carte de visite</span>
+        <h3 data-i18n="ranch.card3Title">Identité & supports de communication</h3>
+        <p data-i18n="ranch.card3Desc">Carte de visite et carte de fidélité : coordonnées, réseaux sociaux et éléments de marque cohérents avec l'identité The Ranch Events.</p>
+        <span class="ranch-subheading" data-i18n="ranch.businessCardHeading">Carte de visite</span>
         <div class="ranch-pair ranch-pair--fill">
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/business-card-front.jpg" data-lightbox-alt="Carte de visite The Ranch, recto" aria-label="Agrandir la carte de visite, recto">
               <img src="assets/projects/the-ranch/business-card-front.jpg" alt="Carte de visite The Ranch, recto" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Recto</span>
+            <span class="ranch-pair-caption" data-i18n="ranch.recto">Recto</span>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/business-card-back.jpg" data-lightbox-alt="Carte de visite The Ranch, verso" aria-label="Agrandir la carte de visite, verso">
               <img src="assets/projects/the-ranch/business-card-back.jpg" alt="Carte de visite The Ranch, verso" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Verso</span>
+            <span class="ranch-pair-caption" data-i18n="ranch.verso">Verso</span>
           </div>
         </div>
-        <span class="ranch-subheading">Carte de fidélité The Ranch</span>
-        <p>Création d'un support recto/verso associant l'identité visuelle du restaurant, les informations pratiques, les réseaux sociaux et un QR code de réservation.</p>
+        <span class="ranch-subheading" data-i18n="ranch.loyaltyCardHeading">Carte de fidélité The Ranch</span>
+        <p data-i18n="ranch.loyaltyCardDesc">Création d'un support recto/verso associant l'identité visuelle du restaurant, les informations pratiques, les réseaux sociaux et un QR code de réservation.</p>
         <div class="ranch-pair ranch-pair--fill">
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/visuel-grill-logo.jpg" data-lightbox-alt="Carte de fidélité The Ranch, recto" aria-label="Agrandir la carte de fidélité, recto">
               <img src="assets/projects/the-ranch/visuel-grill-logo.jpg" alt="Carte de fidélité The Ranch, recto" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Recto</span>
+            <span class="ranch-pair-caption" data-i18n="ranch.recto">Recto</span>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/carte-fidelite-verso.jpg" data-lightbox-alt="Carte de fidélité The Ranch, verso" aria-label="Agrandir la carte de fidélité, verso">
               <img src="assets/projects/the-ranch/carte-fidelite-verso.jpg" alt="Carte de fidélité The Ranch, verso" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Verso</span>
+            <span class="ranch-pair-caption" data-i18n="ranch.verso">Verso</span>
           </div>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Supports recto / verso</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="ranch.card3Deliverable">Supports recto / verso</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>Canva</span><span>Photoshop</span><span>Illustrator</span><span>Pinterest</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Mise en page</span><span>Création de supports visuels</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="ranch.card3Skill1">Mise en page</span><span data-i18n="ranch.card3Skill2">Création de supports visuels</span></div>
           </div>
         </div>
       </article>
 
       <article class="card ranch-project-card">
         <span class="project-number">04</span>
-        <h3>Photographie événementielle · Colloque AIRMAP</h3>
-        <p>Lors du colloque AIRMAP, j'ai réalisé un reportage photographique : prises de vue des buffets, des produits et de leur présentation pendant l'événement.</p>
+        <h3 data-i18n="ranch.card4Title">Photographie événementielle · Colloque AIRMAP</h3>
+        <p data-i18n="ranch.card4Desc">Lors du colloque AIRMAP, j'ai réalisé un reportage photographique : prises de vue des buffets, des produits et de leur présentation pendant l'événement.</p>
         <div class="ranch-photo-grid">
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/airmap-buffet-01.jpg" data-lightbox-alt="Plateau de crumpets pour la pause café du colloque AIRMAP" data-lightbox-group="airmap-buffet" aria-label="Agrandir la capture : plateau de crumpets">
               <img src="assets/projects/the-ranch/airmap-buffet-01.jpg" alt="Plateau de crumpets pour la pause café du colloque AIRMAP" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Plateau de crumpets</span>
+            <span class="ranch-pair-caption" data-i18n="ranch.photoCrumpets">Plateau de crumpets</span>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/airmap-buffet-08.jpg" data-lightbox-alt="Corbeille de cookies et mini-cakes pour la pause café" data-lightbox-group="airmap-buffet" aria-label="Agrandir la capture : corbeille de cookies et mini-cakes">
               <img src="assets/projects/the-ranch/airmap-buffet-08.jpg" alt="Corbeille de cookies et mini-cakes pour la pause café" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Cookies & mini-cakes</span>
+            <span class="ranch-pair-caption" data-i18n="ranch.photoCookies">Cookies & mini-cakes</span>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/airmap-buffet-05.jpg" data-lightbox-alt="Mise en place de la pause café du colloque AIRMAP" data-lightbox-group="airmap-buffet" aria-label="Agrandir la capture : mise en place du buffet">
               <img src="assets/projects/the-ranch/airmap-buffet-05.jpg" alt="Mise en place de la pause café du colloque AIRMAP" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Mise en place</span>
+            <span class="ranch-pair-caption" data-i18n="ranch.photoSetup">Mise en place</span>
           </div>
           <div>
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/the-ranch/airmap-buffet-09.jpg" data-lightbox-alt="Présentoir de viennoiseries sur étagère dorée" data-lightbox-group="airmap-buffet" aria-label="Agrandir la capture : présentoir de viennoiseries">
               <img src="assets/projects/the-ranch/airmap-buffet-09.jpg" alt="Présentoir de viennoiseries sur étagère dorée" loading="lazy" />
             </button>
-            <span class="ranch-pair-caption">Présentoir</span>
+            <span class="ranch-pair-caption" data-i18n="ranch.photoDisplay">Présentoir</span>
           </div>
         </div>
         <!-- Porteurs invisibles : complètent le groupe de 10 photos pour la navigation
@@ -210,48 +218,49 @@
         <span class="ranch-gallery-extra" data-lightbox-group="airmap-buffet" data-lightbox-src="assets/projects/the-ranch/airmap-buffet-07.jpg" data-lightbox-alt="Corbeille de cookies et mini-cakes avec jus de fruits"></span>
         <span class="ranch-gallery-extra" data-lightbox-group="airmap-buffet" data-lightbox-src="assets/projects/the-ranch/airmap-buffet-10.jpg" data-lightbox-alt="Présentoir de viennoiseries, vue rapprochée"></span>
         <div class="ranch-doc-actions">
-          <button type="button" class="gallery-trigger btn secondary" data-lightbox-src="assets/projects/the-ranch/airmap-buffet-01.jpg" data-lightbox-alt="Plateau de crumpets pour la pause café du colloque AIRMAP" data-lightbox-group="airmap-buffet">Voir les 10 photos ↗</button>
+          <button type="button" class="gallery-trigger btn secondary" data-lightbox-src="assets/projects/the-ranch/airmap-buffet-01.jpg" data-lightbox-alt="Plateau de crumpets pour la pause café du colloque AIRMAP" data-lightbox-group="airmap-buffet" data-i18n="ranch.viewAllPhotos">Voir les 10 photos ↗</button>
         </div>
         <div class="ranch-work">
           <div class="ranch-group">
-            <p class="ranch-work-title">Livrable</p>
-            <p class="ranch-deliverable-text">Galerie de 10 photographies personnelles</p>
+            <p class="ranch-work-title" data-i18n="common.deliverable">Livrable</p>
+            <p class="ranch-deliverable-text" data-i18n="ranch.card4Deliverable">Galerie de 10 photographies personnelles</p>
           </div>
           <div class="ranch-group ranch-group--tools">
-            <p class="ranch-work-title">Outils utilisés</p>
+            <p class="ranch-work-title" data-i18n="common.toolsUsed">Outils utilisés</p>
             <div class="ranch-tags"><span>DaVinci Resolve</span><span>Photoshop</span><span>Appareil photo</span></div>
           </div>
           <div class="ranch-group ranch-group--skills">
-            <p class="ranch-work-title">Compétences mobilisées</p>
-            <div class="ranch-tags"><span>Photographie événementielle</span><span>Événementiel</span></div>
+            <p class="ranch-work-title" data-i18n="common.skillsUsed">Compétences mobilisées</p>
+            <div class="ranch-tags"><span data-i18n="ranch.card4Skill1">Photographie événementielle</span><span data-i18n="ranch.card4Skill2">Événementiel</span></div>
           </div>
         </div>
       </article>
     </div>
 
-    <h2 class="ranch-section-title">Outils & compétences</h2>
+    <h2 class="ranch-section-title" data-i18n="ranch.toolsSectionTitle">Outils & compétences</h2>
     <div class="skill-tags skills-plain">
-      <span>Canva</span>
-      <span>Communication digitale</span>
-      <span>Événementiel</span>
-      <span>Photographie événementielle</span>
-      <span>Création de supports visuels</span>
+      <span data-i18n="ranch.skillTag1">Canva</span>
+      <span data-i18n="ranch.skillTag2">Communication digitale</span>
+      <span data-i18n="ranch.skillTag3">Événementiel</span>
+      <span data-i18n="ranch.skillTag4">Photographie événementielle</span>
+      <span data-i18n="ranch.skillTag5">Création de supports visuels</span>
     </div>
   </main>
 
   <div class="lightbox" id="lightbox" hidden>
-    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Photo précédente" hidden>‹</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Photo précédente" hidden data-i18n-attr="aria-label:common.lightboxPrevPhoto">‹</button>
     <div class="lightbox-inner">
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l'aperçu">✕</button>
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l'aperçu" data-i18n-attr="aria-label:common.lightboxClose">✕</button>
       <img id="lightboxImage" src="" alt="" />
     </div>
-    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Photo suivante" hidden>›</button>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Photo suivante" hidden data-i18n-attr="aria-label:common.lightboxNextPhoto">›</button>
   </div>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

@@ -182,7 +182,7 @@ button:focus-visible {
 .section {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 92px 0;
+  padding: 36px 0;
   scroll-margin-top: 90px;
 }
 
@@ -204,10 +204,6 @@ button:focus-visible {
 @media (min-width: 1025px) {
   .hero {
     min-height: calc(82vh - 76px);
-  }
-
-  #accueil.section {
-    padding-bottom: 36px;
   }
 }
 
@@ -257,27 +253,63 @@ button:focus-visible {
   padding: 7px 14px;
 }
 
-.eyebrow-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  font-family: "Space Mono", monospace;
-  font-size: 0.82rem;
-  letter-spacing: 0.01em;
-  color: var(--primary-light);
-  border: 1px solid rgba(47, 123, 255, 0.3);
-  background: rgba(47, 123, 255, 0.08);
-  padding: 8px 16px;
-  border-radius: 999px;
+.hero-status {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
   margin-bottom: 22px;
+  max-width: 100%;
 }
 
-.eyebrow-pill .dot {
+.hero-status-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+
+.hero-status-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.55);
   flex-shrink: 0;
+}
+
+.hero-status-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.1);
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.hero-status-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.hero-status-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(91, 157, 255, 0.45);
+  box-shadow: 0 0 6px rgba(91, 157, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.hero-status-years {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--primary-light);
+  letter-spacing: 0.02em;
 }
 
 .hero h1 {
@@ -308,7 +340,9 @@ button:focus-visible {
 .hero-text {
   max-width: 650px;
   font-size: 1.1rem;
-  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 500;
+  color: rgba(245, 247, 251, 0.94);
 }
 
 .hero-actions {
@@ -592,9 +626,17 @@ button:focus-visible {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 70px;
   align-items: start;
+}
+
+/* Colonne droite réduite à Langues seule (Formation/Spécialité retirées,
+   déjà présentes dans "Mon parcours académique") : alignée en haut, au
+   niveau du premier paragraphe de gauche, avec une légère respiration. */
+.about-stats--languages-only {
+  align-self: start;
+  margin-top: 6px;
 }
 
 .about-text,
@@ -610,8 +652,9 @@ button:focus-visible {
 
 .about-text {
   padding: 0;
-  color: var(--muted);
+  color: #d9dee7;
   font-size: 1.05rem;
+  line-height: 1.75;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -717,9 +760,9 @@ button:focus-visible {
   border-radius: 0;
   border: none;
   border-bottom: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 28px;
   align-items: center;
 }
 
@@ -738,7 +781,7 @@ button:focus-visible {
 .about-stats p {
   color: var(--text);
   font-weight: 700;
-  text-align: right;
+  text-align: left;
   margin: 0;
 }
 
@@ -901,14 +944,6 @@ button:focus-visible {
   grid-area: right;
 }
 
-.skills-col-left .card:nth-child(2) {
-  margin-top: 32px;
-}
-
-.skills-col-right .card:nth-child(1) {
-  margin-top: 32px;
-}
-
 .skill-card {
   display: flex;
   flex-direction: column;
@@ -929,73 +964,30 @@ button:focus-visible {
   margin-top: 16px;
 }
 
-/* Cartes de compétences (section "Ce que je peux apporter") : contenu
-   aligné en haut, tags ancrés en bas via flex (plutôt qu'un grand trou
-   au milieu si une carte a moins de texte) ; voir aussi l'égalisation de
-   hauteur des 4 cartes dans script.js. */
+/* Cartes de compétences (section "Ce que je peux apporter") : plus
+   d'icône — hiérarchie titre → paragraphe → tags. Contenu aligné en
+   haut, tags ancrés en bas via flex (plutôt qu'un grand trou au milieu
+   si une carte a moins de texte) ; voir aussi l'égalisation de hauteur
+   des 4 cartes dans script.js. */
 .skill-card .skill-tags {
   margin-top: auto;
-  padding-top: 16px;
+  padding-top: 14px;
 }
 
-/* Finitions "premium" des 4 cartes de compétences : padding un peu plus
-   généreux, titre plus affirmé, meilleure hiérarchie icône / titre /
-   texte / tags. Scopé à .skill-card pour ne rien changer ailleurs
-   (les cartes projets/étapes réutilisent .card sans cette classe). */
 .skill-card {
-  padding: 28px;
+  padding: 22px 28px;
 }
 
 .skill-card h3 {
-  font-size: 1.18rem;
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.01em;
-  margin-bottom: 10px;
+  color: var(--text);
+  margin-bottom: 12px;
 }
 
 .skill-card p {
-  line-height: 1.6;
-}
-
-/* Icônes de catégorie : chip plus grand, dégradé doux propre à chaque
-   univers (au lieu des classes .icon-* partagées avec les badges d'étape
-   numérotés d'autres pages, pour ne jamais les affecter), anneau discret,
-   aucune touche cartoon. */
-.skills-showcase .card-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-}
-
-.skills-showcase .card-icon svg {
-  width: 24px;
-  height: 24px;
-}
-
-.skill-icon-web {
-  background: linear-gradient(135deg, rgba(47, 123, 255, 0.22), rgba(47, 123, 255, 0.06));
-  border-color: rgba(91, 157, 255, 0.35);
-  color: var(--primary-light);
-}
-
-.skill-icon-marketing {
-  background: linear-gradient(135deg, rgba(217, 70, 239, 0.22), rgba(217, 70, 239, 0.06));
-  border-color: rgba(232, 121, 249, 0.35);
-  color: #e879f9;
-}
-
-.skill-icon-design {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.24), rgba(99, 102, 241, 0.06));
-  border-color: rgba(129, 140, 248, 0.35);
-  color: #818cf8;
-}
-
-.skill-icon-business {
-  background: linear-gradient(135deg, rgba(202, 138, 4, 0.26), rgba(202, 138, 4, 0.08));
-  border-color: rgba(234, 179, 8, 0.4);
-  color: #eab308;
+  line-height: 1.65;
 }
 
 .skill-tags span {
@@ -1264,89 +1256,52 @@ button:focus-visible {
   margin: 0;
 }
 
-.cta-section {
-  padding: 0 0 56px;
-}
-
-/* Resserre légèrement l'espace Formation → CTA → Contact → Footer en bas
-   de page (restait très généreux avec le padding par défaut de .section
-   cumulé entre chaque bloc), sans supprimer la respiration du design. */
+/* Contact : padding-top légèrement resserré après Formation, padding-bottom
+   un peu plus généreux avant le footer (seule exception à l'espacement
+   standard des sections, pour clore la page proprement). */
 #contact.section {
-  padding-top: 56px;
-  padding-bottom: 64px;
+  padding-top: 32px;
+  padding-bottom: 72px;
 }
 
-.cta-box {
+.contact-box {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  border-radius: 32px;
-  padding: 64px 32px;
   text-align: center;
+  padding: 56px 40px;
+  max-width: 760px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
   box-shadow: var(--shadow);
 }
 
-.cta-decor {
+.contact-box::before {
+  content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.28), transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(255, 255, 255, 0.2), transparent 45%);
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.22), transparent 42%),
+    radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.16), transparent 45%);
 }
 
-.cta-box .eyebrow-light {
+.contact-box .eyebrow {
   display: inline-flex;
   color: rgba(255, 255, 255, 0.92);
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
-  margin-bottom: 14px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-}
-
-.cta-box h2 {
-  color: #ffffff;
-  font-size: clamp(1.8rem, 1vw + 1.7rem, 2.6rem);
-  max-width: 720px;
-  margin: 0 auto 16px;
-  line-height: 1.15;
-}
-
-.cta-text {
-  color: rgba(255, 255, 255, 0.88);
-  max-width: 620px;
-  margin: 0 auto 30px;
-}
-
-.cta-btn {
-  background: #ffffff;
-  color: var(--primary);
-  font-weight: 800;
-}
-
-.cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
-}
-
-.contact-box {
-  text-align: center;
-  padding: 44px 32px;
-  max-width: 720px;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.16);
+  border: none;
 }
 
 .contact-box h2 {
+  color: #ffffff;
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .contact-box p {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.92);
   max-width: 520px;
   margin: 14px auto 0;
 }
@@ -1419,6 +1374,39 @@ button:focus-visible {
   color: var(--accent);
 }
 
+/* Icônes/labels du bloc Contact (fond bleu) : cercles sombres translucides +
+   pictogrammes/labels blancs pour rester lisibles sur le dégradé bleu. */
+.contact-box .social-icon {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.contact-box .social-icon svg {
+  color: #ffffff;
+}
+
+.contact-box .contact-stack:hover .social-icon,
+.contact-box .contact-stack:focus-visible .social-icon {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.contact-box .contact-stack:hover .social-icon svg,
+.contact-box .contact-stack:focus-visible .social-icon svg {
+  color: #ffffff;
+}
+
+.contact-box .contact-stack .tool-caption {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.contact-box .contact-stack:hover .tool-caption,
+.contact-box .contact-stack:focus-visible .tool-caption {
+  color: #ffffff;
+}
+
 footer {
   text-align: center;
   color: var(--muted);
@@ -1468,6 +1456,54 @@ footer {
   margin-bottom: 28px;
   color: var(--accent);
   font-weight: 800;
+}
+
+.detail-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.detail-topbar .back-link {
+  margin-bottom: 0;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.lang-switch .lang-option {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 7px;
+  border-radius: 7px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.lang-switch .lang-option:hover {
+  color: var(--text);
+}
+
+.lang-switch .lang-option.active {
+  color: var(--text);
+  background: var(--primary-soft);
+}
+
+.lang-switch .lang-sep {
+  color: var(--line);
+  font-size: 0.75rem;
 }
 
 .detail-hero {
@@ -3116,6 +3152,7 @@ a.ranch-pair-caption:hover {
 /* Langues : chaque langue est une pilule autoportante (nom + niveau) */
 
 .about-stats > div.languages-row {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
@@ -3450,11 +3487,6 @@ a.ranch-pair-caption:hover {
     margin: 0 auto 8px;
   }
 
-  .skills-col-left .card:nth-child(2),
-  .skills-col-right .card:nth-child(1) {
-    margin-top: 0;
-  }
-
   .stats-strip-inner {
     flex-direction: column;
   }
@@ -3465,12 +3497,21 @@ a.ranch-pair-caption:hover {
   }
 
   .section {
-    padding: 72px 0;
+    padding: 32px 0;
   }
 }
 
 @media (max-width: 480px) {
   .nav-cta {
+    display: none;
+  }
+
+  .hero-status-detail {
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+
+  .hero-status-divider {
     display: none;
   }
 }
@@ -3514,14 +3555,9 @@ a.ranch-pair-caption:hover {
     font-size: 1.05rem;
   }
 
-  .about-stats > div {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .about-stats p {
-    text-align: left;
+  .about-stats > div:not(.languages-row) {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
   }
 
   .languages {
@@ -3555,16 +3591,8 @@ a.ranch-pair-caption:hover {
     gap: 18px;
   }
 
-  .cta-box {
-    padding: 44px 22px;
-  }
-
-  .cta-box h2 {
-    font-size: clamp(1.5rem, 6vw, 2rem);
-  }
-
   .contact-box {
-    padding: 36px 18px;
+    padding: 44px 22px;
   }
 
   .profile-image-overlay,
@@ -4088,9 +4116,15 @@ a.ranch-pair-caption:hover {
 /* Cartes de l'accueil (projets, expériences et compétences) : textes
    descriptifs en blanc pour une lecture immédiate, et badges à texte plus
    contrasté. Les contours arrondis des badges restent ceux de .skill-tags span. */
-.info-card p,
-.skill-card p {
+.info-card p {
   color: #ffffff;
+}
+
+/* Paragraphes des cartes de compétences : légèrement moins blancs que les
+   titres pour renforcer la hiérarchie titre → paragraphe → tags, tout en
+   restant parfaitement lisibles sur fond sombre. */
+.skill-card p {
+  color: #d5d8e0;
 }
 
 .info-card .skill-tags span,

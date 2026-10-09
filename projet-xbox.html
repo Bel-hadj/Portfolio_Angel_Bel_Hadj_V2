@@ -9,10 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail project-detail-showcase xbox-theme">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible xbox-glow">
       <!-- Le lecteur PDF sert de visuel principal du hero (même composant que
            Terra Ética, classe .pdf-viewer--hero) : un seul lecteur PDF sur la
@@ -21,131 +29,131 @@
         <div class="pdf-viewer-frame" id="xboxPdfFrame">
           <canvas id="xboxPdfCanvas"></canvas>
           <div class="pdf-viewer-status" id="xboxPdfStatus">
-            <p id="xboxPdfStatusText">Chargement de la présentation Xbox…</p>
+            <p id="xboxPdfStatusText" data-i18n="xbox.status">Chargement de la présentation Xbox…</p>
             <a href="assets/projects/xbox/xbox-social-media-strategy.pdf" target="_blank" rel="noopener noreferrer"
-              class="btn secondary pdf-expand-btn" id="xboxPdfStatusFallback" hidden>Ouvrir le PDF complet</a>
+              class="btn secondary pdf-expand-btn" id="xboxPdfStatusFallback" hidden data-i18n="common.openFullPdf">Ouvrir le PDF complet</a>
           </div>
         </div>
         <div class="pdf-controls">
-          <button type="button" class="pdf-btn" id="xboxPdfPrev" aria-label="Page précédente">←</button>
-          <span class="pdf-page-label">Page <span id="xboxPdfPageCurrent">1</span> / <span id="xboxPdfPageTotal">…</span></span>
-          <button type="button" class="pdf-btn" id="xboxPdfNext" aria-label="Page suivante">→</button>
+          <button type="button" class="pdf-btn" id="xboxPdfPrev" aria-label="Page précédente" data-i18n-attr="aria-label:common.previousPage">←</button>
+          <span class="pdf-page-label"><span data-i18n="common.page">Page</span> <span id="xboxPdfPageCurrent">1</span> / <span id="xboxPdfPageTotal">…</span></span>
+          <button type="button" class="pdf-btn" id="xboxPdfNext" aria-label="Page suivante" data-i18n-attr="aria-label:common.nextPage">→</button>
           <label class="pdf-goto" for="xboxPdfPageInput">
-            Aller à :
+            <span data-i18n="common.goTo">Aller à :</span>
             <input type="number" id="xboxPdfPageInput" min="1" value="1" inputmode="numeric" aria-label="Accéder à une page" />
           </label>
-          <button type="button" class="btn secondary pdf-expand-btn" id="xboxPdfExpand" aria-label="Agrandir le PDF" disabled>Agrandir</button>
+          <button type="button" class="btn secondary pdf-expand-btn" id="xboxPdfExpand" aria-label="Agrandir le PDF" disabled data-i18n="common.expand">Agrandir</button>
         </div>
       </div>
 
       <div class="detail-content">
-        <span class="tag tag-xbox">Social media</span>
+        <span class="tag tag-xbox" data-i18n="xbox.tag">Social media</span>
         <h1>Xbox Stratégie Social Media &amp; Influence</h1>
-        <p class="detail-subtitle">Étude de cas • Diagnostic digital • Recommandations éditoriales</p>
-        <p>Étude de cas réalisée en groupe de cinq (cours Digital &amp; International Business, EMLV, septembre 2025) : concevoir une stratégie social media qui rapproche Xbox de sa communauté, à partir d’un diagnostic de sa communication actuelle et des tendances du marché du gaming.</p>
+        <p class="detail-subtitle" data-i18n="xbox.subtitle">Étude de cas • Diagnostic digital • Recommandations éditoriales</p>
+        <p data-i18n="xbox.intro">Étude de cas réalisée en groupe de cinq (cours Digital &amp; International Business, EMLV, septembre 2025) : concevoir une stratégie social media qui rapproche Xbox de sa communauté, à partir d’un diagnostic de sa communication actuelle et des tendances du marché du gaming.</p>
 
         <!-- Bouton Canva : aucune URL fournie pour le moment. Dès qu'Angel transmet le
              vrai lien, remplacer le <button disabled> ci-dessous par :
              <a href="COLLER_URL_CANVA_ICI" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir sur Canva ↗</a> -->
         <div class="doc-actions">
-          <a href="#xbox-pdf-viewer" class="btn xbox-btn-primary">Voir la présentation</a>
-          <a href="assets/projects/xbox/xbox-social-media-strategy.pdf" download class="btn secondary">Télécharger le PDF</a>
-          <button type="button" class="btn secondary" disabled aria-disabled="true">Canva bientôt disponible</button>
+          <a href="#xbox-pdf-viewer" class="btn xbox-btn-primary" data-i18n="xbox.btnViewPresentation">Voir la présentation</a>
+          <a href="assets/projects/xbox/xbox-social-media-strategy.pdf" download class="btn secondary" data-i18n="common.downloadPdf">Télécharger le PDF</a>
+          <button type="button" class="btn secondary" disabled aria-disabled="true" data-i18n="xbox.btnCanvaSoon">Canva bientôt disponible</button>
         </div>
 
         <div class="snapshot-grid">
           <div class="snapshot-item">
-            <span class="snapshot-label">Cadre</span>
-            <span class="snapshot-value">EMLV — cours Digital &amp; International Business</span>
+            <span class="snapshot-label" data-i18n="xbox.snapFrameLbl">Cadre</span>
+            <span class="snapshot-value" data-i18n="xbox.snapFrameVal">EMLV — cours Digital &amp; International Business</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Équipe</span>
-            <span class="snapshot-value">Groupe de 5 (septembre 2025)</span>
+            <span class="snapshot-label" data-i18n="xbox.snapTeamLbl">Équipe</span>
+            <span class="snapshot-value" data-i18n="xbox.snapTeamVal">Groupe de 5 (septembre 2025)</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Cible</span>
-            <span class="snapshot-value">Joueurs et joueuses de 18 à 35 ans</span>
+            <span class="snapshot-label" data-i18n="xbox.snapTargetLbl">Cible</span>
+            <span class="snapshot-value" data-i18n="xbox.snapTargetVal">Joueurs et joueuses de 18 à 35 ans</span>
           </div>
           <div class="snapshot-item">
-            <span class="snapshot-label">Objectif</span>
-            <span class="snapshot-value">Rapprocher Xbox de sa communauté, image plus inspirante</span>
+            <span class="snapshot-label" data-i18n="xbox.snapObjectiveLbl">Objectif</span>
+            <span class="snapshot-value" data-i18n="xbox.snapObjectiveVal">Rapprocher Xbox de sa communauté, image plus inspirante</span>
           </div>
         </div>
 
-        <h2>Diagnostic digital</h2>
-        <p>Xbox reste troisième du marché des consoles derrière PlayStation et Nintendo. Communication perçue comme solide mais trop corporate, avec peu d’exclusivités fortes face à la concurrence ; bonne réactivité de la marque, mais quelques lenteurs de support signalées par une communauté très active sur Reddit, Discord et Twitter/X.</p>
+        <h2 data-i18n="xbox.h2Diagnostic">Diagnostic digital</h2>
+        <p data-i18n="xbox.pDiagnostic">Xbox reste troisième du marché des consoles derrière PlayStation et Nintendo. Communication perçue comme solide mais trop corporate, avec peu d’exclusivités fortes face à la concurrence ; bonne réactivité de la marque, mais quelques lenteurs de support signalées par une communauté très active sur Reddit, Discord et Twitter/X.</p>
 
-        <h2>Réseaux analysés</h2>
-        <p class="reality-lead">Quatre plateformes étudiées, chacune avec un rôle, un point fort et une limite propres.</p>
+        <h2 data-i18n="xbox.h2Networks">Réseaux analysés</h2>
+        <p class="reality-lead" data-i18n="xbox.networksLead">Quatre plateformes étudiées, chacune avec un rôle, un point fort et une limite propres.</p>
         <div class="reality-grid">
           <div>
             <strong>Instagram</strong>
-            <span>Rôle : vitrine visuelle de la marque.</span>
-            <span>Point fort : belles images, bonne régularité.</span>
-            <span>Limite : peu d’interaction directe avec les abonnés.</span>
+            <span data-i18n="xbox.instaRole">Rôle : vitrine visuelle de la marque.</span>
+            <span data-i18n="xbox.instaStrength">Point fort : belles images, bonne régularité.</span>
+            <span data-i18n="xbox.instaLimit">Limite : peu d’interaction directe avec les abonnés.</span>
           </div>
           <div>
             <strong>TikTok</strong>
-            <span>Rôle : proximité et viralité auprès des jeunes joueurs.</span>
-            <span>Point fort : créativité, bonne énergie.</span>
-            <span>Limite : publications pas toujours régulières.</span>
+            <span data-i18n="xbox.tiktokRole">Rôle : proximité et viralité auprès des jeunes joueurs.</span>
+            <span data-i18n="xbox.tiktokStrength">Point fort : créativité, bonne énergie.</span>
+            <span data-i18n="xbox.tiktokLimit">Limite : publications pas toujours régulières.</span>
           </div>
           <div>
             <strong>YouTube</strong>
-            <span>Rôle : contenu immersif (trailers, tests, lives).</span>
-            <span>Point fort : forte visibilité, humour marquant.</span>
-            <span>Limite : peu d’échanges après publication.</span>
+            <span data-i18n="xbox.ytRole">Rôle : contenu immersif (trailers, tests, lives).</span>
+            <span data-i18n="xbox.ytStrength">Point fort : forte visibilité, humour marquant.</span>
+            <span data-i18n="xbox.ytLimit">Limite : peu d’échanges après publication.</span>
           </div>
           <div>
             <strong>X / Twitter</strong>
-            <span>Rôle : réactivité et actualité de la marque.</span>
-            <span>Point fort : diffusion rapide des informations.</span>
-            <span>Limite : manque d’humour et de proximité.</span>
+            <span data-i18n="xbox.xRole">Rôle : réactivité et actualité de la marque.</span>
+            <span data-i18n="xbox.xStrength">Point fort : diffusion rapide des informations.</span>
+            <span data-i18n="xbox.xLimit">Limite : manque d’humour et de proximité.</span>
           </div>
         </div>
 
         <div class="detail-pair">
           <div class="card">
-            <h2>Objectifs SMART YouTube</h2>
-            <p>Atteindre 2 millions de vues mensuelles sur les vidéos Xbox d’ici 6 mois.</p>
-            <p><strong>KPI :</strong> durée moyenne de visionnage (AVD), taux de clics sur les miniatures (CTR).</p>
+            <h2 data-i18n="xbox.smartYtTitle">Objectif YouTube à 6 mois</h2>
+            <p data-i18n="xbox.smartYtText">Atteindre 2 millions de vues mensuelles sur les contenus Xbox.</p>
+            <p data-i18n="xbox.smartYtKpi">Indicateurs suivis : durée moyenne de visionnage, taux de clic sur les miniatures.</p>
           </div>
           <div class="card">
-            <h2>Objectifs SMART TikTok</h2>
-            <p>Gagner 1 million de nouveaux abonnés et publier au moins 3 vidéos par semaine d’ici 6 mois.</p>
-            <p><strong>KPI :</strong> taux d’engagement (ER), taux de clics (CTR).</p>
+            <h2 data-i18n="xbox.smartTtTitle">Objectif TikTok à 6 mois</h2>
+            <p data-i18n="xbox.smartTtText">Développer la communauté avec un objectif d’1 million de nouveaux abonnés et au moins 3 publications par semaine.</p>
+            <p data-i18n="xbox.smartTtKpi">Indicateurs suivis : taux d’engagement, taux de clic.</p>
           </div>
         </div>
 
-        <h2>Recommandations</h2>
+        <h2 data-i18n="xbox.h2Reco">Recommandations</h2>
         <div class="cards-grid cards-grid-3">
           <article class="card">
             <span class="step-badge icon-indigo">01</span>
-            <h3>Humaniser la communication</h3>
-            <p><strong>Behind the Player :</strong> témoignages humains de la communauté plutôt qu’un ton institutionnel.</p>
+            <h3 data-i18n="xbox.reco1Title">Humaniser la communication</h3>
+            <p data-i18n="xbox.reco1Text">Mettre davantage en avant les joueurs, les équipes et les histoires autour de la communauté Xbox plutôt qu’une communication uniquement institutionnelle.</p>
           </article>
           <article class="card">
             <span class="step-badge icon-violet">02</span>
-            <h3>Valoriser la communauté</h3>
-            <p><strong>Power Your Community :</strong> UGC, concours et collaborations avec des créateurs TikTok/Twitch pour plus de proximité.</p>
+            <h3 data-i18n="xbox.reco2Title">Valoriser la communauté</h3>
+            <p data-i18n="xbox.reco2Text">Donner davantage de place aux contenus créés par la communauté, aux concours et aux collaborations avec des créateurs.</p>
           </article>
           <article class="card">
             <span class="step-badge icon-amber">03</span>
-            <h3>Adapter localement</h3>
-            <p>Décliner les campagnes globales par pays et simplifier les visuels présentant le Game Pass.</p>
+            <h3 data-i18n="xbox.reco3Title">Adapter les contenus aux marchés locaux</h3>
+            <p data-i18n="xbox.reco3Text">Adapter certains contenus et visuels selon les pays plutôt que de reprendre systématiquement les mêmes campagnes globales.</p>
           </article>
         </div>
 
-        <h2>Mon rôle &amp; compétences</h2>
-        <p>Travail mené en groupe de cinq (cours DIB, EMLV) : je n’ai pas réalisé ce projet seul. Mes contributions : analyse de la présence social media et benchmark concurrentiel, réflexion sur l’e-réputation, définition d’objectifs SMART et recommandations stratégiques, propositions de concepts éditoriaux. Cette étude m’a permis de mener un vrai diagnostic digital et de défendre des recommandations argumentées en groupe.</p>
+        <h2 data-i18n="xbox.h2RoleSkills">Mon rôle &amp; compétences</h2>
+        <p data-i18n="xbox.pRole">Projet réalisé en groupe de cinq dans le cadre du cours DIB à l’EMLV. Je me suis principalement concentré sur l’analyse de la présence Social Media de Xbox et sur les recommandations liées à la stratégie de contenu.</p>
         <div class="skill-tags skills-plain">
-          <span>Community management</span>
-          <span>Analyse social media</span>
-          <span>Stratégie de contenu</span>
-          <span>Benchmark concurrentiel</span>
-          <span>Objectifs SMART</span>
-          <span>Ligne éditoriale</span>
-          <span>Travail d’équipe</span>
+          <span data-i18n="xbox.skill1">Community management</span>
+          <span data-i18n="xbox.skill2">Analyse social media</span>
+          <span data-i18n="xbox.skill3">Stratégie de contenu</span>
+          <span data-i18n="xbox.skill4">Benchmark concurrentiel</span>
+          <span data-i18n="xbox.skill5">Objectifs SMART</span>
+          <span data-i18n="xbox.skill6">Ligne éditoriale</span>
+          <span data-i18n="xbox.skill7">Travail d’équipe</span>
         </div>
       </div>
     </article>
@@ -155,17 +163,17 @@
     <div class="pdf-modal-inner" role="dialog" aria-modal="true" aria-label="Lecteur PDF – Xbox">
       <div class="pdf-modal-head">
         <span class="pdf-modal-title">Xbox Stratégie Social Media &amp; Influence</span>
-        <button type="button" class="pdf-btn" id="xboxPdfModalClose" aria-label="Fermer le lecteur">✕</button>
+        <button type="button" class="pdf-btn" id="xboxPdfModalClose" aria-label="Fermer le lecteur" data-i18n-attr="aria-label:common.lightboxClose">✕</button>
       </div>
       <div class="pdf-viewer-frame">
         <canvas id="xboxPdfModalCanvas"></canvas>
       </div>
       <div class="pdf-controls">
-        <button type="button" class="pdf-btn" id="xboxPdfModalPrev" aria-label="Page précédente">←</button>
-        <span class="pdf-page-label">Page <span id="xboxPdfModalPageCurrent">1</span> / <span id="xboxPdfModalPageTotal">…</span></span>
-        <button type="button" class="pdf-btn" id="xboxPdfModalNext" aria-label="Page suivante">→</button>
+        <button type="button" class="pdf-btn" id="xboxPdfModalPrev" aria-label="Page précédente" data-i18n-attr="aria-label:common.previousPage">←</button>
+        <span class="pdf-page-label"><span data-i18n="common.page">Page</span> <span id="xboxPdfModalPageCurrent">1</span> / <span id="xboxPdfModalPageTotal">…</span></span>
+        <button type="button" class="pdf-btn" id="xboxPdfModalNext" aria-label="Page suivante" data-i18n-attr="aria-label:common.nextPage">→</button>
         <label class="pdf-goto" for="xboxPdfModalPageInput">
-          Aller à :
+          <span data-i18n="common.goTo">Aller à :</span>
           <input type="number" id="xboxPdfModalPageInput" min="1" value="1" inputmode="numeric" aria-label="Accéder à une page" />
         </label>
       </div>
@@ -173,11 +181,12 @@
   </div>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
   <script src="assets/projects/xbox/xbox-pdf-data.js"></script>
   <script type="module" src="assets/projects/xbox/xbox-pdf-viewer.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>

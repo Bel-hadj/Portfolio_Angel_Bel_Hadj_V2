@@ -9,10 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
   <main class="project-detail">
-    <a href="index.html#projets" class="back-link">← Retour au portfolio</a>
+    <div class="detail-topbar">
+      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-option" data-lang="fr">FR</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-option" data-lang="en">EN</button>
+      </div>
+    </div>
     <article class="detail-hero reveal visible web-glow">
       <!-- Vraie capture de la page d'accueil de ce portfolio (générée depuis le site
            réel, pas une maquette). -->
@@ -21,76 +29,76 @@
         onerror="const d=document.createElement('div'); d.className='media-fallback'; d.textContent='Capture d’écran à venir — cover.png'; this.replaceWith(d);" />
 
       <div class="detail-content">
-        <span class="tag category-web">Web Design • Front-end</span>
-        <h1>Portfolio personnel</h1>
-        <p class="detail-subtitle">Design, développement et structuration d’un portfolio professionnel</p>
-        <p>Portfolio développé pour présenter mes projets, mes compétences et mes expériences à travers des études de cas interactives.</p>
+        <span class="tag category-web" data-i18n="portfolioProj.tag">Web Design • Front-end</span>
+        <h1 data-i18n="portfolioProj.title">Portfolio personnel</h1>
+        <p class="detail-subtitle" data-i18n="portfolioProj.subtitle">Design, développement et structuration d’un portfolio professionnel</p>
+        <p data-i18n="portfolioProj.intro">Portfolio développé pour présenter mes projets, mes compétences et mes expériences à travers des études de cas interactives.</p>
 
         <div class="doc-actions">
-          <a href="index.html" class="btn web-btn-primary">Voir le portfolio</a>
-          <a href="https://github.com/Bel-hadj/Portfolio_Angel_Bel_Hadj_V2" target="_blank" rel="noopener noreferrer" class="btn secondary">Voir sur GitHub ↗</a>
+          <a href="index.html" class="btn web-btn-primary" data-i18n="portfolioProj.btnView">Voir le portfolio</a>
+          <a href="https://github.com/Bel-hadj/Portfolio_Angel_Bel_Hadj_V2" target="_blank" rel="noopener noreferrer" class="btn secondary" data-i18n="common.viewGithub">Voir sur GitHub ↗</a>
         </div>
 
-        <h2>Contexte</h2>
-        <p>Le portfolio que vous consultez actuellement a été conçu et développé pour présenter mes projets académiques et professionnels de façon claire, à destination des recruteurs.</p>
+        <h2 data-i18n="portfolioProj.h2Context">Contexte</h2>
+        <p data-i18n="portfolioProj.pContext">Le portfolio que vous consultez actuellement a été conçu et développé pour présenter mes projets académiques et professionnels de façon claire, à destination des recruteurs.</p>
 
-        <h2>Objectifs</h2>
-        <p>Créer un site rapide à parcourir, où chaque projet est présenté comme une vraie étude de cas plutôt qu’une simple liste, avec une identité visuelle cohérente et un accès direct à l’essentiel.</p>
+        <h2 data-i18n="portfolioProj.h2Objectives">Objectifs</h2>
+        <p data-i18n="portfolioProj.pObjectives">Créer un site rapide à parcourir, où chaque projet est présenté comme une vraie étude de cas plutôt qu’une simple liste, avec une identité visuelle cohérente et un accès direct à l’essentiel.</p>
 
-        <h2>Design &amp; UX</h2>
+        <h2 data-i18n="portfolioProj.h2DesignUx">Design &amp; UX</h2>
         <ul>
-<li>Thème sombre, cohérent sur l’ensemble du site</li>
-<li>Hiérarchie visuelle claire : titres, sous-titres, badges de catégorie</li>
-<li>Cards projets avec système de catégories réutilisable</li>
-<li>Pages projet construites comme de vraies études de cas</li>
-<li>Navigation simple, pensée pour réduire le nombre de clics d’un recruteur</li>
+<li data-i18n="portfolioProj.d1">Thème sombre, cohérent sur l’ensemble du site</li>
+<li data-i18n="portfolioProj.d2">Hiérarchie visuelle claire : titres, sous-titres, badges de catégorie</li>
+<li data-i18n="portfolioProj.d3">Cards projets avec système de catégories réutilisable</li>
+<li data-i18n="portfolioProj.d4">Pages projet construites comme de vraies études de cas</li>
+<li data-i18n="portfolioProj.d5">Navigation simple, pensée pour réduire le nombre de clics d’un recruteur</li>
         </ul>
 
-        <h2>Développement</h2>
-        <p>Le site est développé en HTML, CSS et JavaScript, sans framework, avec des composants réutilisables (cards, badges, sections de type « étude de cas ») répétés d’un projet à l’autre pour garder une cohérence visuelle.</p>
+        <h2 data-i18n="portfolioProj.h2Dev">Développement</h2>
+        <p data-i18n="portfolioProj.pDev">Le site est développé en HTML, CSS et JavaScript, sans framework, avec des composants réutilisables (cards, badges, sections de type « étude de cas ») répétés d’un projet à l’autre pour garder une cohérence visuelle.</p>
 
-        <h2>Fonctionnalités</h2>
+        <h2 data-i18n="portfolioProj.h2Features">Fonctionnalités</h2>
         <div class="reality-grid">
           <div>
-            <strong>Menu mobile</strong>
-            <span>Navigation repliable sur petit écran.</span>
+            <strong data-i18n="portfolioProj.f1Title">Menu mobile</strong>
+            <span data-i18n="portfolioProj.f1Text">Navigation repliable sur petit écran.</span>
           </div>
           <div>
-            <strong>Animations au scroll</strong>
-            <span>Apparition progressive des sections (IntersectionObserver).</span>
+            <strong data-i18n="portfolioProj.f2Title">Animations au scroll</strong>
+            <span data-i18n="portfolioProj.f2Text">Apparition progressive des sections (IntersectionObserver).</span>
           </div>
           <div>
-            <strong>Lecteurs PDF intégrés</strong>
-            <span>Certaines études de cas embarquent la présentation complète, page par page.</span>
+            <strong data-i18n="portfolioProj.f3Title">Lecteurs PDF intégrés</strong>
+            <span data-i18n="portfolioProj.f3Text">Certaines études de cas embarquent la présentation complète, page par page.</span>
           </div>
           <div>
-            <strong>Galerie avec lightbox</strong>
-            <span>Captures agrandissables au clavier et à la souris.</span>
+            <strong data-i18n="portfolioProj.f4Title">Galerie avec lightbox</strong>
+            <span data-i18n="portfolioProj.f4Text">Captures agrandissables au clavier et à la souris.</span>
           </div>
           <div>
-            <strong>Fallbacks gracieux</strong>
-            <span>Logos ou images manquants remplacés proprement plutôt qu’une icône cassée.</span>
+            <strong data-i18n="portfolioProj.f5Title">Fallbacks gracieux</strong>
+            <span data-i18n="portfolioProj.f5Text">Logos ou images manquants remplacés proprement plutôt qu’une icône cassée.</span>
           </div>
           <div>
-            <strong>Catégories réutilisables</strong>
-            <span>Un même système de badges pour tous les projets et expériences.</span>
+            <strong data-i18n="portfolioProj.f6Title">Catégories réutilisables</strong>
+            <span data-i18n="portfolioProj.f6Text">Un même système de badges pour tous les projets et expériences.</span>
           </div>
         </div>
 
-        <h2>Architecture du portfolio</h2>
-        <p>Une page d’accueil présente les projets sous forme de cards, chacune reliant vers une page dédiée construite comme une étude de cas (contexte, réalisations, rôle, compétences).</p>
+        <h2 data-i18n="portfolioProj.h2Architecture">Architecture du portfolio</h2>
+        <p data-i18n="portfolioProj.pArchitecture">Une page d’accueil présente les projets sous forme de cards, chacune reliant vers une page dédiée construite comme une étude de cas (contexte, réalisations, rôle, compétences).</p>
         <div class="rtc-flow">
-          <div class="rtc-step">Accueil<span>Cards projets</span></div>
+          <div class="rtc-step"><span data-i18n="portfolioProj.flowHome">Accueil</span><span data-i18n="portfolioProj.flowHomeSub">Cards projets</span></div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Page projet<span>Étude de cas</span></div>
+          <div class="rtc-step"><span data-i18n="portfolioProj.flowProject">Page projet</span><span data-i18n="portfolioProj.flowProjectSub">Étude de cas</span></div>
           <div class="rtc-arrow">→</div>
-          <div class="rtc-step">Retour au portfolio</div>
+          <div class="rtc-step" data-i18n="portfolioProj.flowBack">Retour au portfolio</div>
         </div>
 
-        <h2>Responsive</h2>
-        <p>Le site est pensé pour rester lisible sur desktop, tablette et mobile : les grilles de projets s’adaptent (jusqu’à 4 colonnes en desktop, 2 en tablette, 1 en mobile) et les boutons restent dimensionnés pour un usage tactile.</p>
+        <h2 data-i18n="portfolioProj.h2Responsive">Responsive</h2>
+        <p data-i18n="portfolioProj.pResponsive">Le site est pensé pour rester lisible sur desktop, tablette et mobile : les grilles de projets s’adaptent (jusqu’à 4 colonnes en desktop, 2 en tablette, 1 en mobile) et les boutons restent dimensionnés pour un usage tactile.</p>
 
-        <h2>Stack technique</h2>
+        <h2 data-i18n="portfolioProj.h2Stack">Stack technique</h2>
         <div class="skill-tags skills-plain">
           <span>HTML</span>
           <span>CSS</span>
@@ -99,15 +107,15 @@
           <span>GitHub</span>
         </div>
 
-        <h2>Aperçu</h2>
+        <h2 data-i18n="portfolioProj.h2Preview">Aperçu</h2>
         <div class="gallery-grid">
           <article class="card gallery-card">
             <button type="button" class="gallery-trigger" data-lightbox-src="assets/projects/portfolio/projets.png" data-lightbox-alt="Section Mes projets – Portfolio" aria-label="Agrandir la capture : Mes projets">
               <img class="card-thumb" src="assets/projects/portfolio/projets.png" alt="Section Mes projets – Portfolio" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
-            <h3>Mes projets</h3>
-            <p>La grille de projets principaux, avec badges de catégorie.</p>
+            <h3 data-i18n="portfolioProj.galProjectsTitle">Mes projets</h3>
+            <p data-i18n="portfolioProj.galProjectsDesc">La grille de projets principaux, avec badges de catégorie.</p>
           </article>
 
           <article class="card gallery-card">
@@ -115,8 +123,8 @@
               <img class="card-thumb" src="assets/projects/portfolio/page-projet.png" alt="Exemple de page projet – Portfolio" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
-            <h3>Page projet</h3>
-            <p>Une étude de cas (ici Terra Ética), avec hero et navigation.</p>
+            <h3 data-i18n="portfolioProj.galPageTitle">Page projet</h3>
+            <p data-i18n="portfolioProj.galPageDesc">Une étude de cas (ici Terra Ética), avec hero et navigation.</p>
           </article>
 
           <article class="card gallery-card">
@@ -124,13 +132,13 @@
               <img class="card-thumb" src="assets/projects/portfolio/mobile.png" alt="Version mobile – Portfolio" loading="lazy"
                 onerror="const t=this.closest('.gallery-trigger'); const d=document.createElement('div'); d.className='card-thumb media-fallback'; d.textContent='Capture à venir'; this.replaceWith(d); if(t){t.setAttribute('disabled','');}" />
             </button>
-            <h3>Version mobile</h3>
-            <p>Le hero et la navigation adaptés à un écran mobile.</p>
+            <h3 data-i18n="portfolioProj.galMobileTitle">Version mobile</h3>
+            <p data-i18n="portfolioProj.galMobileDesc">Le hero et la navigation adaptés à un écran mobile.</p>
           </article>
         </div>
 
-        <h2>Compétences &amp; apprentissages</h2>
-        <p>Ce projet m’a permis de travailler la présentation de mon travail comme un vrai produit : hiérarchisation de l’information, cohérence visuelle entre les pages, et itérations successives pour rendre chaque étude de cas plus claire et plus rapide à parcourir pour un recruteur.</p>
+        <h2 data-i18n="portfolioProj.h2SkillsLearnings">Compétences &amp; apprentissages</h2>
+        <p data-i18n="portfolioProj.pSkillsLearnings">Ce projet m’a permis de travailler la présentation de mon travail comme un vrai produit : hiérarchisation de l’information, cohérence visuelle entre les pages, et itérations successives pour rendre chaque étude de cas plus claire et plus rapide à parcourir pour un recruteur.</p>
         <div class="skill-tags skills-plain">
           <span>HTML</span>
           <span>CSS</span>
@@ -145,15 +153,16 @@
 
   <div class="lightbox" id="lightbox" hidden>
     <div class="lightbox-inner">
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l’aperçu">✕</button>
+      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fermer l’aperçu" data-i18n-attr="aria-label:common.lightboxClose">✕</button>
       <img id="lightboxImage" src="" alt="" />
     </div>
   </div>
 
   <footer>
-    <p>© 2026 Angel Bel Hadj. Tous droits réservés.</p>
+    <p data-i18n="home.footer">© 2026 Angel Bel Hadj. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js"></script>
+  <script src="assets/i18n/i18n.js"></script>
 </body>
 </html>
