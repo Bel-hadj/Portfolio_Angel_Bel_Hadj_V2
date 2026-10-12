@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bel-hadj.github.io/Portfolio_Angel_Bel_Hadj_V2/sitemap.xml

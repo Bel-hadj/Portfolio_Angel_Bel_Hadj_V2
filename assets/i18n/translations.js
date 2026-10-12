@@ -188,11 +188,12 @@ window.I18N = {
     "home.footer": "© 2026 Angel Bel Hadj. Tous droits réservés.",
     "common.footerLegal": "Mentions légales",
     "common.footerPrivacy": "Confidentialité",
-    "home.pageTitle": "Angel Bel Hadj | Portfolio",
-    "home.metaDescription": "Portfolio d'Angel Bel Hadj - Web Design, UX/UI, Marketing Digital et Communication.",
+    "home.pageTitle": "Angel Bel Hadj | Portfolio – Web Design, UX/UI & Marketing Digital",
+    "home.metaDescription": "Portfolio d'Angel Bel Hadj, étudiant en Digital & International Business à l'EMLV. Projets en web design, UX/UI et marketing digital. Recherche d'une alternance ou d'un stage alterné pour 2026-2027.",
 
     /* ===== Club Entrepreneurs (page détaillée) ===== */
     "clubDetail.subtitle": "Membre depuis 10/2024 · Responsable communication (09/2025 → 03/2026)",
+    "clubDetail.metaDescription": "Membre du Club Entrepreneurs EMLV depuis 2024, responsable communication : création de contenus et animation de la communication digitale du club.",
     "clubDetail.intro": "Création de contenus et animation de la communication digitale du club.",
     "clubDetail.h2Club": "Le club",
     "clubDetail.pClub": "Association étudiante de l'EMLV dédiée à la sensibilisation à l'entrepreneuriat : événements, ateliers et conférences ouverts à tous les étudiants.",
@@ -233,6 +234,7 @@ window.I18N = {
     /* ===== The Ranch (page détaillée) ===== */
     "ranch.tag": "Digital Marketing & Events",
     "ranch.subtitle": "Stage marketing digital & communication · 2025",
+    "ranch.metaDescription": "Stage marketing digital et communication chez The Ranch (2025) : refonte de menus, supports visuels, communication événementielle et photographie.",
     "ranch.meta": "Mai 2025 → Juillet 2025 · Mantes-la-Jolie, Île-de-France",
     "ranch.h2Context": "Contexte",
     "ranch.pContext": "Lors de mon stage en marketing digital et communication, j'ai travaillé sur la refonte de menus, la création de supports visuels, la communication autour d'un événement et la photographie événementielle.",
@@ -279,6 +281,7 @@ window.I18N = {
     "xbox.status": "Chargement de la présentation Xbox…",
     "xbox.tag": "Social media",
     "xbox.subtitle": "Étude de cas • Diagnostic digital • Recommandations éditoriales",
+    "xbox.metaDescription": "Étude de cas Xbox : stratégie social media et influence, diagnostic digital et recommandations éditoriales (projet de groupe, EMLV).",
     "xbox.intro": "Étude de cas réalisée en groupe de cinq (cours Digital & International Business, EMLV, septembre 2025) : concevoir une stratégie social media qui rapproche Xbox de sa communauté, à partir d’un diagnostic de sa communication actuelle et des tendances du marché du gaming.",
     "xbox.btnViewPresentation": "Voir la présentation",
     "xbox.btnCanvaSoon": "Canva bientôt disponible",
@@ -327,6 +330,7 @@ window.I18N = {
     /* ===== Asian Dreams ===== */
     "asian.tag": "Web Development",
     "asian.subtitle": "Site bilingue PHP / Twig dédié à la pop culture asiatique · 2024",
+    "asian.metaDescription": "Asian Dreams : site bilingue FR/EN présentant des fiches K-Drama, K-Pop et mangas, développé en PHP / Twig.",
     "asian.intro": "Site personnel présentant des fiches K-Drama, K-Pop et mangas, entièrement disponible en français et en anglais.",
     "asian.h2Context": "Contexte",
     "asian.pContext": "Projet personnel, développé pour découvrir et exposer trois univers que j’apprécie — les K-Dramas, la K-Pop et les mangas — puis repris et amélioré pour en faire une vraie pièce de portfolio.",
@@ -365,6 +369,7 @@ window.I18N = {
     /* ===== DVD Filmothèque (bibliotheque) ===== */
     "dvd.tag": "Web Development",
     "dvd.subtitle": "Application web PHP / MySQL · 2024",
+    "dvd.metaDescription": "DVD Filmothèque : application web PHP / MySQL permettant de consulter un catalogue de films connecté à une base de données relationnelle.",
     "dvd.intro": "Application web permettant de consulter un catalogue de films connecté à une base de données relationnelle.",
     "dvd.h2Context": "Contexte",
     "dvd.pContext": "Projet réalisé dans le cadre de la SAE 203 (BUT MMI, IUT de Haguenau – Université de Strasbourg) : une filmothèque web connectée à une base de données MySQL.",
@@ -403,6 +408,7 @@ window.I18N = {
     /* ===== Escape Game — La nuit du château maudit ===== */
     "escape.tag": "Design & communication",
     "escape.subtitle": "Projet de communication pour le Château de Lichtenberg · 2024",
+    "escape.metaDescription": "Escape game d'horreur et communication digitale imaginés pour le Château de Lichtenberg, projet réalisé en équipe dans le cadre d'Eventify.",
     "escape.intro": "Projet réalisé en équipe dans le cadre d'Eventify, une agence de communication fictive. Le Château de Lichtenberg souhaitait développer sa fréquentation et toucher de nouveaux publics. Notre réponse : imaginer un escape game d'horreur inspiré de l'histoire du château et construire sa communication digitale.",
     "escape.snapClientLbl": "Client",
     "escape.snapClientVal": "Château de Lichtenberg",
@@ -452,6 +458,7 @@ window.I18N = {
     "fandom.index": "Projet principal",
     "fandom.tag1": "UX Research", "fandom.tag2": "User Testing", "fandom.tag3": "Card Sorting",
     "fandom.subtitle": "Tests utilisateurs & Card Sorting · 1er semestre 2026",
+    "fandom.metaDescription": "Audit UX du site Fandom : tests utilisateurs et Card Sorting pour améliorer l'organisation d'un catalogue de contenus très large.",
     "fandom.intro1": "Analyse de l’expérience utilisateur du site Fandom à travers des tests utilisateurs, un questionnaire UX et une activité de card sorting.",
     "fandom.intro2": "L’objectif était d’identifier les difficultés de navigation et de comprendre comment les utilisateurs organisent naturellement l’information.",
     "fandom.pdfLoading": "Chargement de l’audit Fandom…",
@@ -494,6 +501,7 @@ window.I18N = {
     /* ===== Emergent (projet-indiewave.html) ===== */
     "emergent.tag": "Web • Entrepreneuriat",
     "emergent.subtitle": "Conception produit • UX/UI • Développement front-end · 2026",
+    "emergent.metaDescription": "Emergent : plateforme de découverte musicale pour artistes émergents, avec recherche, annuaire d'artistes et écoute via Spotify.",
     "emergent.intro": "Projet réalisé pendant mes 4 mois en Bulgarie. Emergent est une plateforme de découverte musicale dédiée aux artistes émergents : recherche et filtrage d’un catalogue, annuaire d’artistes avec fiches individuelles, écoute directe via de vrais embeds Spotify, et un formulaire permettant à un artiste de proposer un titre.",
     "emergent.h2Context": "Contexte",
     "emergent.pContext": "Projet réalisé seul pendant mon échange académique à la Varna University of Management, en 2026. Sur les plateformes de streaming classiques, les artistes émergents peinent à se faire découvrir face aux artistes déjà installés.",
@@ -529,6 +537,7 @@ window.I18N = {
     /* ===== Adobe Photoshop for Business ===== */
     "photoshop.tag": "Projet académique",
     "photoshop.subtitle": "Création graphique, retouche photo et communication visuelle · 2024",
+    "photoshop.metaDescription": "Trois exercices Adobe Photoshop réalisés en cours DIB (EMLV) : retouche photo, visuels social media et composition graphique libre.",
     "photoshop.intro": "Trois exercices réalisés dans le cadre du cours DIB (EMLV) avec Adobe Photoshop : retouche et correction d’image, création de visuels social media multi-formats, et composition graphique libre.",
     "photoshop.card1Title": "Retouche photo beauté",
     "photoshop.card1Desc": "Retouche et amélioration d’un portrait : détourage, correction des imperfections de peau, ajustement du fond et optimisation du rendu visuel.",
@@ -559,6 +568,7 @@ window.I18N = {
     "portfolioProj.tag": "Web Design • Front-end",
     "portfolioProj.title": "Portfolio personnel",
     "portfolioProj.subtitle": "Design, développement et structuration d’un portfolio professionnel",
+    "portfolioProj.metaDescription": "Portfolio personnel conçu et développé pour présenter mes projets, compétences et expériences à travers des études de cas interactives.",
     "portfolioProj.intro": "Portfolio développé pour présenter mes projets, mes compétences et mes expériences à travers des études de cas interactives.",
     "portfolioProj.btnView": "Voir le portfolio",
     "portfolioProj.h2Context": "Contexte",
@@ -845,11 +855,12 @@ window.I18N = {
     "home.footer": "© 2026 Angel Bel Hadj. All rights reserved.",
     "common.footerLegal": "Legal notice",
     "common.footerPrivacy": "Privacy",
-    "home.pageTitle": "Angel Bel Hadj | Portfolio",
-    "home.metaDescription": "Angel Bel Hadj's portfolio - Web Design, UX/UI, Digital Marketing and Communications.",
+    "home.pageTitle": "Angel Bel Hadj | Portfolio – Web Design, UX/UI & Digital Marketing",
+    "home.metaDescription": "Angel Bel Hadj's portfolio, Digital & International Business student at EMLV. Web design, UX/UI and digital marketing projects. Looking for a work-study program for 2026-2027.",
 
     /* ===== Club Entrepreneurs (detail page) ===== */
     "clubDetail.subtitle": "Member since 10/2024 · Communications Manager (09/2025 → 03/2026)",
+    "clubDetail.metaDescription": "Communications Manager at EMLV's Club Entrepreneurs since 2024: content creation and digital communication for the club.",
     "clubDetail.intro": "Creating content and running the club's digital communications.",
     "clubDetail.h2Club": "The club",
     "clubDetail.pClub": "EMLV student association dedicated to raising awareness about entrepreneurship: events, workshops and talks open to all students.",
@@ -890,6 +901,7 @@ window.I18N = {
     /* ===== The Ranch (detail page) ===== */
     "ranch.tag": "Digital Marketing & Events",
     "ranch.subtitle": "Digital marketing & communications internship · 2025",
+    "ranch.metaDescription": "Digital marketing and communications internship at The Ranch (2025): menu redesign, visual materials, event communication and photography.",
     "ranch.meta": "May 2025 → July 2025 · Mantes-la-Jolie, Île-de-France",
     "ranch.h2Context": "Context",
     "ranch.pContext": "During my internship in digital marketing and communications, I worked on redesigning menus, creating visual materials, communicating around an event, and event photography.",
@@ -936,6 +948,7 @@ window.I18N = {
     "xbox.status": "Loading the Xbox presentation…",
     "xbox.tag": "Social media",
     "xbox.subtitle": "Case study • Digital diagnosis • Editorial recommendations",
+    "xbox.metaDescription": "Xbox case study: social media and influence strategy, digital diagnosis and editorial recommendations (group project, EMLV).",
     "xbox.intro": "Case study completed in a team of five (Digital & International Business course, EMLV, September 2025): design a social media strategy that brings Xbox closer to its community, based on a diagnosis of its current communications and gaming market trends.",
     "xbox.btnViewPresentation": "View presentation",
     "xbox.btnCanvaSoon": "Canva coming soon",
@@ -984,6 +997,7 @@ window.I18N = {
     /* ===== Asian Dreams ===== */
     "asian.tag": "Web Development",
     "asian.subtitle": "Bilingual PHP / Twig site dedicated to Asian pop culture · 2024",
+    "asian.metaDescription": "Asian Dreams: bilingual FR/EN site featuring K-Drama, K-Pop and manga profiles, built with PHP / Twig.",
     "asian.intro": "Personal site featuring K-Drama, K-Pop and manga entries, fully available in French and English.",
     "asian.h2Context": "Context",
     "asian.pContext": "Personal project built to explore and showcase three universes I enjoy — K-Dramas, K-Pop and manga — then revisited and improved to make it a real portfolio piece.",
@@ -1022,6 +1036,7 @@ window.I18N = {
     /* ===== DVD Filmothèque ===== */
     "dvd.tag": "Web Development",
     "dvd.subtitle": "PHP / MySQL web application · 2024",
+    "dvd.metaDescription": "DVD Filmothèque: PHP / MySQL web application for browsing a film catalogue connected to a relational database.",
     "dvd.intro": "Web application for browsing a film catalog connected to a relational database.",
     "dvd.h2Context": "Context",
     "dvd.pContext": "A SAE 203 project (BUT MMI, IUT de Haguenau – University of Strasbourg): a DVD catalog site connected to a MySQL database.",
@@ -1060,6 +1075,7 @@ window.I18N = {
     /* ===== Escape Game — The Night of the Cursed Castle ===== */
     "escape.tag": "Design & communication",
     "escape.subtitle": "Communication project for Château de Lichtenberg · 2024",
+    "escape.metaDescription": "Horror escape game and digital communication designed for Château de Lichtenberg, a team project for the Eventify agency.",
     "escape.intro": "Team project completed for Eventify, a fictional communications agency. Château de Lichtenberg wanted to grow its attendance and reach new audiences. Our answer: imagine a horror escape room inspired by the castle's history and build its digital communications.",
     "escape.snapClientLbl": "Client",
     "escape.snapClientVal": "Château de Lichtenberg",
@@ -1109,6 +1125,7 @@ window.I18N = {
     "fandom.index": "Featured project",
     "fandom.tag1": "UX Research", "fandom.tag2": "User Testing", "fandom.tag3": "Card Sorting",
     "fandom.subtitle": "User testing & Card Sorting · First semester 2026",
+    "fandom.metaDescription": "UX audit of the Fandom website: user testing and card sorting to improve the organization of a very large content catalogue.",
     "fandom.intro1": "UX analysis of the Fandom site through user testing, a UX survey and a card sorting exercise.",
     "fandom.intro2": "The goal was to identify navigation issues and understand how users naturally organize information.",
     "fandom.pdfLoading": "Loading the Fandom audit…",
@@ -1151,6 +1168,7 @@ window.I18N = {
     /* ===== Emergent ===== */
     "emergent.tag": "Web • Entrepreneurship",
     "emergent.subtitle": "Product design • UX/UI • Front-end development · 2026",
+    "emergent.metaDescription": "Emergent: a music discovery platform for emerging artists, with search, an artist directory and Spotify playback.",
     "emergent.intro": "Project built during my 4 months in Bulgaria. Emergent is a music discovery platform dedicated to emerging artists: catalog search and filtering, an artist directory with individual profiles, direct listening via real Spotify embeds, and a form letting an artist submit a track.",
     "emergent.h2Context": "Context",
     "emergent.pContext": "Solo project built during my academic exchange at Varna University of Management, in 2026. On mainstream streaming platforms, emerging artists struggle to be discovered next to already-established ones.",
@@ -1186,6 +1204,7 @@ window.I18N = {
     /* ===== Adobe Photoshop for Business ===== */
     "photoshop.tag": "Academic project",
     "photoshop.subtitle": "Graphic design, photo retouching and visual communication · 2024",
+    "photoshop.metaDescription": "Three Adobe Photoshop exercises from the DIB course (EMLV): photo retouching, social media visuals and free graphic composition.",
     "photoshop.intro": "Three exercises completed for the DIB course (EMLV) with Adobe Photoshop: image retouching and correction, multi-format social media visuals, and a free-form graphic composition.",
     "photoshop.card1Title": "Beauty photo retouching",
     "photoshop.card1Desc": "Retouched and enhanced a portrait: cutout, skin imperfection correction, background adjustment and overall visual optimization.",
@@ -1216,6 +1235,7 @@ window.I18N = {
     "portfolioProj.tag": "Web Design • Front-end",
     "portfolioProj.title": "Personal Portfolio",
     "portfolioProj.subtitle": "Design, development and structure of a professional portfolio",
+    "portfolioProj.metaDescription": "Personal portfolio designed and built to present my projects, skills and experience through interactive case studies.",
     "portfolioProj.intro": "Portfolio built to present my projects, skills and experience through interactive case studies.",
     "portfolioProj.btnView": "View the portfolio",
     "portfolioProj.h2Context": "Context",
