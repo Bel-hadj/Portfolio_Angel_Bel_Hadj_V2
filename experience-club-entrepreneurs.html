@@ -9,15 +9,27 @@
   <script src="assets/i18n/translations.js"></script>
 </head>
 <body>
-  <main class="project-detail project-detail-showcase ranch-detail-wide club-detail">
-    <div class="detail-topbar">
-      <a href="index.html#projets" class="back-link" data-i18n="common.backToPortfolio">← Retour au portfolio</a>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html#accueil" class="logo-brand">
+        <span class="logo-text">Angel Bel Hadj</span>
+      </a>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" data-i18n-attr="aria-label:common.menuToggleLabel">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html#accueil" data-i18n="common.navHome">Accueil</a></li>
+        <li><a href="index.html#projets" data-i18n="common.navProjects">Projets</a></li>
+        <li><a href="index.html#apropos" data-i18n="common.navAbout">À propos</a></li>
+        <li><a href="index.html#contact" data-i18n="common.navContact">Contact</a></li>
+      </ul>
       <div class="lang-switch" role="group" aria-label="Langue / Language">
         <button type="button" class="lang-option" data-lang="fr">FR</button>
         <span class="lang-sep" aria-hidden="true">|</span>
         <button type="button" class="lang-option" data-lang="en">EN</button>
       </div>
-    </div>
+      <a href="index.html#contact" class="btn primary nav-cta" data-i18n="common.navContactCta">Me contacter ↗</a>
+    </nav>
+  </header>
+  <main class="project-detail project-detail-showcase ranch-detail-wide club-detail">
     <article class="detail-hero reveal visible">
       <div class="club-hero-mosaic">
         <div class="mosaic-tile mosaic-main">
