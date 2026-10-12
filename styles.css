@@ -3313,8 +3313,34 @@ a.ranch-pair-caption:hover {
 }
 
 @media (max-width: 480px) {
+  /* Navbar partagée (homepage + pages projet) : sur très petit écran, logo +
+     hamburger + switch langue + CTA dépassaient légèrement du viewport
+     (mesuré : jusqu'à 36px de débordement réel à 360px). On resserre les
+     espacements et tailles plutôt que de masquer le bouton, pour qu'il reste
+     entièrement visible et cliquable. */
+  .navbar {
+    gap: 5px;
+  }
+
+  .logo-text {
+    font-size: 0.88rem;
+  }
+
+  .menu-toggle {
+    padding: 6px 10px;
+  }
+
+  .lang-switch {
+    gap: 2px;
+  }
+
+  .lang-switch .lang-option {
+    padding: 3px 5px;
+  }
+
   .nav-cta {
-    display: none;
+    padding: 6px 9px;
+    font-size: 0.64rem;
   }
 
   .hero-status-detail {
